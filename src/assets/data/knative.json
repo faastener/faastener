@@ -1,0 +1,401 @@
+{
+  "platformName": "Knative Serving",
+  "logoPath": "knative.png",
+  "description": "Knative Serving is an open source FaaS platform running on Kubernetes.",
+  "descriptionOfficial": "Knative (pronounced kay-nay-tiv) extends Kubernetes to provide a set of middleware components that are essential to build modern, source-centric, and container-based applications that can run anywhere: on premises, in the cloud, or even in a third-party data center.",
+  "businessView": {
+    "licensing": {
+      "license": {
+        "value": "Apache 2.0",
+        "references": [
+          "https://github.com/knative/serving/blob/master/LICENSE"
+        ]
+      },
+      "type": "permissive"
+    },
+    "installations": [
+      {
+        "type": {
+          "value": "installable",
+          "references": [
+            "https://knative.dev/docs/install"
+          ]
+        },
+        "targetHosts": [
+          {
+            "value": "Kubernetes",
+            "references": [
+              "https://knative.dev/docs/install/any-kubernetes-cluster"
+            ]
+          }
+        ]
+      }
+    ],
+    "sourceCode": {
+      "availability": {
+        "value": "open source",
+        "references": [
+          "https://github.com/knative/serving",
+          "https://github.com/knative/eventing"
+        ]
+      },
+      "hostingPlatform": {
+        "value": "GitHub",
+        "references": [
+          "https://github.com"
+        ]
+      },
+      "prgLang": {
+        "value": "Go",
+        "references": [
+          "https://github.com/knative/serving/search?l=go",
+          "https://github.com/knative/eventing/search?l=go"
+        ]
+      }
+    },
+    "release": {
+      "value": "beta",
+      "references": [
+        "https://github.com/knative/serving/releases"
+      ]
+    },
+    "interfaces": {
+      "type": [
+        {
+          "value": "CLI",
+          "references": [
+            "https://github.com/knative/client"
+          ]
+        },
+        {
+          "value": "API",
+          "references": [
+            "https://github.com/knative/docs/blob/master/docs/serving/spec/knative-api-specification-1.0.md"
+          ]
+        }
+      ],
+      "appManagement": [
+        {
+          "value": "create",
+          "references": []
+        },
+        {
+          "value": "retrieve",
+          "references": []
+        },
+        {
+          "value": "update",
+          "references": []
+        },
+        {
+          "value": "delete",
+          "references": []
+        }
+      ],
+      "platformAdministration": [
+        {
+          "value": "deployment",
+          "references": []
+        },
+        {
+          "value": "configuration",
+          "references": []
+        },
+        {
+          "value": "enactment",
+          "references": []
+        }
+      ]
+    },
+    "community": {
+      "github": {
+        "stars": 2700,
+        "forks": 563,
+        "issues": 274,
+        "commits": 3800,
+        "contributors": 165,
+        "references": [
+          "https://github.com/knative/serving"
+        ]
+      },
+      "stackoverflow": {
+        "questions": 57,
+        "references": []
+      }
+    },
+    "documentation": {
+      "functions": [
+        {
+          "value": "deployment",
+          "references": []
+        }
+      ],
+      "platform": [
+        {
+          "value": "usage",
+          "references": []
+        },
+        {
+          "value": "deployment",
+          "references": []
+        }
+      ]
+    },
+    "quotas": {
+      "deployment": {
+        "codeSize": {
+          "value": "unbounded",
+          "references": []
+        },
+        "packageSize": {
+          "value": "unbounded",
+          "references": []
+        }
+      },
+      "runtime": {
+        "cpu": {
+          "value": "unbounded",
+          "references": []
+        },
+        "memory": {
+          "value": "unbounded",
+          "references": []
+        },
+        "storage": {
+          "value": "unbounded",
+          "references": []
+        },
+        "executionTime": {
+          "value": "unbounded",
+          "references": []
+        }
+      }
+    }
+  },
+  "technicalView": {
+    "development": {
+      "funcRuntimes": [
+        {
+          "value": "Docker Image",
+          "references": []
+        }
+      ],
+      "runtimeCustomization": {
+        "value": "supported",
+        "references": []
+      },
+      "editors": [],
+      "clientLibs": []
+    },
+    "versioning": {
+      "appVersions": {
+        "value": "n/s",
+        "references": []
+      },
+      "funcVersions": {
+        "value": "dedicated",
+        "references": []
+      }
+    },
+    "eventSources": {
+      "endpoint": {
+        "syncCall": [
+          {
+            "value": "HTTP",
+            "references": []
+          }
+        ],
+        "asyncCall": [],
+        "endpointCustomization": {
+          "value": "supported",
+          "references": []
+        },
+        "tls": {
+          "value": "supported",
+          "references": []
+        }
+      },
+      "dataStore": {
+        "fileLevel": [
+          {
+            "value": "Google Cloud Storage",
+            "references": []
+          }
+        ],
+        "databaseMode": [
+          {
+            "value": "Apache CouchDB",
+            "references": []
+          },
+          {
+            "value": "AWS DynamoDB",
+            "references": []
+          }
+        ]
+      },
+      "scheduler": {
+        "value": "supported",
+        "references": []
+      },
+      "messageQ": [
+        {
+          "value": "AWS SQS",
+          "references": []
+        },
+        {
+          "value": "AWS SNS",
+          "references": []
+        },
+        {
+          "value": "Google Cloud Pub/Sub",
+          "references": []
+        }
+      ],
+      "streamProc": [
+        {
+          "value": "Apache Kafka",
+          "references": []
+        },
+        {
+          "value": "AWS Kinesis",
+          "references": []
+        },
+        {
+          "value": "Google Cloud Pub/Sub",
+          "references": []
+        }
+      ],
+      "specService": [
+        {
+          "value": "Apache Camel",
+          "references": []
+        },
+        {
+          "value": "Kubernetes event",
+          "references": []
+        },
+        {
+          "value": "GitHub",
+          "references": []
+        },
+        {
+          "value": "BitBucket",
+          "references": []
+        },
+        {
+          "value": "GitLab",
+          "references": []
+        },
+        {
+          "value": "Google Cloud Scheduler",
+          "references": []
+        },
+        {
+          "value": "AWS CodeCommit",
+          "references": []
+        },
+        {
+          "value": "AWS Cognito",
+          "references": []
+        },
+        {
+          "value": "FTP/SFTP",
+          "references": []
+        },
+        {
+          "value": "Heartbeat event",
+          "references": []
+        },
+        {
+          "value": "Websocket",
+          "references": []
+        }
+      ],
+      "integration": [
+        {
+          "value": "custom plugins",
+          "references": [
+            "PLACEHOLDER"
+          ]
+        }
+      ]
+    },
+    "functionOrchestration": {
+      "orchestratorName": "Knative Eventing",
+      "workflowDef": {
+        "type": "custom DSL",
+        "languages": [
+          "YAML"
+        ],
+        "references": []
+      },
+      "conFlowDocs": {
+        "value": "documented",
+        "references": []
+      },
+      "quotas": []
+    },
+    "testing": {
+      "functional": [],
+      "nonFunctional": []
+    },
+    "debugging": {
+      "local": [],
+      "remote": []
+    },
+    "observability": {
+      "logging": [
+        {
+          "value": "Elasticsearch + Kibana",
+          "references": []
+        },
+        {
+          "value": "Google Cloud Operations",
+          "references": []
+        }
+      ],
+      "monitoring": [
+        {
+          "value": "Prometheus + Grafana",
+          "references": []
+        },
+        {
+          "value": "Zipkin",
+          "references": []
+        },
+        {
+          "value": "Jaeger",
+          "references": []
+        }
+      ],
+      "integration": [
+        {
+          "value": "push-based",
+          "references": []
+        }
+      ]
+    },
+    "appDelivery": {
+      "depAuto": [
+        {
+          "value": "Kubernetes-based",
+          "references": []
+        }
+      ],
+      "ciCd": []
+    },
+    "codeReuse": {
+      "marketplaces": [],
+      "sampleRepos": [
+        {
+          "value": "available",
+          "references": []
+        }
+      ]
+    },
+    "accessManagement": {
+      "auth": [],
+      "accessControl": []
+    }
+  }
+}

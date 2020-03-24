@@ -1,0 +1,48 @@
+<section id="info-page-banner" class="banner-section">
+  <div class="container" fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap="nowrap" fxLayoutGap="30px">
+    <div fxFlex="100">
+      <h1 class="banner-title text-center">
+        Find your FaaS platform
+      </h1>
+      <div class="banner-description text-center">
+        Learn more about available Function-as-a-Service platforms and find suitable platforms based on your requirements.
+      </div>
+
+      <div class="banner-description-list" fxLayout="row" fxLayout.xs="column">
+        <div fxLayout="column" fxFlex="34"></div>
+        <div fxLayout="column" fxFlex="34" fxLayoutGap="30px">
+          <div fxFlex="100">
+            <mat-icon>check_circle</mat-icon>
+            <span fxFlex="20px"></span> 10 reviewed platforms, more on the way
+          </div>
+          <div fxFlex="100">
+            <mat-icon>check_circle</mat-icon>
+            <span fxFlex="20px"></span> High- and low-level platform selection criteria
+          </div>
+          <div fxFlex="100">
+            <mat-icon>check_circle</mat-icon>
+            <span fxFlex="20px"></span> Open source and extensible
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="32"></div>
+      </div>
+
+      <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="center center">
+        <button mat-raised-button [routerLink]="'../search'">
+          <mat-icon>search</mat-icon>
+          Find a Platform
+        </button>
+        <span fxFlex="20px"></span>
+        <button mat-raised-button [routerLink]="'../explorer'">
+          <mat-icon>view_list</mat-icon>
+          Browse platforms
+        </button>
+        <span fxFlex="20px"></span>
+        <button mat-raised-button>
+          <mat-icon>info</mat-icon>
+          Learn more
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

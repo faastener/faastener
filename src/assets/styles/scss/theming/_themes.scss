@@ -1,0 +1,16 @@
+@import '../../../../../node_modules/@angular/material/theming';
+@import "faastener-palette";
+
+@include mat-core();
+
+$faastener-theme-primary: mat-palette($faastener-violet);
+$faastener-theme-accent: mat-palette($faastener-salad);
+
+$faastener-main-theme: mat-light-theme(
+    $faastener-theme-primary,
+    $faastener-theme-accent
+);
+
+.faastener-main {
+  @include angular-material-theme($faastener-main-theme);
+}

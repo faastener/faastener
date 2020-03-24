@@ -1,0 +1,66 @@
+.platform-card {
+  border-top: 2px solid #212121;
+  transition: all .3s ease;
+  height: calc(100% - 50px);
+  margin: 0 7px 0 7px;
+
+  h3, p {
+    margin: 0;
+  }
+
+  img {
+    opacity: .75;
+    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+  }
+}
+
+.platform-card:hover {
+  border-top: 2px solid #b5ca8f;
+  opacity: 1;
+
+  img {
+    opacity: 1;
+  }
+}
+
+.platform-card:hover [mat-card-icon] {
+  color: #b5ca8f;
+}
+
+.platform-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+}
+
+.platform-card .description {
+  font-size: 15px;
+  color: #616161;
+  height: 100px;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+.platform-logo {
+  height: 125px; /* Equals maximum image height */
+  border: none;
+  text-align: center;
+  margin: 1em 0;
+}
+
+.platform-logo img {
+  vertical-align: middle;
+  max-height: 125px;
+  max-width: 160px;
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}

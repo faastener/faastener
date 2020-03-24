@@ -1,0 +1,976 @@
+<section id="view-conf-section" class="view-config-section" #conf>
+  <div class="container">
+    <div class="page-section-header text-center" fxLayout="column">
+      <h3>Platform Browser Properties</h3>
+      <p class="text-center">
+        Show/hide platform view details and configure the data representations.
+      </p>
+    </div>
+    <mat-accordion>
+      <mat-expansion-panel [expanded]="true" (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+                           hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Platform View properties
+          </mat-panel-title>
+          <mat-panel-description>
+            <span fxFlex></span>
+            {{panelOpenState ? 'Click to collapse settings' : 'Click to expand settings'}}
+            <mat-icon>settings</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-form-field class="platform-select">
+          <mat-label>Select a platform</mat-label>
+          <mat-select [(value)]="selectedPlatformId" (selectionChange)="onPlatformChange()">
+            <mat-option *ngFor="let platform of platforms" value="{{platform.id}}">
+              {{platform.platformName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</section>
+
+<section id="view-section" *ngIf="selectedPlatform" #view>
+  <div class="container">
+    <div class="page-section-header text-center">
+      <h2>
+        {{selectedPlatform.platformName}} Overview
+      </h2>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+      <div fxFlex="15" class="platform-logo" fxLayoutAlign="center center">
+        <div fxLayout="column">
+          <img fxFlex="100" src="{{selectedPlatform.logoPath}}" alt="{{selectedPlatform.platformName}}"/>
+        </div>
+      </div>
+
+
+      <div fxFlex="70" fxFlexAlign="stretch">
+        <div fxLayout="row">
+          <div>
+            <h5 class="text-muted">Description</h5>
+          </div>
+        </div>
+
+        <div fxLayout="row" fxFlexAlign="stretch" fxLayoutAlign="end">
+          <div class="text-justify">
+            {{selectedPlatform.descriptionOfficial}}
+          </div>
+        </div>
+
+        <div fxLayout="row">
+          <div fxLayout="column" fxFlex="50">
+            <h5 class="text-muted">Release Status:
+              <span class="font-bold">{{selectedPlatform.businessView.release.value}}</span>
+            </h5>
+          </div>
+          <div fxLayout="row" fxFlex="50" fxLayoutAlign="start end">
+            <div fxFlex="30">
+              <h5 class="text-muted">Installation:</h5>
+            </div>
+            <div fxFlex="70">
+              <mat-chip-list>
+                <mat-chip *ngFor="let i of selectedPlatform.businessView.installations">{{i.type.value}}</mat-chip>
+              </mat-chip-list>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div fxFlex="14" fxFlexAlign="stretch" class="text-center">
+        <div fxLayout="row" fxLayoutAlign="center">
+          <div>
+            <h5 class="text-muted">Licensing</h5>
+          </div>
+        </div>
+
+        <div fxLayout="column" fxLayoutAlign="space-evenly center">
+          <div class="text-center font-bold text-muted">
+            {{selectedPlatform.businessView.licensing.license.value}}
+          </div>
+          <div class="text-center">
+            Type: {{selectedPlatform.businessView.licensing.type}}
+          </div>
+          <div class="text-center">
+            <button mat-button>
+              <mat-icon>link</mat-icon>
+              <a href="{{selectedPlatform.businessView.licensing.license.references}}" target="_blank">
+                <strong class="text-muted">LINK</strong>
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <mat-divider></mat-divider>
+  </div>
+</section>
+
+<div class="page-section-header text-center" *ngIf="selectedPlatform && selectedPlatform.businessView">
+  <h2>
+    Business View
+  </h2>
+</div>
+
+<section *ngIf="selectedPlatform && selectedPlatform.hasTargetHosts()">
+  <div class="container">
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+
+      <div fxFlex="90" fxFlexOffset="5" fxFlexAlign="stretch">
+
+        <div fxLayout="row">
+          <h5 class="text-muted">
+            Target Hosts
+          </h5>
+        </div>
+
+        <div fxLayout="row wrap" fxLayoutAlign="space-evenly stretch"
+             *ngFor="let i of selectedPlatform.businessView.installations">
+          <mat-card fxFlex *ngFor="let host of i.targetHosts">
+            <mat-card-header>
+              <mat-card-title>{{host.value}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section *ngIf="selectedPlatform">
+  <div class="container">
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+
+      <div fxFlex="90" fxFlexOffset="5" fxFlexAlign="stretch">
+
+        <div fxLayout="row">
+          <h5 class="text-muted">
+            Source Code
+          </h5>
+        </div>
+
+        <div fxLayout="row wrap" fxLayoutAlign="space-evenly stretch">
+          <mat-card fxFlex>
+            <mat-card-header>
+              <mat-card-title class="text-center">Availability</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="text-center font-bold">
+              {{selectedPlatform.businessView.sourceCode.availability.value}}
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex>
+            <mat-card-header>
+              <mat-card-title class="text-center">Code Hosting Platform</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="text-center font-bold">
+              {{selectedPlatform.businessView.sourceCode.hostingPlatform.value || 'n/a'}}
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex>
+            <mat-card-header>
+              <mat-card-title class="text-center">Programming Language</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="text-center font-bold">
+              {{selectedPlatform.businessView.sourceCode.prgLang.value || 'n/a'}}
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section *ngIf="selectedPlatform">
+  <div class="container">
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+
+      <div fxFlex="90" fxFlexOffset="5" fxFlexAlign="stretch">
+        <div fxLayout="row">
+          <div fxFlex="10">
+            <h5 class="text-muted">Interfaces:</h5>
+          </div>
+          <div fxFlex="90" fxLayoutAlign="start end">
+            <mat-chip-list>
+              <mat-chip *ngFor="let i of selectedPlatform.businessView.interfaces.type">{{i.value}}</mat-chip>
+            </mat-chip-list>
+          </div>
+        </div>
+
+
+        <div fxLayout="row" fxLayoutAlign="space-evenly stretch">
+          <mat-card fxFlex="50">
+            <mat-card-header>
+              <mat-card-title class="text-center">Application Management</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="text-center font-bold">
+              <mat-list>
+                <mat-list-item
+                  *ngFor="let op of selectedPlatform.businessView.interfaces.appManagement"> {{op.value}} </mat-list-item>
+              </mat-list>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex="50">
+            <mat-card-header>
+              <mat-card-title class="text-center">Platform Administration</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="text-center font-bold">
+              <mat-list>
+                <mat-list-item
+                  *ngFor="let op of selectedPlatform.businessView.interfaces.platformAdministration"> {{op.value}} </mat-list-item>
+              </mat-list>
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<section *ngIf="selectedPlatform">
+  <div class="container">
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+
+      <div fxFlex="90" fxFlexOffset="5" fxFlexAlign="stretch">
+        <div fxLayout="row">
+          <div fxFlex="10">
+            <h5 class="text-muted">Community</h5>
+          </div>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="space-evenly stretch">
+          <mat-card fxFlex="50" *ngIf="selectedPlatform.businessView.community.github !== null">
+            <mat-card-header>
+              <mat-card-title class="text-center">GitHub</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="text-center font-bold">
+              <mat-list>
+                <mat-list-item> Stars: {{selectedPlatform.businessView.community.github.stars}} </mat-list-item>
+                <mat-list-item> Forks: {{selectedPlatform.businessView.community.github.forks}} </mat-list-item>
+                <mat-list-item> Commits: {{selectedPlatform.businessView.community.github.commits}} </mat-list-item>
+                <mat-list-item>
+                  Contributors: {{selectedPlatform.businessView.community.github.contributors}} </mat-list-item>
+                <mat-list-item> Issues: {{selectedPlatform.businessView.community.github.issues}} </mat-list-item>
+              </mat-list>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex="50">
+            <mat-card-header>
+              <mat-card-title class="text-center">StackOverflow</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="text-center font-bold">
+              <mat-list>
+                <mat-list-item>
+                  Questions: {{selectedPlatform.businessView.community.stackoverflow.questions}} </mat-list-item>
+              </mat-list>
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+<section *ngIf="selectedPlatform">
+  <div class="container">
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+
+      <div fxFlex="90" fxFlexOffset="5" fxFlexAlign="stretch">
+        <div fxLayout="row">
+          <div fxFlex="10">
+            <h5 class="text-muted">Documentation</h5>
+          </div>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="space-evenly stretch">
+          <mat-card fxFlex="50">
+            <mat-card-header>
+              <mat-card-title class="text-center">Functions</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="text-center font-bold">
+              <mat-list>
+                <mat-list-item
+                  *ngFor="let d of selectedPlatform.businessView.documentation.functions"> {{d.value}} </mat-list-item>
+              </mat-list>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex="50">
+            <mat-card-header>
+              <mat-card-title class="text-center">Platform</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="text-center font-bold">
+              <mat-list>
+                <mat-list-item
+                  *ngFor="let d of selectedPlatform.businessView.documentation.platform"> {{d.value}} </mat-list-item>
+              </mat-list>
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+<section *ngIf="selectedPlatform">
+  <div class="container">
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+
+      <div fxFlex="90" fxFlexOffset="5" fxFlexAlign="stretch">
+        <div fxLayout="row">
+          <div fxFlex="10">
+            <h5 class="text-muted">Quotas</h5>
+          </div>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="space-evenly stretch">
+          <mat-card fxFlex="50">
+            <mat-card-header>
+              <mat-card-title class="text-center">Deployment</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="text-center font-bold">
+              <mat-list>
+                <mat-list-item> Code
+                  Size: {{selectedPlatform.businessView.quotas.deployment.codeSize.value}} </mat-list-item>
+                <mat-list-item> Package
+                  Size: {{selectedPlatform.businessView.quotas.deployment.packageSize.value}} </mat-list-item>
+              </mat-list>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex="50">
+            <mat-card-header>
+              <mat-card-title class="text-center">Runtime</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="text-center font-bold">
+              <mat-list>
+                <mat-list-item> CPU: {{selectedPlatform.businessView.quotas.runtime.cpu.value}} </mat-list-item>
+                <mat-list-item> Memory: {{selectedPlatform.businessView.quotas.runtime.memory.value}} </mat-list-item>
+                <mat-list-item> Execution
+                  Time: {{selectedPlatform.businessView.quotas.runtime.executionTime.value}} </mat-list-item>
+                <mat-list-item> Storage: {{selectedPlatform.businessView.quotas.runtime.storage.value}} </mat-list-item>
+              </mat-list>
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+      </div>
+
+    </div>
+    <br>
+    <mat-divider></mat-divider>
+  </div>
+</section>
+
+<div class="page-section-header text-center" *ngIf="selectedPlatform && selectedPlatform.technicalView">
+  <h2>
+    Technical View
+  </h2>
+</div>
+
+<section *ngIf="selectedPlatform">
+  <div class="container">
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+
+      <div fxFlex="90" fxFlexOffset="5" fxFlexAlign="stretch">
+
+        <div fxLayout="row">
+          <div fxFlex="10">
+            <h5 class="text-muted">Function Runtimes</h5>
+          </div>
+          <div fxFlex="90" fxLayoutAlign="start end">
+            <mat-chip-list
+              *ngIf="selectedPlatform.technicalView.development.runtimeCustomization.value === 'supported'">
+              <mat-chip>customizable</mat-chip>
+            </mat-chip-list>
+          </div>
+        </div>
+
+        <div fxLayout="row wrap" fxLayoutAlign="space-evenly stretch">
+          <mat-card fxFlex *ngFor="let rt of selectedPlatform.technicalView.development.funcRuntimes">
+            <mat-card-header>
+              <mat-card-title>{{rt.value}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section *ngIf="selectedPlatform">
+  <div class="container">
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+
+      <div fxFlex="90" fxFlexOffset="5" fxFlexAlign="stretch">
+
+        <div fxLayout="row">
+          <div fxFlex="10">
+            <h5 class="text-muted">Editors</h5>
+          </div>
+          <div fxFlex="90" fxLayoutAlign="start end">
+            <mat-chip-list>
+              <mat-chip *ngFor="let e of selectedPlatform.technicalView.development.editors">{{e.value}}</mat-chip>
+            </mat-chip-list>
+          </div>
+        </div>
+
+        <div fxLayout="row">
+          <div fxFlex="10">
+            <h5 class="text-muted">Client Libraries</h5>
+          </div>
+          <div fxFlex="90" fxLayoutAlign="start end">
+            <mat-chip-list>
+              <mat-chip
+                *ngFor="let lib of selectedPlatform.technicalView.development.clientLibs">{{lib.value}}</mat-chip>
+            </mat-chip-list>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section *ngIf="selectedPlatform">
+  <div class="container">
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+
+      <div fxFlex="90" fxFlexOffset="5" fxFlexAlign="stretch">
+
+        <div fxLayout="row">
+          <div fxFlex="10">
+            <h5 class="text-muted">Versioning</h5>
+          </div>
+        </div>
+
+        <div fxLayout="row wrap" fxLayoutAlign="space-evenly stretch">
+          <mat-card fxFlex>
+            <mat-card-header>
+              <mat-card-title>Application Versioning</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              {{ selectedPlatform.technicalView.versioning.appVersions.value}}
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex>
+            <mat-card-header>
+              <mat-card-title>Function Versioning</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              {{ selectedPlatform.technicalView.versioning.funcVersions.value}}
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section *ngIf="selectedPlatform">
+  <div class="container">
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+
+      <div fxFlex="90" fxFlexOffset="5" fxFlexAlign="stretch">
+
+        <div fxLayout="row">
+          <div fxFlex="10">
+            <h5 class="text-muted">Event Sources</h5>
+          </div>
+        </div>
+
+        <div fxLayout="row wrap" fxLayoutAlign="space-evenly stretch">
+          <mat-card fxFlex>
+            <mat-card-header>
+              <mat-card-title>Endpoint</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip
+                  *ngFor="let sync of selectedPlatform.technicalView.eventSources.endpoint.syncCall">{{sync.value}}
+                  (sync)
+                </mat-chip>
+              </mat-chip-list>
+              <mat-chip-list>
+                <mat-chip
+                  *ngFor="let async of selectedPlatform.technicalView.eventSources.endpoint.asyncCall">{{async.value}}
+                  (async)
+                </mat-chip>
+              </mat-chip-list>
+              <mat-chip-list>
+                <mat-chip>
+                  Customization: {{selectedPlatform.technicalView.eventSources.endpoint.endpointCustomization.value}}</mat-chip>
+                <mat-chip>TLS: {{selectedPlatform.technicalView.eventSources.endpoint.tls.value}}</mat-chip>
+              </mat-chip-list>
+
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex>
+            <mat-card-header>
+              <mat-card-title>Data Store</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div *ngIf="selectedPlatform.technicalView.eventSources.dataStore.fileLevel.length > 0">
+                <p>File level:</p>
+                <mat-chip-list>
+                  <mat-chip
+                    *ngFor="let db of selectedPlatform.technicalView.eventSources.dataStore.fileLevel">{{db.value}}</mat-chip>
+                </mat-chip-list>
+              </div>
+
+              <div *ngIf="selectedPlatform.technicalView.eventSources.dataStore.databaseMode.length > 0">
+                <p>Database mode:</p>
+                <mat-chip-list>
+                  <mat-chip
+                    *ngFor="let db of selectedPlatform.technicalView.eventSources.dataStore.databaseMode">{{db.value}}</mat-chip>
+                </mat-chip-list>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex>
+            <mat-card-header>
+              <mat-card-title>Scheduler</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip>{{selectedPlatform.technicalView.eventSources.scheduler.value}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex>
+            <mat-card-header>
+              <mat-card-title>Message Queues</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip *ngFor="let q of selectedPlatform.technicalView.eventSources.messageQ">
+                  {{q.value}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex>
+            <mat-card-header>
+              <mat-card-title>Stream Processing Platforms</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip *ngFor="let s of selectedPlatform.technicalView.eventSources.streamProc">
+                  {{s.value}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex>
+            <mat-card-header>
+              <mat-card-title>Special-purpose Services</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip *ngFor="let s of selectedPlatform.technicalView.eventSources.specService">
+                  {{s.value}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex>
+            <mat-card-header>
+              <mat-card-title>Event Sources Integration</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip *ngFor="let v of selectedPlatform.technicalView.eventSources.integration">
+                  {{v.value}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section *ngIf="selectedPlatform">
+  <div class="container">
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+
+      <div fxFlex="90" fxFlexOffset="5" fxFlexAlign="stretch">
+
+        <div fxLayout="row">
+          <div fxFlex="12">
+            <h5 class="text-muted">Function Orchestrators</h5>
+          </div>
+          <div fxFlex="88" fxLayoutAlign="start end">
+            <mat-chip-list>
+              <mat-chip
+                *ngIf="selectedPlatform.technicalView.functionOrchestration.orchestratorName; else noOrchestrator">{{selectedPlatform.technicalView.functionOrchestration.orchestratorName}}</mat-chip>
+              <ng-template #noOrchestrator>
+                <mat-chip #noOrchestrator>not available</mat-chip>
+              </ng-template>
+
+            </mat-chip-list>
+          </div>
+        </div>
+
+        <div fxLayout="row" *ngIf="selectedPlatform.technicalView.functionOrchestration.orchestratorName">
+          <div fxFlex="100" fxLayoutAlign="start end">
+            <mat-card fxFlex>
+              <mat-card-header>
+                <mat-card-title>Workflow Definition</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <mat-chip-list>
+                  <mat-chip> Type:{{selectedPlatform.technicalView.functionOrchestration.workflowDef.type}}</mat-chip>
+                  <mat-chip
+                    *ngFor="let l of selectedPlatform.technicalView.functionOrchestration.workflowDef.languages">
+                    Language: {{l}}</mat-chip>
+                  <mat-chip> Control
+                    flow:{{selectedPlatform.technicalView.functionOrchestration.conFlowDocs.value}}</mat-chip>
+                </mat-chip-list>
+              </mat-card-content>
+            </mat-card>
+
+            <mat-card fxFlex
+                      *ngIf="selectedPlatform.technicalView.functionOrchestration.quotas && selectedPlatform.technicalView.functionOrchestration.quotas.length > 0">
+              <mat-card-header>
+                <mat-card-title>Orchestrator Quotas</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <mat-chip-list>
+                  <mat-chip
+                    *ngFor="let q of selectedPlatform.technicalView.functionOrchestration.quotas"> {{q.value}}</mat-chip>
+                </mat-chip-list>
+              </mat-card-content>
+            </mat-card>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section *ngIf="selectedPlatform">
+  <div class="container">
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+
+      <div fxFlex="90" fxFlexOffset="5" fxFlexAlign="stretch">
+
+        <div fxLayout="row">
+          <div fxFlex="10">
+            <h5 class="text-muted">Testing</h5>
+          </div>
+        </div>
+
+        <div fxLayout="row wrap" fxLayoutAlign="space-evenly stretch">
+          <mat-card fxFlex *ngIf="selectedPlatform.technicalView.testing.functional.length > 0">
+            <mat-card-header>
+              <mat-card-title>Functional Testing</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip
+                  *ngFor="let q of selectedPlatform.technicalView.testing.functional"> {{q.value}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex *ngIf="selectedPlatform.technicalView.testing.nonFunctional.length > 0">
+            <mat-card-header>
+              <mat-card-title>Non-Functional Testing</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip
+                  *ngFor="let q of selectedPlatform.technicalView.testing.nonFunctional"> {{q.value}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section *ngIf="selectedPlatform">
+  <div class="container">
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+
+      <div fxFlex="90" fxFlexOffset="5" fxFlexAlign="stretch">
+
+        <div fxLayout="row">
+          <div fxFlex="10">
+            <h5 class="text-muted">Debugging</h5>
+          </div>
+        </div>
+
+        <div fxLayout="row wrap" fxLayoutAlign="space-evenly stretch">
+          <mat-card fxFlex *ngIf="selectedPlatform.technicalView.debugging.local.length > 0">
+            <mat-card-header>
+              <mat-card-title>Local Debugging</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip
+                  *ngFor="let q of selectedPlatform.technicalView.debugging.local"> {{q.value}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex *ngIf="selectedPlatform.technicalView.debugging.remote.length > 0">
+            <mat-card-header>
+              <mat-card-title>Remote Debugging</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip
+                  *ngFor="let q of selectedPlatform.technicalView.debugging.remote"> {{q.value}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section *ngIf="selectedPlatform">
+  <div class="container">
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+
+      <div fxFlex="90" fxFlexOffset="5" fxFlexAlign="stretch">
+
+        <div fxLayout="row">
+          <div fxFlex="10">
+            <h5 class="text-muted">Observability</h5>
+          </div>
+        </div>
+
+        <div fxLayout="row wrap" fxLayoutAlign="space-evenly stretch">
+          <mat-card fxFlex *ngIf="selectedPlatform.technicalView.observability.monitoring.length > 0">
+            <mat-card-header>
+              <mat-card-title>Monitoring</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip
+                  *ngFor="let q of selectedPlatform.technicalView.observability.monitoring"> {{q.value}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex *ngIf="selectedPlatform.technicalView.observability.logging.length > 0">
+            <mat-card-header>
+              <mat-card-title>Logging</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip
+                  *ngFor="let q of selectedPlatform.technicalView.observability.logging"> {{q.value}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex *ngIf="selectedPlatform.technicalView.observability.integration.length > 0">
+            <mat-card-header>
+              <mat-card-title>Integration</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip
+                  *ngFor="let q of selectedPlatform.technicalView.observability.integration"> {{q.value}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section *ngIf="selectedPlatform">
+  <div class="container">
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+
+      <div fxFlex="90" fxFlexOffset="5" fxFlexAlign="stretch">
+
+        <div fxLayout="row">
+          <div fxFlex="10">
+            <h5 class="text-muted">Application Delivery</h5>
+          </div>
+        </div>
+
+        <div fxLayout="row wrap" fxLayoutAlign="space-evenly stretch">
+          <mat-card fxFlex *ngIf="selectedPlatform.technicalView.appDelivery.depAuto.length > 0">
+            <mat-card-header>
+              <mat-card-title>Deployment Automation</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip
+                  *ngFor="let q of selectedPlatform.technicalView.appDelivery.depAuto"> {{q.value}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex *ngIf="selectedPlatform.technicalView.appDelivery.ciCd.length > 0">
+            <mat-card-header>
+              <mat-card-title>CI/CD</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip
+                  *ngFor="let q of selectedPlatform.technicalView.appDelivery.ciCd"> {{q.value}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section *ngIf="selectedPlatform">
+  <div class="container">
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+
+      <div fxFlex="90" fxFlexOffset="5" fxFlexAlign="stretch">
+
+        <div fxLayout="row">
+          <div fxFlex="10">
+            <h5 class="text-muted">Code Reuse</h5>
+          </div>
+        </div>
+
+        <div fxLayout="row wrap" fxLayoutAlign="space-evenly stretch">
+          <mat-card fxFlex *ngIf="selectedPlatform.technicalView.codeReuse.marketplaces.length > 0">
+            <mat-card-header>
+              <mat-card-title>Deployment Automation</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip
+                  *ngFor="let q of selectedPlatform.technicalView.codeReuse.marketplaces"> {{q.value}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex *ngIf="selectedPlatform.technicalView.codeReuse.sampleRepos.length > 0">
+            <mat-card-header>
+              <mat-card-title>Code Sample Repositories</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip
+                  *ngFor="let q of selectedPlatform.technicalView.codeReuse.sampleRepos"> {{q.value}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section *ngIf="selectedPlatform">
+  <div class="container">
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+
+      <div fxFlex="90" fxFlexOffset="5" fxFlexAlign="stretch">
+
+        <div fxLayout="row">
+          <div fxFlex="10">
+            <h5 class="text-muted">Access Management</h5>
+          </div>
+        </div>
+
+        <div fxLayout="row wrap" fxLayoutAlign="space-evenly stretch">
+          <mat-card fxFlex *ngIf="selectedPlatform.technicalView.accessManagement.auth.length > 0">
+            <mat-card-header>
+              <mat-card-title>Authentication</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip
+                  *ngFor="let q of selectedPlatform.technicalView.accessManagement.auth"> {{q.value}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card fxFlex
+                    *ngIf="selectedPlatform.technicalView.accessManagement.accessControl && selectedPlatform.technicalView.accessManagement.accessControl.length > 0">
+            <mat-card-header>
+              <mat-card-title>Access Control Mechanisms</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-chip-list>
+                <mat-chip
+                  *ngFor="let q of selectedPlatform.technicalView.accessManagement.accessControl"> {{q.value}}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

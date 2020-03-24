@@ -1,0 +1,367 @@
+{
+  "platformName": "Kubeless",
+  "logoPath": "kubeless.png",
+  "description": "Kubeless is an open source, Kubernetes-native FaaS platform.",
+  "descriptionOfficial": "Kubeless is a Kubernetes-native serverless framework that lets you deploy small bits of code (functions) without having to worry about the underlying infrastructure. It is designed to be deployed on top of a Kubernetes cluster and take advantage of all the great Kubernetes primitives. If you are looking for an open source serverless solution that clones what you can find on AWS Lambda, Azure Functions, and Google Cloud Functions, Kubeless is for you!",
+  "businessView": {
+    "licensing": {
+      "license": {
+        "value": "Apache 2.0",
+        "references": [
+          "https://github.com/kubeless/kubeless/blob/master/LICENSE"
+        ]
+      },
+      "type": "permissive"
+    },
+    "installations": [
+      {
+        "type": {
+          "value": "installable",
+          "references": [
+            "https://kubeless.io/docs/quick-start/#installation"
+          ]
+        },
+        "targetHosts": [
+          {
+            "value": "Kubernetes",
+            "references": [
+              "https://kubeless.io/docs/quick-start/#installation"
+            ]
+          },
+          {
+            "value": "Linux",
+            "references": [
+              "https://kubeless.io/docs/quick-start/#linux-and-macos"
+            ]
+          },
+          {
+            "value": "MacOS",
+            "references": [
+              "https://kubeless.io/docs/quick-start/#linux-and-macos"
+            ]
+          },
+          {
+            "value": "Windows",
+            "references": [
+              "https://kubeless.io/docs/quick-start/#windows"
+            ]
+          }
+        ]
+      }
+    ],
+    "sourceCode": {
+      "availability": {
+        "value": "open source",
+        "references": [
+          "https://github.com/kubeless/kubeless"
+        ]
+      },
+      "hostingPlatform": {
+        "value": "GitHub",
+        "references": [
+          "https://github.com"
+        ]
+      },
+      "prgLang": {
+        "value": "Go",
+        "references": [
+          "https://github.com/kubeless/kubeless/search?l=go"
+        ]
+      }
+    },
+    "release": {
+      "value": "release candidate",
+      "references": []
+    },
+    "interfaces": {
+      "type": [
+        {
+          "value": "CLI",
+          "references": [
+            "https://github.com/kubeless/kubeless/blob/master/docs/architecture.md#kubeless-command-line-client"
+          ]
+        }
+      ],
+      "appManagement": [
+        {
+          "value": "create",
+          "references": []
+        },
+        {
+          "value": "retrieve",
+          "references": []
+        },
+        {
+          "value": "update",
+          "references": []
+        },
+        {
+          "value": "delete",
+          "references": []
+        }
+      ],
+      "platformAdministration": [
+        {
+          "value": "deployment",
+          "references": []
+        },
+        {
+          "value": "configuration",
+          "references": []
+        },
+        {
+          "value": "enactment",
+          "references": []
+        }
+      ]
+    },
+    "community": {
+      "github": {
+        "stars": 5500,
+        "forks": 558,
+        "issues": 158,
+        "commits": 1000,
+        "contributors": 82,
+        "references": [
+          "https://github.com/kubeless/kubeless"
+        ]
+      },
+      "stackoverflow": {
+        "questions": 7,
+        "references": []
+      }
+    },
+    "documentation": {
+      "functions": [
+        {
+          "value": "development",
+          "references": []
+        },
+        {
+          "value": "deployment",
+          "references": []
+        }
+      ],
+      "platform": [
+        {
+          "value": "usage",
+          "references": []
+        },
+        {
+          "value": "development",
+          "references": []
+        },
+        {
+          "value": "deployment",
+          "references": []
+        },
+        {
+          "value": "architecture",
+          "references": []
+        }
+      ]
+    },
+    "quotas": {
+      "deployment": {
+        "codeSize": {
+          "value": "unbounded",
+          "references": []
+        },
+        "packageSize": {
+          "value": "unbounded",
+          "references": []
+        }
+      },
+      "runtime": {
+        "cpu": {
+          "value": "unbounded",
+          "references": []
+        },
+        "memory": {
+          "value": "unbounded",
+          "references": []
+        },
+        "storage": {
+          "value": "unbounded",
+          "references": []
+        },
+        "executionTime": {
+          "value": "unbounded",
+          "references": []
+        }
+      }
+    }
+  },
+  "technicalView": {
+    "development": {
+      "funcRuntimes": [
+        {
+          "value": "Ballerina",
+          "references": []
+        },
+        {
+          "value": "Docker Image",
+          "references": []
+        },
+        {
+          "value": "Go",
+          "references": []
+        },
+        {
+          "value": "Java",
+          "references": []
+        },
+        {
+          "value": ".NET",
+          "references": []
+        },
+        {
+          "value": "Node.js",
+          "references": []
+        },
+        {
+          "value": "PHP",
+          "references": []
+        },
+        {
+          "value": "Python",
+          "references": []
+        },
+        {
+          "value": "Ruby",
+          "references": []
+        }
+      ],
+      "runtimeCustomization": {
+        "value": "supported",
+        "references": []
+      },
+      "editors": [
+        {
+          "value": "Visual Studio Code",
+          "references": []
+        }
+      ],
+      "clientLibs": []
+    },
+    "versioning": {
+      "appVersions": {
+        "value": "n/s",
+        "references": []
+      },
+      "funcVersions": {
+        "value": "implicit",
+        "references": []
+      }
+    },
+    "eventSources": {
+      "endpoint": {
+        "syncCall": [
+          {
+            "value": "HTTP",
+            "references": []
+          }
+        ],
+        "asyncCall": [],
+        "endpointCustomization": {
+          "value": "supported",
+          "references": []
+        },
+        "tls": {
+          "value": "supported",
+          "references": []
+        }
+      },
+      "dataStore": {
+        "fileLevel": [],
+        "databaseMode": []
+      },
+      "scheduler": {
+        "value": "supported",
+        "references": []
+      },
+      "messageQ": [],
+      "streamProc": [
+        {
+          "value": "AWS Kinesis",
+          "references": []
+        },
+        {
+          "value": "NATS",
+          "references": []
+        },
+        {
+          "value": "Apache Kafka",
+          "references": []
+        }
+      ],
+      "specService": [],
+      "integration": [
+        {
+          "value": "custom plugins",
+          "references": []
+        }
+      ]
+    },
+    "functionOrchestration": {
+      "orchestratorName": null,
+      "workflowDef": null,
+      "conFlowDocs": null,
+      "quotas": null
+    },
+    "testing": {
+      "functional": [],
+      "nonFunctional": []
+    },
+    "debugging": {
+      "local": [],
+      "remote": []
+    },
+    "observability": {
+      "logging": [],
+      "monitoring": [
+        {
+          "value": "Prometheus + Grafana",
+          "references": []
+        }
+      ],
+      "integration": []
+    },
+    "appDelivery": {
+      "depAuto": [
+        {
+          "value": "Kubernetes-based",
+          "references": []
+        },
+        {
+          "value": "Serverless Framework",
+          "references": []
+        }
+      ],
+      "ciCd": []
+    },
+    "codeReuse": {
+      "marketplaces": [],
+      "sampleRepos": [
+        {
+          "value": "available",
+          "references": []
+        }
+      ]
+    },
+    "accessManagement": {
+      "auth": [
+        {
+          "value": "Kubernetes-based mechanisms",
+          "references": []
+        }
+      ],
+      "accessControl": [
+        {
+          "value": "Kubernetes-based mechanisms",
+          "references": []
+        }
+      ]
+    }
+  }
+}

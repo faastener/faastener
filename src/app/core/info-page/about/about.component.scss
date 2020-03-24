@@ -1,0 +1,27 @@
+.about-card {
+  border-top: 2px solid #212121;
+  transition: all .3s ease;
+  height: calc(100% - 50px);
+
+  [fxlayout="column"] {
+    height: 100%;
+  }
+
+  h3, p {
+    margin: 0;
+  }
+
+}
+
+.about-card:hover {
+  border-top: 2px solid #b5ca8f;
+}
+
+.about-card:hover [mat-card-icon] {
+  color: #b5ca8f;
+}
+
+.about-card .description {
+  font-size: 15px;
+  color: #616161;
+}

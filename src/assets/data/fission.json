@@ -1,0 +1,363 @@
+{
+  "platformName": "Fission",
+  "logoPath": "fission.png",
+  "description": "Fission is an open source FaaS platform based on Kubernetes.",
+  "descriptionOfficial": "Fission is a fast, open source serverless framework for Kubernetes with a focus on developer productivity and high performance. Fission operates on just the code: Docker and Kubernetes are abstracted away under normal operation, though you can use both to extend Fission if you want to. Fission is extensible to any language; the core is written in Go, and language-specific parts are isolated in something called environments (more below). Fission currently supports NodeJS, Python, Ruby, Go, PHP, Bash, and any Linux executable, with more languages coming soon.",
+  "businessView": {
+    "licensing": {
+      "license": {
+        "value": "Apache 2.0",
+        "references": [
+          "https://github.com/fission/fission/blob/master/LICENSE"
+        ]
+      },
+      "type": "permissive"
+    },
+    "installations": [
+      {
+        "type": {
+          "value": "installable",
+          "references": [
+            "https://docs.fission.io/docs/installation"
+          ]
+        },
+        "targetHosts": [
+          {
+            "value": "Kubernetes",
+            "references": [
+              "https://docs.fission.io/docs/installation/#install-fission"
+            ]
+          }
+        ]
+      }
+    ],
+    "sourceCode": {
+      "availability": {
+        "value": "open source",
+        "references": [
+          "https://github.com/fission/fission"
+        ]
+      },
+      "hostingPlatform": {
+        "value": "GitHub",
+        "references": [
+          "https://github.com"
+        ]
+      },
+      "prgLang": {
+        "value": "Go",
+        "references": [
+          "https://github.com/fission/fission/search?l=go"
+        ]
+      }
+    },
+    "release": {
+      "value": "stable",
+      "references": [
+        "https://github.com/fission/fission/releases"
+      ]
+    },
+    "interfaces": {
+      "type": [
+        {
+          "value": "CLI",
+          "references": [
+            "https://docs.fission.io/installation/#install-the-fission-cli"
+          ]
+        }
+      ],
+      "appManagement": [
+        {
+          "value": "create",
+          "references": []
+        },
+        {
+          "value": "retrieve",
+          "references": []
+        },
+        {
+          "value": "update",
+          "references": []
+        },
+        {
+          "value": "delete",
+          "references": []
+        }
+      ],
+      "platformAdministration": [
+        {
+          "value": "deployment",
+          "references": []
+        },
+        {
+          "value": "configuration",
+          "references": []
+        },
+        {
+          "value": "enactment",
+          "references": []
+        }
+      ]
+    },
+    "community": {
+      "github": {
+        "stars": 5000,
+        "forks": 451,
+        "issues": 191,
+        "commits": 1100,
+        "contributors": 91,
+        "references": [
+          "https://github.com/fission/fission"
+        ]
+      },
+      "stackoverflow": {
+        "questions": 6,
+        "references": []
+      }
+    },
+    "documentation": {
+      "functions": [
+        {
+          "value": "development",
+          "references": []
+        },
+        {
+          "value": "deployment",
+          "references": []
+        }
+      ],
+      "platform": [
+        {
+          "value": "usage",
+          "references": []
+        },
+        {
+          "value": "deployment",
+          "references": []
+        }
+      ]
+    },
+    "quotas": {
+      "deployment": {
+        "codeSize": {
+          "value": "unbounded",
+          "references": []
+        },
+        "packageSize": {
+          "value": "unbounded",
+          "references": []
+        }
+      },
+      "runtime": {
+        "cpu": {
+          "value": "unbounded",
+          "references": []
+        },
+        "memory": {
+          "value": "unbounded",
+          "references": []
+        },
+        "storage": {
+          "value": "unbounded",
+          "references": []
+        },
+        "executionTime": {
+          "value": "unbounded",
+          "references": []
+        }
+      }
+    }
+  },
+  "technicalView": {
+    "development": {
+      "funcRuntimes": [
+        {
+          "value": "Binary",
+          "references": []
+        },
+        {
+          "value": "Go",
+          "references": []
+        },
+        {
+          "value": "Java",
+          "references": []
+        },
+        {
+          "value": ".NET",
+          "references": []
+        },
+        {
+          "value": "Node.js",
+          "references": []
+        },
+        {
+          "value": "Perl",
+          "references": []
+        },
+        {
+          "value": "PHP",
+          "references": []
+        },
+        {
+          "value": "Python",
+          "references": []
+        },
+        {
+          "value": "Ruby",
+          "references": []
+        },
+        {
+          "value": "Shell",
+          "references": []
+        }
+      ],
+      "runtimeCustomization": {
+        "value": "supported",
+        "references": []
+      },
+      "editors": [],
+      "clientLibs": []
+    },
+    "versioning": {
+      "appVersions": {
+        "value": "implicit",
+        "references": []
+      },
+      "funcVersions": {
+        "value": "implicit",
+        "references": []
+      }
+    },
+    "eventSources": {
+      "endpoint": {
+        "syncCall": [
+          {
+            "value": "HTTP",
+            "references": []
+          }
+        ],
+        "asyncCall": [],
+        "endpointCustomization": {
+          "value": "supported",
+          "references": []
+        },
+        "tls": {
+          "value": "n/s",
+          "references": []
+        }
+      },
+      "dataStore": {
+        "fileLevel": [],
+        "databaseMode": []
+      },
+      "scheduler": {
+        "value": "supported",
+        "references": []
+      },
+      "messageQ": [
+        {
+          "value": "NATS",
+          "references": []
+        },
+        {
+          "value": "Azure Storage Queue",
+          "references": []
+        }
+      ],
+      "streamProc": [
+        {
+          "value": "Apache Kafka",
+          "references": []
+        }
+      ],
+      "specService": [
+        {
+          "value": "Kubernetes Watch",
+          "references": []
+        }
+      ],
+      "integration": [
+        {
+          "value": "custom plugins",
+          "references": []
+        }
+      ]
+    },
+    "functionOrchestration": {
+      "orchestratorName": "Fission Workflows",
+      "workflowDef": {
+        "type": "custom DSL",
+        "languages": [
+          "YAML"
+        ],
+        "references": []
+      },
+      "conFlowDocs": {
+        "value": "documented",
+        "references": []
+      },
+      "quotas": []
+    },
+    "testing": {
+      "functional": [
+        {
+          "value": "function invocation testing",
+          "references": []
+        }
+      ],
+      "nonFunctional": []
+    },
+    "debugging": {
+      "local": [
+        {
+          "value": "log-based debugging using platform's CLI tool",
+          "references": []
+        }
+      ],
+      "remote": []
+    },
+    "observability": {
+      "logging": [
+        {
+          "value": "Istio + Jaeger",
+          "references": []
+        }
+      ],
+      "monitoring": [
+        {
+          "value": "Istio + Prometheus",
+          "references": []
+        }
+      ],
+      "integration": [
+        {
+          "value": "service mesh add-ons",
+          "references": []
+        }
+      ]
+    },
+    "appDelivery": {
+      "depAuto": [
+        {
+          "value": "Kubernetes-based",
+          "references": []
+        }
+      ],
+      "ciCd": []
+    },
+    "codeReuse": {
+      "marketplaces": [],
+      "sampleRepos": [
+        {
+          "value": "available",
+          "references": []
+        }
+      ]
+    },
+    "accessManagement": {
+      "auth": [],
+      "accessControl": []
+    }
+  }
+}

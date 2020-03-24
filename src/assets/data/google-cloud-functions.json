@@ -1,0 +1,346 @@
+{
+  "platformName": "Google Cloud Functions",
+  "logoPath": "google-cloud-functions.png",
+  "description": "Google Cloud Functions is a commercial FaaS platform by Google.",
+  "descriptionOfficial": "Cloud Functions is Google Cloud’s event-driven serverless compute platform. Run your code locally or in the cloud without having to provision servers. Go from code to deploy with continuous delivery and monitoring tools. Cloud Functions scales up or down, so you pay only for compute resources you use. Easily create end-to-end complex development scenarios by connecting with existing Google Cloud or third-party services.",
+  "businessView": {
+    "licensing": {
+      "license": {
+        "value": "Google Cloud Platform Terms",
+        "references": [
+          "https://cloud.google.com/terms"
+        ]
+      },
+      "type": "proprietary"
+    },
+    "installations": [
+      {
+        "type": {
+          "value": "as-a-service",
+          "references": [
+            "https://cloud.google.com/functions"
+          ]
+        },
+        "targetHosts": []
+      }
+    ],
+    "sourceCode": {
+      "availability": {
+        "value": "closed source",
+        "references": [
+          "https://cloud.google.com/functions"
+        ]
+      },
+      "hostingPlatform": {
+        "value": "",
+        "references": []
+      },
+      "prgLang": {
+        "value": "",
+        "references": []
+      }
+    },
+    "release": {
+      "value": "production",
+      "references": []
+    },
+    "interfaces": {
+      "type": [
+        {
+          "value": "CLI",
+          "references": [
+            "https://cloud.google.com/sdk/gcloud/reference/functions"
+          ]
+        },
+        {
+          "value": "API",
+          "references": [
+            "https://cloud.google.com/functions/docs/apis"
+          ]
+        },
+        {
+          "value": "GUI",
+          "references": [
+            "https://console.cloud.google.com/functions"
+          ]
+        }
+      ],
+      "appManagement": [
+        {
+          "value": "create",
+          "references": []
+        },
+        {
+          "value": "retrieve",
+          "references": []
+        },
+        {
+          "value": "update",
+          "references": []
+        },
+        {
+          "value": "delete",
+          "references": []
+        }
+      ],
+      "platformAdministration": []
+    },
+    "community": {
+      "github": null,
+      "stackoverflow": {
+        "questions": 8500,
+        "references": []
+      }
+    },
+    "documentation": {
+      "functions": [
+        {
+          "value": "development",
+          "references": []
+        },
+        {
+          "value": "deployment",
+          "references": []
+        }
+      ],
+      "platform": [
+        {
+          "value": "usage",
+          "references": []
+        }
+      ]
+    },
+    "quotas": {
+      "deployment": {
+        "codeSize": {
+          "value": "limited",
+          "references": []
+        },
+        "packageSize": {
+          "value": "unbounded",
+          "references": []
+        }
+      },
+      "runtime": {
+        "cpu": {
+          "value": "limited",
+          "references": []
+        },
+        "memory": {
+          "value": "limited",
+          "references": []
+        },
+        "storage": {
+          "value": "unbounded",
+          "references": []
+        },
+        "executionTime": {
+          "value": "limited",
+          "references": []
+        }
+      }
+    }
+  },
+  "technicalView": {
+    "development": {
+      "funcRuntimes": [
+        {
+          "value": "Go",
+          "references": []
+        },
+        {
+          "value": "Node.js",
+          "references": []
+        },
+        {
+          "value": "Python",
+          "references": []
+        }
+      ],
+      "runtimeCustomization": {
+        "value": "unsupported",
+        "references": []
+      },
+      "editors": [],
+      "clientLibs": [
+        {
+          "value": "Dart",
+          "references": []
+        },
+        {
+          "value": "Go",
+          "references": []
+        },
+        {
+          "value": "Java",
+          "references": []
+        },
+        {
+          "value": ".NET",
+          "references": []
+        },
+        {
+          "value": "Node.js",
+          "references": []
+        },
+        {
+          "value": "Python",
+          "references": []
+        },
+        {
+          "value": "Ruby",
+          "references": []
+        }
+      ]
+    },
+    "versioning": {
+      "appVersions": {
+        "value": "implicit",
+        "references": []
+      },
+      "funcVersions": {
+        "value": "implicit",
+        "references": []
+      }
+    },
+    "eventSources": {
+      "endpoint": {
+        "syncCall": [
+          {
+            "value": "HTTP",
+            "references": []
+          },
+          {
+            "value": "RPC",
+            "references": []
+          }
+        ],
+        "asyncCall": [],
+        "endpointCustomization": {
+          "value": "supported",
+          "references": []
+        },
+        "tls": {
+          "value": "supported",
+          "references": []
+        }
+      },
+      "dataStore": {
+        "fileLevel": [
+          {
+            "value": "Google Cloud Storage",
+            "references": []
+          }
+        ],
+        "databaseMode": [
+          {
+            "value": "Cloud Firestore",
+            "references": []
+          },
+          {
+            "value": "Firebase Realtime Database",
+            "references": []
+          }
+        ]
+      },
+      "scheduler": {
+        "value": "supported",
+        "references": []
+      },
+      "messageQ": [
+        {
+          "value": "Google Cloud Pub/Sub",
+          "references": []
+        }
+      ],
+      "streamProc": [
+        {
+          "value": "Google Cloud Pub/Sub",
+          "references": []
+        }
+      ],
+      "specService": [
+        {
+          "value": "Google Cloud Operations",
+          "references": []
+        }
+      ],
+      "integration": []
+    },
+    "functionOrchestration": {
+      "orchestratorName": null,
+      "workflowDef": null,
+      "conFlowDocs": null,
+      "quotas": null
+    },
+    "testing": {
+      "functional": [
+        {
+          "value": "testing using external tools",
+          "references": []
+        }
+      ],
+      "nonFunctional": []
+    },
+    "debugging": {
+      "local": [
+        {
+          "value": "step-through debugging using dedicated functions development framework",
+          "references": []
+        }
+      ],
+      "remote": []
+    },
+    "observability": {
+      "logging": [
+        {
+          "value": "Google Cloud Operations",
+          "references": []
+        }
+      ],
+      "monitoring": [
+        {
+          "value": "Google Cloud Operations",
+          "references": []
+        }
+      ],
+      "integration": []
+    },
+    "appDelivery": {
+      "depAuto": [],
+      "ciCd": [
+        {
+          "value": "Cloud Build",
+          "references": []
+        }
+      ]
+    },
+    "codeReuse": {
+      "marketplaces": [],
+      "sampleRepos": [
+        {
+          "value": "available",
+          "references": []
+        }
+      ]
+    },
+    "accessManagement": {
+      "auth": [
+        {
+          "value": "Cloud IAM",
+          "references": []
+        }
+      ],
+      "accessControl": [
+        {
+          "value": "resources",
+          "references": []
+        },
+        {
+          "value": "functions",
+          "references": []
+        }
+      ]
+    }
+  }
+}
