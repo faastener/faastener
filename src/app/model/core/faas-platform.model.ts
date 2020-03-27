@@ -13,6 +13,31 @@ export class FaaSPlatform {
   public hasTargetHosts(): boolean {
     return this.businessView.installations.some(i => i.targetHosts.length > 0);
   }
+
+  getPropertyValueByFilterName(name: string) {
+    if (name === 'license') {
+      return new Array<string>(this.businessView.licensing.license.value);
+    } else if (name === 'licenseType') {
+      return new Array<string>(this.businessView.licensing.type);
+    } else if (name === 'installationType') {
+      return this.businessView.installations.map(i => {
+        return i.type.value;
+      });
+    } else if (name === 'targetHosts') {
+      const result: string[] = [];
+      this.businessView.installations.map(i => {
+        i.targetHosts.forEach(h => result.push(h.value));
+      });
+      return result;
+    } else if (name === 'codeAvailability') {
+      return new Array<string>(this.businessView.sourceCode.availability.value);
+    } else if (name === 'codeHostingPlatform') {
+      return new Array<string>(this.businessView.sourceCode.hostingPlatform.value);
+    } else if (name === 'codeProgLanguage') {
+      return new Array<string>(this.businessView.sourceCode.prgLang.value);
+    }
+    return [];
+  }
 }
 
 export class FaaSPlatformBuilder {

@@ -15,7 +15,7 @@ export class FilterComponent implements OnInit {
   platforms: FaaSPlatform[];
   filteredPlatforms: FaaSPlatform[];
   searchCriteria: SearchCriteria;
-  platformFilter: SearchFilter = new SearchFilter();
+  platformFilter: FilterEntry[];
 
   license = new FormControl();
   licenseType = new FormControl();
@@ -40,40 +40,70 @@ export class FilterComponent implements OnInit {
     this.platforms = platformService.getPlatforms();
     this.filteredPlatforms = this.platforms;
     this.searchCriteria = platformService.getSearchCriteria();
+    this.platformFilter = [];
   }
 
   ngOnInit(): void {
   }
 
-  showOptions($event: MatSelectChange) {
-    this.platformFilter[$event.source.id] = $event.source.value;
+  filterOptions($event: MatSelectChange) {
+    this.updatePlatformsFilter($event);
     this.filterPlatforms();
   }
 
   filterPlatforms() {
-    this.filteredPlatforms = this.platforms.filter(platform => {
-      return this.platformFilter.license.includes(platform.businessView.licensing.license.value);
+    this.filteredPlatforms = this.platforms.filter((platform) => {
+      for (const entry of this.platformFilter) {
+        const property: string[] = platform.getPropertyValueByFilterName(entry.name);
+        if (property.filter(p => entry.values.has(p)).length <= 0) {
+          return false;
+        }
+      }
+      return true;
     });
+
+    console.log(this.filteredPlatforms);
+  }
+
+  private updatePlatformsFilter($event: MatSelectChange) {
+    this.platformFilter.forEach((entry, index) => {
+      if (entry.name === $event.source.id) {
+        this.platformFilter.splice(index, 1);
+      }
+    });
+    if ($event.source.value.length > 0) {
+      this.platformFilter.push(new FilterEntry($event.source.id, $event.source.value));
+    }
+  }
+}
+
+class FilterEntry {
+  name: string;
+  values: Set<string>;
+
+  constructor(name: string, values: string[]) {
+    this.name = name;
+    this.values = new Set<string>(values);
   }
 }
 
 class SearchFilter {
-  license: string[];
-  licenseType: string[];
-  installationType: string[];
-  targetHosts: string[];
-  codeAvailability: string[];
-  codeHostingPlatform: string[];
-  codeProgLanguage: string[];
-  interfaceTypes: string[];
-  appInterfaceOps: string[];
-  platformAdminOps: string[];
-  appDoc: string[];
-  platformDoc: string[];
-  qCodeSize: string[];
-  qPackageSize: string[];
-  qCpu: string[];
-  qMemory: string[];
-  qExecTime: string[];
-  qStorage: string[];
+  license: Set<string>;
+  licenseType: Set<string>;
+  installationType: Set<string>;
+  targetHosts: Set<string>;
+  codeAvailability: Set<string>;
+  codeHostingPlatform: Set<string>;
+  codeProgLanguage: Set<string>;
+  interfaceTypes: Set<string>;
+  appInterfaceOps: Set<string>;
+  platformAdminOps: Set<string>;
+  appDoc: Set<string>;
+  platformDoc: Set<string>;
+  qCodeSize: Set<string>;
+  qPackageSize: Set<string>;
+  qCpu: Set<string>;
+  qMemory: Set<string>;
+  qExecTime: Set<string>;
+  qStorage: Set<string>;
 }
