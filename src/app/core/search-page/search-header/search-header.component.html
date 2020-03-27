@@ -1,0 +1,29 @@
+<header id="sticky-header">
+  <div class="container" fxLayout="row wrap">
+
+    <div class="header-mobile-top" fxLayoutAlign="start center">
+      <div class="header-logo">
+        <a>
+          <img src="assets/images/logo-v.png" alt="FaaStener logo">
+        </a>
+      </div>
+      <button mat-icon-button id="menu-toggle" (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <div fxFlex class="top-menu">
+      <button  mat-flat-button class="header-menu-btn" [routerLink]="'/'">
+        <strong>Back</strong>
+      </button>
+
+      <span fxFlex></span>
+
+      <button  mat-flat-button class="header-menu-btn icon-button">
+        <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+        <strong> GitHub</strong>
+      </button>
+    </div>
+
+  </div>
+</header>

@@ -1,0 +1,190 @@
+<section class="view-config-section">
+  <div class="container">
+    <div class="page-section-header text-center">
+      <h2>
+        Search Criteria
+      </h2>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+      <mat-form-field>
+        <mat-label>License</mat-label>
+        <mat-select [id]="'license'" [formControl]="license" multiple (selectionChange)="showOptions($event)">
+          <mat-option *ngFor="let license of searchCriteria.getLicensing().getLicense().getValues()"
+                      [value]="license">{{license}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>License Type</mat-label>
+        <mat-select [id]="'licenseType'" [formControl]="licenseType" multiple (selectionChange)="showOptions($event)">
+          <mat-option *ngFor="let licenseType of searchCriteria.getLicensing().getLicenseType().getValues()"
+                      [value]="licenseType">{{licenseType}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+      <mat-form-field>
+        <mat-label>Installation Type</mat-label>
+        <mat-select [id]="'installationType'" [formControl]="installationType" multiple
+                    (selectionChange)="showOptions($event)">
+          <mat-option *ngFor="let inst of searchCriteria.getInstallation().getInstallation().getValues()"
+                      [value]="inst">{{inst}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Target Hosts</mat-label>
+        <mat-select [id]="'targetHosts'" [formControl]="targetHosts" multiple (selectionChange)="showOptions($event)">
+          <mat-option *ngFor="let host of searchCriteria. getInstallation().getTargetHosts().getValues()"
+                      [value]="host">{{host}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+      <mat-form-field>
+        <mat-label>Code Availability</mat-label>
+        <mat-select [id]="'codeAvailability'" [formControl]="codeAvailability" multiple
+                    (selectionChange)="showOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getCode().getAvailability().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Code Hosting Platform</mat-label>
+        <mat-select [id]="'codeHostingPlatform'" [formControl]="codeHostingPlatform" multiple
+                    (selectionChange)="showOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getCode().getHostingPlatform().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Main Programming Language</mat-label>
+        <mat-select [id]="'codeProgLanguage'" [formControl]="codeProgLanguage" multiple
+                    (selectionChange)="showOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getCode().getMainLanguage().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+      <mat-form-field>
+        <mat-label>Interface Types</mat-label>
+        <mat-select [id]="'interfaceTypes'" [formControl]="interfaceTypes" multiple
+                    (selectionChange)="showOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getInterface().getInterfaceTypes().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Application Management Operations</mat-label>
+        <mat-select [id]="'appInterfaceOps'" [formControl]="appInterfaceOps" multiple
+                    (selectionChange)="showOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getInterface().getAppInterfaces().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Platform Administration Operations</mat-label>
+        <mat-select [id]="'platformAdminOps'" [formControl]="platformAdminOps" multiple
+                    (selectionChange)="showOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getInterface().getPlatformInterfaces().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+      <mat-form-field>
+        <mat-label>Application Documentation</mat-label>
+        <mat-select [id]="'appDoc'" [formControl]="appDoc" multiple (selectionChange)="showOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getDocumentation().getFunctionDocs().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Platform Documentation</mat-label>
+        <mat-select [id]="'platformDoc'" [formControl]="platformDoc" multiple (selectionChange)="showOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getDocumentation().getPlatformDocs().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+      <mat-form-field>
+        <mat-label>Code Size Quota</mat-label>
+        <mat-select [id]="'qCodeSize'" [formControl]="qCodeSize" multiple (selectionChange)="showOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getQuotas().getCodeSize().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Package Size Quota</mat-label>
+        <mat-select [id]="'qPackageSize'" [formControl]="qPackageSize" multiple (selectionChange)="showOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getQuotas().getPackageSize().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+      <mat-form-field>
+        <mat-label>CPU Quota</mat-label>
+        <mat-select [id]="'qCpu'" [formControl]="qCpu" multiple (selectionChange)="showOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getQuotas().getCpu().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Memory Quota</mat-label>
+        <mat-select [id]="'qMemory'" [formControl]="qMemory" multiple (selectionChange)="showOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getQuotas().getMemory().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Execution Time Quota</mat-label>
+        <mat-select [id]="'qExecTime'" [formControl]="qExecTime" multiple (selectionChange)="showOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getQuotas().getExecTime().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Storage Quota</mat-label>
+        <mat-select [id]="'qStorage'" [formControl]="qStorage" multiple (selectionChange)="showOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getQuotas().getStorage().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <button mat-raised-button (click)="filterPlatforms()">
+      Find platform
+    </button>
+
+
+    <mat-nav-list *ngIf="filteredPlatforms.length > 0">
+      <mat-list-item *ngFor="let platform of filteredPlatforms">
+        <a matLine href="...">{{ platform.platformName }}</a>
+        <button mat-icon-button>
+          <mat-icon>info</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+
+  </div>
+</section>

@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {InfoPageComponent} from './info-page.component';
 
 const infoPageRoutes: Routes = [
-  {path: 'home', component: InfoPageComponent}
+  {path: '', component: InfoPageComponent}
 ];
 
 @NgModule({

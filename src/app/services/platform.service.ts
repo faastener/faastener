@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
-import {FaaSPlatform, FaaSPlatformBuilder} from '../model/core/faasplatform.model';
+import {FaaSPlatform, FaaSPlatformBuilder} from '../model/core/faas-platform.model';
 import {HttpClient} from '@angular/common/http';
+import {SearchCriteria} from '../model/core/search-criteria.model';
 
 const platformData: string[] = [
   '/assets/data/aws-lambda.json',
@@ -22,10 +23,12 @@ export class PlatformService {
   readonly platformLogoDir = '/assets/images/vendor/platforms/';
   platforms: FaaSPlatform[];
   platformsMap: Map<string, FaaSPlatform>;
+  searchCriteria: SearchCriteria;
 
   constructor(private http: HttpClient) {
     this.platforms = [];
     this.platformsMap = new Map<string, FaaSPlatform>();
+    this.searchCriteria = new SearchCriteria();
     this.queryPlatformsData();
   }
 
@@ -45,8 +48,20 @@ export class PlatformService {
             .build();
           this.platforms.push(p);
           this.platformsMap.set(p.id, p);
+          this.populateSearchCriteria(p);
         });
     });
+  }
+
+  populateSearchCriteria(p: FaaSPlatform): void {
+    this.searchCriteria.addLicensingCriteria(p.businessView.licensing);
+    this.searchCriteria.getRelease().getValues().add(p.businessView.release.value);
+    this.searchCriteria.addInstallationCriteria(p.businessView.installations);
+    this.searchCriteria.addCodeCriteria(p.businessView.sourceCode);
+    this.searchCriteria.addInterfaceCriteria(p.businessView.interfaces);
+    this.searchCriteria.addDocumentationCriteria(p.businessView.documentation);
+    this.searchCriteria.addQuotaCriteria(p.businessView.quotas);
+
   }
 
   getPlatforms(): FaaSPlatform[] {
@@ -55,5 +70,9 @@ export class PlatformService {
 
   getPlatform(id: string) {
     return this.platformsMap.get(id);
+  }
+
+  getSearchCriteria(): SearchCriteria {
+    return this.searchCriteria;
   }
 }

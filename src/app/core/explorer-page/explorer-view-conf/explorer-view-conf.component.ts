@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PlatformService} from '../../../services/platform.service';
 import {Router} from '@angular/router';
-import {FaaSPlatform} from '../../../model/core/faasplatform.model';
+import {FaaSPlatform} from '../../../model/core/faas-platform.model';
 
 @Component({
   selector: 'app-explorer-view-config',

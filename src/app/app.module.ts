@@ -7,11 +7,11 @@ import {MaterialModule} from './material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
-import {PlatformSelectionComponent} from './core/platform-selection/platform-selection.component';
 import {PageNotFoundComponent} from './core/page-not-found/page-not-found.component';
 import {InfoPageModule} from './core/info-page/info-page.module';
 import {FooterComponent} from './core/footer/footer.component';
 import {ExplorerPageModule} from './core/explorer-page/explorer-page.module';
+import {SearchPageModule} from './core/search-page/search-page.module';
 
 @NgModule({
   imports: [
@@ -21,12 +21,12 @@ import {ExplorerPageModule} from './core/explorer-page/explorer-page.module';
     MaterialModule,
     FlexLayoutModule,
     InfoPageModule,
+    SearchPageModule,
     ExplorerPageModule,
     AppRoutingModule
   ],
   declarations: [
     AppComponent,
-    PlatformSelectionComponent,
     FooterComponent,
     PageNotFoundComponent
   ],
