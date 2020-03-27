@@ -35,6 +35,10 @@ export class FilterComponent implements OnInit {
   qMemory = new FormControl();
   qExecTime = new FormControl();
   qStorage = new FormControl();
+  devRuntimes = new FormControl();
+  runtimeCustomization = new FormControl();
+  devEditors = new FormControl();
+  clientLibs = new FormControl();
 
   constructor(private platformService: PlatformService) {
     this.platforms = platformService.getPlatforms();
@@ -85,25 +89,4 @@ class FilterEntry {
     this.name = name;
     this.values = new Set<string>(values);
   }
-}
-
-class SearchFilter {
-  license: Set<string>;
-  licenseType: Set<string>;
-  installationType: Set<string>;
-  targetHosts: Set<string>;
-  codeAvailability: Set<string>;
-  codeHostingPlatform: Set<string>;
-  codeProgLanguage: Set<string>;
-  interfaceTypes: Set<string>;
-  appInterfaceOps: Set<string>;
-  platformAdminOps: Set<string>;
-  appDoc: Set<string>;
-  platformDoc: Set<string>;
-  qCodeSize: Set<string>;
-  qPackageSize: Set<string>;
-  qCpu: Set<string>;
-  qMemory: Set<string>;
-  qExecTime: Set<string>;
-  qStorage: Set<string>;
 }

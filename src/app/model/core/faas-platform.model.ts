@@ -67,6 +67,20 @@ export class FaaSPlatform {
       return new Array<string>(this.businessView.quotas.runtime.executionTime.value);
     } else if (name === 'qStorage') {
       return new Array<string>(this.businessView.quotas.runtime.storage.value);
+    } else if (name === 'devRuntimes') {
+      return this.technicalView.development.funcRuntimes.map(r => {
+        return r.value;
+      });
+    } else if (name === 'runtimeCustomization') {
+      return new Array<string>(this.technicalView.development.runtimeCustomization.value);
+    } else if (name === 'devEditors') {
+      return this.technicalView.development.editors.map(e => {
+        return e.value;
+      });
+    } else if (name === 'clientLibs') {
+      return this.technicalView.development.clientLibs.map(lib => {
+        return lib.value;
+      });
     }
     return [];
   }

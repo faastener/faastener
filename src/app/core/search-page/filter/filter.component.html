@@ -131,7 +131,8 @@
 
       <mat-form-field>
         <mat-label>Package Size Quota</mat-label>
-        <mat-select [id]="'qPackageSize'" [formControl]="qPackageSize" multiple (selectionChange)="filterOptions($event)">
+        <mat-select [id]="'qPackageSize'" [formControl]="qPackageSize" multiple
+                    (selectionChange)="filterOptions($event)">
           <mat-option *ngFor="let value of searchCriteria.getQuotas().getPackageSize().getValues()"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
@@ -173,10 +174,45 @@
     </div>
 
 
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+      <mat-form-field>
+        <mat-label>Function runtimes</mat-label>
+        <mat-select [id]="'devRuntimes'" [formControl]="devRuntimes" multiple (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getDevelopment().getRuntimes().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Runtime Customization</mat-label>
+        <mat-select [id]="'runtimeCustomization'" [formControl]="runtimeCustomization" multiple
+                    (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getDevelopment().getRuntimeCustomization().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Editors</mat-label>
+        <mat-select [id]="'devEditors'" [formControl]="devEditors" multiple (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getDevelopment().getEditors().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Client Libraries</mat-label>
+        <mat-select [id]="'clientLibs'" [formControl]="clientLibs" multiple (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getDevelopment().getClientLibs().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
     <mat-nav-list *ngIf="filteredPlatforms.length > 0">
       <mat-list-item *ngFor="let platform of filteredPlatforms">
-        <a matLine href="...">{{ platform.platformName }}</a>
-        <button mat-icon-button>
+        <a matLine [routerLink]="'/explorer'" [state]="{platformId: platform.id}">{{ platform.platformName }}</a>
+        <button mat-icon-button [routerLink]="'/explorer'" [state]="{platformId: platform.id}">
           <mat-icon>info</mat-icon>
         </button>
       </mat-list-item>

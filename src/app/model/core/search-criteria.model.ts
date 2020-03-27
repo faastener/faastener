@@ -11,6 +11,10 @@ import {SourceCode} from './business-view/source-code.model';
 import {Interfaces} from './business-view/interfaces.model';
 import {Documentation} from './business-view/documentation';
 import {Quotas} from './business-view/quotas.model';
+import {Development} from './technical-view/development.model';
+import {Versioning} from './technical-view/versioning.model';
+import {EventSources} from './technical-view/event-sources.model';
+import {DevelopmentCriteria} from './criteria/development-criteria.model';
 
 export class SearchCriteria {
   licensing: LicensingCriteria;
@@ -20,6 +24,7 @@ export class SearchCriteria {
   interface: InterfaceCriteria;
   documentation: DocumentationCriteria;
   quotas: QuotaCriteria;
+  development: DevelopmentCriteria;
 
   constructor() {
     this.licensing = new LicensingCriteria();
@@ -29,6 +34,7 @@ export class SearchCriteria {
     this.interface = new InterfaceCriteria();
     this.documentation = new DocumentationCriteria();
     this.quotas = new QuotaCriteria();
+    this.development = new DevelopmentCriteria();
   }
 
   getLicensing() {
@@ -57,6 +63,10 @@ export class SearchCriteria {
 
   getQuotas() {
     return this.quotas;
+  }
+
+  getDevelopment() {
+    return this.development;
   }
 
   addLicensingCriteria(licensing: License) {
@@ -95,5 +105,19 @@ export class SearchCriteria {
     this.getQuotas().getMemory().getValues().add(q.runtime.memory.value);
     this.getQuotas().getExecTime().getValues().add(q.runtime.executionTime.value);
     this.getQuotas().getStorage().getValues().add(q.runtime.storage.value);
+  }
+
+  addDevelopmentCriteria(development: Development) {
+    development.funcRuntimes.forEach(r => this.getDevelopment().getRuntimes().getValues().add(r.value));
+    development.editors.forEach(e => this.getDevelopment().getEditors().getValues().add(e.value));
+    development.clientLibs.forEach(lib => this.getDevelopment().getClientLibs().getValues().add(lib.value));
+    this.getDevelopment().getRuntimeCustomization().getValues().add(development.runtimeCustomization.value);
+  }
+
+  addVersioningCriteria(versioning: Versioning) {
+  }
+
+  addEventSourcesCriteria(eventSources: EventSources) {
+
   }
 }
