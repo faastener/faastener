@@ -15,8 +15,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     FlexLayoutModule,
     ScrollToModule.forRoot(),
     CommonModule,
-    SearchPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SearchPageRoutingModule
   ],
   declarations: [
     SearchPageComponent,

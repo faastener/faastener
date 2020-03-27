@@ -172,10 +172,6 @@
       </mat-form-field>
     </div>
 
-    <button mat-raised-button (click)="filterPlatforms()">
-      Find platform
-    </button>
-
 
     <mat-nav-list *ngIf="filteredPlatforms.length > 0">
       <mat-list-item *ngFor="let platform of filteredPlatforms">

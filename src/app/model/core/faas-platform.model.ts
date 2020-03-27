@@ -35,6 +35,38 @@ export class FaaSPlatform {
       return new Array<string>(this.businessView.sourceCode.hostingPlatform.value);
     } else if (name === 'codeProgLanguage') {
       return new Array<string>(this.businessView.sourceCode.prgLang.value);
+    } else if (name === 'interfaceTypes') {
+      return this.businessView.interfaces.type.map(it => {
+        return it.value;
+      });
+    } else if (name === 'appInterfaceOps') {
+      return this.businessView.interfaces.appManagement.map(it => {
+        return it.value;
+      });
+    } else if (name === 'platformAdminOps') {
+      return this.businessView.interfaces.platformAdministration.map(it => {
+        return it.value;
+      });
+    } else if (name === 'appDoc') {
+      return this.businessView.documentation.functions.map(it => {
+        return it.value;
+      });
+    } else if (name === 'platformDoc') {
+      return this.businessView.documentation.platform.map(it => {
+        return it.value;
+      });
+    } else if (name === 'qCodeSize') {
+      return new Array<string>(this.businessView.quotas.deployment.codeSize.value);
+    } else if (name === 'qPackageSize') {
+      return new Array<string>(this.businessView.quotas.deployment.packageSize.value);
+    } else if (name === 'qCpu') {
+      return new Array<string>(this.businessView.quotas.runtime.cpu.value);
+    } else if (name === 'qMemory') {
+      return new Array<string>(this.businessView.quotas.runtime.memory.value);
+    } else if (name === 'qExecTime') {
+      return new Array<string>(this.businessView.quotas.runtime.executionTime.value);
+    } else if (name === 'qStorage') {
+      return new Array<string>(this.businessView.quotas.runtime.storage.value);
     }
     return [];
   }
