@@ -81,6 +81,48 @@ export class FaaSPlatform {
       return this.technicalView.development.clientLibs.map(lib => {
         return lib.value;
       });
+    } else if (name === 'functionVersion') {
+      return new Array<string>(this.technicalView.versioning.funcVersions.value);
+    } else if (name === 'applicationVersion') {
+      return new Array<string>(this.technicalView.versioning.appVersions.value);
+    } else if (name === 'syncEndpoint') {
+      return this.technicalView.eventSources.endpoint.syncCall.map(lib => {
+        return lib.value;
+      });
+    } else if (name === 'asyncEndpoint') {
+      return this.technicalView.eventSources.endpoint.asyncCall.map(lib => {
+        return lib.value;
+      });
+    } else if (name === 'endpointCustomization') {
+      return new Array<string>(this.technicalView.eventSources.endpoint.endpointCustomization.value);
+    } else if (name === 'tls') {
+      return new Array<string>(this.technicalView.eventSources.endpoint.tls.value);
+    } else if (name === 'fileDataStore') {
+      return this.technicalView.eventSources.dataStore.fileLevel.map(lib => {
+        return lib.value;
+      });
+    } else if (name === 'database') {
+      return this.technicalView.eventSources.dataStore.databaseMode.map(lib => {
+        return lib.value;
+      });
+    } else if (name === 'scheduler') {
+      return new Array<string>(this.technicalView.eventSources.scheduler.value);
+    } else if (name === 'messageQueue') {
+      return this.technicalView.eventSources.messageQ.map(lib => {
+        return lib.value;
+      });
+    } else if (name === 'streamProcessing') {
+      return this.technicalView.eventSources.streamProc.map(lib => {
+        return lib.value;
+      });
+    } else if (name === 'specService') {
+      return this.technicalView.eventSources.specService.map(lib => {
+        return lib.value;
+      });
+    } else if (name === 'integration') {
+      return this.technicalView.eventSources.integration.map(lib => {
+        return lib.value;
+      });
     }
     return [];
   }

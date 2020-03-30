@@ -39,6 +39,19 @@ export class FilterComponent implements OnInit {
   runtimeCustomization = new FormControl();
   devEditors = new FormControl();
   clientLibs = new FormControl();
+  functionVersions = new FormControl();
+  appVersions = new FormControl();
+  syncEndpoint = new FormControl();
+  asyncEndpoint = new FormControl();
+  endpointCustomization = new FormControl();
+  tls = new FormControl();
+  fileDataStore = new FormControl();
+  database = new FormControl();
+  scheduler = new FormControl();
+  messageQueue = new FormControl();
+  streamProcessing = new FormControl();
+  specService = new FormControl();
+  integration = new FormControl();
 
   constructor(private platformService: PlatformService) {
     this.platforms = platformService.getPlatforms();

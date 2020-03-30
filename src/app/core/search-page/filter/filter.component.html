@@ -209,6 +209,134 @@
       </mat-form-field>
     </div>
 
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+      <mat-form-field>
+        <mat-label>Function versioning</mat-label>
+        <mat-select [id]="'functionVersion'" [formControl]="functionVersions" multiple
+                    (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getVersioning().getFunctionVersion().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Application versioning</mat-label>
+        <mat-select [id]="'applicationVersion'" [formControl]="appVersions" multiple
+                    (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getVersioning().getApplicationVersion().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+      <mat-form-field>
+        <mat-label>Synchronous endpoint calls</mat-label>
+        <mat-select [id]="'syncEndpoint'" [formControl]="syncEndpoint" multiple
+                    (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getSyncEndpoint().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Asynchronous endpoint calls</mat-label>
+        <mat-select [id]="'asyncEndpoint'" [formControl]="asyncEndpoint" multiple
+                    (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getSyncEndpoint().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Endpoint customization</mat-label>
+        <mat-select [id]="'endpointCustomization'" [formControl]="endpointCustomization" multiple
+                    (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getEndpointCustomization().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>TLS Support</mat-label>
+        <mat-select [id]="'tls'" [formControl]="tls" multiple
+                    (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getTls().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+      <mat-form-field>
+        <mat-label>File level data stores</mat-label>
+        <mat-select [id]="'fileDataStore'" [formControl]="fileDataStore" multiple
+                    (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getFileDataStore().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Database mode data stores</mat-label>
+        <mat-select [id]="'database'" [formControl]="database" multiple
+                    (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getDatabase().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+      <mat-form-field>
+        <mat-label>Scheduler</mat-label>
+        <mat-select [id]="'scheduler'" [formControl]="scheduler" multiple
+                    (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getScheduler().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
+      <mat-form-field>
+        <mat-label>Message queue</mat-label>
+        <mat-select [id]="'messageQueue'" [formControl]="messageQueue" multiple
+                    (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getMessageQueue().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Stream processing platform</mat-label>
+        <mat-select [id]="'streamProcessing'" [formControl]="streamProcessing" multiple
+                    (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getStreamProcessing().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Special-purpose services</mat-label>
+        <mat-select [id]="'specService'" [formControl]="specService" multiple
+                    (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getSpecService().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Custom events integration</mat-label>
+        <mat-select [id]="'integration'" [formControl]="integration" multiple
+                    (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getIntegration().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+
     <mat-nav-list *ngIf="filteredPlatforms.length > 0">
       <mat-list-item *ngFor="let platform of filteredPlatforms">
         <a matLine [routerLink]="'/explorer'" [state]="{platformId: platform.id}">{{ platform.platformName }}</a>

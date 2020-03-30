@@ -278,7 +278,7 @@
         "databaseMode": []
       },
       "scheduler": {
-        "value": "supproted",
+        "value": "supported",
         "references": []
       },
       "messageQ": [

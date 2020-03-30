@@ -15,16 +15,23 @@ import {Development} from './technical-view/development.model';
 import {Versioning} from './technical-view/versioning.model';
 import {EventSources} from './technical-view/event-sources.model';
 import {DevelopmentCriteria} from './criteria/development-criteria.model';
+import {VersioningCriteria} from './criteria/versioning-criteria.model';
+import {EventSourceCriteria} from './criteria/event-source-criteria.model';
+import {OrchestrationCriteria} from './criteria/orchestration-criteria.model';
+import {FunctionOrchestration} from './technical-view/function-orchestration.model';
 
 export class SearchCriteria {
-  licensing: LicensingCriteria;
-  release: Criterion;
-  installation: InstallationCriteria;
-  code: CodeCriteria;
-  interface: InterfaceCriteria;
-  documentation: DocumentationCriteria;
-  quotas: QuotaCriteria;
-  development: DevelopmentCriteria;
+  private readonly licensing: LicensingCriteria;
+  private readonly release: Criterion;
+  private readonly installation: InstallationCriteria;
+  private readonly code: CodeCriteria;
+  private readonly interface: InterfaceCriteria;
+  private readonly documentation: DocumentationCriteria;
+  private readonly quotas: QuotaCriteria;
+  private readonly development: DevelopmentCriteria;
+  private readonly versioning: VersioningCriteria;
+  private readonly eventSource: EventSourceCriteria;
+  private readonly orchestration: OrchestrationCriteria;
 
   constructor() {
     this.licensing = new LicensingCriteria();
@@ -35,6 +42,9 @@ export class SearchCriteria {
     this.documentation = new DocumentationCriteria();
     this.quotas = new QuotaCriteria();
     this.development = new DevelopmentCriteria();
+    this.versioning = new VersioningCriteria();
+    this.eventSource = new EventSourceCriteria();
+    this.orchestration = new OrchestrationCriteria();
   }
 
   getLicensing() {
@@ -67,6 +77,18 @@ export class SearchCriteria {
 
   getDevelopment() {
     return this.development;
+  }
+
+  getVersioning() {
+    return this.versioning;
+  }
+
+  getEventSource() {
+    return this.eventSource;
+  }
+
+  getOrchestration() {
+    return this.orchestration;
   }
 
   addLicensingCriteria(licensing: License) {
@@ -115,9 +137,25 @@ export class SearchCriteria {
   }
 
   addVersioningCriteria(versioning: Versioning) {
+    this.getVersioning().getFunctionVersion().getValues().add(versioning.funcVersions.value);
+    this.getVersioning().getApplicationVersion().getValues().add(versioning.appVersions.value);
   }
 
   addEventSourcesCriteria(eventSources: EventSources) {
+    eventSources.endpoint.syncCall.forEach(v => this.getEventSource().getSyncEndpoint().getValues().add(v.value));
+    eventSources.endpoint.asyncCall.forEach(v => this.getEventSource().getAsyncEndpoint().getValues().add(v.value));
+    this.getEventSource().getEndpointCustomization().getValues().add(eventSources.endpoint.endpointCustomization.value);
+    this.getEventSource().getTls().getValues().add(eventSources.endpoint.tls.value);
+    eventSources.dataStore.fileLevel.forEach(v => this.getEventSource().getFileDataStore().getValues().add(v.value));
+    eventSources.dataStore.databaseMode.forEach(v => this.getEventSource().getDatabase().getValues().add(v.value));
+    this.getEventSource().getScheduler().getValues().add(eventSources.scheduler.value);
+    eventSources.messageQ.forEach(v => this.getEventSource().getMessageQueue().getValues().add(v.value));
+    eventSources.streamProc.forEach(v => this.getEventSource().getStreamProcessing().getValues().add(v.value));
+    eventSources.specService.forEach(v => this.getEventSource().getSpecService().getValues().add(v.value));
+    eventSources.integration.forEach(v => this.getEventSource().getIntegration().getValues().add(v.value));
+  }
 
+  addOrchestrationCriteria(functionOrchestration: FunctionOrchestration) {
+    this.getOrchestration().getOrchestrationType().getValues().add(functionOrchestration.workflowDef.type);
   }
 }
