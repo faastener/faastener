@@ -55,18 +55,6 @@ export class FaaSPlatform {
       return this.businessView.documentation.platform.map(it => {
         return it.value;
       });
-    } else if (name === 'qCodeSize') {
-      return new Array<string>(this.businessView.quotas.deployment.codeSize.value);
-    } else if (name === 'qPackageSize') {
-      return new Array<string>(this.businessView.quotas.deployment.packageSize.value);
-    } else if (name === 'qCpu') {
-      return new Array<string>(this.businessView.quotas.runtime.cpu.value);
-    } else if (name === 'qMemory') {
-      return new Array<string>(this.businessView.quotas.runtime.memory.value);
-    } else if (name === 'qExecTime') {
-      return new Array<string>(this.businessView.quotas.runtime.executionTime.value);
-    } else if (name === 'qStorage') {
-      return new Array<string>(this.businessView.quotas.runtime.storage.value);
     } else if (name === 'devRuntimes') {
       return this.technicalView.development.funcRuntimes.map(r => {
         return r.value;
@@ -81,6 +69,10 @@ export class FaaSPlatform {
       return this.technicalView.development.clientLibs.map(lib => {
         return lib.value;
       });
+    } else if (name === 'qPackageSize') {
+      return new Array<string>(this.technicalView.development.quotas.packageSize.value);
+    } else if (name === 'qExecTime') {
+      return new Array<string>(this.technicalView.development.quotas.executionTime.value);
     } else if (name === 'functionVersion') {
       return new Array<string>(this.technicalView.versioning.funcVersions.value);
     } else if (name === 'applicationVersion') {

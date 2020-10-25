@@ -130,36 +130,6 @@
           "references": []
         }
       ]
-    },
-    "quotas": {
-      "deployment": {
-        "codeSize": {
-          "value": "unbounded",
-          "references": []
-        },
-        "packageSize": {
-          "value": "unbounded",
-          "references": []
-        }
-      },
-      "runtime": {
-        "cpu": {
-          "value": "unbounded",
-          "references": []
-        },
-        "memory": {
-          "value": "unbounded",
-          "references": []
-        },
-        "storage": {
-          "value": "unbounded",
-          "references": []
-        },
-        "executionTime": {
-          "value": "unbounded",
-          "references": []
-        }
-      }
     }
   },
   "technicalView": {
@@ -211,7 +181,17 @@
         "references": []
       },
       "editors": [],
-      "clientLibs": []
+      "clientLibs": [],
+      "quotas": {
+        "packageSize": {
+          "value": "unbounded",
+          "references": []
+        },
+        "executionTime": {
+          "value": "unbounded",
+          "references": []
+        }
+      }
     },
     "versioning": {
       "appVersions": {

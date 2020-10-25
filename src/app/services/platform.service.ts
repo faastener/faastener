@@ -59,7 +59,7 @@ export class PlatformService {
     this.searchCriteria.addCodeCriteria(p.businessView.sourceCode);
     this.searchCriteria.addInterfaceCriteria(p.businessView.interfaces);
     this.searchCriteria.addDocumentationCriteria(p.businessView.documentation);
-    this.searchCriteria.addQuotaCriteria(p.businessView.quotas);
+    this.searchCriteria.addQuotaCriteria(p.technicalView.development.quotas);
     this.searchCriteria.addDevelopmentCriteria(p.technicalView.development);
     this.searchCriteria.addVersioningCriteria(p.technicalView.versioning);
     this.searchCriteria.addEventSourcesCriteria(p.technicalView.eventSources);

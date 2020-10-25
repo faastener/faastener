@@ -105,36 +105,6 @@
           "references": []
         }
       ]
-    },
-    "quotas": {
-      "deployment": {
-        "codeSize": {
-          "value": "limited",
-          "references": []
-        },
-        "packageSize": {
-          "value": "unbounded",
-          "references": []
-        }
-      },
-      "runtime": {
-        "cpu": {
-          "value": "unbounded",
-          "references": []
-        },
-        "memory": {
-          "value": "limited",
-          "references": []
-        },
-        "storage": {
-          "value": "limited",
-          "references": []
-        },
-        "executionTime": {
-          "value": "limited",
-          "references": []
-        }
-      }
     }
   },
   "technicalView": {
@@ -228,7 +198,17 @@
           "value": "Ruby",
           "references": []
         }
-      ]
+      ],
+      "quotas": {
+        "packageSize": {
+          "value": "bounded",
+          "references": []
+        },
+        "executionTime": {
+          "value": "bounded",
+          "references": []
+        }
+      }
     },
     "versioning": {
       "appVersions": {

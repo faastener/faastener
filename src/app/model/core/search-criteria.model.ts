@@ -114,12 +114,8 @@ export class SearchCriteria {
   }
 
   addQuotaCriteria(q: Quotas) {
-    this.getQuotas().getCodeSize().getValues().add(q.deployment.codeSize.value);
-    this.getQuotas().getPackageSize().getValues().add(q.deployment.packageSize.value);
-    this.getQuotas().getCpu().getValues().add(q.runtime.cpu.value);
-    this.getQuotas().getMemory().getValues().add(q.runtime.memory.value);
-    this.getQuotas().getExecTime().getValues().add(q.runtime.executionTime.value);
-    this.getQuotas().getStorage().getValues().add(q.runtime.storage.value);
+    this.getQuotas().getPackageSize().getValues().add(q.packageSize.value);
+    this.getQuotas().getExecTime().getValues().add(q.executionTime.value);
   }
 
   addDevelopmentCriteria(development: Development) {

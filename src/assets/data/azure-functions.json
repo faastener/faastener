@@ -156,36 +156,6 @@
           "references": []
         }
       ]
-    },
-    "quotas": {
-      "deployment": {
-        "codeSize": {
-          "value": "limited",
-          "references": []
-        },
-        "packageSize": {
-          "value": "unbounded",
-          "references": []
-        }
-      },
-      "runtime": {
-        "cpu": {
-          "value": "unbounded",
-          "references": []
-        },
-        "memory": {
-          "value": "unbounded",
-          "references": []
-        },
-        "storage": {
-          "value": "limited",
-          "references": []
-        },
-        "executionTime": {
-          "value": "limited",
-          "references": []
-        }
-      }
     }
   },
   "technicalView": {
@@ -243,7 +213,17 @@
           "value": ".NET",
           "references": []
         }
-      ]
+      ],
+      "quotas": {
+        "packageSize": {
+          "value": "bounded",
+          "references": []
+        },
+        "executionTime": {
+          "value": "bounded (can be unset)",
+          "references": []
+        }
+      }
     },
     "versioning": {
       "appVersions": {

@@ -111,48 +111,6 @@
           ]
         }
       ]
-    },
-    "quotas": {
-      "deployment": {
-        "codeSize": {
-          "value": "PLACEHOLDER",
-          "references": [
-            "PLACEHOLDER"
-          ]
-        },
-        "packageSize": {
-          "value": "PLACEHOLDER",
-          "references": [
-            "PLACEHOLDER"
-          ]
-        }
-      },
-      "runtime": {
-        "cpu": {
-          "value": "PLACEHOLDER",
-          "references": [
-            "PLACEHOLDER"
-          ]
-        },
-        "memory": {
-          "value": "PLACEHOLDER",
-          "references": [
-            "PLACEHOLDER"
-          ]
-        },
-        "storage": {
-          "value": "PLACEHOLDER",
-          "references": [
-            "PLACEHOLDER"
-          ]
-        },
-        "executionTime": {
-          "value": "PLACEHOLDER",
-          "references": [
-            "PLACEHOLDER"
-          ]
-        }
-      }
     }
   },
   "technicalView": {
@@ -186,7 +144,21 @@
             "PLACEHOLDER"
           ]
         }
-      ]
+      ],
+      "quotas": {
+        "packageSize": {
+          "value": "PLACEHOLDER",
+          "references": [
+            "PLACEHOLDER"
+          ]
+        },
+        "executionTime": {
+          "value": "PLACEHOLDER",
+          "references": [
+            "PLACEHOLDER"
+          ]
+        }
+      }
     },
     "versioning": {
       "appVersions": {

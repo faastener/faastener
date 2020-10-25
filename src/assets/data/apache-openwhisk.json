@@ -176,36 +176,6 @@
           "references": []
         }
       ]
-    },
-    "quotas": {
-      "deployment": {
-        "codeSize": {
-          "value": "limited",
-          "references": []
-        },
-        "packageSize": {
-          "value": "limited",
-          "references": []
-        }
-      },
-      "runtime": {
-        "cpu": {
-          "value": "unbounded",
-          "references": []
-        },
-        "memory": {
-          "value": "limited",
-          "references": []
-        },
-        "storage": {
-          "value": "unbounded",
-          "references": []
-        },
-        "executionTime": {
-          "value": "limited",
-          "references": []
-        }
-      }
     }
   },
   "technicalView": {
@@ -321,7 +291,17 @@
           "value": "Swift",
           "references": []
         }
-      ]
+      ],
+      "quotas": {
+        "packageSize": {
+          "value": "unbounded",
+          "references": []
+        },
+        "executionTime": {
+          "value": "bounded (can be unset)",
+          "references": []
+        }
+      }
     },
     "versioning": {
       "appVersions": {

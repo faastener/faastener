@@ -29,12 +29,8 @@ export class FilterComponent implements OnInit {
   platformAdminOps = new FormControl();
   appDoc = new FormControl();
   platformDoc = new FormControl();
-  qCodeSize = new FormControl();
   qPackageSize = new FormControl();
-  qCpu = new FormControl();
-  qMemory = new FormControl();
   qExecTime = new FormControl();
-  qStorage = new FormControl();
   devRuntimes = new FormControl();
   runtimeCustomization = new FormControl();
   devEditors = new FormControl();

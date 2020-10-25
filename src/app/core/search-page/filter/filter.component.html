@@ -122,60 +122,6 @@
 
     <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
       <mat-form-field>
-        <mat-label>Code Size Quota</mat-label>
-        <mat-select [id]="'qCodeSize'" [formControl]="qCodeSize" multiple (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getQuotas().getCodeSize().getValues()"
-                      [value]="value">{{value}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Package Size Quota</mat-label>
-        <mat-select [id]="'qPackageSize'" [formControl]="qPackageSize" multiple
-                    (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getQuotas().getPackageSize().getValues()"
-                      [value]="value">{{value}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-
-    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
-      <mat-form-field>
-        <mat-label>CPU Quota</mat-label>
-        <mat-select [id]="'qCpu'" [formControl]="qCpu" multiple (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getQuotas().getCpu().getValues()"
-                      [value]="value">{{value}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Memory Quota</mat-label>
-        <mat-select [id]="'qMemory'" [formControl]="qMemory" multiple (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getQuotas().getMemory().getValues()"
-                      [value]="value">{{value}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Execution Time Quota</mat-label>
-        <mat-select [id]="'qExecTime'" [formControl]="qExecTime" multiple (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getQuotas().getExecTime().getValues()"
-                      [value]="value">{{value}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Storage Quota</mat-label>
-        <mat-select [id]="'qStorage'" [formControl]="qStorage" multiple (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getQuotas().getStorage().getValues()"
-                      [value]="value">{{value}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-
-
-    <div fxLayout="row" fxFlexFill fxLayoutGap="30px">
-      <mat-form-field>
         <mat-label>Function runtimes</mat-label>
         <mat-select [id]="'devRuntimes'" [formControl]="devRuntimes" multiple (selectionChange)="filterOptions($event)">
           <mat-option *ngFor="let value of searchCriteria.getDevelopment().getRuntimes().getValues()"
@@ -207,6 +153,24 @@
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Package Size Quota</mat-label>
+        <mat-select [id]="'qPackageSize'" [formControl]="qPackageSize" multiple
+                    (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getQuotas().getPackageSize().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Execution Time Quota</mat-label>
+        <mat-select [id]="'qExecTime'" [formControl]="qExecTime" multiple (selectionChange)="filterOptions($event)">
+          <mat-option *ngFor="let value of searchCriteria.getQuotas().getExecTime().getValues()"
+                      [value]="value">{{value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
     </div>
 
     <div fxLayout="row" fxFlexFill fxLayoutGap="30px">

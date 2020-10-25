@@ -4,7 +4,6 @@ import {SourceCode} from './source-code.model';
 import {Interfaces} from './interfaces.model';
 import {Community} from './community.model';
 import {Documentation} from './documentation';
-import {Quotas} from './quotas.model';
 
 export class BusinessView {
   licensing: License;
@@ -13,7 +12,6 @@ export class BusinessView {
   interfaces: Interfaces;
   community: Community;
   documentation: Documentation;
-  quotas: Quotas;
 }
 
 export class BusinessViewBuilder {
@@ -50,11 +48,6 @@ export class BusinessViewBuilder {
 
   documentation(data: Documentation): BusinessViewBuilder {
     this.businessView.documentation = data;
-    return this;
-  }
-
-  quotas(data: Quotas): BusinessViewBuilder {
-    this.businessView.quotas = data;
     return this;
   }
 
