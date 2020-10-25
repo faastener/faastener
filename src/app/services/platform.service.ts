@@ -55,7 +55,6 @@ export class PlatformService {
 
   populateSearchCriteria(p: FaaSPlatform): void {
     this.searchCriteria.addLicensingCriteria(p.businessView.licensing);
-    this.searchCriteria.getRelease().getValues().add(p.businessView.release.value);
     this.searchCriteria.addInstallationCriteria(p.businessView.installations);
     this.searchCriteria.addCodeCriteria(p.businessView.sourceCode);
     this.searchCriteria.addInterfaceCriteria(p.businessView.interfaces);
@@ -64,7 +63,6 @@ export class PlatformService {
     this.searchCriteria.addDevelopmentCriteria(p.technicalView.development);
     this.searchCriteria.addVersioningCriteria(p.technicalView.versioning);
     this.searchCriteria.addEventSourcesCriteria(p.technicalView.eventSources);
-    //this.searchCriteria.addOrchestrationCriteria(p.technicalView.functionOrchestration);
   }
 
   getPlatforms(): FaaSPlatform[] {

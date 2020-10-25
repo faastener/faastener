@@ -1,4 +1,3 @@
-import {Criterion} from '../shared/criterion.model';
 import {LicensingCriteria} from './criteria/licensing-criteria.model';
 import {InstallationCriteria} from './criteria/installation-criteria.model';
 import {CodeCriteria} from './criteria/code-criteria.model';
@@ -22,7 +21,6 @@ import {FunctionOrchestration} from './technical-view/function-orchestration.mod
 
 export class SearchCriteria {
   private readonly licensing: LicensingCriteria;
-  private readonly release: Criterion;
   private readonly installation: InstallationCriteria;
   private readonly code: CodeCriteria;
   private readonly interface: InterfaceCriteria;
@@ -35,7 +33,6 @@ export class SearchCriteria {
 
   constructor() {
     this.licensing = new LicensingCriteria();
-    this.release = new Criterion('Release status');
     this.installation = new InstallationCriteria();
     this.code = new CodeCriteria();
     this.interface = new InterfaceCriteria();
@@ -49,10 +46,6 @@ export class SearchCriteria {
 
   getLicensing() {
     return this.licensing;
-  }
-
-  getRelease() {
-    return this.release;
   }
 
   getInstallation() {

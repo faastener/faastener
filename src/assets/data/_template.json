@@ -50,12 +50,6 @@
         ]
       }
     },
-    "release": {
-      "status": "PLACEHOLDER",
-      "references": [
-        "PLACEHOLDER"
-      ]
-    },
     "interfaces": {
       "type": [
         {

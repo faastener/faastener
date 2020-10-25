@@ -75,12 +75,6 @@
         ]
       }
     },
-    "release": {
-      "value": "release candidate",
-      "references": [
-        "https://github.com/apache/openwhisk/releases"
-      ]
-    },
     "interfaces": {
       "type": [
         {

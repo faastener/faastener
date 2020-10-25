@@ -53,12 +53,6 @@
         ]
       }
     },
-    "release": {
-      "value": "beta",
-      "references": [
-        "https://github.com/knative/serving/releases"
-      ]
-    },
     "interfaces": {
       "type": [
         {

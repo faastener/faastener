@@ -69,12 +69,6 @@
         ]
       }
     },
-    "release": {
-      "value": "release candidate",
-      "references": [
-        "https://github.com/fnproject/fn/releases"
-      ]
-    },
     "interfaces": {
       "type": [
         {

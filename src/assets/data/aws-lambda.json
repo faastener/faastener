@@ -40,10 +40,6 @@
         "references": []
       }
     },
-    "release": {
-      "value": "production",
-      "references": []
-    },
     "interfaces": {
       "type": [
         {

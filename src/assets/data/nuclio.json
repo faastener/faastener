@@ -63,10 +63,6 @@
         ]
       }
     },
-    "release": {
-      "value": "rtm",
-      "references": []
-    },
     "interfaces": {
       "type": [
         {

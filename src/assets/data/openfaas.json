@@ -69,10 +69,6 @@
         ]
       }
     },
-    "release": {
-      "value": "release candidate",
-      "references": []
-    },
     "interfaces": {
       "type": [
         {

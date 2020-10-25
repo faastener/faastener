@@ -51,12 +51,6 @@
         ]
       }
     },
-    "release": {
-      "value": "stable",
-      "references": [
-        "https://github.com/fission/fission/releases"
-      ]
-    },
     "interfaces": {
       "type": [
         {
