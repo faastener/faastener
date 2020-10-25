@@ -8,6 +8,7 @@ import {ExplorerPageComponent} from './explorer-page.component';
 import {ExplorerViewConfComponent} from './explorer-view-conf/explorer-view-conf.component';
 import {ExplorerHeaderComponent} from './explorer-header/explorer-header.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ExplorerViewComponent} from './explorer-view/explorer-view.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   declarations: [
     ExplorerPageComponent,
     ExplorerHeaderComponent,
-    ExplorerViewConfComponent
+    ExplorerViewConfComponent,
+    ExplorerViewComponent
   ]
 })
 export class ExplorerPageModule {

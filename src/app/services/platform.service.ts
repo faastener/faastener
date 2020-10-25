@@ -64,7 +64,7 @@ export class PlatformService {
     this.searchCriteria.addDevelopmentCriteria(p.technicalView.development);
     this.searchCriteria.addVersioningCriteria(p.technicalView.versioning);
     this.searchCriteria.addEventSourcesCriteria(p.technicalView.eventSources);
-    this.searchCriteria.addOrchestrationCriteria(p.technicalView.functionOrchestration);
+    //this.searchCriteria.addOrchestrationCriteria(p.technicalView.functionOrchestration);
   }
 
   getPlatforms(): FaaSPlatform[] {

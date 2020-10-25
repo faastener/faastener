@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {PlatformService} from '../../../services/platform.service';
-import {Router} from '@angular/router';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FaaSPlatform} from '../../../model/core/faas-platform.model';
+import {MatSelectChange} from '@angular/material/select';
 
 @Component({
   selector: 'app-explorer-view-config',
@@ -10,31 +9,18 @@ import {FaaSPlatform} from '../../../model/core/faas-platform.model';
 })
 export class ExplorerViewConfComponent implements OnInit {
   panelOpenState = false;
-  platforms: FaaSPlatform[];
-  selectedPlatformId: string;
-  selectedPlatform: FaaSPlatform;
+  @Input() platforms: FaaSPlatform[];
+  @Input() selectedPlatformId: string;
+  @Input() selectedPlatform: FaaSPlatform;
+  @Output() selectedEvent = new EventEmitter<string>();
 
-  constructor(private platformService: PlatformService, private router: Router) {
-    this.platforms = platformService.getPlatforms().sort((p1, p2) => {
-      if (p1.platformName > p2.platformName) {
-        return 1;
-      }
-      if (p1.platformName < p2.platformName) {
-        return -1;
-      }
-      return 0;
-    });
-
-    const s = router.getCurrentNavigation().extras.state;
-    this.selectedPlatformId = s && s.platformId;
-    this.selectedPlatform = this.platformService.getPlatform(this.selectedPlatformId);
+  constructor() {
   }
 
   ngOnInit() {
   }
 
-  onPlatformChange() {
-    this.selectedPlatform = this.platformService.getPlatform(this.selectedPlatformId);
-    console.log(this.selectedPlatform);
+  emitPlatformChangeEvent($event: MatSelectChange) {
+    this.selectedEvent.emit($event.value);
   }
 }
