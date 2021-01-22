@@ -6,7 +6,6 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {BannerComponent} from './banner/banner.component';
 import {AboutComponent} from './about/about.component';
 import {CommonModule} from '@angular/common';
-import {ScrollToModule} from '@nicky-lenaers/ngx-scroll-to';
 import {PlatformsListComponent} from './platforms-list/platforms-list.component';
 import {InfoPageHeaderComponent} from './info-page-header/info-page-header.component';
 
@@ -14,7 +13,6 @@ import {InfoPageHeaderComponent} from './info-page-header/info-page-header.compo
   imports: [
     MaterialModule,
     FlexLayoutModule,
-    ScrollToModule.forRoot(),
     CommonModule,
     InfoPageRoutingModule
   ],
