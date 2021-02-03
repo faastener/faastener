@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {StickyHeaderComponent} from '../../../shared/sticky-header/sticky-header.component';
+import {StickyHeaderComponent} from '../../shared/sticky-header/sticky-header.component';
 
 @Component({
   selector: 'app-search-header',

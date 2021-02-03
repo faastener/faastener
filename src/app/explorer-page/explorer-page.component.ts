@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FaaSPlatform} from '../../models/core/faas-platform.model';
+import {FaaSPlatform} from '../models/core/faas-platform.model';
 import {Router} from '@angular/router';
-import {DataService} from '../../core/services/data.service';
+import {DataService} from '../core/services/data.service';
 
 @Component({
   selector: 'app-explorer-page',

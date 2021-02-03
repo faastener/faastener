@@ -6,9 +6,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
-import {InfoPageModule} from './main/info-page/info-page.module';
-import {ExplorerPageModule} from './main/explorer-page/explorer-page.module';
-import {SearchPageModule} from './main/search-page/search-page.module';
+import {InfoPageModule} from './info-page/info-page.module';
+import {ExplorerPageModule} from './explorer-page/explorer-page.module';
+import {SearchPageModule} from './search-page/search-page.module';
 import {CoreModule} from './core/core.module';
 
 @NgModule({

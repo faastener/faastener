@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {DataService} from '../../../core/services/data.service';
-import {FaaSPlatform} from '../../../models/core/faas-platform.model';
+import {DataService} from '../../core/services/data.service';
+import {FaaSPlatform} from '../../models/core/faas-platform.model';
 
 @Component({
   selector: 'app-info-page-platforms-list',

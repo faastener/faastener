@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {MaterialModule} from '../../shared/material.module';
+import {MaterialModule} from '../shared/material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {CommonModule} from '@angular/common';
 import {SearchPageRoutingModule} from './search-page-routing.module';
