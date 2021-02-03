@@ -9,7 +9,7 @@ const searchRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(searchRoutes)],
+  imports: [RouterModule.forRoot(searchRoutes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class SearchPageRoutingModule {
