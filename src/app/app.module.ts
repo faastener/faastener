@@ -3,33 +3,27 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MaterialModule} from './material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
-import {PageNotFoundComponent} from './core/page-not-found/page-not-found.component';
-import {InfoPageModule} from './core/info-page/info-page.module';
-import {FooterComponent} from './core/footer/footer.component';
-import {ExplorerPageModule} from './core/explorer-page/explorer-page.module';
-import {SearchPageModule} from './core/search-page/search-page.module';
+import {InfoPageModule} from './main/info-page/info-page.module';
+import {ExplorerPageModule} from './main/explorer-page/explorer-page.module';
+import {SearchPageModule} from './main/search-page/search-page.module';
+import {CoreModule} from './core/core.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MaterialModule,
     FlexLayoutModule,
     InfoPageModule,
     SearchPageModule,
     ExplorerPageModule,
+    CoreModule,
     AppRoutingModule
   ],
-  declarations: [
-    AppComponent,
-    FooterComponent,
-    PageNotFoundComponent
-  ],
+  declarations: [AppComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

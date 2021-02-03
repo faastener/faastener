@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {PlatformService} from '../../../services/platform.service';
-import {SearchCriteria} from '../../../model/core/search-criteria.model';
-import {FaaSPlatform} from '../../../model/core/faas-platform.model';
+import {DataService} from '../../../core/services/data.service';
+import {SearchCriteria} from '../../../models/core/search-criteria.model';
+import {FaaSPlatform} from '../../../models/core/faas-platform.model';
 import {MatSelectChange} from '@angular/material/select';
 
 @Component({
@@ -49,7 +49,7 @@ export class FilterComponent implements OnInit {
   specService = new FormControl();
   integration = new FormControl();
 
-  constructor(private platformService: PlatformService) {
+  constructor(private platformService: DataService) {
     this.platforms = platformService.getPlatforms();
     this.filteredPlatforms = this.platforms;
     this.searchCriteria = platformService.getSearchCriteria();

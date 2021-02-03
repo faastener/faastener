@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {PlatformService} from '../../../services/platform.service';
-import {FaaSPlatform} from '../../../model/core/faas-platform.model';
+import {DataService} from '../../../core/services/data.service';
+import {FaaSPlatform} from '../../../models/core/faas-platform.model';
 
 @Component({
   selector: 'app-info-page-platforms-list',
@@ -10,7 +10,7 @@ import {FaaSPlatform} from '../../../model/core/faas-platform.model';
 export class PlatformsListComponent implements OnInit {
   platforms: FaaSPlatform[];
 
-  constructor(private platformService: PlatformService) {
+  constructor(private platformService: DataService) {
   }
 
   ngOnInit() {

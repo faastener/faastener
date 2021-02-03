@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FaaSPlatform} from '../../../model/core/faas-platform.model';
+import {FaaSPlatform} from '../../../models/core/faas-platform.model';
 
 @Component({
   selector: 'app-explorer-view',

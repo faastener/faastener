@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {FaaSPlatform, FaaSPlatformBuilder} from '../model/core/faas-platform.model';
+import {FaaSPlatform, FaaSPlatformBuilder} from '../../models/core/faas-platform.model';
 import {HttpClient} from '@angular/common/http';
-import {SearchCriteria} from '../model/core/search-criteria.model';
+import {SearchCriteria} from '../../models/core/search-criteria.model';
 
 const platformData: string[] = [
   '/assets/data/aws-lambda.json',
@@ -19,7 +19,7 @@ const platformData: string[] = [
 @Injectable({
   providedIn: 'root'
 })
-export class PlatformService {
+export class DataService {
   readonly platformLogoDir = '/assets/images/vendor/platforms/';
   platforms: FaaSPlatform[];
   platformsMap: Map<string, FaaSPlatform>;

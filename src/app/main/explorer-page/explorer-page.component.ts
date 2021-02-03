@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FaaSPlatform} from '../../model/core/faas-platform.model';
+import {FaaSPlatform} from '../../models/core/faas-platform.model';
 import {Router} from '@angular/router';
-import {PlatformService} from '../../services/platform.service';
+import {DataService} from '../../core/services/data.service';
 
 @Component({
   selector: 'app-explorer-page',
@@ -27,7 +27,7 @@ export class ExplorerPageComponent implements OnInit {
   selectedPlatformId: string;
   selectedPlatform: FaaSPlatform;
 
-  constructor(private platformService: PlatformService, private router: Router) {
+  constructor(private platformService: DataService, private router: Router) {
     this.platforms = platformService.getPlatforms().sort((p1, p2) => {
       if (p1.platformName > p2.platformName) {
         return 1;

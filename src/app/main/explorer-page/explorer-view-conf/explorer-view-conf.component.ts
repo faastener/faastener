@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FaaSPlatform} from '../../../model/core/faas-platform.model';
+import {FaaSPlatform} from '../../../models/core/faas-platform.model';
 import {MatSelectChange} from '@angular/material/select';
 
 @Component({
