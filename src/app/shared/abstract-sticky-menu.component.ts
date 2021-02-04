@@ -16,6 +16,7 @@ enum Direction {
 
 @Component({
   template: '',
+  styleUrls: ['./abstract-sticky-menu.component.scss'],
   animations: [
     trigger('toggle', [
       state(
@@ -37,7 +38,7 @@ enum Direction {
     ])
   ]
 })
-export abstract class StickyHeaderComponent implements OnInit, AfterViewInit {
+export abstract class AbstractStickyMenuComponent implements OnInit, AfterViewInit {
   isVisible: boolean;
   menuOpened: boolean;
 

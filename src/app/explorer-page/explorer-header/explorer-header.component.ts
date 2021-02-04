@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
-import {StickyHeaderComponent} from '../../shared/sticky-header/sticky-header.component';
+import {AbstractStickyMenuComponent} from '../../shared/abstract-sticky-menu.component';
 
 @Component({
   selector: 'app-explorer-header',
   templateUrl: './explorer-header.component.html'
 })
-export class ExplorerHeaderComponent extends StickyHeaderComponent {
+export class ExplorerHeaderComponent extends AbstractStickyMenuComponent {
 }

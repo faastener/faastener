@@ -24,7 +24,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/app/styles/app.scss"
+              "src/scss/app.scss"
             ],
             "scripts": []
           },
@@ -87,9 +87,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/app/styles/app.scss"
-            ],
+            "styles": [],
             "scripts": []
           }
         },

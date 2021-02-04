@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {InfoPageComponent} from './info-page.component';
+import {HomeComponent} from './home.component';
 
 const infoPageRoutes: Routes = [
-  {path: '', component: InfoPageComponent}
+  {path: '', component: HomeComponent}
 ];
 
 @NgModule({
@@ -14,5 +14,5 @@ const infoPageRoutes: Routes = [
     RouterModule
   ]
 })
-export class InfoPageRoutingModule {
+export class HomeRoutingModule {
 }

@@ -1,28 +1,29 @@
 import {NgModule} from '@angular/core';
-import {InfoPageRoutingModule} from './info-page-routing.module';
-import {InfoPageComponent} from './info-page.component';
+import {CommonModule} from '@angular/common';
+
+import {HomeComponent} from './home.component';
 import {MaterialModule} from '../shared/material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {BannerComponent} from './banner/banner.component';
 import {AboutComponent} from './about/about.component';
-import {CommonModule} from '@angular/common';
 import {PlatformsListComponent} from './platforms-list/platforms-list.component';
-import {InfoPageHeaderComponent} from './info-page-header/info-page-header.component';
+import {HomeRoutingModule} from './home-routing.module';
+import {HomeHeaderComponent} from './home-header/home-header.component';
 
 @NgModule({
   imports: [
     MaterialModule,
     FlexLayoutModule,
     CommonModule,
-    InfoPageRoutingModule
+    HomeRoutingModule
   ],
   declarations: [
-    InfoPageComponent,
-    InfoPageHeaderComponent,
+    HomeComponent,
+    HomeHeaderComponent,
     BannerComponent,
     AboutComponent,
     PlatformsListComponent
   ]
 })
-export class InfoPageModule {
+export class HomeModule {
 }
