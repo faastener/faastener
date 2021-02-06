@@ -1,0 +1,18 @@
+@import "theming/themes";
+
+// Basic styles
+@import "global/variables";
+@import "global/app-loading";
+@import "global/typography";
+
+// Main grid
+@import "global/layout";
+@import "global/header";
+@import "global/footer";
+
+
+
+// Shared Layouts
+//@import "layout/page-styles";
+//@import "../app/shared/abstract-sticky-menu.component";
+

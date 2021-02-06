@@ -2,12 +2,10 @@ import {Component} from '@angular/core';
 
 @Component({
   template: `
-    <div>
-      <app-home-header></app-home-header>
-      <app-info-page-banner></app-info-page-banner>
-      <app-info-page-about></app-info-page-about>
-      <app-info-page-platforms-list></app-info-page-platforms-list>
-    </div>`
+    <app-home-banner></app-home-banner>
+    <app-home-about></app-home-about>
+    <app-home-platforms></app-home-platforms>
+  `
 })
 export class HomeComponent {
 

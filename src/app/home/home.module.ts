@@ -6,7 +6,7 @@ import {MaterialModule} from '../shared/material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {BannerComponent} from './banner/banner.component';
 import {AboutComponent} from './about/about.component';
-import {PlatformsListComponent} from './platforms-list/platforms-list.component';
+import {PlatformsComponent} from './platforms/platforms.component';
 import {HomeRoutingModule} from './home-routing.module';
 import {HomeHeaderComponent} from './home-header/home-header.component';
 
@@ -22,7 +22,7 @@ import {HomeHeaderComponent} from './home-header/home-header.component';
     HomeHeaderComponent,
     BannerComponent,
     AboutComponent,
-    PlatformsListComponent
+    PlatformsComponent
   ]
 })
 export class HomeModule {

@@ -4,7 +4,6 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {CommonModule} from '@angular/common';
 import {SearchPageRoutingModule} from './search-page-routing.module';
 import {SearchPageComponent} from './search-page.component';
-import {SearchHeaderComponent} from './search-header/search-header.component';
 import {FilterComponent} from './filter/filter.component';
 import {ReactiveFormsModule} from '@angular/forms';
 
@@ -18,7 +17,6 @@ import {ReactiveFormsModule} from '@angular/forms';
   ],
   declarations: [
     SearchPageComponent,
-    SearchHeaderComponent,
     FilterComponent
   ]
 })

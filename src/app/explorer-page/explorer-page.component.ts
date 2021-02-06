@@ -7,7 +7,6 @@ import {DataService} from '../core/services/data.service';
   selector: 'app-explorer-page',
   template: `
     <div>
-      <app-explorer-header></app-explorer-header>
       <app-explorer-view-config
         [platforms]="platforms"
         [selectedPlatformId]="selectedPlatformId"
