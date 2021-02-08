@@ -3,12 +3,12 @@
     <ul class="header__menu header__menu--nolist">
       <li><a [routerLink]="['/home']"><img class="header__logo" src="../assets/images/logo-v.png" alt="FaaStener logo"></a></li>
       <li class="menu__icon"><a class="menu__link-icon" mat-icon-button><mat-icon>menu</mat-icon></a></li>
-      <li class="menu__text"><a class="menu__link" mat-button [routerLink]="['/home']" routerLinkActive="menu__link--active" [routerLinkActiveOptions]= "{exact: true}"> Home </a></li>
+      <li class="menu__text menu__text--lmar-2em"><a class="menu__link" mat-button [routerLink]="['/home']" routerLinkActive="menu__link--active" [routerLinkActiveOptions]= "{exact: true}"> Home </a></li>
       <li class="menu__text"><a class="menu__link" mat-button matTooltip="Under construction" routerLinkActive="menu__link--active"> About </a></li>
       <li class="menu__text"><a class="menu__link" mat-button [routerLink]="['/explorer']" routerLinkActive="menu__link--active" [routerLinkActiveOptions]="{ exact : true}"> Platforms </a></li>
       <li class="menu__text"><a class="menu__link" mat-button matTooltip="Under construction" routerLinkActive="menu__link--active"> Contact Us </a></li>
       <li class="header__spacer"><span></span></li>
-      <li><a class="menu__link menu__link--rmargin-2em" mat-button target="_blank" href="https://github.com/faastener/faastener" ><i class="fa fa-github fa-2x" aria-hidden="true"></i> GitHub </a></li>
+      <li><a class="menu__link menu__link--rpad-2em" mat-button target="_blank" href="https://github.com/faastener/faastener" ><i class="fa fa-github fa-2x" aria-hidden="true"></i> GitHub </a></li>
     </ul>
   </nav>
 </header>

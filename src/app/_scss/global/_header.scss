@@ -47,8 +47,12 @@
   margin-top: 2em !important;
 }
 
-.menu__link--rmargin-2em {
-  margin-right: 2em !important;
+.menu__text--lmar-2em {
+  margin-left: 2em !important;
+}
+
+.menu__link--rpad-2em {
+  padding-right: 2em !important;
 }
 
 .menu__link {
@@ -60,13 +64,13 @@
   color: $pink-main !important;
 }
 
-@media screen and (min-width: 489px) {
+@media screen and (min-width: 509px) {
   .menu__icon {
     display: none;
   }
 }
 
-@media screen and (max-width: 490px) {
+@media screen and (max-width: 510px) {
   .menu__text, .header__logo {
     display: none;
   }
@@ -80,9 +84,18 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 585px) {
   .header__logo, .header__spacer {
     display: none;
+  }
+}
+
+@media screen and (min-width: 586px) {
+  .menu__link {
+    font-size: .95rem;
+  }
+  .header__logo {
+    margin: 1em 0 0 1em;
   }
 }
 

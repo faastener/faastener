@@ -6,7 +6,6 @@
 
 .about-section__description {
   padding: 1rem;
-  font-size: 1rem;
   color: #616161;
 }
 
@@ -44,11 +43,23 @@
 
 .about-section__card-title {
   padding-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .about-section__card-title-description {
   flex: 1;
+  font-size: .8rem;
+}
+
+@media screen and (min-width: 550px) {
+  .about-section__card-title {
+    font-size: 1.1rem;
+  }
+
+  .about-section__card-title-description {
+    flex: 1;
+    font-size: .9rem;
+  }
 }
 
 
@@ -58,7 +69,16 @@
   }
 
   .about-section__description {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
+  }
+
+  .about-section__card-title {
+    font-size: 1.2rem;
+  }
+
+  .about-section__card-title-description {
+    flex: 1;
+    font-size: 1rem;
   }
 }
 
