@@ -1,27 +1,74 @@
-.about-card {
-  border-top: 2px solid #212121;
-  transition: all .3s ease;
-  height: calc(100% - 50px);
-
-  [fxlayout="column"] {
-    height: 100%;
-  }
-
-  h3, p {
-    margin: 0;
-  }
-
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.about-card:hover {
-  border-top: 2px solid #b5ca8f;
-}
-
-.about-card:hover [mat-card-icon] {
-  color: #b5ca8f;
-}
-
-.about-card .description {
-  font-size: 15px;
+.about-section__description {
+  padding: 1rem;
+  font-size: 1rem;
   color: #616161;
+}
+
+.about-section__cards {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+}
+
+.about-section__card {
+  margin: .5rem;
+  border-top: .2rem solid #212121;
+  transition: all .3s ease;
+  flex-basis: 18%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  &:hover {
+    border-top: .2rem solid #b5ca8f;
+
+    .about-section__card-icon {
+      color: #b5ca8f;
+    }
+  }
+}
+
+.about-section__card-icon {
+  font-size: 3rem !important;
+  transition: all .3s ease;
+  margin-right: 1rem;
+}
+
+.about-section__card-title {
+  padding-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.about-section__card-title-description {
+  flex: 1;
+}
+
+
+@media (min-width: 790px) {
+  .g__page-section-header {
+    font-size: 1.8rem !important;
+  }
+
+  .about-section__description {
+    font-size: 1.05rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .g__page-section-header {
+    font-size: 2rem !important;
+    margin-top: 2rem;
+  }
+
+  .about-section {
+    max-width: 1200px;
+  }
 }

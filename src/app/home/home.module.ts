@@ -8,7 +8,6 @@ import {BannerComponent} from './banner/banner.component';
 import {AboutComponent} from './about/about.component';
 import {PlatformsComponent} from './platforms/platforms.component';
 import {HomeRoutingModule} from './home-routing.module';
-import {HomeHeaderComponent} from './home-header/home-header.component';
 
 @NgModule({
   imports: [
@@ -19,7 +18,6 @@ import {HomeHeaderComponent} from './home-header/home-header.component';
   ],
   declarations: [
     HomeComponent,
-    HomeHeaderComponent,
     BannerComponent,
     AboutComponent,
     PlatformsComponent

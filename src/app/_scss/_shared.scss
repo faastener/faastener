@@ -23,6 +23,25 @@
   }*/
 }
 
+.g__page-section {
+  padding: 2rem 0;
+}
+
+.g__page-section--gray {
+  background: rgba(0, 0, 0, .024);
+}
+
+.g__page-section mat-card:hover {
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+.g__page-section-header {
+  margin: 0;
+  font-size: 1.5rem !important;
+  font-weight: $font-weight-bold;
+}
+
+
 .text-center {
   text-align: center;
 }
