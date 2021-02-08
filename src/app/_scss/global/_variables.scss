@@ -1,3 +1,6 @@
+@import "../theming/faastener-palette";
+@import "~@angular/material/theming";
+
 // Typography
 $font-family-base: Roboto, "Helvetica Neue", sans-serif !default;
 $font-size-base: .875rem !default;
@@ -17,3 +20,13 @@ $headings-font-family: inherit !default;
 $headings-font-weight: 400 !default;
 $headings-line-height: 1.1 !default;
 $headings-color: inherit !default;
+
+
+// Colors
+$violet-main: mat-color($faastener-violet);
+$violet-500: mat-color($faastener-violet, 500);
+$violet-600: mat-color($faastener-violet, 600);
+$violet-700: mat-color($faastener-violet, 700);
+
+$pink-main: mat-color($faastener-pink, 900);
+$pink-900: mat-color($faastener-pink, 900);

@@ -1,27 +1,26 @@
-@import "theming/faastener-palette";
-@import "../../../node_modules/@angular/material/theming";
+@import "./global/variables";
 
-@mixin faastener__link {
-  color: mat-color($faastener-violet, 600);
+@mixin nav_item {
+  color: $violet-600;
   cursor: pointer;
   text-decoration: none;
 
-  &:hover, &:active {
+  /*&:hover, &:active {
     text-decoration: underline;
-  }
+  }*/
 
   &:hover {
-    color: mat-color($faastener-violet, 700);
+    color: $pink-900;
   }
 
   &:active {
-    color: mat-color($faastener-violet);
+    color: $violet-700;
   }
 
-  &:visited {
-    color: mat-color($faastener-violet, 500);
+  /*&:visited {
+    color: $violet-500;
     text-decoration: underline;
-  }
+  }*/
 }
 
 .text-center {
