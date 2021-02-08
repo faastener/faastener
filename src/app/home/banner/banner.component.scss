@@ -1,28 +1,59 @@
-.banner-section {
+.banner {
   background: url(../../../assets/images/bg-pattern.png) repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: auto;
-  padding: 100px 0;
   color: #ffffff;
   z-index: -10;
-  overflow: hidden
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.banner-title {
-  margin: 50px auto 0;
-  font-size: 48px;
+.banner__heading {
+  margin: 1rem auto 0;
+  padding: 0 1rem;
+  font-size: 1.5rem !important;
   font-weight: 900;
-  line-height: 52px;
+  line-height: 1.7rem;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.22);
 }
 
-.banner-description {
-  margin: 15px 0 40px;
-  font-size: 22px;
+.banner__description {
+  margin: .8rem auto 0;
+  padding: 0 1rem;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 32px;
+  line-height: 1.5rem;
+}
+
+.banner__summary {
+  margin: 1rem 0;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+}
+
+.banner__summary-item {
+  margin-bottom: .5rem;
+  display: flex;
+  align-content: center;
+}
+
+.banner__summary-item-text {
+  padding: .2rem 0 0 .5rem;
+  font-size: .9rem;
+}
+
+.banner__quick-links {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.banner__quick-links-spacer {
+  margin: 0 .5rem;
 }
 
 .banner-description-list {
@@ -30,21 +61,43 @@
   font-size: 18px;
 }
 
-@media (max-width: 767px) {
-  .banner-section {
-    padding: 100px 0 60px;
+
+@media (min-width: 790px) {
+  .banner__heading {
+    font-size: 1.8rem !important;
   }
-  .banner-title {
-    margin: 0 0 30px;
-    font-size: 32px;
-    font-weight: 900;
-    line-height: 38px;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.22);
+
+  .banner__description {
+    font-size: 1.3rem;
   }
-  .banner-description {
-    margin: 0 0 40px;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 27px;
+
+  .banner__summary-item-text {
+    font-size: 1rem;
+  }
+
+}
+
+@media (min-width: 1100px) {
+  .banner__heading {
+    font-size: 2rem !important;
+    margin-top: 3rem;
+  }
+
+  .banner__quick-links {
+    margin: 1rem 0 3rem 0;
+  }
+
+  .banner__summary {
+    margin: 1rem 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+
+  .banner__summary-item {
+    margin: 0 2rem .5rem 0;
+    display: flex;
+    align-content: center;
   }
 }
+
