@@ -12,9 +12,10 @@
         <div class="platform-section__logo-container">
           <img class="platform-section__logo" src="{{p.logoPath}}" alt="{{p.platformName}}"/>
         </div>
-        <h2 class="platform-section__card-title font-light"> {{p.platformName}} </h2>
+        <h2 class="platform-section__card-title"> {{p.platformName}} </h2>
         <span class="platform-section__card-spacer"></span>
         <p class="platform-section__card-description"> {{p.description}} </p>
+        <mat-divider [inset]="true"></mat-divider>
         <button mat-button [routerLink]="'/explorer'" [state]="{platformId: p.id}">
           <strong class="text-muted">EXPLORE</strong>
         </button>

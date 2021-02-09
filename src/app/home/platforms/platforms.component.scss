@@ -18,8 +18,7 @@
   margin: .5rem;
   border-top: .2rem solid #212121;
   transition: all .3s ease;
-  flex-basis: 15%;
-  flex-grow: 1;
+  flex: 1 0 16%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,7 +35,7 @@
   }
 
   .platform-section__logo {
-    opacity: .75;
+    opacity: .55;
     transition: opacity .5s ease-out;
     -moz-transition: opacity .5s ease-out;
     -webkit-transition: opacity .5s ease-out;
@@ -66,10 +65,12 @@
 .platform-section__card-title {
   padding-top: 1rem;
   font-size: 1rem;
+  color: $violet-500;
   align-self: center;
 }
 
 .platform-section__card-description {
+  display: none;
   font-size: .8rem;
 }
 
@@ -79,6 +80,7 @@
   }
 
   .platform-section__card-description {
+    display: flex;
     flex: 1;
     font-size: .9rem;
   }
@@ -91,7 +93,8 @@
   }
 
   .platform-section__card-description {
+    display: flex;
     flex: 1;
-    font-size: 1rem;
+    font-size: .95rem;
   }
 }

@@ -15,6 +15,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatTableModule} from '@angular/material/table';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatSelectModule,
     MatChipsModule,
     MatTableModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatMenuModule
   ],
   exports: [
     MatButtonModule,
@@ -51,7 +53,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatSelectModule,
     MatChipsModule,
     MatTableModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatMenuModule
   ]
 })
 export class MaterialModule {
