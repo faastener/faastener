@@ -1,14 +1,41 @@
-.platform-card {
-  border-top: 2px solid #212121;
-  transition: all .3s ease;
-  height: calc(100% - 50px);
-  margin: 0 7px 0 7px;
+@import "../../_scss/shared";
 
-  h3, p {
-    margin: 0;
+:host {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  @include bg-grey;
+}
+
+.platforms-section__cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.platform-section__card {
+  margin: .5rem;
+  border-top: .2rem solid #212121;
+  transition: all .3s ease;
+  flex-basis: 15%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  &:hover {
+    border-top: .2rem solid #b5ca8f;
+    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.2) !important;
+    opacity: 1;
+
+    .platform-section__logo {
+      opacity: 1;
+    }
   }
 
-  img {
+  .platform-section__logo {
     opacity: .75;
     transition: opacity .5s ease-out;
     -moz-transition: opacity .5s ease-out;
@@ -17,50 +44,54 @@
   }
 }
 
-.platform-card:hover {
-  border-top: 2px solid #b5ca8f;
-  opacity: 1;
+.platform-section__logo-container {
+  flex: 0 0 10rem;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
 
-  img {
-    opacity: 1;
+.platform-section__logo {
+  height: auto;
+  width: 80%;
+  margin: 1em 0;
+  border: none;
+  align-self: center;
+}
+
+.platform-section__card-spacer {
+  flex-grow: 2;
+}
+
+.platform-section__card-title {
+  padding-top: 1rem;
+  font-size: 1rem;
+  align-self: center;
+}
+
+.platform-section__card-description {
+  font-size: .8rem;
+}
+
+@media screen and (min-width: 550px) {
+  .platform-section__card-title {
+    font-size: 1.1rem;
+  }
+
+  .platform-section__card-description {
+    flex: 1;
+    font-size: .9rem;
   }
 }
 
-.platform-card:hover [mat-card-icon] {
-  color: #b5ca8f;
-}
 
-.platform-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 45px;
-}
+@media (min-width: 790px) {
+  .platform-section__card-title {
+    font-size: 1.2rem;
+  }
 
-.platform-card .description {
-  font-size: 15px;
-  color: #616161;
-  height: 100px;
-  display: table-cell;
-  vertical-align: middle;
-  padding: 10px;
-}
-
-.platform-logo {
-  height: 125px; /* Equals maximum image height */
-  border: none;
-  text-align: center;
-  margin: 1em 0;
-}
-
-.platform-logo img {
-  vertical-align: middle;
-  max-height: 125px;
-  max-width: 160px;
-}
-
-.helper {
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
+  .platform-section__card-description {
+    flex: 1;
+    font-size: 1rem;
+  }
 }

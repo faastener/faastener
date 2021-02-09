@@ -23,22 +23,24 @@
   }*/
 }
 
+@mixin bg-grey {
+  background: $gray-bg;
+}
+
 .g__page-section {
   padding: 2rem 0;
 }
 
-.g__page-section--gray {
-  background: rgba(0, 0, 0, .024);
-}
-
-.g__page-section mat-card:hover {
-  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.2) !important;
-}
 
 .g__page-section-header {
   margin: 0;
   font-size: 1.5rem !important;
   font-weight: $font-weight-bold;
+}
+
+.g__page-section__description {
+  padding: 1rem;
+  color: #616161;
 }
 
 
@@ -65,4 +67,26 @@
 
 .text-muted {
   color: rgba(0, 0, 0, .54) !important;
+}
+
+
+@media (min-width: 790px) {
+  .g__page-section-header {
+    font-size: 1.8rem !important;
+  }
+}
+
+@media (min-width: 1100px) {
+  .g__page-section {
+    max-width: 1200px;
+  }
+
+  .g__page-section-header {
+    font-size: 2rem !important;
+    margin-top: 2rem;
+  }
+
+  .g__page-section__description {
+    font-size: 1.02rem;
+  }
 }

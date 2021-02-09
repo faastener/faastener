@@ -1,37 +1,25 @@
-<section id="platforms-section" class="gray-page-section">
-  <div class="container">
-    <div class="text-center" fxLayout="column">
-      <h1 class="g__page-section-header">Reviewed Platforms</h1>
-      <p class="text-center">
-        Browse through the list of available platforms, for a detailed view click on the corresponding platform's
-        button.
-      </p>
-    </div>
+<section class="platforms-section g__page-section">
 
-    <div fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutAlign="stretch">
+  <h1 class="g__page-section-header text-center">Reviewed Platforms</h1>
+  <p class="g__page-section__description text-center">
+    Browse through the list of available platforms, for a detailed view click on the corresponding platform's
+    button.
+  </p>
 
-      <div fxFlex="20%" *ngFor="let p of this.platforms" class="text-center" fxLayoutAlign="stretch" fxFlex.xs="100%">
-        <mat-card class="platform-card">
-          <div class="platform-logo">
-            <span class="helper"></span>
-            <img src="{{p.logoPath}}" alt="{{p.platformName}}"/>
-          </div>
-          <mat-card-content>
-            <div class="platform-header">
-              <h5>{{p.platformName}}</h5>
-            </div>
-            <p class="description text-center">
-              {{p.description}}
-            </p>
-            <mat-divider></mat-divider>
-            <button mat-button [routerLink]="'/explorer'" [state]="{platformId: p.id}">
-              <strong class="text-muted">EXPLORE</strong>
-            </button>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
-
+  <div class="platforms-section__cards">
+    <ng-container *ngFor="let p of this.platforms">
+      <mat-card class="platform-section__card text-center">
+        <div class="platform-section__logo-container">
+          <img class="platform-section__logo" src="{{p.logoPath}}" alt="{{p.platformName}}"/>
+        </div>
+        <h2 class="platform-section__card-title font-light"> {{p.platformName}} </h2>
+        <span class="platform-section__card-spacer"></span>
+        <p class="platform-section__card-description"> {{p.description}} </p>
+        <button mat-button [routerLink]="'/explorer'" [state]="{platformId: p.id}">
+          <strong class="text-muted">EXPLORE</strong>
+        </button>
+      </mat-card>
+    </ng-container>
   </div>
 
 </section>
