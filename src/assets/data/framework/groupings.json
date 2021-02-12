@@ -1,0 +1,148 @@
+[
+  {
+    "id": "licensing",
+    "locator": "licensing",
+    "name":"Licensing",
+    "criteria": [ "platform.license", "platform.license.type" ]
+  },
+  {
+    "id": "installation",
+    "locator": "installation",
+    "name":"Installation",
+    "criteria": [ "platform.installation.type", "platform.installation.targets" ]
+  },
+  {
+    "id": "source-code",
+    "locator": "source-code",
+    "name":"Source Code",
+    "criteria": [ "platform.code.availability", "platform.code.repository", "platform.code.language" ]
+  },
+  {
+    "id": "interface",
+    "locator": "interface",
+    "name":"Interface",
+    "criteria": [ "platform.interface.types", "platform.interface.ops.app-mgmt", "platform.interface.ops.platform-adm" ]
+  },
+  {
+    "id": "community",
+    "locator": "community",
+    "name":"Community",
+    "groupings": [
+      {
+        "id": "github",
+        "locator": "github",
+        "name":"GitHub",
+        "criteria": [ "platform.github.stars", "platform.github.forks", "platform.github.issues", "platform.github.commits", "platform.github.contributors", "platform.stackoverflow.questions" ]
+      },
+      {
+        "id": "stackoverflow",
+        "locator": "stackoverflow",
+        "name":"Stackoverflow",
+        "criteria": [ "platform.stackoverflow.questions" ]
+      }
+    ]
+  },
+  {
+    "id": "documentation",
+    "locator": "documentation",
+    "name":"Documentation",
+    "criteria": [ "platform.documentation", "platform.documentation.functions" ]
+  },
+  {
+    "id": "development",
+    "locator": "development",
+    "name":"Development",
+    "criteria": [ "platform.function.runtimes", "platform.function.runtime-customization", "platform.development.ide-support", "platform.function.client-libraries" ],
+    "groupings": [
+      {
+        "id": "dev-quotas",
+        "locator": "dev-quotas",
+        "name":"Quotas",
+        "criteria": [ "platform.quotas.dep-pkg-size", "platform.quotas.execution-time" ]
+      }
+    ]
+  },
+  {
+    "id": "versioning",
+    "locator": "versioning",
+    "name":"Version Management",
+    "criteria": [ "platform.function.versioning", "platform.function.versioning-app" ]
+  },
+  {
+    "id": "event-sources",
+    "locator": "event-sources",
+    "name":"Event Sources",
+    "criteria": [ "platform.event-source.scheduler", "platform.event-source.messaging", "platform.event-source.streaming", "platform.event-source.special-purpose-service", "platform.event-source.integration" ],
+    "groupings": [
+      {
+        "id": "endpoint",
+        "locator": "endpoint",
+        "name":"Endpoint",
+        "criteria": [ "platform.event-source.endpoint.sync-call", "platform.event-source.endpoint.async-call", "platform.event-source.endpoint.customization", "platform.event-source.endpoint.tls" ]
+      },
+      {
+        "id": "data-store",
+        "locator": "data-store",
+        "name":"Data Store",
+        "criteria": [ "platform.event-source.datastore.file-level", "platform.event-source.datastore.database-mode" ]
+      }
+    ]
+  },
+  {
+    "id": "function-orchestration",
+    "locator": "function-orchestration",
+    "name":"Function Orchestration",
+    "criteria": [ "platform.function.orchestrator", "platform.function.orchestrator.workflow-definition-type", "platform.function.orchestrator.workflow-definition-languages", "platform.function.orchestrator.control-flow-docs" ],
+    "groupings": [
+      {
+        "id": "orchestrator-quotas",
+        "locator": "orchestrator-quotas",
+        "name":"Quotas",
+        "criteria": [ "platform.function.orchestrator.quotas.execution-time", "platform.function.orchestrator.quotas.io-size" ]
+      }
+    ]
+  },
+  {
+    "id": "testing-debugging",
+    "locator": "testing-debugging",
+    "name":"Testing and Debugging",
+    "groupings": [
+      {
+        "id": "testing",
+        "locator": "testing",
+        "name":"Testing",
+        "criteria": [ "platform.testing.functional", "platform.testing.non-functional" ]
+      },
+      {
+        "id": "debugging",
+        "locator": "debugging",
+        "name":"Debugging",
+        "criteria": [ "platform.debugging.local", "platform.debugging.remote" ]
+      }
+    ]
+  },
+  {
+    "id": "observability",
+    "locator": "observability",
+    "name":"Observability",
+    "criteria": [ "platform.observability.logging", "platform.observability.monitoring", "platform.observability.integration" ]
+  },
+  {
+    "id": "app-delivery",
+    "locator": "app-delivery",
+    "name":"Application Delivery",
+    "criteria": [ "platform.deployment-automation", "platform.ci-cd" ]
+  },
+  {
+    "id": "code-reuse",
+    "locator": "code-reuse",
+    "name":"Code Reuse",
+    "criteria": [ "platform.function.marketplaces", "platform.function.code-sample-repositories" ]
+  },
+  {
+    "id": "access-mgmt",
+    "locator": "access-mgmt",
+    "name":"Access Management",
+    "criteria": [ "platform.authentication", "platform.access-control" ]
+  }
+]

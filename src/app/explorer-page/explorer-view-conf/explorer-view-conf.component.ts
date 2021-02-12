@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FaaSPlatform} from '../../models/core/faas-platform.model';
 import {MatSelectChange} from '@angular/material/select';
+import {FaaSPlatform} from '../../shared/data-models/core/faas-platform.model';
 
 @Component({
   selector: 'app-explorer-view-config',

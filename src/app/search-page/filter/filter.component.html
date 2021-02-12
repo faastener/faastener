@@ -10,7 +10,7 @@
       <mat-form-field>
         <mat-label>License</mat-label>
         <mat-select [id]="'license'" [formControl]="license" multiple (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let license of searchCriteria.getLicensing().getLicense().getValues()"
+          <mat-option *ngFor="let license of searchCriteria.getLicensing().getLicense().values"
                       [value]="license">{{license}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -18,7 +18,7 @@
       <mat-form-field>
         <mat-label>License Type</mat-label>
         <mat-select [id]="'licenseType'" [formControl]="licenseType" multiple (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let licenseType of searchCriteria.getLicensing().getLicenseType().getValues()"
+          <mat-option *ngFor="let licenseType of searchCriteria.getLicensing().getLicenseType().values"
                       [value]="licenseType">{{licenseType}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -30,7 +30,7 @@
         <mat-label>Installation Type</mat-label>
         <mat-select [id]="'installationType'" [formControl]="installationType" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let inst of searchCriteria.getInstallation().getInstallation().getValues()"
+          <mat-option *ngFor="let inst of searchCriteria.getInstallation().getInstallation().values"
                       [value]="inst">{{inst}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -38,7 +38,7 @@
       <mat-form-field>
         <mat-label>Target Hosts</mat-label>
         <mat-select [id]="'targetHosts'" [formControl]="targetHosts" multiple (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let host of searchCriteria. getInstallation().getTargetHosts().getValues()"
+          <mat-option *ngFor="let host of searchCriteria. getInstallation().getTargetHosts().values"
                       [value]="host">{{host}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -49,7 +49,7 @@
         <mat-label>Code Availability</mat-label>
         <mat-select [id]="'codeAvailability'" [formControl]="codeAvailability" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getCode().getAvailability().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getCode().getAvailability().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -58,7 +58,7 @@
         <mat-label>Code Hosting Platform</mat-label>
         <mat-select [id]="'codeHostingPlatform'" [formControl]="codeHostingPlatform" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getCode().getHostingPlatform().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getCode().getHostingPlatform().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -67,7 +67,7 @@
         <mat-label>Main Programming Language</mat-label>
         <mat-select [id]="'codeProgLanguage'" [formControl]="codeProgLanguage" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getCode().getMainLanguage().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getCode().getMainLanguage().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -78,7 +78,7 @@
         <mat-label>Interface Types</mat-label>
         <mat-select [id]="'interfaceTypes'" [formControl]="interfaceTypes" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getInterface().getInterfaceTypes().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getInterface().getInterfaceTypes().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -87,7 +87,7 @@
         <mat-label>Application Management Operations</mat-label>
         <mat-select [id]="'appInterfaceOps'" [formControl]="appInterfaceOps" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getInterface().getAppInterfaces().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getInterface().getAppInterfaces().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -96,7 +96,7 @@
         <mat-label>Platform Administration Operations</mat-label>
         <mat-select [id]="'platformAdminOps'" [formControl]="platformAdminOps" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getInterface().getPlatformInterfaces().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getInterface().getPlatformInterfaces().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -106,7 +106,7 @@
       <mat-form-field>
         <mat-label>Application Documentation</mat-label>
         <mat-select [id]="'appDoc'" [formControl]="appDoc" multiple (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getDocumentation().getFunctionDocs().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getDocumentation().getFunctionDocs().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -114,7 +114,7 @@
       <mat-form-field>
         <mat-label>Platform Documentation</mat-label>
         <mat-select [id]="'platformDoc'" [formControl]="platformDoc" multiple (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getDocumentation().getPlatformDocs().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getDocumentation().getPlatformDocs().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -124,7 +124,7 @@
       <mat-form-field>
         <mat-label>Function runtimes</mat-label>
         <mat-select [id]="'devRuntimes'" [formControl]="devRuntimes" multiple (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getDevelopment().getRuntimes().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getDevelopment().getRuntimes().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -133,7 +133,7 @@
         <mat-label>Runtime Customization</mat-label>
         <mat-select [id]="'runtimeCustomization'" [formControl]="runtimeCustomization" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getDevelopment().getRuntimeCustomization().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getDevelopment().getRuntimeCustomization().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -141,7 +141,7 @@
       <mat-form-field>
         <mat-label>Editors</mat-label>
         <mat-select [id]="'devEditors'" [formControl]="devEditors" multiple (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getDevelopment().getEditors().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getDevelopment().getEditors().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -149,7 +149,7 @@
       <mat-form-field>
         <mat-label>Client Libraries</mat-label>
         <mat-select [id]="'clientLibs'" [formControl]="clientLibs" multiple (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getDevelopment().getClientLibs().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getDevelopment().getClientLibs().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -158,7 +158,7 @@
         <mat-label>Package Size Quota</mat-label>
         <mat-select [id]="'qPackageSize'" [formControl]="qPackageSize" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getQuotas().getPackageSize().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getQuotas().getPackageSize().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -166,7 +166,7 @@
       <mat-form-field>
         <mat-label>Execution Time Quota</mat-label>
         <mat-select [id]="'qExecTime'" [formControl]="qExecTime" multiple (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getQuotas().getExecTime().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getQuotas().getExecTime().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -178,7 +178,7 @@
         <mat-label>Function versioning</mat-label>
         <mat-select [id]="'functionVersion'" [formControl]="functionVersions" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getVersioning().getFunctionVersion().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getVersioning().getFunctionVersion().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -187,7 +187,7 @@
         <mat-label>Application versioning</mat-label>
         <mat-select [id]="'applicationVersion'" [formControl]="appVersions" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getVersioning().getApplicationVersion().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getVersioning().getApplicationVersion().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -198,7 +198,7 @@
         <mat-label>Synchronous endpoint calls</mat-label>
         <mat-select [id]="'syncEndpoint'" [formControl]="syncEndpoint" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getEventSource().getSyncEndpoint().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getSyncEndpoint().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -207,7 +207,7 @@
         <mat-label>Asynchronous endpoint calls</mat-label>
         <mat-select [id]="'asyncEndpoint'" [formControl]="asyncEndpoint" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getEventSource().getSyncEndpoint().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getSyncEndpoint().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -216,7 +216,7 @@
         <mat-label>Endpoint customization</mat-label>
         <mat-select [id]="'endpointCustomization'" [formControl]="endpointCustomization" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getEventSource().getEndpointCustomization().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getEndpointCustomization().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -225,7 +225,7 @@
         <mat-label>TLS Support</mat-label>
         <mat-select [id]="'tls'" [formControl]="tls" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getEventSource().getTls().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getTls().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -236,7 +236,7 @@
         <mat-label>File level data stores</mat-label>
         <mat-select [id]="'fileDataStore'" [formControl]="fileDataStore" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getEventSource().getFileDataStore().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getFileDataStore().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -245,7 +245,7 @@
         <mat-label>Database mode data stores</mat-label>
         <mat-select [id]="'database'" [formControl]="database" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getEventSource().getDatabase().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getDatabase().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -256,7 +256,7 @@
         <mat-label>Scheduler</mat-label>
         <mat-select [id]="'scheduler'" [formControl]="scheduler" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getEventSource().getScheduler().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getScheduler().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -267,7 +267,7 @@
         <mat-label>Message queue</mat-label>
         <mat-select [id]="'messageQueue'" [formControl]="messageQueue" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getEventSource().getMessageQueue().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getMessageQueue().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -276,7 +276,7 @@
         <mat-label>Stream processing platform</mat-label>
         <mat-select [id]="'streamProcessing'" [formControl]="streamProcessing" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getEventSource().getStreamProcessing().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getStreamProcessing().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -285,7 +285,7 @@
         <mat-label>Special-purpose services</mat-label>
         <mat-select [id]="'specService'" [formControl]="specService" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getEventSource().getSpecService().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getSpecService().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -294,7 +294,7 @@
         <mat-label>Custom events integration</mat-label>
         <mat-select [id]="'integration'" [formControl]="integration" multiple
                     (selectionChange)="filterOptions($event)">
-          <mat-option *ngFor="let value of searchCriteria.getEventSource().getIntegration().getValues()"
+          <mat-option *ngFor="let value of searchCriteria.getEventSource().getIntegration().values"
                       [value]="value">{{value}}</mat-option>
         </mat-select>
       </mat-form-field>

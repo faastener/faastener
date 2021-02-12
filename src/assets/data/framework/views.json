@@ -1,0 +1,31 @@
+[
+  {
+    "id": "faas:managerial",
+    "name": "Managerial View",
+    "description": "This view combines higher-level classification criteria focusing on general platform properties such as licence or installation type.",
+    "groupings": [
+      "licensing",
+      "installation",
+      "source-code",
+      "interface",
+      "community",
+      "documentation"
+    ]
+  },
+  {
+    "id": "faas:devops",
+    "name": "DevOps View",
+    "description": "This view combines lower-level classification criteria focusing on technical properties such as supported runtimes or event sources.",
+    "groupings": [
+      "development",
+      "versioning",
+      "event-sources",
+      "function-orchestration",
+      "testing-debugging",
+      "observability",
+      "app-delivery",
+      "code-reuse",
+      "access-mgmt"
+    ]
+  }
+]

@@ -1,0 +1,145 @@
+{
+  "platformID": "apache-openwhisk",
+  "reviewedCriteria": [
+    { "criterionId": "platform.license", "values": [ { "value": "Apache 2.0", "references": [ "https://github.com/apache/openwhisk/blob/master/LICENSE.txt" ] } ] },
+    { "criterionId": "platform.license.type", "values": [ { "value": "permissive" } ] },
+    { "criterionId": "platform.installation.type", "values": [
+        { "value": "installable", "references": [ "https://openwhisk.apache.org/documentation.html#openwhisk_deployment" ], "comment": "IBM Cloud Functions is based on Apache Openwhisk" }
+      ]
+    },
+    { "criterionId": "platform.installation.targets", "values": [
+        { "value": "Docker", "references": [ "https://openwhisk.apache.org/documentation.html#deploy_docker_compose" ] },
+        { "value": "Kubernetes", "references": [ "https://openwhisk.apache.org/documentation.html#deploy_kubernetes" ] },
+        { "value": "Linux", "references": [ "https://github.com/apache/openwhisk/blob/master/tools/ubuntu-setup/README.md" ] },
+        { "value": "MacOS", "references": [ "https://github.com/apache/openwhisk/blob/master/tools/macos/README.md" ] },
+        { "value": "Mesos", "references": [ "https://github.com/apache/openwhisk-deploy-mesos/blob/master/README.md" ] }
+      ]
+    },
+    { "criterionId": "platform.code.availability", "values": [ { "value": "open source", "references": [ "https://github.com/apache/openwhisk" ] } ] },
+    { "criterionId": "platform.code.repository", "values": [ { "value": "GitHub", "references": [ "https://github.com/apache/openwhisk" ] } ] },
+    { "criterionId": "platform.code.language", "values": [ { "value": "Scala", "references": [ "https://github.com/apache/openwhisk/search?l=scala" ] } ] },
+    { "criterionId": "platform.interface.types", "values": [
+        { "value": "CLI", "references": [ "https://openwhisk.apache.org/documentation.html#wsk-cli" ] },
+        { "value": "API", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/rest_api.md#using-rest-apis-with-openwhisk" ] }
+      ]
+    },
+    { "criterionId": "platform.interface.ops.app-mgmt", "values": [
+        { "value": "create", "references": [], "comment": "The interface is not documented explicitly, available features can be checked via the CLI tool with the -help flag" },
+        { "value": "retrieve", "references": [], "comment": "The interface is not documented explicitly, available features can be checked via the CLI tool with the -help flag" },
+        { "value": "update", "references": [], "comment": "The interface is not documented explicitly, available features can be checked via the CLI tool with the -help flag" },
+        { "value": "delete", "references": [], "comment": "The interface is not documented explicitly, available features can be checked via the CLI tool with the -help flag" }
+      ]
+    },
+    { "criterionId": "platform.interface.ops.platform-adm", "values": [
+        { "value": "deployment", "references": [ "https://openwhisk.apache.org/documentation.html#openwhisk_deployment" ] },
+        { "value": "configuration", "references": [ "https://github.com/apache/openwhisk/tree/master/tools/admin" ] },
+        { "value": "enactment", "references": [ "https://openwhisk.apache.org/documentation.html#openwhisk_deployment" ] }
+      ]
+    },
+    { "criterionId": "platform.github.stars", "values": [ { "value": "4600", "references": [ "https://github.com/apache/openwhisk" ] } ] },
+    { "criterionId": "platform.github.forks", "values": [ { "value": "890", "references": [ "https://github.com/apache/openwhisk/network/members" ] } ] },
+    { "criterionId": "platform.github.issues", "values": [ { "value": "260", "references": [ "https://github.com/apache/openwhisk/issues" ] } ] },
+    { "criterionId": "platform.github.commits", "values": [ { "value": "2700", "references": [ "https://github.com/apache/openwhisk" ] } ] },
+    { "criterionId": "platform.github.contributors", "values": [ { "value": "173", "references": [ "https://github.com/apache/openwhisk" ] } ] },
+    { "criterionId": "platform.stackoverflow.questions", "values": [ { "value": "188", "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=openwhisk" ] } ] },
+    { "criterionId": "platform.documentation", "values": [
+        { "value": "usage", "references": [ "https://openwhisk.apache.org/documentation.html#using-openwhisk" ] },
+        { "value": "development", "references": [ "https://openwhisk.apache.org/documentation.html#contributors" ] },
+        { "value": "deployment", "references": [ "https://openwhisk.apache.org/documentation.html#openwhisk_deployment" ] },
+        { "value": "architecture", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/about.md#how-openWhisk-works" ] }
+      ]
+    },
+    { "criterionId": "platform.documentation.functions", "values": [
+        { "value": "development", "references": [ "https://openwhisk.apache.org/documentation.html" ] },
+        { "value": "deployment", "references": [ "https://openwhisk.apache.org/documentation.html#actions-creating-and-invoking", "https://openwhisk.apache.org/documentation.html#wskdeploy" ] }
+      ]
+    },
+    { "criterionId": "platform.function.runtimes", "values": [
+        { "value": "Ballerina", "references": [ "https://github.com/apache/openwhisk-runtime-ballerina#readme" ] },
+        { "value": "Binary", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/dev/modules.md#runtimes" ] },
+        { "value": "Docker Image", "references": [ "https://github.com/apache/openwhisk-runtime-docker#readme" ] },
+        { "value": "Go", "references": [ "https://github.com/apache/openwhisk-runtime-go#readme" ] },
+        { "value": "Java", "references": [ "https://github.com/apache/openwhisk-runtime-java#readme" ] },
+        { "value": ".NET", "references": [ "https://github.com/apache/openwhisk-runtime-dotnet#readme" ] },
+        { "value": "Node.js", "references": [ "https://github.com/apache/openwhisk-runtime-nodejs#readme" ] },
+        { "value": "PHP", "references": [ "https://github.com/apache/openwhisk-runtime-php#readme" ] },
+        { "value": "Python", "references": [ "https://github.com/apache/openwhisk-runtime-python#readme" ] },
+        { "value": "Ruby", "references": [ "https://github.com/apache/openwhisk-runtime-ruby#readme" ] },
+        { "value": "Rust", "references": [ "https://github.com/apache/openwhisk-runtime-rust#readme" ] },
+        { "value": "Shell", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/actions-docker.md#example-shell-script" ] },
+        { "value": "Swift", "references": [ "https://github.com/apache/openwhisk-runtime-swift#readme" ] }
+      ]
+    },
+    { "criterionId": "platform.function.runtime-customization", "values": [ { "value": "true", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/actions-new.md" ] } ] },
+    { "criterionId": "platform.development.ide-support", "values": [
+        { "value": "Visual Studio Code", "references": [ "https://github.com/apache/openwhisk-vscode" ], "comment": "deprecated" },
+        { "value": "Xcode", "references": [ "https://github.com/apache/openwhisk-xcode" ], "comment": "deprecated" }
+      ]
+    },
+    { "criterionId": "platform.function.client-libraries", "values": [
+        { "value": "Go", "references": [ "https://github.com/apache/openwhisk-client-go/blob/master/README.md" ] },
+        { "value": "Node.js", "references": [ "https://github.com/apache/openwhisk-client-js/blob/master/README.md#openwhisk-client-for-javascript" ] }
+      ]
+    },
+    { "criterionId": "platform.quotas.dep-pkg-size", "values": [ { "value": "false", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/reference.md#system-limits" ] } ] },
+    { "criterionId": "platform.quotas.execution-time", "values": [ { "value": "true", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/reference.md#system-limits" ] } ] },
+    { "criterionId": "platform.function.versioning", "values": [ { "value": "implicit", "references": [] } ] },
+    { "criterionId": "platform.function.versioning-app", "values": [ { "value": "implicit", "references": [] } ] },
+    { "criterionId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/webactions.md", "https://github.com/apache/openwhisk/blob/master/docs/rest_api.md#actions"] } ] },
+    { "criterionId": "platform.event-source.endpoint.async-call", "values": [ { "value": "HTTP", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/rest_api.md#actions"], "comment": "non-blocking invocation is set by default" } ] },
+    { "criterionId": "platform.event-source.endpoint.customization", "values": [ { "value": "true", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/apigateway.md" ] } ] },
+    { "criterionId": "platform.event-source.endpoint.tls", "values": [ { "value": "true", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/webactions.md" ] } ] },
+    { "criterionId": "platform.event-source.datastore.file-level", "values": [] },
+    { "criterionId": "platform.event-source.datastore.database-mode", "values": [ { "value": "IBM Cloudant", "references": [ "https://github.com/apache/openwhisk-package-cloudant/blob/master/README.md" ] } ] },
+    { "criterionId": "platform.event-source.scheduler", "values": [ { "value": "supported", "references": [ "https://github.com/apache/incubator-openwhisk-package-alarms/blob/master/README.md" ] } ] },
+    { "criterionId": "platform.event-source.messaging", "values": [] },
+    { "criterionId": "platform.event-source.streaming", "values": [
+        { "value": "Apache Kafka", "references": [ "https://github.com/apache/openwhisk-package-kafka/blob/master/README.md" ] },
+        { "value": "IBM Message Hub", "references": [ "https://github.com/apache/openwhisk-package-kafka/blob/master/README.md" ] }
+      ]
+    },
+    { "criterionId": "platform.event-source.special-purpose-service", "values": [
+        { "value": "GitHub", "references": [ "https://github.com/apache/openwhisk-catalog/blob/master/packages/github/README.md" ] },
+        { "value": "Slack", "references": [ "https://github.com/apache/openwhisk-catalog/blob/master/packages/slack/README.md" ] },
+        { "value": "Weather Company Data", "references": [ "https://github.com/apache/openwhisk-catalog/blob/master/packages/weather/README.md" ] },
+        { "value": "IBM Push Notifications", "references": [ "https://github.com/apache/openwhisk-package-pushnotifications/blob/master/README.md" ] },
+        { "value": "Websocket API", "references": [ "https://github.com/apache/openwhisk-catalog/blob/master/packages/websocket/README.md" ] }
+      ]
+    },
+    { "criterionId": "platform.event-source.integration", "values": [
+        { "value": "hooks", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/feeds.md" ] },
+        { "value": "polling", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/feeds.md" ] },
+        { "value": "connection", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/feeds.md" ] }
+      ]
+    },
+    { "criterionId": "platform.function.orchestrator", "values": [ { "value": "Apache OpenWhisk Composer", "references": [ "https://github.com/apache/openwhisk-composer" ] } ] },
+    { "criterionId": "platform.function.orchestrator.workflow-definition-type", "values": [ { "value": "orchestrating function", "references": [ "https://github.com/apache/openwhisk-composer#defining-a-composition" ] } ] },
+    { "criterionId": "platform.function.orchestrator.workflow-definition-languages", "values": [
+        { "value": "JavaScript", "references": [ "https://github.com/apache/openwhisk-composer#defining-a-composition" ] },
+        { "value": "Python", "references": [ "https://github.com/apache/openwhisk-composer-python" ] }
+      ]
+    },
+    { "criterionId": "platform.function.orchestrator.control-flow-docs", "values": [ { "value": "true", "references": [ "https://github.com/apache/openwhisk-composer/blob/master/docs/COMBINATORS.md" ] } ] },
+    { "criterionId": "platform.function.orchestrator.quotas.execution-time", "values": [ { "value": "true", "references": [ "https://github.com/apache/openwhisk-composer/blob/master/docs/COMMANDS.md#deploy" ] } ] },
+    { "criterionId": "platform.function.orchestrator.quotas.io-size", "values": [ ] },
+    { "criterionId": "platform.testing.functional", "values": [ { "value": "function invocation testing", "references": [ "https://github.com/apache/openwhisk-devtools/blob/master/node-local/README.md" ], "comment": "Using Openwhisk's CLI tool" } ] },
+    { "criterionId": "platform.testing.non-functional", "values": [] },
+    { "criterionId": "platform.debugging.local", "values": [] },
+    { "criterionId": "platform.debugging.remote", "values": [] },
+    { "criterionId": "platform.observability.logging", "values": [ { "value": "Logback (slf4j)", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/logging.md" ] } ] },
+    { "criterionId": "platform.observability.monitoring", "values": [
+        { "value": "Kamon", "references": [ "https://github.com/apache/openwhisk/tree/master/core/monitoring/user-events", "https://github.com/apache/openwhisk/blob/master/docs/metrics.md" ] },
+        { "value": "Prometheus", "references": [ "https://github.com/apache/openwhisk/tree/master/core/monitoring/user-events" ], "comment": "User events can be pushed  via Kamon using user-events service" },
+        { "value": "Datadog", "references": [ "https://github.com/apache/openwhisk/tree/master/core/monitoring/user-events" ], "comment": "User events can be pushed  via Kamon using user-events service" }
+      ]
+    },
+    { "criterionId": "platform.observability.integration", "values": [] },
+
+    { "criterionId": "platform.deployment-automation", "values": [ { "value": "wskdeploy", "references": [ "https://github.com/apache/openwhisk-wskdeploy" ] } ] },
+    { "criterionId": "platform.ci-cd", "values": [] },
+    { "criterionId": "platform.function.marketplaces", "values": [] },
+    { "criterionId": "platform.function.code-sample-repositories", "values": [ { "value": "true", "references": [ "https://openwhisk.apache.org/documentation.html#contributors" ], "comment": "See Samples block" } ] },
+    { "criterionId": "platform.authentication", "values": [ { "value": "shared secrets", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/webactions.md#securing-web-actions" ] } ] },
+    { "criterionId": "platform.access-control", "values": [] }
+  ]
+}

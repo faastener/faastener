@@ -6,7 +6,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
-import {ExplorerPageModule} from './explorer-page/explorer-page.module';
+import {PlatformExplorerModule} from './explorer-page/platform-explorer.module';
 import {SearchPageModule} from './search-page/search-page.module';
 import {CoreModule} from './core/core.module';
 import {SharedModule} from './shared/shared.module';
@@ -20,7 +20,7 @@ import {HomeModule} from './home/home.module';
     FlexLayoutModule,
     HomeModule,
     SearchPageModule,
-    ExplorerPageModule,
+    PlatformExplorerModule,
     CoreModule,
     SharedModule,
     AppRoutingModule

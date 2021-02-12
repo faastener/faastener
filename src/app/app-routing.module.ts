@@ -4,7 +4,11 @@ import {PageNotFoundComponent} from './shared/page-not-found/page-not-found.comp
 
 const appRoutes: Routes = [
   {path: 'search', loadChildren: () => import(`src/app/search-page/search-page.module`).then(m => m.SearchPageModule)},
-  {path: 'explorer', loadChildren: () => import(`src/app/explorer-page/explorer-page.module`).then(m => m.ExplorerPageModule)},
+  {
+    path: 'explorer/:platformId',
+    loadChildren: () => import(`src/app/explorer-page/platform-explorer.module`).then(m => m.PlatformExplorerModule)
+  },
+  {path: 'explorer', loadChildren: () => import(`src/app/explorer-page/platform-explorer.module`).then(m => m.PlatformExplorerModule)},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}
 ];

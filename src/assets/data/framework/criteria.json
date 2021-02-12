@@ -1,0 +1,338 @@
+[
+  {
+    "id": "platform.license",
+    "name": "License Name",
+    "description": "The name of license under which a platform is released.",
+    "exampleValues": [ "Apache 2.0", "GNU GPL 1.0", "GNU GPL 2.0", "MIT" ]
+  },
+  {
+    "id": "platform.license.type",
+    "name": "License Type",
+    "description": "The type of license under which a platform is released.",
+    "exampleValues": [ "public domain", "permissive", "copyleft", "freeware", "proprietary" ]
+  },
+  {
+    "id": "platform.installation.type",
+    "name": "Installation Type",
+    "description": "This criterion indicates how a platform can be installed.",
+    "exampleValues": [ "as-a-service", "installable" ]
+  },
+  {
+    "id": "platform.installation.targets",
+    "name": "Installation Target Hosts",
+    "description": "This criterion indicates to which target hosts a platform can be installed.",
+    "exampleValues": [ "Docker", "Kubernetes", "Linux", "MacOS", "Windows" ]
+  },
+  {
+    "id": "platform.code.availability",
+    "name": "Source Code Availability",
+    "description": "This criterion indicates whether a platform's source code is publicly available.",
+    "exampleValues": [ "open source", "closed source" ]
+  },
+  {
+    "id": "platform.code.repository",
+    "name": "Source Code Repository",
+    "description": "This criterion indicates which open source repository contains the source code of a given open source platform.",
+    "exampleValues": [ "BitBucket", "GitHub", "SourceForge" ]
+  },
+  {
+    "id": "platform.code.language",
+    "name": "Main Programming Language",
+    "description": "This criterion indicates the main implementation language of a given open source platform.",
+    "exampleValues": [ "C", "C#", "F#", "Go", "Java", "JavaScript", "Python", "Ruby", "Scala" ]
+  },
+  {
+    "id": "platform.interface.types",
+    "name": "Interface Types",
+    "description": "This criterion indicates which interfaces are provided by a given platform.",
+    "exampleValues": [ "API", "CLI", "GUI" ]
+  },
+  {
+    "id": "platform.interface.ops.app-mgmt",
+    "name": "Interface Operations for Application Management",
+    "description": "This criterion indicates which application management operations are supported by a given platform.",
+    "exampleValues": [ "creation", "retrieval", "update", "deletion" ]
+  },
+  {
+    "id": "platform.interface.ops.platform-adm",
+    "name": "Interface Operations for Platform Administration",
+    "description": "This criterion indicates which platform administration operations are supported by a given platform.",
+    "exampleValues": [ "deployment", "configuration", "enactment", "termination", "undeployment" ]
+  },
+  {
+    "id": "platform.github.stars",
+    "name": "GitHub Stars",
+    "description": "This criterion indicates how many GitHub stars a given platform has.",
+    "exampleValues": [ "numeric value" ]
+  },
+  {
+    "id": "platform.github.forks",
+    "name": "GitHub Forks",
+    "description": "This criterion indicates how many GitHub forks a given platform has.",
+    "exampleValues": [ "numeric value" ]
+  },
+  {
+    "id": "platform.github.issues",
+    "name": "GitHub Issues",
+    "description": "This criterion indicates how many GitHub issues a given platform has.",
+    "exampleValues": [ "numeric value" ]
+  },
+  {
+    "id": "platform.github.commits",
+    "name": "GitHub Commits",
+    "description": "This criterion indicates how many GitHub commits a given platform has.",
+    "exampleValues": [ "numeric value" ]
+  },
+  {
+    "id": "platform.github.contributors",
+    "name": "GitHub Contributors",
+    "description": "This criterion indicates how many GitHub contributors a given platform has.",
+    "exampleValues": [ "numeric value" ]
+  },
+  {
+    "id": "platform.stackoverflow.questions",
+    "name": "Stackoverflow Questions",
+    "description": "This criterion indicates how many Stackoverflow questions a given platform has.",
+    "exampleValues": [ "numeric value" ]
+  },
+  {
+    "id": "platform.documentation",
+    "name": "Platform Documentation",
+    "description": "This criterion indicates whether a given platform provides the documentation on how to use and extend it, also including the platform's architecture.",
+    "exampleValues": [ "usage", "development","deployment", "architecture" ]
+  },
+  {
+    "id": "platform.documentation.functions",
+    "name": "Functions Documentation",
+    "description": "This criterion indicates whether a given FaaS platform provides the documentation on how to develop and deploy functions.",
+    "exampleValues": [ "development", "deployment" ]
+  },
+  {
+    "id": "platform.function.runtimes",
+    "name": "Function Runtimes",
+    "description": "This criterion indicates which function runtimes are supported by a given FaaS platform.",
+    "exampleValues": [ "C", "C#", "F#", "Go", "Java", "JavaScript", "Python", "Ruby", "Scala" ]
+  },
+  {
+    "id": "platform.function.runtime-customization",
+    "name": "Function Runtime Customization",
+    "description": "This criterion indicates whether a given FaaS platform supports runtime customization.",
+    "exampleValues": [ "true", "false" ]
+  },
+  {
+    "id": "platform.development.ide-support",
+    "name": "IDEs and Text Editors",
+    "description": "This criterion indicates which IDEs and text editor a given platform supports.",
+    "exampleValues": [ "IntelliJ IDEA", "Eclipse", "Visual Studio Code" ]
+  },
+  {
+    "id": "platform.function.client-libraries",
+    "name": "Client Libraries",
+    "description": "This criterion indicates whether a given platform offers client libraries and in which programming languages.",
+    "exampleValues": [ "C", "C#", "F#", "Go", "Java", "JavaScript", "Python", "Ruby", "Scala" ]
+  },
+  {
+    "id": "platform.quotas.dep-pkg-size",
+    "name": "Deployment Package Size Quota",
+    "description": "This criterion indicates whether a given FaaS platform has quotas on the deployment package size.",
+    "exampleValues": [ "true", "false" ]
+  },
+  {
+    "id": "platform.quotas.execution-time",
+    "name": "Execution Time Quota",
+    "description": "This criterion indicates whether a given FaaS platform has quotas on the function execution time.",
+    "exampleValues": [ "true", "false" ]
+  },
+  {
+    "id": "platform.function.versioning",
+    "name": "Function Versions",
+    "description": "This criterion indicates whether a given FaaS platform supports versioning on the level of functions.",
+    "exampleValues": [ "dedicated mechanisms", "implicit versioning" ]
+  },
+  {
+    "id": "platform.function.versioning-app",
+    "name": "Application Versions",
+    "description": "This criterion indicates whether a given FaaS platform supports versioning on the level of application.",
+    "exampleValues": [ "dedicated mechanisms", "implicit versioning", "no support" ]
+  },
+  {
+    "id": "platform.event-source.endpoint.sync-call",
+    "name": "Synchronous Endpoint Call",
+    "description": "This criterion indicates whether a given FaaS platform supports exposing functions as endpoints for synchronous calls and using which protocols.",
+    "exampleValues": [ "HTTP", "gRPC" ]
+  },
+  {
+    "id": "platform.event-source.endpoint.async-call",
+    "name": "Asynchronous Endpoint Call",
+    "description": "This criterion indicates whether a given FaaS platform supports exposing functions as endpoints for asynchronous calls and using which protocols.",
+    "exampleValues": [ "HTTP", "gRPC" ]
+  },
+  {
+    "id": "platform.event-source.endpoint.customization",
+    "name": "Endpoint Customization",
+    "description": "This criterion indicates whether a given FaaS platform supports exposing functions as endpoints for asynchronous calls and using which protocols.",
+    "exampleValues": [ "true", "false" ]
+  },
+  {
+    "id": "platform.event-source.endpoint.tls",
+    "name": "Endpoint TLS Support",
+    "description": "This criterion indicates whether a given FaaS platform supports exposing functions as secure endpoints using TLS.",
+    "exampleValues": [ "true", "false" ]
+  },
+  {
+    "id": "platform.event-source.datastore.file-level",
+    "name": "File Level Data Stores",
+    "description": "This criterion indicates which file-level data stores can trigger functions on a given FaaS platform.",
+    "exampleValues": [ "AWS S3", "Min.io" ]
+  },
+  {
+    "id": "platform.event-source.datastore.database-mode",
+    "name": "Database Mode Data Stores",
+    "description": "This criterion indicates which database-mode data stores can trigger functions on a given FaaS platform.",
+    "exampleValues": [ "Azure CosmosDB", "AWS Aurora" ]
+  },
+  {
+    "id": "platform.event-source.scheduler",
+    "name": "Scheduler",
+    "description": "This criterion indicates whether a given FaaS platform supports scheduled function invocation.",
+    "exampleValues": [ "true", "false" ]
+  },
+  {
+    "id": "platform.event-source.messaging",
+    "name": "Message Queue",
+    "description": "This criterion indicates which messaging solutions can trigger functions on a given FaaS platform.",
+    "exampleValues": [ "AWS SQS", "RabbitMQ" ]
+  },
+  {
+    "id": "platform.event-source.streaming",
+    "name": "Stream Processing Platform",
+    "description": "This criterion indicates which stream processing solutions can trigger functions on a given FaaS platform.",
+    "exampleValues": [ "AWS Kinesis", "Apache Kafka" ]
+  },
+  {
+    "id": "platform.event-source.special-purpose-service",
+    "name": "Special Purpose Services",
+    "description": "This criterion indicates which special-purpose services can trigger functions on a given FaaS platform.",
+    "exampleValues": [ "AWS Alexa", "GitHub", "IBM Watson" ]
+  },
+  {
+    "id": "platform.event-source.integration",
+    "name": "Event Sources Integration",
+    "description": "This criterion indicates how a given FaaS platform enables integration of custom event sources.",
+    "exampleValues": [ "plugin-based", "messaging-based" ]
+  },
+  {
+    "id": "platform.function.orchestrator",
+    "name": "Function Orchestrator",
+    "description": "This criterion indicates whether a function orchestrator can be used with a given FaaS platform.",
+    "exampleValues": [ "AWS Step Functions", "Azure Durable Functions" ]
+  },
+  {
+    "id": "platform.function.orchestrator.workflow-definition-type",
+    "name": "Function Workflows Definition",
+    "description": "This criterion indicates how workflow are defined using a given function orchestrator.",
+    "exampleValues": [ "standard workflow definition language", "custom DSL", "orchestrating function" ]
+  },
+  {
+    "id": "platform.function.orchestrator.workflow-definition-languages",
+    "name": "Orchestrating Function Languages",
+    "description": "This criterion indicates which programming languages can be used to define workflows using a given function orchestrator.",
+    "exampleValues": [ "JavaScript", "Python" ]
+  },
+  {
+    "id": "platform.function.orchestrator.control-flow-docs",
+    "name": "Control Flow Constructs Documentation",
+    "description": "This criterion indicates whether a given function orchestrator provides teh documentation on control flow constructs.",
+    "exampleValues": [ "true", "false" ]
+  },
+  {
+    "id": "platform.function.orchestrator.quotas.execution-time",
+    "name": "Function Workflow Execution Time Quota",
+    "description": "This criterion indicates whether a given function orchestrator has quotas on workflow execution time.",
+    "exampleValues": [ "true", "false" ]
+  },
+  {
+    "id": "platform.function.orchestrator.quotas.io-size",
+    "name": "Function Workflow Task I/O Size Quota",
+    "description": "This criterion indicates whether a given function orchestrator has quotas on workflow tasks' I/O size.",
+    "exampleValues": [ "true", "false" ]
+  },
+  {
+    "id": "platform.testing.functional",
+    "name": "Tools for Functional Testing",
+    "description": "This criterion indicates which tools for functional testing a given platform supports.",
+    "exampleValues": [ "platform-native tooling", "3rd party tooling" ]
+  },
+  {
+    "id": "platform.testing.non-functional",
+    "name": "Tools for Non-Functional Testing",
+    "description": "This criterion indicates which tools for non-functional testing a given platform supports.",
+    "exampleValues": [ "platform-native tooling", "3rd party tooling" ]
+  },
+  {
+    "id": "platform.debugging.local",
+    "name": "Local Debugging Tools",
+    "description": "This criterion indicates which tools for local debugging a given platform supports.",
+    "exampleValues": [ "platform-native tooling", "3rd party tooling" ]
+  },
+  {
+    "id": "platform.debugging.remote",
+    "name": "Remote Debugging Tools",
+    "description": "This criterion indicates which tools for remote debugging a given platform supports.",
+    "exampleValues": [ "platform-native tooling", "3rd party tooling" ]
+  },
+  {
+    "id": "platform.observability.logging",
+    "name": "Logging Tools",
+    "description": "This criterion indicates which logging tools a given platform supports.",
+    "exampleValues": [ "platform-native tooling", "3rd party tooling" ]
+  },
+  {
+    "id": "platform.observability.monitoring",
+    "name": "Monitoring Tools",
+    "description": "This criterion indicates which monitoring tools a given platform supports.",
+    "exampleValues": [ "platform-native tooling", "3rd party tooling" ]
+  },
+  {
+    "id": "platform.observability.integration",
+    "name": "Tooling Integration",
+    "description": "This criterion indicates whether a given platform supports integration of logging and monitoring tools.",
+    "exampleValues": [ "push-based", "pull-based", "plugin-based" ]
+  },
+  {
+    "id": "platform.deployment-automation",
+    "name": "Deployment Automation",
+    "description": "This criterion indicates which deployment automation tools a given platform supports.",
+    "exampleValues": [ "platform-native tooling", "3rd party tooling" ]
+  },
+  {
+    "id": "platform.ci-cd",
+    "name": "CI/CD Pipelining",
+    "description": "This criterion indicates whether a given platform documents support for CI/CD tools.",
+    "exampleValues": [ "true", "false" ]
+  },
+  {
+    "id": "platform.function.marketplaces",
+    "name": "Function Marketplace",
+    "description": "This criterion indicates whether a given FaaS platform has function or application examples available via a function marketplace.",
+    "exampleValues": [ "official marketplace", "3rd party marketplace" ]
+  },
+  {
+    "id": "platform.function.code-sample-repositories",
+    "name": "Function Code Sample Repository",
+    "description": "This criterion indicates whether a given FaaS platform provides one or more repositories with code samples.",
+    "exampleValues": [ "true", "false" ]
+  },
+  {
+    "id": "platform.authentication",
+    "name": "Authentication",
+    "description": "This criterion indicates whether a given FaaS platform provides authentication mechanisms",
+    "exampleValues": [ "built-in", "external" ]
+  },
+  {
+    "id": "platform.access-control",
+    "name": "Access Control",
+    "description": "This criterion indicates whether a given FaaS platform provides access control mechanisms",
+    "exampleValues": [ "functions", "resources" ]
+  }
+]

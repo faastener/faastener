@@ -1,0 +1,11 @@
+[
+  {
+    "id": "faas-platform-classification",
+    "name": "FaaS CF",
+    "description": "A classification framework encompassing X criteria. The criteria are grouped into two views: a higher-level, managerial view and a lower-level, DevOps view.",
+    "views": [
+      "faas:managerial",
+      "faas:devops"
+    ]
+  }
+]

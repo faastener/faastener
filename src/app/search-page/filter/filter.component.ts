@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {DataService} from '../../core/services/data.service';
-import {SearchCriteria} from '../../models/core/search-criteria.model';
-import {FaaSPlatform} from '../../models/core/faas-platform.model';
 import {MatSelectChange} from '@angular/material/select';
+import {FaaSPlatform} from '../../shared/data-models/core/faas-platform.model';
+import {SearchCriteria} from '../../shared/data-models/core/search-criteria.model';
 
 @Component({
   selector: 'app-filter',
