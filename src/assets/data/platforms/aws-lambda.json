@@ -76,7 +76,7 @@
     { "criterionId": "platform.event-source.endpoint.tls", "values": [ { "value": "true", "references": [ "https://docs.aws.amazon.com/general/latest/gr/apigateway.html" ] } ] },
     { "criterionId": "platform.event-source.datastore.file-level", "values": [ { "value": "AWS S3", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/with-s3.html" ] } ] },
     { "criterionId": "platform.event-source.datastore.database-mode", "values": [ { "value": "Amazon DynamoDB", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/with-ddb.html" ] } ] },
-    { "criterionId": "platform.event-source.scheduler", "values": [ { "value": "supported", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents-expressions.html" ] } ] },
+    { "criterionId": "platform.event-source.scheduler", "values": [ { "value": "true", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents-expressions.html" ] } ] },
     { "criterionId": "platform.event-source.messaging", "values": [
         { "value": "AWS SQS", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/with-sqs.html" ] },
         { "value": "AWS SNS", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/with-sns.html" ] }

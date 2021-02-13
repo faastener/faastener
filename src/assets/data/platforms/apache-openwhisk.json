@@ -91,7 +91,7 @@
     { "criterionId": "platform.event-source.endpoint.tls", "values": [ { "value": "true", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/webactions.md" ] } ] },
     { "criterionId": "platform.event-source.datastore.file-level", "values": [] },
     { "criterionId": "platform.event-source.datastore.database-mode", "values": [ { "value": "IBM Cloudant", "references": [ "https://github.com/apache/openwhisk-package-cloudant/blob/master/README.md" ] } ] },
-    { "criterionId": "platform.event-source.scheduler", "values": [ { "value": "supported", "references": [ "https://github.com/apache/incubator-openwhisk-package-alarms/blob/master/README.md" ] } ] },
+    { "criterionId": "platform.event-source.scheduler", "values": [ { "value": "true", "references": [ "https://github.com/apache/incubator-openwhisk-package-alarms/blob/master/README.md" ] } ] },
     { "criterionId": "platform.event-source.messaging", "values": [] },
     { "criterionId": "platform.event-source.streaming", "values": [
         { "value": "Apache Kafka", "references": [ "https://github.com/apache/openwhisk-package-kafka/blob/master/README.md" ] },

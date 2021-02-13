@@ -48,115 +48,106 @@
         { "value": "deployment", "references": [ "https://docs.microsoft.com/cli/azure/functionapp/deployment" ] }
       ]
     },
-
-
-
-
-
-
-
     { "criterionId": "platform.function.runtimes", "values": [
-      { "value": "Go", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html" ] },
-      { "value": "Java", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html" ] },
-      { "value": ".NET", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html" ] },
-      { "value": "Node.js", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html" ] },
-      { "value": "Python", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html" ] },
-      { "value": "Ruby", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html" ] },
-      { "value": "Shell", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/powershell-programming-model.html" ] }
-    ]
+        { "value": "Docker", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-image" ] },
+        { "value": "C#", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-csharp" ] },
+        { "value": "JavaScript", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node?tabs=v2#node-version" ] },
+        { "value": "F#", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-fsharp" ] },
+        { "value": "Java", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-java?tabs=bash%2Cconsumption" ] },
+        { "value": "Powershell", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-powershell?tabs=portal" ] },
+        { "value": "Python", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python#python-version" ] },
+        { "value": "TypeScript", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node?tabs=v2#typescript" ] }
+      ]
     },
-    { "criterionId": "platform.function.runtime-customization", "values": [ { "value": "true", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/runtimes-custom.html" ] } ] },
+    { "criterionId": "platform.function.runtime-customization", "values": [ { "value": "true", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-image", "https://github.com/Azure/azure-functions-host/wiki/Language-Extensibility" ] } ] },
     { "criterionId": "platform.development.ide-support", "values": [
-      { "value": "AWS Cloud9", "references": [ "https://docs.aws.amazon.com/cloud9/latest/user-guide/tutorial-lambda.html" ] },
-      { "value": "Eclipse", "references": [ "https://docs.aws.amazon.com/toolkit-for-eclipse/v1/user-guide/lambda.html" ] },
-      { "value": "Jetbrains IntelliJ IDEA", "references": [ "https://docs.aws.amazon.com/toolkit-for-jetbrains/latest/userguide/building-lambda.html" ] },
-      { "value": "Jetbrains PyCharm", "references": [ "https://docs.aws.amazon.com/toolkit-for-jetbrains/latest/userguide/building-lambda.html" ] },
-      { "value": "Jetbrains Webstorm", "references": [ "https://docs.aws.amazon.com/toolkit-for-jetbrains/latest/userguide/building-lambda.html" ] },
-      { "value": "Jetbrains Rider", "references": [ "https://docs.aws.amazon.com/toolkit-for-jetbrains/latest/userguide/building-lambda.html" ] },
-      { "value": "Visual Studio", "references": [ "https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/lambda-index.html" ] },
-      { "value": "Visual Studio Code", "references": [ "https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/serverless-apps.html" ] }
+      { "value": "Visual Studio", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-develop-local" ] },
+      { "value": "Visual Studio Code", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-develop-local" ] }
     ]
     },
     { "criterionId": "platform.function.client-libraries", "values": [
-      { "value": "C++", "references": [ "https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/using-lambda-with-go-sdk.html" ] },
-      { "value": "Go", "references": [ "http://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_lambda_1_1_lambda_client.html" ] },
-      { "value": "Java", "references": [ "https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/lambda-examples.html" ] },
-      { "value": ".NET", "references": [ "https://docs.aws.amazon.com/sdkfornet/v3/apidocs/index.html" ] },
-      { "value": "Node.js", "references": [ "https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/using-lambda-functions.html" ] },
-      { "value": "Python", "references": [ "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html" ] },
-      { "value": "Ruby", "references": [ "https://docs.aws.amazon.com/sdk-for-ruby/v3/developer-guide/lambda-examples.html" ] }
+        { "value": "Java", "references": [ "https://docs.microsoft.com/en-us/java/api/overview/azure/readme?view=azure-java-stable" ] },
+        { "value": ".NET", "references": [ "https://docs.microsoft.com/en-us/dotnet/api/overview/azure/functions?view=azure-dotnet" ] },
+        { "value": "Python", "references": [ "https://docs.microsoft.com/en-us/python/api/overview/azure/functions?view=azure-python" ] }
+      ]
+    },
+    { "criterionId": "platform.quotas.dep-pkg-size", "values": [ { "value": "true", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-scale" ] } ] },
+    { "criterionId": "platform.quotas.execution-time", "values": [ { "value": "true", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-scale" ], "comment": "Execution time can be set to be unlimited" } ] },
+    { "criterionId": "platform.function.versioning", "values": [ { "value": "implicit", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-reference" ] } ] },
+    { "criterionId": "platform.function.versioning-app", "values": [ { "value": "implicit", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-reference" ] } ] },
+    { "criterionId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-bindings-http-webhook" ] } ] },
+    { "criterionId": "platform.event-source.endpoint.async-call", "values": [] },
+    { "criterionId": "platform.event-source.endpoint.customization", "values": [ { "value": "true", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook-trigger?tabs=csharp#customize-the-http-endpoint" ] } ] },
+    { "criterionId": "platform.event-source.endpoint.tls", "values": [ { "value": "true", "references": [ "https://docs.microsoft.com/azure/app-service/app-service-web-configure-tls-mutual-auth" ] } ] },
+    { "criterionId": "platform.event-source.datastore.file-level", "values": [ { "value": "Azure Blob Storage", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-storage-blob-triggered-function" ] } ] },
+    { "criterionId": "platform.event-source.datastore.database-mode", "values": [
+      { "value": "Azure Cosmos DB", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-cosmos-db-triggered-function" ] },
+      { "value": "Azure Tables", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-table" ] }
     ]
     },
-    { "criterionId": "platform.quotas.dep-pkg-size", "values": [ { "value": "true", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html" ] } ] },
-    { "criterionId": "platform.quotas.execution-time", "values": [ { "value": "true", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html" ] } ] },
-    { "criterionId": "platform.function.versioning", "values": [ { "value": "dedicated mechanisms", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html" ] } ] },
-    { "criterionId": "platform.function.versioning-app", "values": [ { "value": "dedicated mechanisms", "references": [ "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-application.html" ] } ] },
-    { "criterionId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/invocation-sync.html" ] } ] },
-    { "criterionId": "platform.event-source.endpoint.async-call", "values": [ { "value": "HTTP", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/invocation-async.html" ] } ] },
-    { "criterionId": "platform.event-source.endpoint.customization", "values": [ { "value": "true", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-apigateway.html" ] } ] },
-    { "criterionId": "platform.event-source.endpoint.tls", "values": [ { "value": "true", "references": [ "https://docs.aws.amazon.com/general/latest/gr/apigateway.html" ] } ] },
-    { "criterionId": "platform.event-source.datastore.file-level", "values": [ { "value": "AWS S3", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/with-s3.html" ] } ] },
-    { "criterionId": "platform.event-source.datastore.database-mode", "values": [ { "value": "Amazon DynamoDB", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/with-ddb.html" ] } ] },
-    { "criterionId": "platform.event-source.scheduler", "values": [ { "value": "supported", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents-expressions.html" ] } ] },
+    { "criterionId": "platform.event-source.scheduler", "values": [ { "value": "true", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-scheduled-function" ] } ] },
     { "criterionId": "platform.event-source.messaging", "values": [
-      { "value": "AWS SQS", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/with-sqs.html" ] },
-      { "value": "AWS SNS", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/with-sns.html" ] }
-    ]
+        { "value": "Azure Queue Storage", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-storage-queue-triggered-function" ] },
+        { "value": "Azure Service Bus", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-bindings-service-bus" ] },
+        { "value": "RabbitMQ", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-rabbitmq" ] }
+      ]
     },
-    { "criterionId": "platform.event-source.streaming", "values": [ { "value": "Amazon Kinesis", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/with-kinesis-example.html" ] } ] },
+    { "criterionId": "platform.event-source.streaming", "values": [
+        { "value": "Azure Event Hubs", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-bindings-event-hubs" ] },
+        { "value": "Apache Kafka", "references": [ "https://github.com/azure/azure-functions-kafka-extension" ] }
+      ]
+    },
     { "criterionId": "platform.event-source.special-purpose-service", "values": [
-      { "value": "Amazon Alexa", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-alexa.html" ] },
-      { "value": "AWS CloudTrail", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/with-cloudtrail.html" ] },
-      { "value": "AWS CloudWatch", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents.html", "https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchlogs.html" ] },
-      { "value": "AWS CodeCommit", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-codecommit.html" ] },
-      { "value": "AWS CodePipeline", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-codepipeline.html" ] },
-      { "value": "Amazon Cognito", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-cognito.html" ] },
-      { "value": "AWS Config", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-config.html" ] },
-      { "value": "AWS EC2", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-ec2.html" ], "comment": "Using AWS Cloudwatch events" },
-      { "value": "Elastic Load Balancing", "references": [ "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/lambda-functions.html" ] },
-      { "value": "AWS IoT", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-iot.html" ] },
-      { "value": "Amazon Kinesis Data Firehose", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-kinesisfirehose.html" ] },
-      { "value": "Amazon Lex", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-lex.html" ] },
-      { "value": "Amazon MQ", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html" ] },
-      { "value": "Amazon RDS", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-rds.html" ] },
-      { "value": "Amazon SES", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-ses.html" ] },
-      { "value": "AWS X-Ray", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html" ] }
-    ]
+        { "value": "Azure Event Grid", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-grid" ] },
+        { "value": "Azure IoT Hub", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-iot" ] },
+        { "value": "Azure Mobile Apps", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-mobile-apps" ], "comment": "Only available to Azure Functions 1.x" },
+        { "value": "Azure Notification Hubs", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-notification-hubs" ] },
+        { "value": "Azure SignalR Service", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-signalr-service" ] },
+        { "value": "SendGrid", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-sendgrid?tabs=csharp" ] },
+        { "value": "Twilio", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-twilio?tabs=csharp" ] }
+      ]
     },
-    { "criterionId": "platform.event-source.integration", "values": [ { "value": "event source mappings", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html" ] } ] },
-    { "criterionId": "platform.function.orchestrator", "values": [ { "value": "AWS Step Functions", "references": [ "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html" ] } ] },
-    { "criterionId": "platform.function.orchestrator.workflow-definition-type", "values": [ { "value": "custom DSL", "references": [ "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html" ] } ] },
-    { "criterionId": "platform.function.orchestrator.workflow-definition-languages", "values": [] },
-    { "criterionId": "platform.function.orchestrator.control-flow-docs", "values": [ { "value": "true", "references": [ "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-states.html" ] } ] },
-    { "criterionId": "platform.function.orchestrator.quotas.execution-time", "values": [ { "value": "true", "references": [ "https://docs.aws.amazon.com/step-functions/latest/dg/limits-overview.html" ] } ] },
-    { "criterionId": "platform.function.orchestrator.quotas.io-size", "values": [ { "value": "true", "references": [ "https://docs.aws.amazon.com/step-functions/latest/dg/limits-overview.html" ] } ] },
-    { "criterionId": "platform.testing.functional", "values": [ { "value": "function invocation testing", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html" ] } ] },
-    { "criterionId": "platform.testing.non-functional", "values": [ { "value": "load testing guidelines", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html" ] } ] },
-    { "criterionId": "platform.debugging.local", "values": [ { "value": "step-through debugging", "references": [ "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-using-debugging.html" ], "comment": "Using IDE plugins or AWS SAM CLI" } ] },
+    { "criterionId": "platform.event-source.integration", "values": [ { "value": "custom I/O bindings", "references": [ "https://github.com/Azure/azure-webjobs-sdk/wiki/Creating-custom-input-and-output-bindings" ] } ] },
+    { "criterionId": "platform.function.orchestrator", "values": [ { "value": "Azure Durable Functions", "references": [ "https://docs.microsoft.com/azure/azure-functions/durable/durable-functions-orchestrations" ] } ] },
+    { "criterionId": "platform.function.orchestrator.workflow-definition-type", "values": [ { "value": "orchestrating function", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-types-features-overview#orchestrator-functions" ] } ] },
+    { "criterionId": "platform.function.orchestrator.workflow-definition-languages", "values": [
+        { "value": "C#", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-create-first-csharp?pivots=code-editor-vscode" ] },
+        { "value": "JavaScript", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/durable/quickstart-js-vscode" ] },
+        { "value": "Python", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/durable/quickstart-python-vscode" ] },
+        { "value": "Powershell", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/durable/quickstart-powershell-vscode" ] }
+      ]
+    },
+    { "criterionId": "platform.function.orchestrator.control-flow-docs", "values": [ { "value": "true", "references": [ "https://docs.microsoft.com/azure/azure-functions/durable/durable-functions-code-constraints" ] } ] },
+    { "criterionId": "platform.function.orchestrator.quotas.execution-time", "values": [] },
+    { "criterionId": "platform.function.orchestrator.quotas.io-size", "values": [] },
+    { "criterionId": "platform.testing.functional", "values": [ { "value": "via external tools", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-test-a-function" ], "comment": "Only guidelines are provided" } ] },
+    { "criterionId": "platform.testing.non-functional", "values": [] },
+    { "criterionId": "platform.debugging.local", "values": [ { "value": "step-through debugging", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-debug-powershell-local" ], "comment": "Using dedicated functions development framework" } ] },
     { "criterionId": "platform.debugging.remote", "values": [] },
-    { "criterionId": "platform.observability.logging", "values": [
-      { "value": "Amazon CloudWatch", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-logs.html" ] },
-      { "value": "AWS CloudTrail", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/with-cloudtrail.html" ] }
-    ]
-    },
-    { "criterionId": "platform.observability.monitoring", "values": [
-      { "value": "Amazon CloudWatch", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-metrics.html" ] }
-    ]
-    },
+    { "criterionId": "platform.observability.logging", "values": [ { "value": "Azure Application Insights", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-monitoring" ] } ] },
+    { "criterionId": "platform.observability.monitoring", "values": [ { "value": "Azure Application Insights", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-monitoring" ] } ] },
     { "criterionId": "platform.observability.integration", "values": [] },
-    { "criterionId": "platform.deployment-automation", "values": [
-      { "value": "AWS CloudFormation", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/lambda-rolling-deployments.html" ] },
-      { "value": "AWS SAM CLI", "references": [ "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-reference.html#serverless-sam-cli" ] }
-    ]
+    { "criterionId": "platform.deployment-automation", "values": [ { "value": "Azure Resource Manager", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-how-to-azure-devops" ] } ] },
+    { "criterionId": "platform.ci-cd", "values": [
+        { "value": "Azure Pipelines", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-azure-devops?tabs=csharp" ] },
+        { "value": "Azure App Service", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-continuous-deployment" ] },
+        { "value": "Jenkins", "references": [ "https://docs.microsoft.com/en-us/azure/developer/jenkins/deploy-to-azure-functions?toc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fazure-functions%2Ftoc.json&bc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fbread%2Ftoc.json" ] }
+      ]
     },
-    { "criterionId": "platform.ci-cd", "values": [ { "value": "AWS CodePipeline", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/build-pipeline.html" ] } ] },
-    { "criterionId": "platform.function.marketplaces", "values": [ { "value": "Serverless Application Repository", "references": [ "https://aws.amazon.com/serverless/serverlessrepo" ] } ] },
-    { "criterionId": "platform.function.code-sample-repositories", "values": [ { "value": "true", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/lambda-samples.html" ] } ] },
-    { "criterionId": "platform.authentication", "values": [ { "value": "AWS IAM", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/security-iam.html" ] } ] },
+    { "criterionId": "platform.function.marketplaces", "values": [] },
+    { "criterionId": "platform.function.code-sample-repositories", "values": [ { "value": "true", "references": [ "https://github.com/Azure/Azure-Functions/wiki/Samples-and-content" ] } ] },
+    { "criterionId": "platform.authentication", "values": [
+        { "value": "Azure Active Directory", "references": [ "https://docs.microsoft.com/azure/app-service/configure-authentication-provider-aad" ] },
+        { "value": "Facebook", "references": [ "https://docs.microsoft.com/azure/app-service/configure-authentication-provider-facebook" ] },
+        { "value": "Google", "references": [ "https://docs.microsoft.com/azure/app-service/configure-authentication-provider-google" ] },
+        { "value": "Microsoft account", "references": [ "https://docs.microsoft.com/azure/app-service/configure-authentication-provider-microsoft" ] },
+        { "value": "Twitter", "references": [ "https://docs.microsoft.com/azure/app-service/configure-authentication-provider-twitter" ] }
+      ]
+    },
     { "criterionId": "platform.access-control", "values": [
-      { "value": "resources", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/access-control-identity-based.html" ] },
-      { "value": "functions", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/access-control-identity-based.html" ] }
-    ]
+        { "value": "resources", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/security-concepts" ] },
+        { "value": "functions", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/security-concepts" ] }
+      ]
     }
   ]
 }
