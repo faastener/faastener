@@ -27,14 +27,8 @@
     { "criterionId": "platform.github.issues", "values": [] },
     { "criterionId": "platform.github.commits", "values": [] },
     { "criterionId": "platform.github.contributors", "values": [] },
-    { "criterionId": "platform.stackoverflow.questions", "values": [ { "value": "15100", "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=aws-lambda" ] } ] },
-    { "criterionId": "platform.documentation", "values": [
-        { "value": "usage", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html" ] },
-        { "value": "development", "references": [] },
-        { "value": "deployment", "references": [] },
-        { "value": "architecture", "references": [] }
-      ]
-    },
+    { "criterionId": "platform.stackoverflow.questions", "values": [ { "value": "16800", "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=aws-lambda" ] } ] },
+    { "criterionId": "platform.documentation", "values": [ { "value": "usage", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html" ] } ] },
     { "criterionId": "platform.documentation.functions", "values": [
         { "value": "development", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html" ] },
         { "value": "deployment", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html" ] }

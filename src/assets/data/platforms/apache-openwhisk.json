@@ -36,12 +36,12 @@
         { "value": "enactment", "references": [ "https://openwhisk.apache.org/documentation.html#openwhisk_deployment" ] }
       ]
     },
-    { "criterionId": "platform.github.stars", "values": [ { "value": "4600", "references": [ "https://github.com/apache/openwhisk" ] } ] },
-    { "criterionId": "platform.github.forks", "values": [ { "value": "890", "references": [ "https://github.com/apache/openwhisk/network/members" ] } ] },
-    { "criterionId": "platform.github.issues", "values": [ { "value": "260", "references": [ "https://github.com/apache/openwhisk/issues" ] } ] },
-    { "criterionId": "platform.github.commits", "values": [ { "value": "2700", "references": [ "https://github.com/apache/openwhisk" ] } ] },
-    { "criterionId": "platform.github.contributors", "values": [ { "value": "173", "references": [ "https://github.com/apache/openwhisk" ] } ] },
-    { "criterionId": "platform.stackoverflow.questions", "values": [ { "value": "188", "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=openwhisk" ] } ] },
+    { "criterionId": "platform.github.stars", "values": [ { "value": "4800", "references": [ "https://github.com/apache/openwhisk" ] } ] },
+    { "criterionId": "platform.github.forks", "values": [ { "value": "932", "references": [ "https://github.com/apache/openwhisk/network/members" ] } ] },
+    { "criterionId": "platform.github.issues", "values": [ { "value": "274", "references": [ "https://github.com/apache/openwhisk/issues" ] } ] },
+    { "criterionId": "platform.github.commits", "values": [ { "value": "2790", "references": [ "https://github.com/apache/openwhisk" ] } ] },
+    { "criterionId": "platform.github.contributors", "values": [ { "value": "180", "references": [ "https://github.com/apache/openwhisk" ] } ] },
+    { "criterionId": "platform.stackoverflow.questions", "values": [ { "value": "198", "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=openwhisk" ] } ] },
     { "criterionId": "platform.documentation", "values": [
         { "value": "usage", "references": [ "https://openwhisk.apache.org/documentation.html#using-openwhisk" ] },
         { "value": "development", "references": [ "https://openwhisk.apache.org/documentation.html#contributors" ] },
