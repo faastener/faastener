@@ -134,7 +134,6 @@
       ]
     },
     { "criterionId": "platform.observability.integration", "values": [] },
-
     { "criterionId": "platform.deployment-automation", "values": [ { "value": "wskdeploy", "references": [ "https://github.com/apache/openwhisk-wskdeploy" ] } ] },
     { "criterionId": "platform.ci-cd", "values": [] },
     { "criterionId": "platform.function.marketplaces", "values": [] },
