@@ -32,7 +32,7 @@
       ]
     },
     { "criterionId": "platform.interface.ops.platform-adm", "values": [] },
-    { "criterionId": "platform.github.stars", "values": [ { "value": "1300", "references": [ "https://github.com/Azure/azure-functions-host" ] } ] },
+    { "criterionId": "platform.github.stars", "values": [ { "value": "1300", "references": [ "https://github.com/Azure/azure-functions-host/stargazers" ] } ] },
     { "criterionId": "platform.github.forks", "values": [ { "value": "279", "references": [ "https://github.com/Azure/azure-functions-host/network/members" ] } ] },
     { "criterionId": "platform.github.issues", "values": [ { "value": "948", "references": [ "https://github.com/Azure/azure-functions-host/issues" ] } ] },
     { "criterionId": "platform.github.commits", "values": [ { "value": "2339", "references": [ "https://github.com/Azure/azure-functions-host" ] } ] },
