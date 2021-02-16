@@ -1,0 +1,25 @@
+<section class="platforms-section g__page-section" *ngIf="supportedPlatforms$ | async as platforms">
+
+  <h1 class="g__page-section-header text-center">Explore Platforms</h1>
+  <p class="g__page-section__description text-center">
+    Browse through the list of available platforms, for a detailed view click on the corresponding platform.
+  </p>
+
+  <div class="platforms-section__cards">
+    <ng-container *ngFor="let p of platforms">
+      <mat-card class="platform-section__card text-center">
+        <div class="platform-section__logo-container">
+          <img class="platform-section__logo" src="{{p.logoLocation}}" alt="{{p.platformName}}"/>
+        </div>
+        <h2 class="platform-section__card-title"> {{p.platformName}} </h2>
+        <span class="platform-section__card-spacer"></span>
+        <p class="platform-section__card-description"> {{p.shortDescription}} </p>
+        <mat-divider [inset]="true"></mat-divider>
+        <button mat-button [routerLink]="['/platforms', p.id]">
+          <strong class="text-muted">EXPLORE</strong>
+        </button>
+      </mat-card>
+    </ng-container>
+  </div>
+
+</section>

@@ -1,0 +1,11 @@
+@import "../_scss/shared";
+
+.platforms-main {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1 0 auto;
+  align-items: center;
+  height: 100%;
+  @include bg-grey;
+  // background: url(../../assets/images/bg-pattern.png) repeat;
+}

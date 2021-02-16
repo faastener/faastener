@@ -3,8 +3,9 @@
 
 .main-grid__header {
   background: #fff;
-  z-index: 900;
-  box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
+  //z-index: 900;
+  box-shadow: 0 0 1px rgba(0, 0, 0, .11), 0 1px 2px rgba(0, 0, 0, .25);
+  // border-bottom: .15em solid $pink-900;
 }
 
 .header__toolbar {
@@ -17,7 +18,8 @@
 .header__menu {
   display: flex;
   margin: 0;
-  flex-grow: 1;
+  padding-left: 1.5rem;
+  flex: 2 0 auto;
   height: 100%;
 }
 
@@ -81,6 +83,14 @@
 
   .header__toolbar {
     margin-left: 0;
+  }
+
+  .menu__link-icon {
+    margin-top: .7em !important;
+  }
+
+  .menu__link {
+    padding-top: 1em !important;
   }
 }
 

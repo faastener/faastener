@@ -6,7 +6,7 @@ import {FaaSPlatform} from '../shared/data-models/core/faas-platform.model';
 @Component({
   selector: 'app-explorer-page',
   template: `
-    <div>
+    <!--<div>
       <app-explorer-view-config
         [platforms]="platforms"
         [selectedPlatformId]="selectedPlatformId"
@@ -18,7 +18,7 @@ import {FaaSPlatform} from '../shared/data-models/core/faas-platform.model';
         [selectedPlatformId]="selectedPlatformId"
         [selectedPlatform]="selectedPlatform">
       </app-explorer-view>
-    </div>
+    </div>-->
   `
 })
 export class PlatformExplorerComponent implements OnInit {

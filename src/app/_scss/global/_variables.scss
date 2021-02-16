@@ -24,11 +24,14 @@ $headings-color: inherit !default;
 
 // Colors
 $violet-main: mat-color($faastener-violet);
+$violet-300: mat-color($faastener-violet, 300);
+$violet-400: mat-color($faastener-violet, 400);
 $violet-500: mat-color($faastener-violet, 500);
 $violet-600: mat-color($faastener-violet, 600);
 $violet-700: mat-color($faastener-violet, 700);
 
 $pink-main: mat-color($faastener-pink, 900);
+$pink-800: mat-color($faastener-pink, 800);
 $pink-900: mat-color($faastener-pink, 900);
 
 $gray-bg: rgba(0, 0, 0, .024);
