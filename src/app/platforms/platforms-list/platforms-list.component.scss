@@ -5,54 +5,40 @@
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-  @include bg-grey;
 }
 
 .platforms-section__cards {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: space-evenly;
 }
 
 .platform-section__card {
-  margin: .5rem;
-  border-top: .2rem solid $violet-400;
+  margin: .5rem .5rem 0 .5rem;
+  border-left: .2rem solid $violet-400;
   transition: all .3s ease;
-  flex: 1 0 16%;
+  flex: 1 0 min-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 
   &:hover {
-    border-top: .2rem solid #b5ca8f;
+    border-left: .2rem solid #b5ca8f;
     box-shadow: 0 10px 16px rgba(0, 0, 0, 0.2) !important;
-    opacity: 1;
-
-    .platform-section__logo {
-      opacity: 1;
-    }
-  }
-
-  .platform-section__logo {
-    opacity: .55;
-    transition: opacity .5s ease-out;
-    -moz-transition: opacity .5s ease-out;
-    -webkit-transition: opacity .5s ease-out;
-    -o-transition: opacity .5s ease-out;
   }
 }
 
 .platform-section__logo-container {
-  flex: 0 0 10rem;
   display: flex;
-  align-content: center;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
 }
 
 .platform-section__logo {
-  height: auto;
-  width: 80%;
+  max-height: 4rem;
+  max-width: 4rem;
   margin: 1em 0;
   border: none;
   align-self: center;
@@ -70,19 +56,14 @@
 }
 
 .platform-section__card-description {
-  display: none;
-  font-size: .8rem;
+  display: flex;
+  flex: 1;
+  font-size: .9rem;
 }
 
 @media screen and (min-width: 550px) {
   .platform-section__card-title {
     font-size: 1.1rem;
-  }
-
-  .platform-section__card-description {
-    display: flex;
-    flex: 1;
-    font-size: .9rem;
   }
 }
 

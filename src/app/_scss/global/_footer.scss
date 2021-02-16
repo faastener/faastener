@@ -18,6 +18,11 @@
   align-items: center;
 }
 
+.footer__heading {
+  padding: 0 .4em .5rem .4rem;
+  border-bottom: .2rem solid $pink-900;
+}
+
 .section_disclaimer {
   max-width: 57rem;
 }

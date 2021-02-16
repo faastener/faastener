@@ -10,6 +10,7 @@
 
 .platforms {
   width: 95%;
+  margin-bottom: 1.5rem;
 }
 
 .platforms__container {
@@ -54,8 +55,6 @@
     opacity: 1;
   }
 }
-
-
 
 @media screen and (min-width: 550px) {
   .platforms__logos {

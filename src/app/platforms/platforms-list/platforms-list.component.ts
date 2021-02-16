@@ -1,4 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Observable} from 'rxjs';
+import {FaasPlatformModel} from '../../shared/data-models/faas-platform/faas-platform.model';
 
 @Component({
   selector: 'app-platforms-list',
@@ -7,6 +9,6 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class PlatformsListComponent {
 
-  @Input() supportedPlatforms$;
+  @Input() supportedPlatforms$: Observable<FaasPlatformModel[]>;
 
 }

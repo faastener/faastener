@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {DataService} from '../core/services/data.service';
+import {Observable} from 'rxjs';
+import {FaasPlatformModel} from '../shared/data-models/faas-platform/faas-platform.model';
 
 @Component({
   selector: 'app-platforms',
@@ -8,7 +10,7 @@ import {DataService} from '../core/services/data.service';
 })
 export class PlatformsComponent {
 
-  supportedPlatforms$ = this.dataService.getSupportedPlatforms();
+  supportedPlatforms$: Observable<FaasPlatformModel[]> = this.dataService.getSupportedPlatforms();
 
   constructor(private dataService: DataService) {
   }
