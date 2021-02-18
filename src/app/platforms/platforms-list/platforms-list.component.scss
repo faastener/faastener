@@ -1,27 +1,27 @@
 @import "../../_scss/shared";
 
-:host {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
+.platforms-list {
+  margin-bottom: 1rem;
 }
 
-.platforms-section__cards {
+.platforms-list__header {
+  margin-left: 1.5rem;
+}
+
+.platforms-list__cards {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
 }
 
-.platform-section__card {
-  margin: .5rem .5rem 0 .5rem;
+.platforms-list__card {
+  margin: 0.2rem .5rem 0 .5rem;
+  padding: 0 .5rem !important;
   border-left: .2rem solid $violet-400;
   transition: all .3s ease;
-  flex: 1 0 min-content;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-evenly;
 
   &:hover {
     border-left: .2rem solid #b5ca8f;
@@ -29,50 +29,29 @@
   }
 }
 
-.platform-section__logo-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.platform-section__logo {
-  max-height: 4rem;
-  max-width: 4rem;
-  margin: 1em 0;
+.platforms-list__logo {
+  max-height: 3rem;
+  max-width: 3rem;
+  margin: 0 .5rem;
   border: none;
   align-self: center;
 }
 
-.platform-section__card-spacer {
+.platforms-list__card-spacer {
   flex-grow: 2;
 }
 
-.platform-section__card-title {
-  padding-top: 1rem;
-  font-size: 1rem;
-  color: $violet-500;
-  align-self: center;
-}
-
-.platform-section__card-description {
-  display: flex;
+.platforms-list__card-description {
   flex: 1;
-  font-size: .9rem;
+  font-size: .8rem;
+  padding-right: .5rem;
 }
 
-@media screen and (min-width: 550px) {
-  .platform-section__card-title {
-    font-size: 1.1rem;
-  }
+.platforms-list__explore-button {
+  @include nav_item;
 }
-
 
 @media (min-width: 790px) {
-  .platform-section__card-title {
-    font-size: 1.2rem;
-  }
-
   .platform-section__card-description {
     display: flex;
     flex: 1;

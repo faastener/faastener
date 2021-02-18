@@ -3,11 +3,12 @@ import {CommonModule} from '@angular/common';
 import {MaterialModule} from './material.module';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {RouterModule} from '@angular/router';
+import { TruncatePipe } from './truncate.pipe';
 
 @NgModule({
-  declarations: [PageNotFoundComponent],
+  declarations: [PageNotFoundComponent, TruncatePipe],
   imports: [CommonModule, MaterialModule, RouterModule],
-  exports: [CommonModule, MaterialModule, PageNotFoundComponent]
+    exports: [CommonModule, MaterialModule, PageNotFoundComponent, TruncatePipe]
 })
 export class SharedModule {
 }

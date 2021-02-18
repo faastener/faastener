@@ -1,23 +1,22 @@
-<section class="platforms-section g__page-section" *ngIf="supportedPlatforms$ | async as platforms">
-
-  <h1 class="g__page-section-header text-center">Platform Explorer</h1>
+<section class="platforms-list g__page-section" *ngIf="supportedPlatforms$ | async as platforms">
+  <h1 class="g__page-section-header platforms-list__header">Platform Explorer</h1>
   <p class="g__page-section__description text-center">
     Browse through the list of available platforms, for a detailed view click on the corresponding platform.
   </p>
 
-  <div class="platforms-section__cards">
+
+  <div class="platforms-list__cards">
     <ng-container *ngFor="let p of platforms">
-      <mat-card class="platform-section__card text-center">
-        <div class="platform-section__logo-container">
-          <img class="platform-section__logo" src="{{p.logoLocation}}" alt="{{p.platformName}}"/>
-          <!--<h2 class="platform-section__card-title"> {{p.platformName}} </h2>-->
-          <p class="platform-section__card-description"> {{p.shortDescription}} </p>
-        </div>
+      <mat-card class="platforms-list__card text-center">
+        <img class="platforms-list__logo" src="{{p.logoLocation}}" alt="{{p.platformName}}"/>
+        <!--<h2 class="platform-section__card-title"> {{p.platformName}} </h2>-->
+        <p class="platforms-list__card-description text-center"> {{p.shortDescription | truncate: 65}} </p>
+        <mat-divider [vertical]="true"></mat-divider>
+        <a mat-icon-button color="primary" [routerLink]="['/platforms', p.id]"
+           aria-label="Open platform details button">
+          <mat-icon class="platforms-list__explore-button">arrow_forward</mat-icon>
+        </a>
 
-
-        <button mat-button [routerLink]="['/platforms', p.id]">
-          <strong class="text-muted">EXPLORE</strong>
-        </button>
       </mat-card>
     </ng-container>
   </div>

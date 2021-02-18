@@ -7,7 +7,7 @@ import {FaaSPlatform, FaaSPlatformBuilder} from '../../shared/data-models/core/f
 import {SearchCriteria} from '../../shared/data-models/core/search-criteria.model';
 import {ClassificationScopeModel} from '../../shared/data-models/classification/classification-scope.model';
 import {FrameworkModel} from '../../shared/data-models/classification/framework.model';
-import {catchError, filter, map} from 'rxjs/operators';
+import {catchError, filter, map, shareReplay} from 'rxjs/operators';
 import {FaasPlatformModel} from '../../shared/data-models/faas-platform/faas-platform.model';
 import {LogoLocatorService} from './logo-locator.service';
 
@@ -149,6 +149,7 @@ export class DataService {
             logoLocation: this.logoLocator.getLogoPath(platform.logoLocator)
           }) as FaasPlatformModel)
         ),
+        shareReplay(1),
         catchError(DataService.handleError)
       );
   }
