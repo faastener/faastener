@@ -4,8 +4,30 @@
   margin-bottom: 1rem;
 }
 
+.platforms-list__controls {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .platforms-list__header {
   margin-left: 1.5rem;
+  flex: 0 0 max-content;
+}
+
+.platforms-list__settings {
+  @include nav_item;
+  margin-right: 1rem;
+}
+
+.platforms-list__search {
+  display: flex;
+  justify-content: center;
+}
+
+.platforms-list__search-field {
+  width: 80%;
 }
 
 .platforms-list__cards {
@@ -49,6 +71,10 @@
 
 .platforms-list__explore-button {
   @include nav_item;
+}
+
+.platforms-list__paginator {
+  background: none;
 }
 
 @media (min-width: 790px) {
