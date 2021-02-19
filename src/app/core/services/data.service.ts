@@ -24,11 +24,11 @@ const platformData: string[] = [
   '/assets/data/openfaas.json'
 ];
 
-const criteriaAssetPath = '/assets/data/framework/criteria.json';
+const criteriaPath = '/assets/data/framework/criteria.json';
 const criteriaGroupingsPath = '/assets/data/framework/groupings.json';
 const frameworkViewsPath = '/assets/data/framework/views.json';
 const frameworksPath = '/assets/data/framework/frameworks.json';
-const platformsPath = '/assets/data/platforms/platforms.json';
+const supportedPlatformsPath = '/assets/data/platforms/platforms.json';
 
 @Injectable({
   providedIn: 'root'
@@ -106,7 +106,7 @@ export class DataService {
 
 
   getCriteria(): Observable<CriterionModel[]> {
-    return this.http.get<CriterionModel[]>(criteriaAssetPath)
+    return this.http.get<CriterionModel[]>(criteriaPath)
       .pipe(
         catchError(DataService.handleError)
       );
@@ -141,7 +141,7 @@ export class DataService {
   }
 
   getSupportedPlatforms(): Observable<FaasPlatformModel[]> {
-    return this.http.get<FaasPlatformModel[]>(platformsPath)
+    return this.http.get<FaasPlatformModel[]>(supportedPlatformsPath)
       .pipe(
         map((platforms) => platforms.map(
           platform => ({
@@ -151,6 +151,19 @@ export class DataService {
         ),
         shareReplay(1),
         catchError(DataService.handleError)
+      );
+  }
+
+  getSupportedPlatformsPaged(offset: number, limit: number): Observable<FaasPlatformModel[]> {
+    return this.getSupportedPlatforms()
+      .pipe(
+        map((platforms) => {
+          const totalPages = Math.ceil(platforms.length / limit);
+          if (platforms.length > 0) {
+
+          }
+          return null;
+        })
       );
   }
 }

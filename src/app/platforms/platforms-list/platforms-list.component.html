@@ -12,12 +12,9 @@
 
   <form class="platforms-list__search">
     <mat-form-field appearance="fill" class="platforms-list__search-field">
-      <mat-label>Search by name</mat-label>
-      <input matInput placeholder="Ex. AWS Lambda..." aria-label="platform name" [matAutocomplete]="auto">
+      <mat-label>Filter by name</mat-label>
+      <input matInput placeholder="Ex. AWS Lambda..." aria-label="platform name" (keyup)="onFilterChange($event)">
       <mat-icon matSuffix>search</mat-icon>
-      <mat-autocomplete #auto>
-        <mat-option *ngFor="let p of platforms" [value]="p.platformName"> {{p.platformName}} </mat-option>
-      </mat-autocomplete>
     </mat-form-field>
   </form>
 
@@ -26,8 +23,13 @@
       <mat-card class="platforms-list__card text-center">
         <img class="platforms-list__logo" src="{{p.logoLocation}}" alt="{{p.platformName}}"/>
         <!--<h2 class="platform-section__card-title"> {{p.platformName}} </h2>-->
-        <p class="platforms-list__card-description text-center"> {{p.shortDescription | truncate: 65}} </p>
-        <mat-divider [vertical]="true"></mat-divider>
+
+        <ng-container>
+          <p class="platforms-list__card-description text-center"> {{p.shortDescription | truncate: 50 : true }}
+          </p>
+
+        </ng-container>
+
         <a mat-icon-button color="primary" [routerLink]="['/platforms', p.id]"
            aria-label="Open platform details button">
           <mat-icon class="platforms-list__explore-button">arrow_forward</mat-icon>
@@ -37,7 +39,8 @@
     </ng-container>
   </div>
 
-  <mat-paginator class="platforms-list__paginator" [length]="platforms.length" [pageSize]="5" [pageSizeOptions]="[5, 10]">
+  <mat-paginator class="platforms-list__paginator" [length]="platforms.length" [pageSize]="5"
+                 [pageSizeOptions]="[5, 10]" [pageIndex]="0">
   </mat-paginator>
 
 
