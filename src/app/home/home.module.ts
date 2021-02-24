@@ -6,8 +6,8 @@ import {MaterialModule} from '../shared/material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {BannerComponent} from './banner/banner.component';
 import {AboutComponent} from './about/about.component';
+import {OverviewComponent} from './overview/overview.component';
 import {HomeRoutingModule} from './home-routing.module';
-import {SupportedPlatformsOverviewComponent} from './supported-platforms-overview/supported-platforms-overview.component';
 
 @NgModule({
   imports: [
@@ -20,7 +20,7 @@ import {SupportedPlatformsOverviewComponent} from './supported-platforms-overvie
     HomeComponent,
     BannerComponent,
     AboutComponent,
-    SupportedPlatformsOverviewComponent
+    OverviewComponent
   ]
 })
 export class HomeModule {

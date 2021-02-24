@@ -1,15 +1,15 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
-import {CriterionModel} from '../../shared/data-models/classification/criterion.model';
-import {CriteriaGroupingModel} from '../../shared/data-models/classification/criteria-grouping.model';
-import {FaaSPlatform, FaaSPlatformBuilder} from '../../shared/data-models/core/faas-platform.model';
-import {SearchCriteria} from '../../shared/data-models/core/search-criteria.model';
-import {ClassificationScopeModel} from '../../shared/data-models/classification/classification-scope.model';
-import {FrameworkModel} from '../../shared/data-models/classification/framework.model';
 import {catchError, filter, map, shareReplay} from 'rxjs/operators';
-import {FaasPlatformModel} from '../../shared/data-models/faas-platform/faas-platform.model';
 import {LogoLocatorService} from './logo-locator.service';
+import {
+  ClassificationCriterion,
+  ClassificationFramework,
+  ClassificationView,
+  CriteriaGrouping
+} from '../../shared/interfaces/classification';
+import {FaasPlatform} from '../../shared/interfaces/faas-platform';
 
 const platformData: string[] = [
   '/assets/data/aws-lambda.json',
@@ -34,15 +34,14 @@ const supportedPlatformsPath = '/assets/data/platforms/platforms.json';
   providedIn: 'root'
 })
 export class DataService {
-  readonly platformLogoDir = '/assets/images/vendor/platforms/';
-  platforms: FaaSPlatform[];
+  /*platforms: FaaSPlatform[];
   platformsMap: Map<string, FaaSPlatform>;
-  searchCriteria: SearchCriteria;
+  searchCriteria: SearchCriteria;*/
 
   constructor(private http: HttpClient, private logoLocator: LogoLocatorService) {
-    this.platforms = [];
+    /*this.platforms = [];
     this.platformsMap = new Map<string, FaaSPlatform>();
-    this.searchCriteria = new SearchCriteria();
+    this.searchCriteria = new SearchCriteria();*/
     // this.queryPlatformsData();
   }
 
@@ -57,7 +56,7 @@ export class DataService {
     return throwError(errorMessage);
   }
 
-  queryPlatformsData() {
+  /*queryPlatformsData() {
     // TODO: simplify querying the data
     platformData.forEach(path => {
       this.http.get<FaaSPlatform>(path)
@@ -100,70 +99,61 @@ export class DataService {
 
   getSearchCriteria(): SearchCriteria {
     return this.searchCriteria;
-  }
+  }*/
 
   // ========================== new methods ====================================
 
 
-  getCriteria(): Observable<CriterionModel[]> {
-    return this.http.get<CriterionModel[]>(criteriaPath)
+  getCriteria(): Observable<ClassificationCriterion[]> {
+    return this.http.get<ClassificationCriterion[]>(criteriaPath)
+      .pipe(
+        catchError(DataService.handleError),
+        shareReplay(1),
+      );
+  }
+
+  getGroupings(): Observable<CriteriaGrouping[]> {
+    return this.http.get<CriteriaGrouping[]>(criteriaGroupingsPath)
+      .pipe(
+        catchError(DataService.handleError),
+        shareReplay(1),
+      );
+  }
+
+  getViews(): Observable<ClassificationView[]> {
+    return this.http.get<ClassificationView[]>(frameworkViewsPath)
+      .pipe(
+        catchError(DataService.handleError),
+        shareReplay(1),
+      );
+  }
+
+  getFrameworks(): Observable<ClassificationFramework[]> {
+    return this.http.get<ClassificationFramework[]>(frameworksPath)
       .pipe(
         catchError(DataService.handleError)
       );
   }
 
-  getGroupings(): Observable<CriteriaGroupingModel[]> {
-    return this.http.get<CriteriaGroupingModel[]>(criteriaGroupingsPath)
-      .pipe(
-        catchError(DataService.handleError)
-      );
-  }
-
-  getViews(): Observable<ClassificationScopeModel[]> {
-    return this.http.get<ClassificationScopeModel[]>(frameworkViewsPath)
-      .pipe(
-        catchError(DataService.handleError)
-      );
-  }
-
-  getFrameworks(): Observable<FrameworkModel[]> {
-    return this.http.get<FrameworkModel[]>(frameworksPath)
-      .pipe(
-        catchError(DataService.handleError)
-      );
-  }
-
-  getFramework(id: string): Observable<FrameworkModel> {
+  getFramework(id: string): Observable<ClassificationFramework> {
     return this.getFrameworks().pipe(
-      filter((f: FrameworkModel) => f.id === id)[0],
+      filter((f: ClassificationFramework) => f.id === id)[0],
       catchError(DataService.handleError)
     );
   }
 
-  getSupportedPlatforms(): Observable<FaasPlatformModel[]> {
-    return this.http.get<FaasPlatformModel[]>(supportedPlatformsPath)
+  getPlatforms(): Observable<FaasPlatform[]> {
+    return this.http.get<FaasPlatform[]>(supportedPlatformsPath)
       .pipe(
         map((platforms) => platforms.map(
           platform => ({
             ...platform,
             logoLocation: this.logoLocator.getLogoPath(platform.logoLocator)
-          }) as FaasPlatformModel)
+          }) as FaasPlatform)
         ),
         shareReplay(1),
         catchError(DataService.handleError)
       );
   }
 
-  getSupportedPlatformsPaged(offset: number, limit: number): Observable<FaasPlatformModel[]> {
-    return this.getSupportedPlatforms()
-      .pipe(
-        map((platforms) => {
-          const totalPages = Math.ceil(platforms.length / limit);
-          if (platforms.length > 0) {
-
-          }
-          return null;
-        })
-      );
-  }
 }

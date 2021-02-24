@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Observable} from 'rxjs';
-import {FaasPlatformModel} from '../../shared/data-models/faas-platform/faas-platform.model';
 import {FilteringService} from '../../core/services/filtering.service';
+import {FaasPlatform} from '../../shared/interfaces/faas-platform';
 
 @Component({
   selector: 'app-platforms-list',
@@ -9,7 +9,7 @@ import {FilteringService} from '../../core/services/filtering.service';
   styleUrls: ['./platforms-list.component.scss']
 })
 export class PlatformsListComponent {
-  @Input() supportedPlatforms$: Observable<FaasPlatformModel[]>;
+  @Input() supportedPlatforms$: Observable<FaasPlatform[]>;
 
   constructor(private filteringService: FilteringService) {
   }
