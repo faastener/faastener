@@ -32,12 +32,12 @@
       ]
     },
     { "criterionId": "platform.interface.ops.platform-adm", "values": [] },
-    { "criterionId": "platform.github.stars", "values": [ { "value": "1300", "references": [ "https://github.com/Azure/azure-functions-host/stargazers" ] } ] },
-    { "criterionId": "platform.github.forks", "values": [ { "value": "279", "references": [ "https://github.com/Azure/azure-functions-host/network/members" ] } ] },
-    { "criterionId": "platform.github.issues", "values": [ { "value": "948", "references": [ "https://github.com/Azure/azure-functions-host/issues" ] } ] },
-    { "criterionId": "platform.github.commits", "values": [ { "value": "2339", "references": [ "https://github.com/Azure/azure-functions-host" ] } ] },
-    { "criterionId": "platform.github.contributors", "values": [ { "value": "60", "references": [ "https://github.com/Azure/azure-functions-host" ] } ] },
-    { "criterionId": "platform.stackoverflow.questions", "values": [ { "value": "7200", "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=azure-functions" ] } ] },
+    { "criterionId": "platform.github.stars", "values": [ { "value": 1300, "references": [ "https://github.com/Azure/azure-functions-host/stargazers" ] } ] },
+    { "criterionId": "platform.github.forks", "values": [ { "value": 279, "references": [ "https://github.com/Azure/azure-functions-host/network/members" ] } ] },
+    { "criterionId": "platform.github.issues", "values": [ { "value": 948, "references": [ "https://github.com/Azure/azure-functions-host/issues" ] } ] },
+    { "criterionId": "platform.github.commits", "values": [ { "value": 2339, "references": [ "https://github.com/Azure/azure-functions-host" ] } ] },
+    { "criterionId": "platform.github.contributors", "values": [ { "value": 60, "references": [ "https://github.com/Azure/azure-functions-host" ] } ] },
+    { "criterionId": "platform.stackoverflow.questions", "values": [ { "value": 7200, "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=azure-functions" ] } ] },
     { "criterionId": "platform.documentation", "values": [
         { "value": "usage", "references": [ "https://docs.microsoft.com/en-us/cli/azure/functionapp" ] },
         { "value": "deployment", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-run-local" ] }
@@ -59,7 +59,7 @@
         { "value": "TypeScript", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node?tabs=v2#typescript" ] }
       ]
     },
-    { "criterionId": "platform.function.runtime-customization", "values": [ { "value": "true", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-image", "https://github.com/Azure/azure-functions-host/wiki/Language-Extensibility" ] } ] },
+    { "criterionId": "platform.function.runtime-customization", "values": [ { "value": true, "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-image", "https://github.com/Azure/azure-functions-host/wiki/Language-Extensibility" ] } ] },
     { "criterionId": "platform.development.ide-support", "values": [
       { "value": "Visual Studio", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-develop-local" ] },
       { "value": "Visual Studio Code", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-develop-local" ] }
@@ -71,21 +71,21 @@
         { "value": "Python", "references": [ "https://docs.microsoft.com/en-us/python/api/overview/azure/functions?view=azure-python" ] }
       ]
     },
-    { "criterionId": "platform.quotas.dep-pkg-size", "values": [ { "value": "true", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-scale" ] } ] },
-    { "criterionId": "platform.quotas.execution-time", "values": [ { "value": "true", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-scale" ], "comment": "Execution time can be set to be unlimited" } ] },
+    { "criterionId": "platform.quotas.dep-pkg-size", "values": [ { "value": true, "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-scale" ] } ] },
+    { "criterionId": "platform.quotas.execution-time", "values": [ { "value": true, "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-scale" ], "comment": "Execution time can be set to be unlimited" } ] },
     { "criterionId": "platform.function.versioning", "values": [ { "value": "implicit", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-reference" ] } ] },
     { "criterionId": "platform.function.versioning-app", "values": [ { "value": "implicit", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-reference" ] } ] },
     { "criterionId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-bindings-http-webhook" ] } ] },
     { "criterionId": "platform.event-source.endpoint.async-call", "values": [] },
-    { "criterionId": "platform.event-source.endpoint.customization", "values": [ { "value": "true", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook-trigger?tabs=csharp#customize-the-http-endpoint" ] } ] },
-    { "criterionId": "platform.event-source.endpoint.tls", "values": [ { "value": "true", "references": [ "https://docs.microsoft.com/azure/app-service/app-service-web-configure-tls-mutual-auth" ] } ] },
+    { "criterionId": "platform.event-source.endpoint.customization", "values": [ { "value": true, "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook-trigger?tabs=csharp#customize-the-http-endpoint" ] } ] },
+    { "criterionId": "platform.event-source.endpoint.tls", "values": [ { "value": true, "references": [ "https://docs.microsoft.com/azure/app-service/app-service-web-configure-tls-mutual-auth" ] } ] },
     { "criterionId": "platform.event-source.datastore.file-level", "values": [ { "value": "Azure Blob Storage", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-storage-blob-triggered-function" ] } ] },
     { "criterionId": "platform.event-source.datastore.database-mode", "values": [
       { "value": "Azure Cosmos DB", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-cosmos-db-triggered-function" ] },
       { "value": "Azure Tables", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-table" ] }
     ]
     },
-    { "criterionId": "platform.event-source.scheduler", "values": [ { "value": "true", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-scheduled-function" ] } ] },
+    { "criterionId": "platform.event-source.scheduler", "values": [ { "value": true, "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-scheduled-function" ] } ] },
     { "criterionId": "platform.event-source.messaging", "values": [
         { "value": "Azure Queue Storage", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-storage-queue-triggered-function" ] },
         { "value": "Azure Service Bus", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-bindings-service-bus" ] },
@@ -117,7 +117,7 @@
         { "value": "Powershell", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/durable/quickstart-powershell-vscode" ] }
       ]
     },
-    { "criterionId": "platform.function.orchestrator.control-flow-docs", "values": [ { "value": "true", "references": [ "https://docs.microsoft.com/azure/azure-functions/durable/durable-functions-code-constraints" ] } ] },
+    { "criterionId": "platform.function.orchestrator.control-flow-docs", "values": [ { "value": true, "references": [ "https://docs.microsoft.com/azure/azure-functions/durable/durable-functions-code-constraints" ] } ] },
     { "criterionId": "platform.function.orchestrator.quotas.execution-time", "values": [] },
     { "criterionId": "platform.function.orchestrator.quotas.io-size", "values": [] },
     { "criterionId": "platform.testing.functional", "values": [ { "value": "via external tools", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-test-a-function" ], "comment": "Only guidelines are provided" } ] },
@@ -135,7 +135,7 @@
       ]
     },
     { "criterionId": "platform.function.marketplaces", "values": [] },
-    { "criterionId": "platform.function.code-sample-repositories", "values": [ { "value": "true", "references": [ "https://github.com/Azure/Azure-Functions/wiki/Samples-and-content" ] } ] },
+    { "criterionId": "platform.function.code-sample-repositories", "values": [ { "value": true, "references": [ "https://github.com/Azure/Azure-Functions/wiki/Samples-and-content" ] } ] },
     { "criterionId": "platform.authentication", "values": [
         { "value": "Azure Active Directory", "references": [ "https://docs.microsoft.com/azure/app-service/configure-authentication-provider-aad" ] },
         { "value": "Facebook", "references": [ "https://docs.microsoft.com/azure/app-service/configure-authentication-provider-facebook" ] },

@@ -1,6 +1,7 @@
 [
   {
     "id": "apache-openwhisk",
+    "category": "FAAS",
     "logoLocator": "apache.openwhisk",
     "platformName": "Apache Openwhisk",
     "shortDescription": "Apache OpenWhisk is an open source FaaS platform from Apache Software Foundation.",
@@ -8,6 +9,7 @@
   },
   {
     "id": "aws-lambda",
+    "category": "FAAS",
     "logoLocator": "aws.lambda",
     "platformName": "AWS Lambda",
     "shortDescription": "AWS Lambda is a commerical FaaS platform offering from Amazon.",
@@ -15,6 +17,7 @@
   },
   {
     "id": "azure-functions",
+    "category": "FAAS",
     "logoLocator": "azure.functions",
     "platformName": "Microsoft Azure Functions",
     "shortDescription": "Azure Functions is a commercial FaaS platform offered by Microsoft.",
@@ -22,6 +25,7 @@
   },
   {
     "id": "fission",
+    "category": "FAAS",
     "logoLocator": "fission",
     "platformName": "Fission",
     "shortDescription": "Fission is an open source FaaS platform based on Kubernetes.",
@@ -29,6 +33,7 @@
   },
   {
     "id": "fn-project",
+    "category": "FAAS",
     "logoLocator": "fn-project",
     "platformName": "Fn Project",
     "shortDescription": "The Fn project is an open-source container-native FaaS platform that can run on cloud or on-premises.",
@@ -36,6 +41,7 @@
   },
   {
     "id": "google-cloud-functions",
+    "category": "FAAS",
     "logoLocator": "google.cloud-functions",
     "platformName": "Google Cloud Functions",
     "shortDescription": "Google Cloud Functions is a commercial FaaS platform by Google.",
@@ -43,6 +49,7 @@
   },
   {
     "id": "knative",
+    "category": "FAAS",
     "logoLocator": "knative",
     "platformName": "Knative",
     "shortDescription": "Knative Serving is an open source FaaS platform running on Kubernetes.",
@@ -50,6 +57,7 @@
   },
   {
     "id": "kubeless",
+    "category": "FAAS",
     "logoLocator": "kubeless",
     "platformName": "Kubeless",
     "shortDescription": "Kubeless is an open source, Kubernetes-native FaaS platform.",
@@ -57,6 +65,7 @@
   },
   {
     "id": "nuclio",
+    "category": "FAAS",
     "logoLocator": "nuclio",
     "platformName": "Nuclio",
     "shortDescription": "Nuclio is an open source serverless platform focusing on data-science based applications.",
@@ -64,6 +73,7 @@
   },
   {
     "id": "openfaas",
+    "category": "FAAS",
     "logoLocator": "openfaas",
     "platformName": "OpenFaaS",
     "shortDescription": "OpenFaaS is an open source FaaS platform working with a variety of container platforms.",
