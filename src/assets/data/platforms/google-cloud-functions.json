@@ -1,0 +1,123 @@
+{
+  "platformID": "google-cloud-functions",
+  "reviewedCriteria": [
+    { "criterionId": "platform.license", "values": [ { "value": "Google Cloud Platform Terms", "references": [ "https://cloud.google.com/terms" ] } ] },
+    { "criterionId": "platform.license.type", "values": [ { "value": "proprietary" } ] },
+    { "criterionId": "platform.installation.type", "values": [ { "value": "as-a-service", "references": [ "https://cloud.google.com/functions/docs/concepts/overview" ] } ] },
+    { "criterionId": "platform.installation.targets", "values": [] },
+    { "criterionId": "platform.code.availability", "values": [ { "value": "closed source", "references": [] } ] },
+    { "criterionId": "platform.code.repository", "values": [] },
+    { "criterionId": "platform.code.language", "values": [] },
+    { "criterionId": "platform.interface.types", "values": [
+      { "value": "CLI", "references": [ "https://cloud.google.com/sdk/gcloud/reference/functions/" ] },
+      { "value": "API", "references": [ "https://cloud.google.com/functions/docs/apis" ] },
+      { "value": "GUI", "references": [ "https://console.cloud.google.com/functions" ] }
+    ]
+    },
+    { "criterionId": "platform.interface.ops.app-mgmt", "values": [
+      { "value": "create", "references": [ "https://cloud.google.com/functions/docs/reference/rest" ] },
+      { "value": "retrieve", "references": [ "https://cloud.google.com/functions/docs/reference/rest" ] },
+      { "value": "update", "references": [ "https://cloud.google.com/functions/docs/reference/rest" ] },
+      { "value": "delete", "references": [ "https://cloud.google.com/functions/docs/reference/rest" ] }
+    ]
+    },
+    { "criterionId": "platform.interface.ops.platform-adm", "values": [] },
+    { "criterionId": "platform.github.stars", "values": [] },
+    { "criterionId": "platform.github.forks", "values": [] },
+    { "criterionId": "platform.github.issues", "values": [] },
+    { "criterionId": "platform.github.commits", "values": [] },
+    { "criterionId": "platform.github.contributors", "values": [] },
+    { "criterionId": "platform.stackoverflow.questions", "values": [ { "value": 12386, "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=google-cloud-functions" ] } ] },
+    { "criterionId": "platform.documentation", "values": [
+      { "value": "usage", "references": [ "https://cloud.google.com/functions/docs/" ] }
+    ]
+    },
+    { "criterionId": "platform.documentation.functions", "values": [
+      { "value": "development", "references": [ "https://cloud.google.com/functions/docs/" ] },
+      { "value": "deployment", "references": [ "https://cloud.google.com/functions/docs/" ] }
+    ]
+    },
+    { "criterionId": "platform.function.runtimes", "values": [
+      { "value": "Go", "references": [ "https://cloud.google.com/functions/docs/concepts/go-runtime" ] },
+      { "value": "Java", "references": [ "https://cloud.google.com/functions/docs/concepts/java-runtime" ] },
+      { "value": "Node.js", "references": [ "https://cloud.google.com/functions/docs/concepts/nodejs-10-runtime" ] },
+      { "value": "Python", "references": [ "https://cloud.google.com/functions/docs/concepts/python-runtime" ] }
+    ]
+    },
+    { "criterionId": "platform.function.runtime-customization", "values": [ { "value": false, "references": [] } ] },
+    { "criterionId": "platform.development.ide-support", "values": [] },
+    { "criterionId": "platform.function.client-libraries", "values": [
+      { "value": "Go", "references": [ "https://godoc.org/google.golang.org/api/cloudfunctions" ] },
+      { "value": "Java", "references": [ "https://github.com/googleapis/google-api-java-client-services#supported-google-apis" ] },
+      { "value": "Node.js", "references": [ "https://github.com/googleapis/google-api-nodejs-client" ] },
+      { "value": "Python", "references": [ "https://github.com/googleapis/google-api-python-client/blob/master/docs/dyn/index.md#cloudfunctions" ] },
+      { "value": "C#", "references": [ "https://developers.google.com/api-client-library/dotnet/apis/cloudfunctions/v1" ] },
+      { "value": "Ruby", "references": [ "https://googleapis.dev/ruby/google-api-client/latest/Google/Apis/CloudfunctionsV1.html" ] },
+      { "value": "Dart", "references": [ "https://pub.dev/packages/googleapis#available-google-apis" ] }
+    ]
+    },
+    { "criterionId": "platform.quotas.dep-pkg-size", "values": [ { "value": true, "references": [ "https://cloud.google.com/functions/quotas" ] } ] },
+    { "criterionId": "platform.quotas.execution-time", "values": [ { "value": true, "references": [ "https://cloud.google.com/functions/docs/concepts/exec#timeout" ] } ] },
+    { "criterionId": "platform.function.versioning", "values": [ { "value": "implicit", "references": [ "https://cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions#CloudFunction" ], "comment": "versionId is used only as output" } ] },
+    { "criterionId": "platform.function.versioning-app", "values": [ { "value": "implicit", "references": [ "https://cloud.google.com/sdk/gcloud/reference/projects" ], "comment": "In GCP resources are grouped by projects, but no details on explicit project versioning" } ] },
+    { "criterionId": "platform.event-source.endpoint.sync-call", "values": [
+      { "value": "HTTP", "references": [ "https://cloud.google.com/functions/docs/calling/direct", "https://cloud.google.com/functions/docs/calling/http" ] },
+      { "value": "RPC", "references": [ "https://cloud.google.com/functions/docs/reference/rpc/google.cloud.functions.v1#google.cloud.functions.v1.CloudFunctionsService"], "comment": "for testing" }
+    ]
+    },
+    { "criterionId": "platform.event-source.endpoint.async-call", "values": [] },
+    { "criterionId": "platform.event-source.endpoint.customization", "values": [ { "value": true, "references": [ "https://cloud.google.com/endpoints/docs/openapi/get-started-cloud-functions#endpoints_configure" ] } ] },
+    { "criterionId": "platform.event-source.endpoint.tls", "values": [ { "value": true, "references": [ "https://cloud.google.com/endpoints/docs/openapi/enabling-ssl" ] } ] },
+    { "criterionId": "platform.event-source.datastore.file-level", "values": [ { "value": "Google Cloud Storage", "references": [ "https://cloud.google.com/functions/docs/calling/storage" ] } ] },
+    { "criterionId": "platform.event-source.datastore.database-mode", "values": [
+      { "value": "Cloud Firestore", "references": [ "https://cloud.google.com/functions/docs/calling/cloud-firestore" ] },
+      { "value": "Firebase Realtime Database", "references": [ "https://cloud.google.com/functions/docs/calling/realtime-database" ] }
+    ]
+    },
+    { "criterionId": "platform.event-source.scheduler", "values": [ { "value": true, "references": [ "https://cloud.google.com/scheduler/docs/tut-pub-sub" ] } ] },
+    { "criterionId": "platform.event-source.messaging", "values": [ { "value": "Google Cloud Pub/Sub", "references": [ "https://cloud.google.com/functions/docs/calling/pubsub" ] } ] },
+    { "criterionId": "platform.event-source.streaming", "values": [ { "value": "Google Cloud Pub/Sub", "references": [ "https://cloud.google.com/functions/docs/calling/pubsub" ] } ] },
+    { "criterionId": "platform.event-source.special-purpose-service", "values": [
+      { "value": "Google Analytics for Firebase", "references": [ "https://cloud.google.com/functions/docs/calling/google-analytics-firebase" ] },
+      { "value": "Firebase Authentication", "references": [ "https://cloud.google.com/functions/docs/calling/firebase-auth" ] },
+      { "value": "Firebase Remote Config", "references": [ "https://cloud.google.com/functions/docs/calling/firebase-remote-config" ] },
+      { "value": "Cloud Logging", "references": [ "https://cloud.google.com/functions/docs/calling#cloud_logging" ] },
+      { "value": "Gmail", "references": [ "https://cloud.google.com/functions/docs/calling#gmail" ] }
+    ]
+    },
+    { "criterionId": "platform.event-source.integration", "values": [
+      { "value": "webhooks", "references": [ "https://cloud.google.com/functions/docs/calling" ] },
+      { "value": "messaging-based", "references": [ "https://cloud.google.com/functions/docs/calling/logging" ] }
+    ]
+    },
+    { "criterionId": "platform.function.orchestrator", "values": [] },
+    { "criterionId": "platform.function.orchestrator.workflow-definition-type", "values": [] },
+    { "criterionId": "platform.function.orchestrator.workflow-definition-languages", "values": [] },
+    { "criterionId": "platform.function.orchestrator.control-flow-docs", "values": [] },
+    { "criterionId": "platform.function.orchestrator.quotas.execution-time", "values": [] },
+    { "criterionId": "platform.function.orchestrator.quotas.io-size", "values": [] },
+    { "criterionId": "platform.testing.functional", "values": [ { "value": "via external tools", "references": [ "https://cloud.google.com/functions/docs/bestpractices/testing" ], "comment": "guidelines only" } ] },
+    { "criterionId": "platform.testing.non-functional", "values": [] },
+    { "criterionId": "platform.debugging.local", "values": [ { "value": "step-through debugging", "references": [ "https://cloud.google.com/functions/docs/functions-framework" ], "comment": "Using dedicated functions development framework" } ] },
+    { "criterionId": "platform.debugging.remote", "values": [] },
+    { "criterionId": "platform.observability.logging", "values": [
+      { "value": "Google Cloud Operations", "references": [ "https://cloud.google.com/functions/docs/monitoring/logging" ] }
+    ]
+    },
+    { "criterionId": "platform.observability.monitoring", "values": [
+      { "value": "Google Cloud Operations", "references": [ "https://cloud.google.com/functions/docs/monitoring/metrics" ] }
+    ]
+    },
+    { "criterionId": "platform.observability.integration", "values": [] },
+    { "criterionId": "platform.deployment-automation", "values": [ { "value": "Google Cloud Deployment Manager", "references": [ "https://cloud.google.com/deployment-manager/docs/configuration/supported-gcp-types" ] } ] },
+    { "criterionId": "platform.ci-cd", "values": [ { "value": "CloudBuild", "references": [ "https://cloud.google.com/functions/docs/testing/test-cicd" ] } ] },
+    { "criterionId": "platform.function.marketplaces", "values": [] },
+    { "criterionId": "platform.function.code-sample-repositories", "values": [ { "value": true, "references": [ "https://cloud.google.com/functions/docs/writing" ] } ] },
+    { "criterionId": "platform.authentication", "values": [ { "value": "Cloud IAM", "references": [ "https://cloud.google.com/functions/docs/securing/authenticating" ] } ] },
+    { "criterionId": "platform.access-control", "values": [
+      { "value": "resources", "references": [ "https://cloud.google.com/functions/docs/securing/managing-access-iam" ] },
+      { "value": "functions", "references": [ "https://cloud.google.com/functions/docs/securing/function-identity" ] }
+    ]
+    }
+  ]
+}
