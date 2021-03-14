@@ -54,7 +54,7 @@
     { "criterionId": "platform.function.client-libraries", "values": [] },
     { "criterionId": "platform.quotas.dep-pkg-size", "values": [ { "value": false, "references": [] } ] },
     { "criterionId": "platform.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
-    { "criterionId": "platform.function.versioning", "values": [ { "value": "explicit", "references": [ "https://github.com/knative/serving/blob/master/docs/spec/overview.md#revision" ], "comment": "Revision resource represents an immutable version of a function" } ] },
+    { "criterionId": "platform.function.versioning", "values": [ { "value": "dedicated mechanisms", "references": [ "https://github.com/knative/serving/blob/master/docs/spec/overview.md#revision" ], "comment": "Revision resource represents an immutable version of a function" } ] },
     { "criterionId": "platform.function.versioning-app", "values": [] },
     { "criterionId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://knative.dev/docs/serving/getting-started-knative-app"] } ] },
     { "criterionId": "platform.event-source.endpoint.async-call", "values": [] },

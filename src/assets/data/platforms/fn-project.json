@@ -68,7 +68,7 @@
     { "criterionId": "platform.function.client-libraries", "values": [ { "value": "Go", "references": [ "https://github.com/fnproject/fn_go" ] } ] },
     { "criterionId": "platform.quotas.dep-pkg-size", "values": [ { "value": false, "references": [] } ] },
     { "criterionId": "platform.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
-    { "criterionId": "platform.function.versioning", "values": [ { "value": "explicit", "references": [ "https://github.com/fnproject/docs/blob/master/fn/develop/func-file.md" ], "comment": "Version property is appended as a tag to the function image" } ] },
+    { "criterionId": "platform.function.versioning", "values": [ { "value": "dedicated mechanisms", "references": [ "https://github.com/fnproject/docs/blob/master/fn/develop/func-file.md" ], "comment": "Version property is appended as a tag to the function image" } ] },
     { "criterionId": "platform.function.versioning-app", "values": [ { "value": "implicit", "references": [ "https://github.com/fnproject/docs/blob/master/fn/develop/apps.md#applications" ], "comment": "" } ] },
     { "criterionId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://github.com/fnproject/docs/blob/master/fn/develop/triggers.md"] } ] },
     { "criterionId": "platform.event-source.endpoint.async-call", "values": [] },
