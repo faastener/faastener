@@ -1,0 +1,6 @@
+<mat-icon>text_snippet</mat-icon>
+<span class="child-grouping__criterion-title"><strong>Criterion: {{criterion.name}}</strong></span>
+<p class="child-grouping__criterion-description"> {{criterion.description }}</p>
+<span *ngIf="!criterionInstance" class="child-grouping__criterion-examples">
+  <span class="text-muted"> Examples: {{criterion.exampleValues | json }} </span>
+</span>

@@ -9,7 +9,7 @@ import {DataService} from '../core/services/data.service';
   `
 })
 export class HomeComponent {
-  supportedPlatforms$ = this.dataService.getPlatforms();
+  supportedPlatforms$ = this.dataService.getTechnologies();
 
   constructor(private dataService: DataService) {
   }

@@ -1,0 +1,18 @@
+<div class="child-grouping" *ngIf="groupings.length">
+
+  <div *ngFor="let g of groupings" [class.child-grouping__criterion--nested]="subGroups">
+    <div *ngIf="subGroups">
+      <div class="child-grouping__title">Grouping: {{g.name}}</div>
+      <div class="child-grouping__path text-muted">{{parent + ' > ' + g.name}}</div>
+    </div>
+
+    <div class="child-grouping__criterion" *ngFor="let criterion of g.criteria">
+      <app-criterion [criterion]="criterion"></app-criterion>
+    </div>
+    <app-child-grouping *ngIf="g.groupings?.size"
+                        [groupings]="g.groupings | setToArray"
+                        [subGroups]="true" [parent]="parent + ' > ' + g.name">
+    </app-child-grouping>
+  </div>
+</div>
+

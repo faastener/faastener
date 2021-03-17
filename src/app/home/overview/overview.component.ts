@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Observable} from 'rxjs';
-import {FaasPlatform} from '../../shared/interfaces/faas-platform';
+import {Technology} from '../../shared/interfaces/technology';
 
 @Component({
   selector: 'app-overview',
@@ -8,7 +8,7 @@ import {FaasPlatform} from '../../shared/interfaces/faas-platform';
   styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent {
-  @Input() supportedPlatforms$: Observable<FaasPlatform[]>;
+  @Input() supportedPlatforms$: Observable<Technology[]>;
 
   constructor() {
   }

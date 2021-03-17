@@ -17,6 +17,11 @@ import {MatTableModule} from '@angular/material/table';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @NgModule({
   imports: [
@@ -35,9 +40,14 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatSelectModule,
     MatChipsModule,
     MatTableModule,
+    MatTabsModule,
     MatTooltipModule,
     MatMenuModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCheckboxModule,
+    MatSlideToggleModule,
+    MatTreeModule,
+    MatButtonToggleModule
   ],
   exports: [
     MatButtonModule,
@@ -55,9 +65,14 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatSelectModule,
     MatChipsModule,
     MatTableModule,
+    MatTabsModule,
     MatTooltipModule,
     MatMenuModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCheckboxModule,
+    MatSlideToggleModule,
+    MatTreeModule,
+    MatButtonToggleModule
   ]
 })
 export class MaterialModule {

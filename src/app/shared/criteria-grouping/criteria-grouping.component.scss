@@ -1,0 +1,9 @@
+
+.groupings {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.groupings__card {
+  flex: 1 1 min-content;
+}

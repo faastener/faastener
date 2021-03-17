@@ -1,26 +1,15 @@
-<section class="platforms-list g__page-section" *ngIf="supportedPlatforms$ | async as platforms">
-  <div class="platforms-list__controls">
-    <h1 class="g__page-section-header platforms-list__header">Platform Browser</h1>
-    <div class="g__spacer"></div>
-    <button class="platforms-list__settings" mat-icon-button aria-label="settings">
-      <mat-icon>settings</mat-icon>
-    </button>
-  </div>
-  <p class="g__page-section__description">
-    Browse through the list of available platforms, for a detailed view click on the corresponding platform.
-  </p>
-
+<section class="platforms-list" *ngIf="dataSource.connect() | async as platforms">
   <form class="platforms-list__search">
     <mat-form-field appearance="fill" class="platforms-list__search-field">
       <mat-label>Filter by name</mat-label>
-      <input matInput placeholder="Ex. AWS Lambda..." aria-label="platform name" (keyup)="onFilterChange($event)">
+      <input #techName matInput placeholder="Ex. AWS Lambda..." aria-label="platform name" (input)="onNameChange(techName.value)">
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
   </form>
 
   <div class="platforms-list__cards">
     <ng-container *ngFor="let p of platforms">
-      <mat-card class="platforms-list__card text-center">
+      <mat-card class="platforms-list__card text-center" [routerLink]="['/platforms', p.id]">
         <img class="platforms-list__logo" src="{{p.logoLocation}}" alt="{{p.platformName}}"/>
         <!--<h2 class="platform-section__card-title"> {{p.platformName}} </h2>-->
 
@@ -39,8 +28,12 @@
     </ng-container>
   </div>
 
-  <mat-paginator class="platforms-list__paginator" [length]="platforms.length" [pageSize]="5"
-                 [pageSizeOptions]="[5, 10]" [pageIndex]="0">
+  <mat-paginator class="platforms-list__paginator"
+                 [length]="dataSource.totalInputSize"
+                 [pageSize]="dataSource.pageSize"
+                 [pageSizeOptions]="[5, 10]"
+                 [pageIndex]="dataSource.currentIndex"
+                 (page)="dataSource.fetch($event)">
   </mat-paginator>
 
 

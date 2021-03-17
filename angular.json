@@ -26,7 +26,9 @@
             "styles": [
               "src/app/_scss/app.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/randomcolor/randomColor.js"
+            ]
           },
           "configurations": {
             "production": {

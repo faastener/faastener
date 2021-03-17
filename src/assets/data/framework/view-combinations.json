@@ -1,0 +1,20 @@
+[
+  {
+    "id": "view-combination:faas:default",
+    "name": "Managerial-DevOps",
+    "description": "A combination of Managerial and DevOps view on FaaS platforms classification.",
+    "viewIds": [
+      "view:faas:managerial",
+      "view:faas:devops"
+    ],
+    "default": true
+  },
+  {
+    "id": "view-combination:faas:flattened",
+    "name": "Flattened",
+    "description": "A flattened classification of FaaS platforms.",
+    "viewIds": [
+      "view:faas:flat"
+    ]
+  }
+]

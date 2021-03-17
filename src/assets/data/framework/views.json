@@ -1,31 +1,53 @@
 [
   {
-    "id": "faas:managerial",
+    "id": "view:faas:managerial",
     "name": "Managerial View",
     "description": "This view combines higher-level classification criteria focusing on general platform properties such as licence or installation type.",
-    "groupings": [
-      "licensing",
-      "installation",
-      "source-code",
-      "interface",
-      "community",
-      "documentation"
+    "groupingIds": [
+      "grouping:licensing",
+      "grouping:installation",
+      "grouping:source-code",
+      "grouping:interface",
+      "grouping:community",
+      "grouping:documentation"
     ]
   },
   {
-    "id": "faas:devops",
+    "id": "view:faas:devops",
     "name": "DevOps View",
     "description": "This view combines lower-level classification criteria focusing on technical properties such as supported runtimes or event sources.",
-    "groupings": [
-      "development",
-      "versioning",
-      "event-sources",
-      "function-orchestration",
-      "testing-debugging",
-      "observability",
-      "app-delivery",
-      "code-reuse",
-      "access-mgmt"
+    "groupingIds": [
+      "grouping:development",
+      "grouping:versioning",
+      "grouping:event-sources",
+      "grouping:function-orchestration",
+      "grouping:testing-debugging",
+      "grouping:observability",
+      "grouping:app-delivery",
+      "grouping:code-reuse",
+      "grouping:access-mgmt"
+    ]
+  },
+  {
+    "id": "view:faas:flat",
+    "name": "Flat View",
+    "description": "This view combines all FaaS-related criteria.",
+    "groupingIds": [
+      "grouping:licensing",
+      "grouping:installation",
+      "grouping:source-code",
+      "grouping:interface",
+      "grouping:community",
+      "grouping:documentation",
+      "grouping:development",
+      "grouping:versioning",
+      "grouping:event-sources",
+      "grouping:function-orchestration",
+      "grouping:testing-debugging",
+      "grouping:observability",
+      "grouping:app-delivery",
+      "grouping:code-reuse",
+      "grouping:access-mgmt"
     ]
   }
 ]

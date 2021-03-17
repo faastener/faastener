@@ -1,6 +1,10 @@
 @import "../theming/themes";
 @import "variables";
 
+html {
+  scroll-behavior: smooth;
+}
+
 .root {
   margin: 0;
   padding: 0;

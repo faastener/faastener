@@ -1,0 +1,41 @@
+@import "../../_scss/shared";
+
+.technology {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.technology__back-button-toolbar {
+  padding: 0;
+  margin-top: 3px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  display: flex;
+  flex-flow: row nowrap;
+  box-shadow: 0 0 1px rgba(0, 0, 0, .3);
+}
+
+.technology__toolbar-button {
+  height: 100%;
+  width: 30%;
+
+  &:focus{
+    outline: none;
+  }
+}
+
+.technology__logo {
+  max-height: 5rem;
+  max-width: 10rem;
+  margin: 0 .5rem;
+  border: none;
+  align-self: center;
+}
+
+.technology__header {
+  margin-top: 2rem;
+  align-self: center;
+}

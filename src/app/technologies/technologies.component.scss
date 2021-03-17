@@ -1,0 +1,33 @@
+@import "../_scss/shared";
+
+.platforms-main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  height: 100%;
+  @include bg-grey;
+  padding-top: 1.5rem;
+  // background: url(../../assets/images/bg-pattern.png) repeat;
+}
+
+.platforms__controls {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90%;
+}
+
+.platforms__header {
+  flex: 1 1 auto;
+}
+
+.platforms__settings {
+  @include nav_item;
+}
+
+@media screen and (min-width: 1100px) {
+  .platforms__controls {
+    max-width: 1050px;
+  }
+}

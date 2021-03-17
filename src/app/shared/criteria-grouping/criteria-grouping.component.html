@@ -1,0 +1,54 @@
+<!--<ul *ngIf="groupings.size">
+  <li *ngFor="let g of groupings">
+    <div>
+      <span>{{g.name}}</span>
+      <br>
+      <span *ngIf="g.criteria && g.criteria.size > 0">Criteria</span><br>
+      <ng-container *ngFor="let c of g.criteria">
+        <span> <strong>{{c.name }}</strong></span>
+        <br>
+        <span> {{c.description }}</span>
+        <br>
+        <span> {{c.exampleValues }}</span>
+        <br>
+      </ng-container>
+
+      <app-criteria-grouping *ngIf="g.groupings?.size" [data]="g.groupings"></app-criteria-grouping>
+    </div>
+  </li>
+</ul>-->
+
+<ng-container *ngIf="groupings.size">
+<div class="groupings">
+
+
+  <mat-card *ngFor="let g of groupings" class="groupings__card">
+    <mat-card-header>
+      <mat-card-title>{{g.name}}</mat-card-title>
+      <!--<mat-card-subtitle>{{g.locator}}</mat-card-subtitle>-->
+    </mat-card-header>
+    <mat-card-content>
+
+      <ng-container *ngFor="let c of g.criteria">
+        <mat-expansion-panel class="mat-elevation-z0">
+          <mat-expansion-panel-header style="position: absolute; right: 0px; top: 0px;"></mat-expansion-panel-header>
+          <span> <strong>{{c.name }}</strong></span>
+          <br>
+          <span> {{c.description }}</span>
+          <br>
+          <span> {{c.exampleValues }}</span>
+          <br>
+
+        </mat-expansion-panel>
+      </ng-container>
+
+      <!--<app-criteria-grouping *ngIf="g.groupings?.size" [data]="g.groupings"></app-criteria-grouping>-->
+
+    </mat-card-content>
+  </mat-card>
+
+</div>
+
+</ng-container>
+
+

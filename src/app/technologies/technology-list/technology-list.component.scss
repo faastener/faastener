@@ -4,23 +4,6 @@
   margin-bottom: 1rem;
 }
 
-.platforms-list__controls {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.platforms-list__header {
-  margin-left: 1.5rem;
-  flex: 0 0 max-content;
-}
-
-.platforms-list__settings {
-  @include nav_item;
-  margin-right: 1rem;
-}
-
 .platforms-list__search {
   display: flex;
   justify-content: center;
@@ -46,8 +29,9 @@
   justify-content: space-evenly;
 
   &:hover {
-    border-left: .2rem solid #b5ca8f;
+    border-left: .2rem solid $salad-600;
     box-shadow: 0 10px 16px rgba(0, 0, 0, 0.2) !important;
+    cursor: pointer;
   }
 }
 

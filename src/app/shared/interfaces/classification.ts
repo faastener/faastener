@@ -1,11 +1,23 @@
 /**
- * An interface representing a generic classification framework, which comprises one or more {@link ClassificationView}
+ * An interface representing a generic classification framework, which comprises one or more {@link ClassificationViewCombination}
+ * Different combinations of classification views can be used to flexibly switch between different representations.
  */
 export interface ClassificationFramework {
   id: string;
   name: string;
   description?: string;
+  viewCombinations: Set<ClassificationViewCombination>;
+}
+
+/**
+ * An interface representing a combination of classifications view which comprises one or more {@link ClassificationView}
+ */
+export interface ClassificationViewCombination {
+  id: string;
+  name: string;
+  description: string;
   views: Set<ClassificationView>;
+  default?: boolean;
 }
 
 /**
@@ -41,7 +53,6 @@ export interface ClassificationCriterion {
   name: string;
   description: string;
   exampleValues?: Set<string>;
-  values?: Set<string>;
 }
 
 /**
@@ -59,7 +70,7 @@ export interface CriterionInstance {
  * An interface representing a generic data value for the given {@link CriterionInstance}.
  */
 export class CriterionValue {
-  value: string;
+  value: string | number | boolean;
   references?: string[];
   comment?: string;
 }

@@ -1,21 +1,23 @@
 import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {PageNotFoundComponent} from './shared/page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
-  {path: 'platforms', loadChildren: () => import(`src/app/platforms/platforms.module`).then(m => m.PlatformsModule)},
-  /*{path: 'search', loadChildren: () => import(`src/app/search-page/search-page.module`).then(m => m.SearchPageModule)},*/
-  /*{
-    path: 'explorer/:platformId',
-    loadChildren: () => import(`src/app/explorer-page/platform-explorer.module`).then(m => m.PlatformExplorerModule)
-  },
-  {path: 'explorer', loadChildren: () => import(`src/app/explorer-page/platform-explorer.module`).then(m => m.PlatformExplorerModule)},*/
   {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'platforms', loadChildren: () => import(`src/app/technologies/technologies.module`).then(m => m.TechnologiesModule)},
+  {path: 'info', loadChildren: () => import(`src/app/information/information.module`).then(m => m.InformationModule)},
   {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
+  imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      {
+        preloadingStrategy: PreloadAllModules
+      }
+    )
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

@@ -3,12 +3,12 @@ import {CommonModule} from '@angular/common';
 import {EnsureModuleLoadedOnceGuard} from './ensure-module-loaded-once.guard';
 import {DataService} from './services/data.service';
 import {LogoLocatorService} from './services/logo-locator.service';
-
+import {RandomColorService} from './services/random-color.service';
 
 @NgModule({
   declarations: [],
   imports: [CommonModule],
-  providers: [DataService, LogoLocatorService]
+  providers: [DataService, LogoLocatorService, RandomColorService]
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {
 
