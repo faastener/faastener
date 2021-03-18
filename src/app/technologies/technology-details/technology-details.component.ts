@@ -26,6 +26,9 @@ export class TechnologyDetailsComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.route.paramMap.subscribe(params => {
         const id: string = params.get('platformId');
+        const type: string = params.get('type');
+        console.log(type);
+
         this.platform$ = this.dataService.getTechnology(id, true);
       })
     );

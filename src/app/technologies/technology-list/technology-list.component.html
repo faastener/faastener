@@ -9,7 +9,7 @@
 
   <div class="platforms-list__cards">
     <ng-container *ngFor="let p of platforms">
-      <mat-card class="platforms-list__card text-center" [routerLink]="['/platforms', p.id]">
+      <mat-card class="platforms-list__card text-center" [routerLink]="['./', p.id]">
         <img class="platforms-list__logo" src="{{p.logoLocation}}" alt="{{p.platformName}}"/>
         <!--<h2 class="platform-section__card-title"> {{p.platformName}} </h2>-->
 
