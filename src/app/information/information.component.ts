@@ -20,7 +20,4 @@ export class InformationComponent {
 
   constructor(private dataService: DataService) {
   }
-
-  private frameworks$: Observable<ClassificationFramework> = this.dataService.getFramework("framework:faas");
-
 }

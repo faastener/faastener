@@ -3,10 +3,10 @@
     <h1 class="g__page-section-header platforms__header">Platform Browser</h1>
     <div class="g__spacer"></div>
     <mat-button-toggle-group [(ngModel)]="browsingMode">
-      <mat-button-toggle class="platforms__settings" value="list" aria-label="Simple browsing" matTooltip="Simple browsing mode">
+      <mat-button-toggle class="platforms__settings" value="list" aria-label="simple view mode" matTooltip="Simple View">
         <mat-icon>list</mat-icon>
       </mat-button-toggle>
-      <mat-button-toggle class="platforms__settings" value="filter" aria-label="Advanced filtering mode" matTooltip="Advanced filtering mode">
+      <mat-button-toggle class="platforms__settings" value="filter" aria-label="detailed view mode" matTooltip="Detailed View">
         <mat-icon>filter_alt</mat-icon>
       </mat-button-toggle>
     </mat-button-toggle-group>
@@ -17,8 +17,6 @@
   </p>
 
   <app-technology-list *ngIf="browsingMode === 'list'"  [dataSource]="dataSource"></app-technology-list>
-
-
-  <router-outlet></router-outlet>
+  <app-technology-table *ngIf="browsingMode === 'filter'"  [dataSource]="dataSource"></app-technology-table>
 </div>
 

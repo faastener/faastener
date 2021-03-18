@@ -12,40 +12,38 @@ import {ClassificationFramework, ClassificationViewCombination} from '../../shar
   styleUrls: ['./technology-details.component.scss']
 })
 export class TechnologyDetailsComponent implements OnInit, OnDestroy {
-  private readonly defaultFrameworkId = 'framework:faas';
-  private techDetailsSubscription: Subscription;
-  private frameworkSubscription: Subscription;
+  private readonly defaultFrameworkId = 'fw-faas';
+  private subscriptions: Subscription[] = [];
 
   framework: ClassificationFramework;
   platform$: Observable<Technology>;
   selectedViewCombination: ClassificationViewCombination;
 
-  constructor(
-    private route: ActivatedRoute,
-    private dataService: DataService,
-    private viewportScroller: ViewportScroller
-  ) {
+  constructor(private route: ActivatedRoute, private dataService: DataService, private viewportScroller: ViewportScroller) {
   }
 
   ngOnInit(): void {
-    this.techDetailsSubscription = this.route.paramMap.subscribe(params => {
-      const id: string = params.get('platformId');
-      this.platform$ = this.dataService.getTechnology(id, true);
-    });
-    this.frameworkSubscription = this.dataService
-      .getFramework(this.defaultFrameworkId)
-      .subscribe(
-        data => {
-          this.framework = data;
-          data.viewCombinations.forEach(vc => vc.default ? this.selectedViewCombination = vc : false);
-        },
-        error => console.error(error)
-      );
+    this.subscriptions.push(
+      this.route.paramMap.subscribe(params => {
+        const id: string = params.get('platformId');
+        this.platform$ = this.dataService.getTechnology(id, true);
+      })
+    );
+
+    this.subscriptions.push(
+      this.dataService.getFramework(this.defaultFrameworkId)
+        .subscribe(
+          data => {
+            this.framework = data;
+            data.viewCombinations.forEach(vc => vc.default ? this.selectedViewCombination = vc : false);
+          },
+          error => console.error(error)
+        )
+    );
   }
 
   ngOnDestroy(): void {
-    this.techDetailsSubscription.unsubscribe();
-    this.frameworkSubscription.unsubscribe();
+    this.subscriptions.forEach(s => s.unsubscribe());
   }
 
   onScrollToTop(platformId: string) {

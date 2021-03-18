@@ -11,7 +11,8 @@ import {ViewportScroller} from '@angular/common';
 })
 export class FrameworkComponent implements OnInit, OnDestroy {
   subscription: Subscription;
-  framework: ClassificationFramework;
+  frameworks: ClassificationFramework[];
+  defaultFramework: ClassificationFramework;
   defaultViewCombination: ClassificationViewCombination;
   viewToggles: Map<string, boolean> = new Map<string, boolean>();
   selectedGrouping: Map<string, CriteriaGrouping> = new Map<string, CriteriaGrouping>();
@@ -21,11 +22,14 @@ export class FrameworkComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscription = this.route.data.subscribe(data => {
-      this.framework = data['resolvedData'];
-      for (let vc of this.framework.viewCombinations) {
-        if (vc.default) {
-          this.defaultViewCombination = vc;
-          break;
+      this.frameworks = data['resolvedData'];
+      if (this.frameworks.length) {
+        this.defaultFramework = this.frameworks[0];
+        for (let vc of this.defaultFramework.viewCombinations) {
+          if (vc.default) {
+            this.defaultViewCombination = vc;
+            break;
+          }
         }
       }
       // Initialize default view configuration
@@ -38,7 +42,9 @@ export class FrameworkComponent implements OnInit, OnDestroy {
       this.selectedGrouping.set(viewId, undefined);
     } else {
       this.selectedGrouping.set(viewId, grouping);
-      setTimeout(()=>{ this.viewportScroller.scrollToAnchor(grouping.id); }, 50);
+      setTimeout(() => {
+        this.viewportScroller.scrollToAnchor(grouping.id);
+      }, 50);
     }
   }
 

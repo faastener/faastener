@@ -10,7 +10,7 @@ import {
   ClassificationViewCombination,
   CriteriaGrouping
 } from '../../shared/interfaces/classification';
-import {CategoryType, Technology, TechnologyDossier} from '../../shared/interfaces/technology';
+import {Technology, TechnologyCategory, TechnologyDossier} from '../../shared/interfaces/technology';
 import {
   ClassificationFrameworkResponse,
   ClassificationViewCombinationResponse,
@@ -143,6 +143,7 @@ export class DataService {
         frameworks.forEach(f => {
           let framework: ClassificationFramework = {
             id: f.id,
+            techCategory: f.techCategory,
             name: f.name,
             description: f.description,
             viewCombinations: new Set<ClassificationViewCombination>()
@@ -235,7 +236,7 @@ export class DataService {
       );
   }
 
-  getFilterConfigurations(category: CategoryType): Observable<TechnologyFilterConfiguration[]> {
+  getFilterConfigurations(category: TechnologyCategory): Observable<TechnologyFilterConfiguration[]> {
     return this.http.get<TechnologyFilterConfiguration[]>(filterConfigurationsPath)
       .pipe(
         map((conf) => conf.filter(c => c.technologyCategory === category)),
@@ -244,7 +245,7 @@ export class DataService {
       );
   }
 
-  getFilterConfiguration(category: CategoryType, filterName: string): Observable<TechnologyFilterConfiguration[]> {
+  getFilterConfiguration(category: TechnologyCategory, filterName: string): Observable<TechnologyFilterConfiguration[]> {
     return this.http.get<TechnologyFilterConfiguration[]>(filterConfigurationsPath)
       .pipe(
         map((conf) => conf.filter(c => c.technologyCategory === category && c.name === filterName)),

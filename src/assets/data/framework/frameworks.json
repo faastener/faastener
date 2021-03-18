@@ -1,7 +1,8 @@
 [
   {
-    "id": "framework:faas",
+    "id": "fw-faas",
     "name": "A Framework for Classifying Function-as-a-Service Platforms",
+    "techCategory": "FAAS",
     "description": "A framework for classifying Function-as-a-Service platforms which encompasses 56 review criteria. By default, the criteria are grouped into two views: a higher-level, managerial view and a lower-level, DevOps view.",
     "viewCombinationIds": [
       "view-combination:faas:default",

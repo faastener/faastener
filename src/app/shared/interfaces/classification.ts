@@ -2,9 +2,12 @@
  * An interface representing a generic classification framework, which comprises one or more {@link ClassificationViewCombination}
  * Different combinations of classification views can be used to flexibly switch between different representations.
  */
+import {TechnologyCategory} from './technology';
+
 export interface ClassificationFramework {
   id: string;
   name: string;
+  techCategory: TechnologyCategory;
   description?: string;
   viewCombinations: Set<ClassificationViewCombination>;
 }

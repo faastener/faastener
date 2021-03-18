@@ -8,7 +8,7 @@ import {CriterionInstance} from './classification';
  */
 export interface Technology {
   id: string;
-  category: CategoryType;
+  category: TechnologyCategory;
   logoLocator: string;
   logoLocation?: string;
   platformName: string;
@@ -26,6 +26,6 @@ export interface TechnologyDossier {
   reviewedCriteria: Set<CriterionInstance>;
 }
 
-export enum CategoryType {
+export enum TechnologyCategory {
   FAAS = "FAAS"
 }

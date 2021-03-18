@@ -1,7 +1,8 @@
 <nav mat-tab-nav-bar class="info-tabs" color="#ffffff">
-  <a class="info-tabs--link" mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.location" routerLinkActive #rla="routerLinkActive"
-     [active]="rla.isActive">
-    <!--<mat-icon>{{ link.icon }}</mat-icon>-->
+  <a mat-tab-link *ngFor="let link of navLinks"
+     [routerLink]="link.location"
+     routerLinkActive #rla="routerLinkActive" [active]="rla.isActive"
+     class="info-tabs--link">
     <span>{{ link.label }}</span>
   </a>
 </nav>
