@@ -6,7 +6,7 @@ import {TechnologyCategory} from './technology';
 export interface ClassificationFrameworkResponse {
   id: string;
   name: string;
-  techCategory: TechnologyCategory;
+  technologyCategory: TechnologyCategory;
   description?: string;
   viewCombinationIds: Set<string>;
 }

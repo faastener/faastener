@@ -143,7 +143,7 @@ export class DataService {
         frameworks.forEach(f => {
           let framework: ClassificationFramework = {
             id: f.id,
-            techCategory: f.techCategory,
+            technologyCategory: f.technologyCategory,
             name: f.name,
             description: f.description,
             viewCombinations: new Set<ClassificationViewCombination>()
@@ -168,6 +168,14 @@ export class DataService {
   getFramework(frameworkId: string): Observable<ClassificationFramework> {
     return this.getFrameworks().pipe(
       map((f) => f.find(item => item.id === frameworkId)),
+      shareReplay(1),
+      catchError(DataService.handleError)
+    );
+  }
+
+  getFrameworkForTechnologyType(category: string): Observable<ClassificationFramework> {
+    return this.getFrameworks().pipe(
+      map((f) => f.find(item => item.technologyCategory.toLocaleLowerCase() === category.toLocaleLowerCase())),
       shareReplay(1),
       catchError(DataService.handleError)
     );

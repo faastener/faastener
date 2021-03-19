@@ -12,7 +12,6 @@ import {ClassificationFramework, ClassificationViewCombination} from '../../shar
   styleUrls: ['./technology-details.component.scss']
 })
 export class TechnologyDetailsComponent implements OnInit, OnDestroy {
-  private readonly defaultFrameworkId = 'fw-faas';
   private subscriptions: Subscription[] = [];
 
   framework: ClassificationFramework;
@@ -23,26 +22,29 @@ export class TechnologyDetailsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    let id: string;
+    let category: string;
+
     this.subscriptions.push(
       this.route.paramMap.subscribe(params => {
-        const id: string = params.get('platformId');
-        const type: string = params.get('type');
-        console.log(type);
-
-        this.platform$ = this.dataService.getTechnology(id, true);
+        id = params.get('platformId');
+        category = params.get('category');
       })
     );
 
-    this.subscriptions.push(
-      this.dataService.getFramework(this.defaultFrameworkId)
-        .subscribe(
-          data => {
+    if (id) {
+      this.platform$ = this.dataService.getTechnology(id, true);
+    }
+
+    if (category) {
+      this.subscriptions.push(
+        this.dataService.getFrameworkForTechnologyType(category).subscribe(data => {
             this.framework = data;
             data.viewCombinations.forEach(vc => vc.default ? this.selectedViewCombination = vc : false);
-          },
-          error => console.error(error)
+          }
         )
-    );
+      );
+    }
   }
 
   ngOnDestroy(): void {

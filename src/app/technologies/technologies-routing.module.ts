@@ -6,8 +6,8 @@ import {TechnologiesResolver} from './technologies-resolver.service';
 
 const platformRoutes: Routes = [
   {path: '', redirectTo: 'faas', pathMatch: 'full'}, // default technology type
-  {path: ':type', component: TechnologiesComponent, resolve: {resolvedData: TechnologiesResolver}},
-  {path: ':type/:platformId', component: TechnologyDetailsComponent}
+  {path: ':category', component: TechnologiesComponent, resolve: {resolvedData: TechnologiesResolver}},
+  {path: ':category/:platformId', component: TechnologyDetailsComponent}
 ];
 
 @NgModule({
