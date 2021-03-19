@@ -22,6 +22,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatSliderModule} from '@angular/material/slider';
 
 @NgModule({
   imports: [
@@ -47,7 +49,9 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatCheckboxModule,
     MatSlideToggleModule,
     MatTreeModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatBottomSheetModule,
+    MatSliderModule
   ],
   exports: [
     MatButtonModule,
@@ -72,7 +76,9 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatCheckboxModule,
     MatSlideToggleModule,
     MatTreeModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatBottomSheetModule,
+    MatSliderModule
   ]
 })
 export class MaterialModule {

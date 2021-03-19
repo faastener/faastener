@@ -1,5 +1,5 @@
 /**
- * An interface representing a filter configuration for a given technology {@link CategoryType}.
+ * An interface representing a filter configuration for a given technology {@link TechnologyCategory}.
  * This configuration defines which criteria have dedicated filter elements in the UI.
  */
 export interface TechnologyFilterConfiguration {
@@ -15,7 +15,8 @@ export interface TechnologyFilterConfiguration {
  */
 export interface CriterionFilterConfiguration {
   criterionId: string;
-  filterSettings: CriterionFilterSettings
+  filterSettings: CriterionFilterSettings;
+  filterValues?: [number, number] | string[];
 }
 
 /**

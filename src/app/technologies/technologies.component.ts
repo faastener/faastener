@@ -4,6 +4,8 @@ import {Subscription} from 'rxjs';
 import {Technology} from '../shared/interfaces/technology';
 import {ActivatedRoute} from '@angular/router';
 import {TechnologyDataSource} from '../shared/datasource';
+import {ClassificationFramework} from '../shared/interfaces/classification';
+import {TechnologyFilterConfiguration} from '../shared/interfaces/filtering';
 
 @Component({
   selector: 'app-technologies',
@@ -12,22 +14,29 @@ import {TechnologyDataSource} from '../shared/datasource';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TechnologiesComponent implements OnInit, OnDestroy {
-  subscription: Subscription;
+  subscriptions: Subscription[] = [];
   technologies: Technology[];
+  framework: ClassificationFramework;
+  filterConfiguration: TechnologyFilterConfiguration;
   dataSource: TechnologyDataSource;
-  browsingMode: string = 'list';
+  browsingMode: string = 'explore';
 
   constructor(private dataService: DataService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    this.subscription = this.route.data.subscribe(data => {
-      this.technologies = data['resolvedData'];
-      this.dataSource = new TechnologyDataSource(this.technologies, {property: 'platformName', order: 'asc'}, undefined);
-    });
+    this.subscriptions.push(
+      this.route.data.subscribe(data => {
+        this.technologies = data['resolvedData'][0];
+        this.dataSource = new TechnologyDataSource(this.technologies, {property: 'platformName', order: 'asc'}, undefined);
+
+        this.framework = data['resolvedData'][1];
+        this.filterConfiguration = data['resolvedData'][2];
+      })
+    );
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.subscriptions.forEach(s => s.unsubscribe());
   }
 }

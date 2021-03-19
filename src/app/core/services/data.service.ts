@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {combineLatest, Observable, throwError} from 'rxjs';
-import {catchError, map, shareReplay} from 'rxjs/operators';
+import {catchError, map, mergeMap, shareReplay, toArray} from 'rxjs/operators';
 import {LogoLocatorService} from './logo-locator.service';
 import {
   ClassificationCriterion,
@@ -181,10 +181,6 @@ export class DataService {
     );
   }
 
-  getFrameworkQuery(frameworkId: string): Observable<ClassificationFramework> {
-    return null;
-  }
-
   getTechnologies(withDossier = false): Observable<Technology[]> {
     if (withDossier) {
       return this.http.get<Technology[]>(supportedPlatformsPath)
@@ -219,20 +215,29 @@ export class DataService {
     }
   }
 
+  getTechnologiesOfCategory(category: string, withDossier = false): Observable<Technology[]> {
+    return this.getTechnologies(withDossier).pipe(
+      map((techs) =>
+        techs.filter(t => t.category.toLocaleLowerCase() === category.toLocaleLowerCase())
+      ),
+      shareReplay(1),
+      catchError(DataService.handleError)
+    );
+  }
+
   getTechnology(id: string, withDossier = false): Observable<Technology> {
-    return this.getTechnologies()
-      .pipe(
-        map((techs) => {
-            let t: Technology = techs.find(t => t.id === id);
-            if (t && withDossier) {
-              this.getDossier(t.id).subscribe({next: value => value ? t.dossier = value : false, error: catchError});
-            }
-            return t;
+    return this.getTechnologies().pipe(
+      map((techs) => {
+          let t: Technology = techs.find(t => t.id === id);
+          if (t && withDossier) {
+            this.getDossier(t.id).subscribe({next: value => value ? t.dossier = value : false, error: catchError});
           }
-        ),
-        shareReplay(1),
-        catchError(DataService.handleError)
-      );
+          return t;
+        }
+      ),
+      shareReplay(1),
+      catchError(DataService.handleError)
+    );
   }
 
   getDossier(technologyId: string): Observable<TechnologyDossier> {
@@ -244,22 +249,54 @@ export class DataService {
       );
   }
 
-  getFilterConfigurations(category: TechnologyCategory): Observable<TechnologyFilterConfiguration[]> {
-    return this.http.get<TechnologyFilterConfiguration[]>(filterConfigurationsPath)
-      .pipe(
-        map((conf) => conf.filter(c => c.technologyCategory === category)),
-        catchError(DataService.handleError),
-        shareReplay(1)
-      );
+  getDossiersOfCategory(category: string): Observable<TechnologyDossier[]> {
+    return this.getTechnologiesOfCategory(category).pipe(
+      mergeMap((techs) => techs),
+      mergeMap((t) => this.getDossier(t.id)),
+      toArray(),
+      shareReplay(1),
+      catchError(DataService.handleError)
+    );
   }
 
-  getFilterConfiguration(category: TechnologyCategory, filterName: string): Observable<TechnologyFilterConfiguration[]> {
-    return this.http.get<TechnologyFilterConfiguration[]>(filterConfigurationsPath)
-      .pipe(
-        map((conf) => conf.filter(c => c.technologyCategory === category && c.name === filterName)),
-        catchError(DataService.handleError),
-        shareReplay(1)
-      );
+  getTechnologyFilter(category: TechnologyCategory): Observable<TechnologyFilterConfiguration> {
+    return combineLatest([
+      this.http.get<TechnologyFilterConfiguration[]>(filterConfigurationsPath).pipe(
+        map((conf) => conf.find(c => c.technologyCategory.toLocaleLowerCase() === category.toLocaleLowerCase())),
+      ),
+      this.getDossiersOfCategory(category)
+    ]).pipe(
+      map(([filter, dossiers]) => {
+          const criteriaValues = new Map<string, Set<any>>();
+          dossiers.forEach(d => {
+            d.reviewedCriteria.forEach((c) => {
+              const distinctValues = new Set<any>();
+              const previous: Set<any> = criteriaValues.get(c.criterionId);
+
+              c.values.forEach(v => distinctValues.add(v.value));
+
+              if (previous) {
+                criteriaValues.set(c.criterionId, new Set([...previous, ...distinctValues]));
+              } else {
+                criteriaValues.set(c.criterionId, distinctValues);
+              }
+            });
+          });
+
+          filter.filters.forEach((f) => {
+            if (f.filterSettings.numericLTEFilter) {
+              const range: number[] = Array.from(criteriaValues.get(f.criterionId)).sort(((a, b) => a > b ? 1 : -1));
+              f.filterValues = [range[0], range[range.length - 1]];
+            } else if (f.filterSettings.textContainmentFilter) {
+              f.filterValues = Array.from(criteriaValues.get(f.criterionId).values());
+            }
+          });
+          return filter;
+        }
+      ),
+      catchError(DataService.handleError),
+      shareReplay(1)
+    );
   }
 
   private buildGroupings(data: CriteriaGroupingResponse[], criteria: Map<string, ClassificationCriterion>): CriteriaGrouping[] {

@@ -7,9 +7,10 @@ import {TechnologyListComponent} from './technology-list/technology-list.compone
 import {TechnologyDetailsComponent} from './technology-details/technology-details.component';
 import {TechnologiesResolver} from './technologies-resolver.service';
 import { TechnologyTableComponent } from './technology-table/technology-table.component';
+import { BottomSheetFilterComponent } from './bottom-sheet-filter/bottom-sheet-filter.component';
 
 @NgModule({
-  declarations: [TechnologiesComponent, TechnologyListComponent, TechnologyDetailsComponent, TechnologyTableComponent],
+  declarations: [TechnologiesComponent, TechnologyListComponent, TechnologyDetailsComponent, TechnologyTableComponent, BottomSheetFilterComponent],
   imports: [CommonModule, SharedModule, TechnologiesRoutingModule],
   providers: [TechnologiesResolver]
 })
