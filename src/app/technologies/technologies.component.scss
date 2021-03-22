@@ -7,6 +7,29 @@
   align-content: center;
 }
 
+.sidenav-container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  flex: 1;
+}
+
+.sidenav {
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  flex: 1;
+  width: 80%;
+  max-width: 30em;
+}
+
+.content-container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  flex: 1;
+}
+
 .platforms-main {
   display: flex;
   flex-flow: column nowrap;

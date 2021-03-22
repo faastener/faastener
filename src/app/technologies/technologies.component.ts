@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {DataService} from '../core/services/data.service';
 import {Subscription} from 'rxjs';
 import {Technology} from '../shared/interfaces/technology';
@@ -6,6 +6,7 @@ import {ActivatedRoute} from '@angular/router';
 import {TechnologyDataSource} from '../shared/datasource';
 import {ClassificationFramework} from '../shared/interfaces/classification';
 import {TechnologyFilterConfiguration} from '../shared/interfaces/filtering';
+import {MatSidenav} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-technologies',
@@ -20,6 +21,8 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
   filterConfiguration: TechnologyFilterConfiguration;
   dataSource: TechnologyDataSource;
   browsingMode: string = 'explore';
+
+  @ViewChild('sidenav') sidenav: MatSidenav;
 
   constructor(private dataService: DataService, private route: ActivatedRoute) {
   }
