@@ -9,11 +9,13 @@ import {FormsModule} from '@angular/forms';
 import {ChildGroupingComponent} from './child-grouping/child-grouping.component';
 import {SetToArrayPipe} from './set-to-array.pipe';
 import { CriterionComponent } from './criterion/criterion.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [PageNotFoundComponent, TruncatePipe, SetToArrayPipe, CriteriaGroupingComponent, ChildGroupingComponent, CriterionComponent],
+  declarations: [PageNotFoundComponent, TruncatePipe, SetToArrayPipe, CriteriaGroupingComponent, ChildGroupingComponent, CriterionComponent, HeaderComponent, FooterComponent],
   imports: [CommonModule, FormsModule, MaterialModule, RouterModule],
-  exports: [CommonModule, FormsModule, MaterialModule, PageNotFoundComponent, TruncatePipe, SetToArrayPipe, CriteriaGroupingComponent, ChildGroupingComponent]
+  exports: [CommonModule, FormsModule, MaterialModule, PageNotFoundComponent, TruncatePipe, SetToArrayPipe, CriteriaGroupingComponent, ChildGroupingComponent, HeaderComponent, FooterComponent]
 })
 export class SharedModule {
 }

@@ -1,4 +1,4 @@
-@import "./variables";
+@import "../../_scss/global/variables";
 
 .main-grid__footer {
   height: 100%;
@@ -13,7 +13,6 @@
   padding: 1em;
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
   justify-items: center;
   align-items: center;
 }

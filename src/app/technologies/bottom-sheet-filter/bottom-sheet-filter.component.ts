@@ -8,6 +8,7 @@ import {TechnologyFilterConfiguration} from '../../shared/interfaces/filtering';
   styleUrls: ['./bottom-sheet-filter.component.scss']
 })
 export class BottomSheetFilterComponent implements OnInit {
+  showLoader = true;
 
   constructor(
     @Inject(MAT_BOTTOM_SHEET_DATA) public filterConfiguration: TechnologyFilterConfiguration,

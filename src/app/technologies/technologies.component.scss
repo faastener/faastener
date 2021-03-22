@@ -1,5 +1,12 @@
 @import "../_scss/shared";
 
+:host {
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+}
+
 .platforms-main {
   display: flex;
   flex-flow: column nowrap;

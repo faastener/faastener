@@ -1,7 +1,15 @@
+@import "../../_scss/shared";
+
 :host {
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
   align-items: center;
+  justify-content: center;
+}
+
+.about-section {
+  width: 95%;
+  margin-bottom: .5rem;
 }
 
 .about-section__cards {

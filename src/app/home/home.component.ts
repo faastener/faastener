@@ -2,11 +2,8 @@ import {Component} from '@angular/core';
 import {DataService} from '../core/services/data.service';
 
 @Component({
-  template: `
-    <app-home-banner></app-home-banner>
-    <app-home-about></app-home-about>
-    <app-overview [supportedPlatforms$]="supportedPlatforms$"></app-overview>
-  `
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
   supportedPlatforms$ = this.dataService.getTechnologies();

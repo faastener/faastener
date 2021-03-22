@@ -5,10 +5,6 @@
   cursor: pointer;
   text-decoration: none;
 
-  /*&:hover, &:active {
-    text-decoration: underline;
-  }*/
-
   &:hover {
     color: $pink-900;
   }
@@ -16,21 +12,19 @@
   &:active {
     color: $violet-700;
   }
-
-  /*&:visited {
-    color: $violet-500;
-    text-decoration: underline;
-  }*/
 }
 
 @mixin bg-grey {
   background: $gray-bg;
 }
 
+@mixin list-style-none {
+  list-style: none;
+}
+
 .g__page-section {
   padding: 2rem 0;
 }
-
 
 .g__page-section-header {
   margin: 0;
@@ -54,7 +48,7 @@
 }
 
 .text-center {
-  text-align: center;
+  text-align: center !important;
 }
 
 .text-justify {

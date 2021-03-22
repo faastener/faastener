@@ -8,14 +8,16 @@ import {BannerComponent} from './banner/banner.component';
 import {AboutComponent} from './about/about.component';
 import {OverviewComponent} from './overview/overview.component';
 import {HomeRoutingModule} from './home-routing.module';
+import {SharedModule} from '../shared/shared.module';
 
 @NgModule({
-  imports: [
-    MaterialModule,
-    FlexLayoutModule,
-    CommonModule,
-    HomeRoutingModule
-  ],
+    imports: [
+        MaterialModule,
+        FlexLayoutModule,
+        CommonModule,
+        HomeRoutingModule,
+        SharedModule
+    ],
   declarations: [
     HomeComponent,
     BannerComponent,

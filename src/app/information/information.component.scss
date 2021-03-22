@@ -1,6 +1,19 @@
 @import "../_scss/shared";
 
+:host {
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+}
+
 .info-tabs {
+  width: 100%;
+  color: white;
+  display: flex;
+}
+
+.info-tabs__links {
   width: 100%;
   display: flex;
 }
@@ -23,7 +36,7 @@
 }
 
 @media screen and (min-width: 1100px) {
-  .info-tabs {
+  .info-tabs__links {
     max-width: 1200px;
   }
 }

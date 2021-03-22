@@ -20,26 +20,12 @@ html {
 }
 
 .root__main-grid {
-  display: grid;
-  grid: " header " 6em
-        " main   " 1fr
-        " footer " min-content /
-        1fr;
+  display: flex;
+  flex-flow: column nowrap;
   height: 100vh;
 }
 
-.main-grid__header {
-  grid-area: header;
-}
-
-.main-grid__content {
-  grid-area: main;
-}
-
-.main-grid__footer {
-  grid-area: footer;
-}
-
+/*
 @media screen and (max-width: 510px) {
   .root__main-grid {
     display: grid;
@@ -50,3 +36,4 @@ html {
     height: 100vh;
   }
 }
+*/

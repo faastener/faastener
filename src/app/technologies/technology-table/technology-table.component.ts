@@ -15,6 +15,8 @@ export class TechnologyTableComponent implements OnInit {
   @Input() dataSource: TechnologyDataSource;
   @Input() framework: ClassificationFramework;
   @Input() filterConfiguration: TechnologyFilterConfiguration;
+  showFiller = false;
+
 
   constructor(private _bottomSheet: MatBottomSheet) {}
 

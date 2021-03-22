@@ -1,9 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {DataService} from '../core/services/data.service';
-import {Observable} from 'rxjs';
-import {Technology} from '../shared/interfaces/technology';
-import {ClassificationFramework} from '../shared/interfaces/classification';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-information',
@@ -18,6 +13,6 @@ export class InformationComponent {
     {location: './faq', label: 'FAQ', icon: 'question_answer'}
   ];
 
-  constructor(private dataService: DataService) {
+  constructor() {
   }
 }
