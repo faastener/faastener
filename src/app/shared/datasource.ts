@@ -69,7 +69,7 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
     this.criteriaBasedQuery.next(nextQuery);
   }
 
-  queryByName(query: string): void {
+   queryByName(query: string): void {
     this.nameBasedQuery.next(query);
   }
 

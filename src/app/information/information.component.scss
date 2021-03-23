@@ -16,6 +16,7 @@
 .info-tabs__links {
   width: 100%;
   display: flex;
+  margin: 0 auto;
 }
 
 .info-tabs--link {
@@ -24,15 +25,11 @@
 }
 
 .info-main {
+  flex: 1;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  height: 100%;
   width: 100%;
-}
-
-.info-main__text {
-
 }
 
 @media screen and (min-width: 1100px) {

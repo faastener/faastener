@@ -8,6 +8,7 @@ import {TechnologyDataSource} from '../../shared/datasource';
 })
 export class TechnologyListComponent {
   @Input() dataSource: TechnologyDataSource;
+  readMore: Map<string, boolean> = new Map<string, boolean>();
 
   constructor() {
   }

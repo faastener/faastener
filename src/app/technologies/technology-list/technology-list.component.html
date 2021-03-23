@@ -2,7 +2,8 @@
   <form class="platforms-list__search">
     <mat-form-field appearance="fill" class="platforms-list__search-field">
       <mat-label>Filter by name</mat-label>
-      <input #techName matInput placeholder="Ex. AWS Lambda..." aria-label="platform name" (input)="onNameChange(techName.value)">
+      <input #techName matInput placeholder="Ex. AWS Lambda..." aria-label="platform name"
+             (input)="onNameChange(techName.value)">
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
   </form>
@@ -14,12 +15,13 @@
         <!--<h2 class="platform-section__card-title"> {{p.platformName}} </h2>-->
 
         <ng-container>
-          <p class="platforms-list__card-description text-center"> {{p.shortDescription | truncate: 50 : true }}
+          <p class="platforms-list__card-description text-center">
+            {{p.shortDescription}}
           </p>
 
         </ng-container>
 
-        <a mat-icon-button color="primary" [routerLink]="['/platforms', p.id]"
+        <a mat-icon-button color="primary" [routerLink]="['./', p.id]"
            aria-label="Open platform details button">
           <mat-icon class="platforms-list__explore-button">arrow_forward</mat-icon>
         </a>

@@ -1,8 +1,13 @@
 @import "../../_scss/shared";
 
+:host {
+  flex: 1;
+}
+
 .platforms-list {
   margin-bottom: 1rem;
-  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .platforms-list__search {
@@ -15,9 +20,10 @@
 }
 
 .platforms-list__cards {
+  flex: 1;
   display: flex;
   flex-flow: column wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
 .platforms-list__card {
@@ -25,6 +31,7 @@
   padding: 0 .5rem !important;
   border-left: .2rem solid $violet-400;
   transition: all .3s ease;
+  flex: 1 1 auto;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -67,5 +74,25 @@
     display: flex;
     flex: 1;
     font-size: .95rem;
+  }
+
+  .platforms-list__cards {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .platforms-list__card {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+}
+
+@media screen and (min-width: 900px) {
+  .platforms-list {
+    max-width: 910px;
+    min-width: 900px;
   }
 }

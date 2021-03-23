@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {combineLatest, Observable, throwError} from 'rxjs';
-import {catchError, map, mergeMap, shareReplay, toArray} from 'rxjs/operators';
+import {catchError, map, mergeAll, mergeMap, shareReplay, toArray} from 'rxjs/operators';
 import {LogoLocatorService} from './logo-locator.service';
 import {
   ClassificationCriterion,
@@ -274,7 +274,6 @@ export class DataService {
               const previous: Set<any> = criteriaValues.get(c.criterionId);
 
               c.values.forEach(v => distinctValues.add(v.value));
-
               if (previous) {
                 criteriaValues.set(c.criterionId, new Set([...previous, ...distinctValues]));
               } else {
@@ -297,6 +296,78 @@ export class DataService {
       catchError(DataService.handleError),
       shareReplay(1)
     );
+  }
+
+  getFrameworkGroupingsData(frameworkId: string): Observable<CriteriaGroupingResponse[]> {
+    return this.getDefaultViewCombinationData(frameworkId).pipe(
+      mergeMap((vc) => this.getViewsData(vc.id)),
+      mergeAll(),
+      mergeMap(v => this.getViewGroupingsData(v.id)),
+      mergeAll(),
+      toArray(),
+      catchError(DataService.handleError),
+      shareReplay(1)
+    );
+  }
+
+  getDefaultViewCombinationData(frameworkId: string): Observable<ClassificationViewCombinationResponse> {
+    return combineLatest([
+      this.http.get<ClassificationViewCombinationResponse[]>(frameworkViewCombinationsPath),
+      this.http.get<ClassificationFrameworkResponse[]>(frameworksPath),
+    ]).pipe(
+      map(([vcs, fws]) => {
+        const vcLookup = new Map(vcs.map(vc => [vc.id, vc] as [string, ClassificationViewCombinationResponse]));
+        let framework = fws.find(f => f.id === frameworkId);
+        if (framework) {
+          for (let id of framework.viewCombinationIds) {
+            let temp = vcLookup.get(id);
+            if (temp && temp.default) {
+              return temp;
+            }
+          }
+        }
+      }),
+      catchError(DataService.handleError),
+      shareReplay(1)
+    );
+  }
+
+  getViewsData(viewCombinationId: string): Observable<ClassificationViewResponse[]> {
+    return combineLatest([
+      this.http.get<ClassificationViewCombinationResponse[]>(frameworkViewCombinationsPath),
+      this.http.get<ClassificationViewResponse[]>(frameworkViewsPath)
+    ]).pipe(
+      map(([combs, views]) => {
+        const viewsLookup = new Map(views.map(v => [v.id, v] as [string, ClassificationViewResponse]));
+        let result = [];
+        let vc = combs.find(c => c.id === viewCombinationId);
+        if (vc) {
+          vc.viewIds.forEach(id => result.push(viewsLookup.get(id)));
+        }
+        return result;
+      }),
+      catchError(DataService.handleError),
+      shareReplay(1)
+    );
+  }
+
+  getViewGroupingsData(viewId: string): Observable<CriteriaGroupingResponse[]> {
+    return combineLatest([
+      this.http.get<ClassificationViewResponse[]>(frameworkViewsPath),
+      this.http.get<CriteriaGroupingResponse[]>(criteriaGroupingsPath)])
+      .pipe(
+        map(([views, groupings]) => {
+          const groupingsLookup = new Map(groupings.map(g => [g.id, g] as [string, CriteriaGroupingResponse]));
+          let result = [];
+          let view = views.find(v => v.id === viewId);
+          if (view) {
+            view.groupingIds.forEach(id => result.push(groupingsLookup.get(id)));
+          }
+          return result;
+        }),
+        catchError(DataService.handleError),
+        shareReplay(1)
+      );
   }
 
   private buildGroupings(data: CriteriaGroupingResponse[], criteria: Map<string, ClassificationCriterion>): CriteriaGrouping[] {

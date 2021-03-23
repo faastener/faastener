@@ -1,3 +1,14 @@
+export interface RenderedFilter {
+  blocks: RenderedFilterBlock[];
+}
+
+export interface RenderedFilterBlock {
+  blockName: string;
+  blockIcon?: string;
+  filters: CriterionFilterConfiguration[];
+}
+
+
 /**
  * An interface representing a filter configuration for a given technology {@link TechnologyCategory}.
  * This configuration defines which criteria have dedicated filter elements in the UI.
@@ -15,6 +26,7 @@ export interface TechnologyFilterConfiguration {
  */
 export interface CriterionFilterConfiguration {
   criterionId: string;
+  displayName: string;
   filterSettings: CriterionFilterSettings;
   filterValues?: [number, number] | string[];
 }
@@ -55,7 +67,7 @@ export interface CriterionFilterSettings {
    *  -- excludesAll: all provided text values must not be contained
    *  -- nonEmpty: any text value must be present
    */
-  textContainmentOptions?: TextContainmentOption[];
+  textContainmentOptions?: TextContainmentOption;
 }
 
 /**

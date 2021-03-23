@@ -4,57 +4,392 @@
     "technologyCategory": "FAAS",
     "name": "Main filter",
     "filters": [
-      { "criterionId": "platform.license", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.license.type", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.installation.type", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.installation.targets", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.code.availability", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.code.repository", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.code.language", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.github.stars", "filterSettings": { "numericLTEFilter": "number" } },
-      { "criterionId": "platform.github.forks", "filterSettings": { "numericLTEFilter": "number" } },
-      { "criterionId": "platform.github.issues", "filterSettings": { "numericLTEFilter": "number" } },
-      { "criterionId": "platform.github.commits", "filterSettings": { "numericLTEFilter": "number" } },
-      { "criterionId": "platform.github.contributors", "filterSettings": { "numericLTEFilter": "number" } },
-      { "criterionId": "platform.stackoverflow.questions", "filterSettings": { "numericLTEFilter": "number" } },
-      { "criterionId": "platform.function.runtimes", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.function.runtime-customization", "filterSettings": { "existenceFilter": true } },
-      { "criterionId": "platform.development.ide-support", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.function.client-libraries", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.function.client-libraries", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.quotas.dep-pkg-size", "filterSettings": { "existenceFilter": true } },
-      { "criterionId": "platform.quotas.execution-time", "filterSettings": { "existenceFilter": true } },
-      { "criterionId": "platform.function.versioning", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.function.versioning-app", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.event-source.endpoint.sync-call", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.event-source.endpoint.async-call", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.event-source.endpoint.customization", "filterSettings": { "existenceFilter": true } },
-      { "criterionId": "platform.event-source.endpoint.tls", "filterSettings": { "existenceFilter": true } },
-      { "criterionId": "platform.event-source.datastore.file-level", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.event-source.datastore.database-mode", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.event-source.scheduler", "filterSettings": { "existenceFilter": true } },
-      { "criterionId": "platform.event-source.messaging", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.event-source.streaming", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.event-source.special-purpose-service", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.event-source.integration", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.function.orchestrator", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 3 } },
-      { "criterionId": "platform.function.orchestrator.workflow-definition-type", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.function.orchestrator.workflow-definition-languages", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 0 } },
-      { "criterionId": "platform.function.orchestrator.quotas.execution-time", "filterSettings": { "existenceFilter": true } },
-      { "criterionId": "platform.function.orchestrator.quotas.io-size", "filterSettings": { "existenceFilter": true } },
-      { "criterionId": "platform.testing.functional", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 3 } },
-      { "criterionId": "platform.testing.non-functional", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 3 } },
-      { "criterionId": "platform.debugging.local", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 3 } },
-      { "criterionId": "platform.debugging.remote", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 3 } },
-      { "criterionId": "platform.observability.logging", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 3 } },
-      { "criterionId": "platform.observability.monitoring", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 3 } },
-      { "criterionId": "platform.observability.integration", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 3 } },
-      { "criterionId": "platform.deployment-automation", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 3 } },
-      { "criterionId": "platform.ci-cd", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 3 } },
-      { "criterionId": "platform.function.marketplaces", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 3 } },
-      { "criterionId": "platform.function.code-sample-repositories", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 3 } },
-      { "criterionId": "platform.authentication", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 3 } },
-      { "criterionId": "platform.access-control", "filterSettings": { "textContainmentFilter": [], "textContainmentOptions": 3 } }
+      {
+        "criterionId": "platform.license",
+        "displayName": "License",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.license.type",
+        "displayName": "License Type",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.installation.type",
+        "displayName": "Installation",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.installation.targets",
+        "displayName": "Installation Targets",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.code.availability",
+        "displayName": "Source Code Availability",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.code.repository",
+        "displayName": "Source Code Repository",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.code.language",
+        "displayName": "Main Programming Language",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.github.stars",
+        "displayName": "GitHub Stars",
+        "filterSettings": {
+          "numericLTEFilter": "number"
+        }
+      },
+      {
+        "criterionId": "platform.github.forks",
+        "displayName": "GitHub Forks",
+        "filterSettings": {
+          "numericLTEFilter": "number"
+        }
+      },
+      {
+        "criterionId": "platform.github.issues",
+        "displayName": "GitHub Issues",
+        "filterSettings": {
+          "numericLTEFilter": "number"
+        }
+      },
+      {
+        "criterionId": "platform.github.commits",
+        "displayName": "GitHub Commits",
+        "filterSettings": {
+          "numericLTEFilter": "number"
+        }
+      },
+      {
+        "criterionId": "platform.github.contributors",
+        "displayName": "GitHub Contributors",
+        "filterSettings": {
+          "numericLTEFilter": "number"
+        }
+      },
+      {
+        "criterionId": "platform.stackoverflow.questions",
+        "displayName": "Stackoverflow Questions",
+        "filterSettings": {
+          "numericLTEFilter": "number"
+        }
+      },
+      {
+        "criterionId": "platform.function.runtimes",
+        "displayName": "Function Runtimes",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.function.runtime-customization",
+        "displayName": "Function Runtime Customization",
+        "filterSettings": {
+          "existenceFilter": true
+        }
+      },
+      {
+        "criterionId": "platform.development.ide-support",
+        "displayName": "Supported IDEs",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.function.client-libraries",
+        "displayName": "Client Libraries",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.quotas.dep-pkg-size",
+        "displayName": "Deployment Package Size Quota",
+        "filterSettings": {
+          "existenceFilter": true
+        }
+      },
+      {
+        "criterionId": "platform.quotas.execution-time",
+        "displayName": "Execution Time Quota",
+        "filterSettings": {
+          "existenceFilter": true
+        }
+      },
+      {
+        "criterionId": "platform.function.versioning",
+        "displayName": "Function Versioning",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.function.versioning-app",
+        "displayName": "Application Versioning",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.event-source.endpoint.sync-call",
+        "displayName": "Synchronous Calls",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.event-source.endpoint.async-call",
+        "displayName": "Asynchronous Calls",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.event-source.endpoint.customization",
+        "displayName": "Endpoint Customization",
+        "filterSettings": {
+          "existenceFilter": true
+        }
+      },
+      {
+        "criterionId": "platform.event-source.endpoint.tls",
+        "displayName": "TLS Support",
+        "filterSettings": {
+          "existenceFilter": true
+        }
+      },
+      {
+        "criterionId": "platform.event-source.datastore.file-level",
+        "displayName": "File-level Datastores",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.event-source.datastore.database-mode",
+        "displayName": "Database Mode Datastores",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.event-source.scheduler",
+        "displayName": "Scheduled Function Calls",
+        "filterSettings": {
+          "existenceFilter": true
+        }
+      },
+      {
+        "criterionId": "platform.event-source.messaging",
+        "displayName": "Message Queues",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.event-source.streaming",
+        "displayName": "Stream Processing Platforms",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.event-source.special-purpose-service",
+        "displayName": "Special-purpose Services",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.event-source.integration",
+        "displayName": "Event Sources Integration",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.function.orchestrator",
+        "displayName": "Native Function Orchestrators",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 3
+        }
+      },
+      {
+        "criterionId": "platform.function.orchestrator.workflow-definition-type",
+        "displayName": "Workflow Definition Type",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.function.orchestrator.workflow-definition-languages",
+        "displayName": "Workflow Definition Language",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 0
+        }
+      },
+      {
+        "criterionId": "platform.function.orchestrator.quotas.execution-time",
+        "displayName": "Workflow Execution Time Quota",
+        "filterSettings": {
+          "existenceFilter": true
+        }
+      },
+      {
+        "criterionId": "platform.function.orchestrator.quotas.io-size",
+        "displayName": "Workflow I/O Size Quota",
+        "filterSettings": {
+          "existenceFilter": true
+        }
+      },
+      {
+        "criterionId": "platform.testing.functional",
+        "displayName": "Functional Testing",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 3
+        }
+      },
+      {
+        "criterionId": "platform.testing.non-functional",
+        "displayName": "Non-functional Testing",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 3
+        }
+      },
+      {
+        "criterionId": "platform.debugging.local",
+        "displayName": "Local Debugging",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 3
+        }
+      },
+      {
+        "criterionId": "platform.debugging.remote",
+        "displayName": "Remote Debugging",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 3
+        }
+      },
+      {
+        "criterionId": "platform.observability.logging",
+        "displayName": "Logging",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 3
+        }
+      },
+      {
+        "criterionId": "platform.observability.monitoring",
+        "displayName": "Monitoring",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 3
+        }
+      },
+      {
+        "criterionId": "platform.observability.integration",
+        "displayName": "Logging/Monitoring Integration",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 3
+        }
+      },
+      {
+        "criterionId": "platform.deployment-automation",
+        "displayName": "Deployment Automation",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 3
+        }
+      },
+      {
+        "criterionId": "platform.ci-cd",
+        "displayName": "CI/CD",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 3
+        }
+      },
+      {
+        "criterionId": "platform.function.marketplaces",
+        "displayName": "Function Marketplaces",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 3
+        }
+      },
+      {
+        "criterionId": "platform.function.code-sample-repositories",
+        "displayName": "Code Sample Repositories",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 3
+        }
+      },
+      {
+        "criterionId": "platform.authentication",
+        "displayName": "Authentication",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 3
+        }
+      },
+      {
+        "criterionId": "platform.access-control",
+        "displayName": "Access Control",
+        "filterSettings": {
+          "textContainmentFilter": [],
+          "textContainmentOptions": 3
+        }
+      }
     ]
   }
 ]

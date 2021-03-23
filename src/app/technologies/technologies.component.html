@@ -1,28 +1,59 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav class="sidenav">
 
-    <ng-container *ngFor="let f of filterConfiguration.filters">
+    <ng-container *ngIf="renderedFilter.blocks">
 
-      <mat-form-field appearance="fill" *ngIf="f.filterSettings.textContainmentFilter">
-        <mat-label>{{f.criterionId}}</mat-label>
-        <mat-select multiple>
-          <mat-option *ngFor="let v of f.filterValues" [value]="v">{{v}}</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <mat-accordion multi displayMode="flat">
+        <mat-expansion-panel *ngFor="let filterBlock of renderedFilter.blocks"
+                             style="box-shadow: none; color: #3f51b5; background: #bec2c3; border-radius: 0; border-bottom: 1px solid #93999c">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon *ngIf="filterBlock.blockIcon">{{filterBlock.blockIcon}}</mat-icon>
+              {{filterBlock.blockName}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
 
-      <mat-slide-toggle *ngIf="f.filterSettings.existenceFilter"
-                        class="example-margin">
-        {{f.criterionId}}
-      </mat-slide-toggle>
+          <ng-container *ngFor="let filter of filterBlock.filters">
 
-      <mat-slider *ngIf="f.filterSettings.numericLTEFilter"
-                  thumbLabel
-                  min="{{f.filterValues[0]}}"
-                  max="{{f.filterValues[1]}}"></mat-slider>
 
+            <ng-container *ngIf="filter.filterSettings.textContainmentFilter">
+              {{filter.displayName}}
+              <ng-container *ngIf="filter.filterSettings.textContainmentOptions !== 3">
+                <ul>
+                  <li *ngFor="let value of filter.filterValues">
+                    <mat-checkbox>{{value}}</mat-checkbox>
+                  </li>
+                </ul>
+              </ng-container>
+
+              <ng-container *ngIf="filter.filterSettings.textContainmentOptions === 3">
+                <mat-slide-toggle>
+                  {{filter.displayName}}
+                </mat-slide-toggle>
+              </ng-container>
+
+            </ng-container>
+
+            <ng-container *ngIf="filter.filterSettings.existenceFilter">
+              <mat-slide-toggle>
+                {{filter.displayName}}
+              </mat-slide-toggle>
+            </ng-container>
+
+            <ng-container *ngIf="filter.filterSettings.numericLTEFilter">
+              {{filter.displayName}}
+              <mat-slider thumbLabel
+                          min="{{filter.filterValues[0]}}"
+                          max="{{filter.filterValues[1]}}">
+              </mat-slider>
+            </ng-container>
+
+          </ng-container>
+
+
+        </mat-expansion-panel>
+      </mat-accordion>
     </ng-container>
-
-
 
 
   </mat-sidenav>
