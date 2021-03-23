@@ -4,15 +4,9 @@ import {Subscription} from 'rxjs';
 import {Technology} from '../shared/interfaces/technology';
 import {ActivatedRoute} from '@angular/router';
 import {TechnologyDataSource} from '../shared/datasource';
-import {ClassificationFramework} from '../shared/interfaces/classification';
-import {
-  CriterionFilterConfiguration,
-  RenderedFilter,
-  RenderedFilterBlock,
-  TechnologyFilterConfiguration
-} from '../shared/interfaces/filtering';
+import {ClassificationFramework, CriteriaGrouping} from '../shared/interfaces/classification';
+import {CriterionFilterConfiguration, RenderedFilterBlock, TechnologyFilterConfiguration} from '../shared/interfaces/filtering';
 import {MatSidenav} from '@angular/material/sidenav';
-import {CriteriaGroupingResponse} from '../shared/interfaces/responses';
 
 @Component({
   selector: 'app-technologies',
@@ -24,12 +18,13 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
   technologies: Technology[];
   framework: ClassificationFramework;
-  rawGroupingsData: CriteriaGroupingResponse[];
   filterConfiguration: TechnologyFilterConfiguration;
+  groupings: CriteriaGrouping[] = [];
+
   dataSource: TechnologyDataSource;
   browsingMode: string = 'explore';
 
-  renderedFilter: RenderedFilter = {blocks: []};
+  renderedFilter: RenderedFilterBlock[] = [];
 
   @ViewChild('sidenav') sidenav: MatSidenav;
 
@@ -52,9 +47,9 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
         this.dataSource = new TechnologyDataSource(this.technologies, {property: 'platformName', order: 'asc'}, undefined);
         this.framework = data['resolvedData'][1];
         this.filterConfiguration = data['resolvedData'][2];
-        this.rawGroupingsData = data['resolvedData'][3];
 
-        this.buildFilter();
+        this.extractGroupings();
+        this.generateFilterStructure();
       })
     );
   }
@@ -63,32 +58,38 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
     this.subscriptions.forEach(s => s.unsubscribe());
   }
 
-
-  private buildFilter(): void {
-    const criteriaFilterLookup = new Map(this.filterConfiguration.filters.map(c => [c.criterionId, c] as [string, CriterionFilterConfiguration]));
-
-    this.rawGroupingsData.forEach(g => {
-      let temp: RenderedFilterBlock = {
-        blockName: g.name,
-        filters: []
-      };
-
-      if (g.criteriaIds) {
-        g.criteriaIds.forEach(id => {
-          const r = criteriaFilterLookup.get(id);
-          if (r) {
-            temp.filters.push(r);
-          }
-        });
+  private extractGroupings() {
+    for (let vc of this.framework.viewCombinations) {
+      if (vc.default) {
+        vc.views.forEach(v => this.groupings.push(...Array.from(v.groupings)));
+        break;
       }
-      if (temp.filters.length > 0) {
-        this.renderedFilter.blocks.push(temp);
+    }
+  }
+
+  private generateFilterStructure() {
+    const criteriaFilterLookup = new Map(this.filterConfiguration.filters.map(c => [c.criterionId, c] as [string, CriterionFilterConfiguration]));
+    let placement: Map<String, RenderedFilterBlock> = new Map<String, RenderedFilterBlock>();
+    this.groupings.forEach(g => this.populateRenderBlocks(g, criteriaFilterLookup, placement));
+    this.renderedFilter = Array.from(placement.values());
+  }
+
+  private populateRenderBlocks(grouping: CriteriaGrouping, filterLookup: Map<string, CriterionFilterConfiguration>, placement: Map<String, RenderedFilterBlock>, parentGroup?: string) {
+    let current = placement.get(grouping.name);
+    if (current === undefined && grouping.criteria && grouping.criteria.size > 0) {
+      placement.set(grouping.name, {blockName: parentGroup ? parentGroup.concat(' : ').concat(grouping.name) : grouping.name, filters: []});
+      current = placement.get(grouping.name);
+    }
+
+    grouping.criteria.forEach(c => {
+      let config = filterLookup.get(c.id);
+      if (config) {
+        current.filters.push(config);
       }
     });
 
-    console.log(this.renderedFilter);
-
+    if (grouping.groupings) {
+      grouping.groupings.forEach(g => this.populateRenderBlocks(g, filterLookup, placement, grouping.name));
+    }
   }
-
-
 }

@@ -1,13 +1,8 @@
-export interface RenderedFilter {
-  blocks: RenderedFilterBlock[];
-}
-
 export interface RenderedFilterBlock {
   blockName: string;
   blockIcon?: string;
   filters: CriterionFilterConfiguration[];
 }
-
 
 /**
  * An interface representing a filter configuration for a given technology {@link TechnologyCategory}.

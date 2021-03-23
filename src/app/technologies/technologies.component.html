@@ -1,11 +1,11 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav class="sidenav">
 
-    <ng-container *ngIf="renderedFilter.blocks">
+    <ng-container *ngIf="renderedFilter">
 
       <mat-accordion multi displayMode="flat">
-        <mat-expansion-panel *ngFor="let filterBlock of renderedFilter.blocks"
-                             style="box-shadow: none; color: #3f51b5; background: #bec2c3; border-radius: 0; border-bottom: 1px solid #93999c">
+        <mat-expansion-panel *ngFor="let filterBlock of renderedFilter"
+                             style="box-shadow: none; color: #3f51b5; background: #e8eaf6; border-radius: 0; border-bottom: 1px solid #93999c">
           <mat-expansion-panel-header>
             <mat-panel-title>
               <mat-icon *ngIf="filterBlock.blockIcon">{{filterBlock.blockIcon}}</mat-icon>
@@ -18,6 +18,7 @@
 
             <ng-container *ngIf="filter.filterSettings.textContainmentFilter">
               {{filter.displayName}}
+
               <ng-container *ngIf="filter.filterSettings.textContainmentOptions !== 3">
                 <ul>
                   <li *ngFor="let value of filter.filterValues">
@@ -35,9 +36,7 @@
             </ng-container>
 
             <ng-container *ngIf="filter.filterSettings.existenceFilter">
-              <mat-slide-toggle>
-                {{filter.displayName}}
-              </mat-slide-toggle>
+              <mat-slide-toggle></mat-slide-toggle>
             </ng-container>
 
             <ng-container *ngIf="filter.filterSettings.numericLTEFilter">
