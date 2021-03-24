@@ -4,53 +4,55 @@
     <ng-container *ngIf="renderedFilter">
 
       <mat-accordion multi displayMode="flat">
-        <mat-expansion-panel *ngFor="let filterBlock of renderedFilter"
-                             style="box-shadow: none; color: #3f51b5; background: #e8eaf6; border-radius: 0; border-bottom: 1px solid #93999c">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <mat-icon *ngIf="filterBlock.blockIcon">{{filterBlock.blockIcon}}</mat-icon>
-              {{filterBlock.blockName}}
-            </mat-panel-title>
-          </mat-expansion-panel-header>
+        <ng-container *ngFor="let filterBlock of renderedFilter">
+          <mat-expansion-panel *ngIf="filterBlock.filters && filterBlock.filters.length > 0"
+                               class="filter-block">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon *ngIf="filterBlock.blockIcon">{{filterBlock.blockIcon}}</mat-icon>
+                {{filterBlock.blockName}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
 
-          <ng-container *ngFor="let filter of filterBlock.filters">
+            <ng-container *ngFor="let filter of filterBlock.filters">
+              <ng-container *ngIf="filter.filterSettings.textContainmentFilter">
+                {{filter.displayName}}
 
+                <ng-container *ngIf="filter.filterSettings.textContainmentOptions !== 3">
+                  <ul class="filter-block__filter-values">
+                    <li *ngFor="let value of filter.filterValues">
+                      <mat-checkbox color="primary">{{value}}</mat-checkbox>
+                    </li>
+                  </ul>
+                </ng-container>
 
-            <ng-container *ngIf="filter.filterSettings.textContainmentFilter">
-              {{filter.displayName}}
+                <ng-container *ngIf="filter.filterSettings.textContainmentOptions === 3">
+                  <mat-slide-toggle>
+                    {{filter.displayName}}
+                  </mat-slide-toggle>
+                </ng-container>
 
-              <ng-container *ngIf="filter.filterSettings.textContainmentOptions !== 3">
-                <ul>
-                  <li *ngFor="let value of filter.filterValues">
-                    <mat-checkbox>{{value}}</mat-checkbox>
-                  </li>
-                </ul>
               </ng-container>
 
-              <ng-container *ngIf="filter.filterSettings.textContainmentOptions === 3">
-                <mat-slide-toggle>
-                  {{filter.displayName}}
-                </mat-slide-toggle>
+              <ng-container *ngIf="filter.filterSettings.existenceFilter">
+                <mat-slide-toggle></mat-slide-toggle>
+              </ng-container>
+
+              <ng-container *ngIf="filter.filterSettings.numericLTEFilter">
+                {{filter.displayName}}
+                <mat-slider thumbLabel
+                            min="{{filter.filterValues[0]}}"
+                            max="{{filter.filterValues[1]}}">
+                </mat-slider>
               </ng-container>
 
             </ng-container>
 
-            <ng-container *ngIf="filter.filterSettings.existenceFilter">
-              <mat-slide-toggle></mat-slide-toggle>
-            </ng-container>
 
-            <ng-container *ngIf="filter.filterSettings.numericLTEFilter">
-              {{filter.displayName}}
-              <mat-slider thumbLabel
-                          min="{{filter.filterValues[0]}}"
-                          max="{{filter.filterValues[1]}}">
-              </mat-slider>
-            </ng-container>
+          </mat-expansion-panel>
 
-          </ng-container>
+        </ng-container>
 
-
-        </mat-expansion-panel>
       </mat-accordion>
     </ng-container>
 

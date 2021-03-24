@@ -55,6 +55,18 @@
   @include nav_item;
 }
 
+.filter-block {
+  box-shadow: none;
+  color: #3f51b5;
+  background: #e8eaf6;
+  border-radius: 0;
+  border-bottom: 1px solid #93999c;
+}
+
+.filter-block__filter-values {
+  @include list-style-none;
+}
+
 @media screen and (min-width: 900px) {
   .platforms__controls {
     max-width: 910px;

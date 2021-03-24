@@ -22,7 +22,7 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
   groupings: CriteriaGrouping[] = [];
 
   dataSource: TechnologyDataSource;
-  browsingMode: string = 'explore';
+  browsingMode = 'explore';
 
   renderedFilter: RenderedFilterBlock[] = [];
 
