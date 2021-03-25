@@ -8,12 +8,13 @@ import {InformationComponent} from './information.component';
 import {InformationRoutingModule} from './information-routing.module';
 import {SharedModule} from '../shared/shared.module';
 import {FrameworkResolver} from './framework-resolver.service';
+import {ResourcesResolver} from './resources-resolver.service';
 
 
 @NgModule({
   declarations: [FrameworkComponent, DocsComponent, ResourcesComponent, FaqComponent, InformationComponent],
   imports: [CommonModule, SharedModule, InformationRoutingModule],
-  providers: [FrameworkResolver]
+  providers: [FrameworkResolver, ResourcesResolver]
 })
 export class InformationModule {
 }

@@ -7,6 +7,7 @@ import {FaqComponent} from './faq/faq.component';
 import {InformationComponent} from './information.component';
 import {FrameworkResolver} from './framework-resolver.service';
 import {ChildGroupingComponent} from '../shared/child-grouping/child-grouping.component';
+import {ResourcesResolver} from './resources-resolver.service';
 
 const infoRoutes: Routes = [
   {
@@ -21,7 +22,7 @@ const infoRoutes: Routes = [
       },
       {path: 'framework/:groupingId', component: ChildGroupingComponent},
       {path: 'docs', component: DocsComponent},
-      {path: 'resources', component: ResourcesComponent},
+      {path: 'resources', component: ResourcesComponent, resolve: {resolvedData: ResourcesResolver}},
       {path: 'faq', component: FaqComponent}
     ]
   }

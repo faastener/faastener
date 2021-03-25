@@ -18,6 +18,7 @@ import {
   CriteriaGroupingResponse
 } from '../../shared/interfaces/responses';
 import {TechnologyFilterConfiguration} from '../../shared/interfaces/filtering';
+import {InfoResourceSection} from '../../shared/interfaces/info';
 
 const criteriaPath = '/assets/data/framework/criteria.json';
 const criteriaGroupingsPath = '/assets/data/framework/groupings.json';
@@ -27,6 +28,7 @@ const frameworksPath = '/assets/data/framework/frameworks.json';
 const supportedPlatformsPath = '/assets/data/platforms/platforms.json';
 const dossiersPath: string = '/assets/data/platforms/';
 const filterConfigurationsPath = '/assets/data/framework/filters.json';
+const infoResourcesPath = '/assets/data/info/resources.json';
 
 @Injectable()
 export class DataService {
@@ -365,6 +367,14 @@ export class DataService {
           }
           return result;
         }),
+        catchError(DataService.handleError),
+        shareReplay(1)
+      );
+  }
+
+  getInfoResources(): Observable<InfoResourceSection[]> {
+    return this.http.get<InfoResourceSection[]>(infoResourcesPath)
+      .pipe(
         catchError(DataService.handleError),
         shareReplay(1)
       );
