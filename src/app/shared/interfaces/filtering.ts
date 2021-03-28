@@ -68,13 +68,17 @@ export interface CriterionFilterSettings {
 /**
  * An interface representing a filter-based query for a given technology.
  * The query is based on a specific {@link TechnologyFilterConfiguration} and contains filter values provided by users for different criteria {@link CriterionFilterValue}.
- */
 export interface FilterBasedQuery {
   filterId: string;
   filters: Map<string, CriterionFilterValue>;
+}*/
+
+export interface CriteriaBasedQuery {
+  [key: string]: CriterionFilterValue;
 }
 
 export interface CriterionFilterValue {
+  criterionId: string;
   exists?: boolean;
   lte?: number;
   text?: string[];

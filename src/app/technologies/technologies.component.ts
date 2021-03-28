@@ -1,12 +1,19 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {DataService} from '../core/services/data.service';
 import {Subscription} from 'rxjs';
 import {Technology} from '../shared/interfaces/technology';
 import {ActivatedRoute} from '@angular/router';
 import {TechnologyDataSource} from '../shared/datasource';
 import {ClassificationFramework, CriteriaGrouping} from '../shared/interfaces/classification';
-import {CriterionFilterConfiguration, RenderedFilterBlock, TechnologyFilterConfiguration} from '../shared/interfaces/filtering';
+import {
+  CriteriaBasedQuery,
+  CriterionFilterConfiguration,
+  RenderedFilterBlock,
+  TechnologyFilterConfiguration
+} from '../shared/interfaces/filtering';
 import {MatSidenav} from '@angular/material/sidenav';
+import {MediaMatcher} from '@angular/cdk/layout';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-technologies',
@@ -26,10 +33,28 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
 
   renderedFilter: RenderedFilterBlock[] = [];
 
-  @ViewChild('sidenav') sidenav: MatSidenav;
 
-  constructor(private dataService: DataService, private route: ActivatedRoute) {
+  renderedForms: FormGroup[] = [];
+
+
+
+  criteriaBasedQuery: CriteriaBasedQuery = {};
+
+
+  @ViewChild('sidenav') sidenav: MatSidenav;
+  mobileQuery: MediaQueryList;
+
+  constructor(
+    private dataService: DataService,
+    private route: ActivatedRoute,
+    private fb: FormBuilder,
+    private changeDetectorRef: ChangeDetectorRef,
+    private media: MediaMatcher
+  ) {
+    this.mobileQuery = media.matchMedia('(max-width: 850px)');
+    this.mobileQuery.addEventListener('change', () => changeDetectorRef.detectChanges());
   }
+
 
   ngOnInit(): void {
     this.subscriptions.push(
@@ -44,7 +69,7 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.route.data.subscribe(data => {
         this.technologies = data['resolvedData'][0];
-        this.dataSource = new TechnologyDataSource(this.technologies, {property: 'platformName', order: 'asc'}, undefined);
+        this.dataSource = new TechnologyDataSource(this.technologies, {property: 'platformName', order: 'asc'}, this.criteriaBasedQuery);
         this.framework = data['resolvedData'][1];
         this.filterConfiguration = data['resolvedData'][2];
 
@@ -70,15 +95,23 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
   private generateFilterStructure() {
     const criteriaFilterLookup = new Map(this.filterConfiguration.filters.map(c => [c.criterionId, c] as [string, CriterionFilterConfiguration]));
     let placement: Map<String, RenderedFilterBlock> = new Map<String, RenderedFilterBlock>();
-    this.groupings.forEach(g => this.populateRenderBlocks(g, criteriaFilterLookup, placement));
+    let generatedForms: Map<String, FormGroup> = new Map<String, FormGroup>();
+
+    this.groupings.forEach(g => this.populateRenderBlocks(g, criteriaFilterLookup, placement, generatedForms));
     this.renderedFilter = Array.from(placement.values());
   }
 
-  private populateRenderBlocks(grouping: CriteriaGrouping, filterLookup: Map<string, CriterionFilterConfiguration>, placement: Map<String, RenderedFilterBlock>, parentGroup?: string) {
+  private populateRenderBlocks(grouping: CriteriaGrouping, filterLookup: Map<string, CriterionFilterConfiguration>, placement: Map<String, RenderedFilterBlock>, generatedForms: Map<String, FormGroup>, parentGroup?: string) {
     let current = placement.get(grouping.name);
+    let currentForm = generatedForms.get(grouping.name);
+
     if (current === undefined && grouping.criteria && grouping.criteria.size > 0) {
       placement.set(grouping.name, {blockName: parentGroup ? parentGroup.concat(' : ').concat(grouping.name) : grouping.name, filters: []});
+
+      generatedForms.set(grouping.name, this.fb.group({}));
+
       current = placement.get(grouping.name);
+      currentForm = generatedForms.get(grouping.name);
     }
 
     grouping.criteria.forEach(c => {
@@ -89,7 +122,7 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
     });
 
     if (grouping.groupings) {
-      grouping.groupings.forEach(g => this.populateRenderBlocks(g, filterLookup, placement, grouping.name));
+      grouping.groupings.forEach(g => this.populateRenderBlocks(g, filterLookup, placement, generatedForms, grouping.name));
     }
   }
 }

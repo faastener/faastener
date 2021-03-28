@@ -2,8 +2,8 @@ import {DataSource} from '@angular/cdk/collections';
 import {BehaviorSubject, combineLatest, Observable, of} from 'rxjs';
 import {map, shareReplay, switchMap} from 'rxjs/operators';
 import {Technology} from './interfaces/technology';
-import {FilterBasedQuery} from './interfaces/filtering';
 import {PageEvent} from '@angular/material/paginator';
+import {CriteriaBasedQuery} from './interfaces/filtering';
 
 export interface SimpleDataSource<T> extends DataSource<T> {
   connect(): Observable<T[]>;
@@ -20,7 +20,7 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
   private readonly data: Technology[];
   private readonly pageNumber = new BehaviorSubject<number>(0);
   private readonly sort: BehaviorSubject<Sort<Technology>>;
-  private readonly criteriaBasedQuery: BehaviorSubject<FilterBasedQuery>;
+  private readonly criteriaBasedQuery: BehaviorSubject<CriteriaBasedQuery>;
   private readonly nameBasedQuery: BehaviorSubject<string>;
 
   public totalInputSize: number;
@@ -29,10 +29,10 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
   public filteredData$: Observable<Technology[]>;
   public paginatedData$: Observable<Technology[]>;
 
-  constructor(data: Technology[], initialSort: Sort<Technology>, initialQuery: FilterBasedQuery, public pageSize = 5) {
+  constructor(data: Technology[], initialSort: Sort<Technology>, initialQuery: CriteriaBasedQuery, public pageSize = 5) {
     this.data = data;
     this.sort = new BehaviorSubject<Sort<Technology>>(initialSort);
-    this.criteriaBasedQuery = new BehaviorSubject<FilterBasedQuery>(initialQuery);
+    this.criteriaBasedQuery = new BehaviorSubject<CriteriaBasedQuery>(initialQuery);
     this.nameBasedQuery = new BehaviorSubject<string>(undefined);
 
     this.filteredData$ = combineLatest([this.criteriaBasedQuery, this.nameBasedQuery, this.sort]).pipe(
@@ -63,13 +63,14 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
     this.sort.next(nextSort);
   }
 
-  queryByCriteria(query: Partial<FilterBasedQuery>): void {
+  queryByCriteria(query: CriteriaBasedQuery): void {
     const lastQuery = this.criteriaBasedQuery.getValue();
     const nextQuery = {...lastQuery, ...query};
     this.criteriaBasedQuery.next(nextQuery);
+
   }
 
-   queryByName(query: string): void {
+  queryByName(query: string): void {
     this.nameBasedQuery.next(query);
   }
 
@@ -86,14 +87,16 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
   disconnect(): void {
   }
 
-  private processData(data: Technology[], criteriaQuery: FilterBasedQuery, nameQuery: string, sort: Sort<Technology>): Technology[] {
+  private processData(data: Technology[], criteriaQuery: CriteriaBasedQuery, nameQuery: string, sort: Sort<Technology>): Technology[] {
     let result: Technology[] = data;
     if (nameQuery) {
       result = data.filter(platform => nameQuery ? platform.platformName.toLocaleLowerCase().includes(nameQuery) : true);
     }
 
     if (criteriaQuery) {
-
+      Object.keys(criteriaQuery).forEach(key => {
+        console.log(criteriaQuery[key]);
+      });
     }
 
     if (sort && sort.order === 'asc') {

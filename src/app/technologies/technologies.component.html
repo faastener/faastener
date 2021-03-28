@@ -1,5 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav class="sidenav">
+  <mat-sidenav #sidenav class="sidenav"
+               [mode]="mobileQuery.matches ? 'over' : 'side'">
 
     <ng-container *ngIf="renderedFilter">
 
@@ -14,40 +15,13 @@
               </mat-panel-title>
             </mat-expansion-panel-header>
 
+            <form novalidate>
+                  <!--[formGroup]="customerForm"-->
+            </form>
+
             <ng-container *ngFor="let filter of filterBlock.filters">
-              <ng-container *ngIf="filter.filterSettings.textContainmentFilter">
-                {{filter.displayName}}
-
-                <ng-container *ngIf="filter.filterSettings.textContainmentOptions !== 3">
-                  <ul class="filter-block__filter-values">
-                    <li *ngFor="let value of filter.filterValues">
-                      <mat-checkbox color="primary">{{value}}</mat-checkbox>
-                    </li>
-                  </ul>
-                </ng-container>
-
-                <ng-container *ngIf="filter.filterSettings.textContainmentOptions === 3">
-                  <mat-slide-toggle>
-                    {{filter.displayName}}
-                  </mat-slide-toggle>
-                </ng-container>
-
-              </ng-container>
-
-              <ng-container *ngIf="filter.filterSettings.existenceFilter">
-                <mat-slide-toggle></mat-slide-toggle>
-              </ng-container>
-
-              <ng-container *ngIf="filter.filterSettings.numericLTEFilter">
-                {{filter.displayName}}
-                <mat-slider thumbLabel
-                            min="{{filter.filterValues[0]}}"
-                            max="{{filter.filterValues[1]}}">
-                </mat-slider>
-              </ng-container>
-
+              <app-criterion-filter [filter]="filter"></app-criterion-filter>
             </ng-container>
-
 
           </mat-expansion-panel>
 
@@ -55,7 +29,6 @@
 
       </mat-accordion>
     </ng-container>
-
 
   </mat-sidenav>
 
