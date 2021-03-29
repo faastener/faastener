@@ -17,7 +17,7 @@ import {
   ClassificationViewResponse,
   CriteriaGroupingResponse
 } from '../../shared/interfaces/responses';
-import {TechnologyFilterConfiguration} from '../../shared/interfaces/filtering';
+import {CriterionFilterType, TechnologyFilterConfiguration} from '../../shared/interfaces/filtering';
 import {InfoResourceSection} from '../../shared/interfaces/info';
 
 const criteriaPath = '/assets/data/framework/criteria.json';
@@ -285,10 +285,10 @@ export class DataService {
           });
 
           filter.filters.forEach((f) => {
-            if (f.filterSettings.numericLTEFilter) {
+            if (f.filterType === CriterionFilterType.lte) {
               const range: number[] = Array.from(criteriaValues.get(f.criterionId)).sort(((a, b) => a > b ? 1 : -1));
               f.filterValues = [range[0], range[range.length - 1]];
-            } else if (f.filterSettings.textContainmentFilter) {
+            } else if (f.filterType !== CriterionFilterType.exists) {
               f.filterValues = Array.from(criteriaValues.get(f.criterionId).values());
             }
           });

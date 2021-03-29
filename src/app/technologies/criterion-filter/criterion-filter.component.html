@@ -1,28 +1,19 @@
-<ng-container *ngIf="filter.filterSettings.textContainmentFilter">
-
-  <ng-container *ngIf="filter.filterSettings.textContainmentOptions !== 3">
-    {{filter.displayName}}
-    <ul class="filter-block__filter-values">
-      <li *ngFor="let value of filter.filterValues">
-        <mat-checkbox color="primary">{{value}}</mat-checkbox>
-      </li>
-    </ul>
-  </ng-container>
-
-  <ng-container *ngIf="filter.filterSettings.textContainmentOptions === 3">
-    {{filter.displayName}}
-    <mat-slide-toggle>
-    </mat-slide-toggle>
-  </ng-container>
-
-</ng-container>
-
-<ng-container *ngIf="filter.filterSettings.existenceFilter">
+<ng-container *ngIf="filter.filterType === FilterType.containsOne">
   {{filter.displayName}}
-  <mat-slide-toggle></mat-slide-toggle>
+  <ul class="filter-block__filter-values">
+    <li *ngFor="let value of filter.filterValues">
+      <mat-checkbox color="primary">{{value}}</mat-checkbox>
+    </li>
+  </ul>
 </ng-container>
 
-<ng-container *ngIf="filter.filterSettings.numericLTEFilter">
+<ng-container *ngIf="filter.filterType === FilterType.exists">
+  {{filter.displayName}}
+  <mat-slide-toggle>
+  </mat-slide-toggle>
+</ng-container>
+
+<ng-container *ngIf="filter.filterType === FilterType.lte">
   {{filter.displayName}}
   <mat-slider thumbLabel
               min="{{filter.filterValues[0]}}"

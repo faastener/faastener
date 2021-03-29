@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CriterionFilterConfiguration} from '../../shared/interfaces/filtering';
+import {CriterionFilterConfiguration, CriterionFilterType} from '../../shared/interfaces/filtering';
 
 @Component({
   selector: 'app-criterion-filter',
@@ -8,6 +8,7 @@ import {CriterionFilterConfiguration} from '../../shared/interfaces/filtering';
 })
 export class CriterionFilterComponent implements OnInit {
   @Input() filter: CriterionFilterConfiguration;
+  public FilterType = CriterionFilterType;
 
   constructor() {
   }

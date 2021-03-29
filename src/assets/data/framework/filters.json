@@ -7,388 +7,252 @@
       {
         "criterionId": "platform.license",
         "displayName": "License",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.license.type",
         "displayName": "License Type",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.installation.type",
         "displayName": "Installation",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.installation.targets",
         "displayName": "Installation Targets",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.code.availability",
         "displayName": "Source Code Availability",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.code.repository",
         "displayName": "Source Code Repository",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.code.language",
         "displayName": "Main Programming Language",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.github.stars",
         "displayName": "GitHub Stars",
-        "filterSettings": {
-          "numericLTEFilter": "number"
-        }
+        "filterType": "lte"
       },
       {
         "criterionId": "platform.github.forks",
         "displayName": "GitHub Forks",
-        "filterSettings": {
-          "numericLTEFilter": "number"
-        }
+        "filterType": "lte"
       },
       {
         "criterionId": "platform.github.issues",
         "displayName": "GitHub Issues",
-        "filterSettings": {
-          "numericLTEFilter": "number"
-        }
+        "filterType": "lte"
       },
       {
         "criterionId": "platform.github.commits",
         "displayName": "GitHub Commits",
-        "filterSettings": {
-          "numericLTEFilter": "number"
-        }
+        "filterType": "lte"
       },
       {
         "criterionId": "platform.github.contributors",
         "displayName": "GitHub Contributors",
-        "filterSettings": {
-          "numericLTEFilter": "number"
-        }
+        "filterType": "lte"
       },
       {
         "criterionId": "platform.stackoverflow.questions",
         "displayName": "Stackoverflow Questions",
-        "filterSettings": {
-          "numericLTEFilter": "number"
-        }
+        "filterType": "lte"
       },
       {
         "criterionId": "platform.function.runtimes",
         "displayName": "Function Runtimes",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.function.runtime-customization",
         "displayName": "Function Runtime Customization",
-        "filterSettings": {
-          "existenceFilter": true
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.development.ide-support",
         "displayName": "Supported IDEs",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.function.client-libraries",
         "displayName": "Client Libraries",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.quotas.dep-pkg-size",
         "displayName": "Deployment Package Size Quota",
-        "filterSettings": {
-          "existenceFilter": true
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.quotas.execution-time",
         "displayName": "Execution Time Quota",
-        "filterSettings": {
-          "existenceFilter": true
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.function.versioning",
         "displayName": "Function Versioning",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.function.versioning-app",
         "displayName": "Application Versioning",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.event-source.endpoint.sync-call",
         "displayName": "Synchronous Calls",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.event-source.endpoint.async-call",
         "displayName": "Asynchronous Calls",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.event-source.endpoint.customization",
         "displayName": "Endpoint Customization",
-        "filterSettings": {
-          "existenceFilter": true
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.event-source.endpoint.tls",
         "displayName": "TLS Support",
-        "filterSettings": {
-          "existenceFilter": true
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.event-source.datastore.file-level",
         "displayName": "File-level Datastores",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.event-source.datastore.database-mode",
         "displayName": "Database Mode Datastores",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.event-source.scheduler",
         "displayName": "Scheduled Function Calls",
-        "filterSettings": {
-          "existenceFilter": true
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.event-source.messaging",
         "displayName": "Message Queues",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.event-source.streaming",
         "displayName": "Stream Processing Platforms",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.event-source.special-purpose-service",
         "displayName": "Special-purpose Services",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.event-source.integration",
         "displayName": "Event Sources Integration",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.function.orchestrator",
         "displayName": "Native Function Orchestrators",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 3
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.function.orchestrator.workflow-definition-type",
         "displayName": "Workflow Definition Type",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.function.orchestrator.workflow-definition-languages",
         "displayName": "Workflow Definition Language",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 0
-        }
+        "filterType": "containsOne"
       },
       {
         "criterionId": "platform.function.orchestrator.quotas.execution-time",
         "displayName": "Workflow Execution Time Quota",
-        "filterSettings": {
-          "existenceFilter": true
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.function.orchestrator.quotas.io-size",
         "displayName": "Workflow I/O Size Quota",
-        "filterSettings": {
-          "existenceFilter": true
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.testing.functional",
         "displayName": "Functional Testing",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 3
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.testing.non-functional",
         "displayName": "Non-functional Testing",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 3
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.debugging.local",
         "displayName": "Local Debugging",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 3
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.debugging.remote",
         "displayName": "Remote Debugging",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 3
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.observability.logging",
         "displayName": "Logging",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 3
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.observability.monitoring",
         "displayName": "Monitoring",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 3
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.observability.integration",
         "displayName": "Logging/Monitoring Integration",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 3
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.deployment-automation",
         "displayName": "Deployment Automation",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 3
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.ci-cd",
         "displayName": "CI/CD",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 3
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.function.marketplaces",
         "displayName": "Function Marketplaces",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 3
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.function.code-sample-repositories",
         "displayName": "Code Sample Repositories",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 3
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.authentication",
         "displayName": "Authentication",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 3
-        }
+        "filterType": "exists"
       },
       {
         "criterionId": "platform.access-control",
         "displayName": "Access Control",
-        "filterSettings": {
-          "textContainmentFilter": [],
-          "textContainmentOptions": 3
-        }
+        "filterType": "exists"
       }
     ]
   }

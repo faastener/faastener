@@ -118,6 +118,13 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
       let config = filterLookup.get(c.id);
       if (config) {
         current.filters.push(config);
+
+        /*if (config.filterSettings.existenceFilter) {
+          currentForm[config.criterionId] = false;
+        } else if (config.filterSettings.numericLTEFilter) {
+          currentForm[config.criterionId] = config.filterValues[0];
+        } else if (config.filterSettings.textContainmentFilter)*/
+
       }
     });
 
