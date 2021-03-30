@@ -121,7 +121,7 @@
     },
     { "criterionId": "platform.function.orchestrator.control-flow-docs", "values": [ { "value": true, "references": [ "https://github.com/apache/openwhisk-composer/blob/master/docs/COMBINATORS.md" ] } ] },
     { "criterionId": "platform.function.orchestrator.quotas.execution-time", "values": [ { "value": true, "references": [ "https://github.com/apache/openwhisk-composer/blob/master/docs/COMMANDS.md#deploy" ] } ] },
-    { "criterionId": "platform.function.orchestrator.quotas.io-size", "values": [ ] },
+    { "criterionId": "platform.function.orchestrator.quotas.io-size", "values": [ { "value": false, "references": [] } ] },
     { "criterionId": "platform.testing.functional", "values": [ { "value": "function invocation testing", "references": [ "https://github.com/apache/openwhisk-devtools/blob/master/node-local/README.md" ], "comment": "Using Openwhisk's CLI tool" } ] },
     { "criterionId": "platform.testing.non-functional", "values": [] },
     { "criterionId": "platform.debugging.local", "values": [] },

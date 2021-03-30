@@ -3,7 +3,7 @@ import {BehaviorSubject, combineLatest, Observable, of} from 'rxjs';
 import {map, shareReplay, switchMap} from 'rxjs/operators';
 import {Technology} from './interfaces/technology';
 import {PageEvent} from '@angular/material/paginator';
-import {CriteriaBasedQuery} from './interfaces/filtering';
+import {CriteriaBasedQuery, CriterionFilterType, CriterionFilterValue} from './interfaces/filtering';
 
 export interface SimpleDataSource<T> extends DataSource<T> {
   connect(): Observable<T[]>;
@@ -23,6 +23,7 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
   private readonly criteriaBasedQuery: BehaviorSubject<CriteriaBasedQuery>;
   private readonly nameBasedQuery: BehaviorSubject<string>;
 
+  public isPaginated = true;
   public totalInputSize: number;
   public currentIndex: number = 0;
   public pageNumber$ = this.pageNumber.asObservable();
@@ -66,6 +67,7 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
   queryByCriteria(query: CriteriaBasedQuery): void {
     const lastQuery = this.criteriaBasedQuery.getValue();
     const nextQuery = {...lastQuery, ...query};
+    console.log(nextQuery);
     this.criteriaBasedQuery.next(nextQuery);
 
   }
@@ -80,8 +82,15 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
     this.currentIndex = event.pageIndex;
   }
 
+  togglePagination(): void {
+    this.isPaginated = !this.isPaginated;
+  }
+
   connect(): Observable<Technology[]> {
-    return this.paginatedData$;
+    if (this.isPaginated) {
+      return this.paginatedData$;
+    }
+    return this.filteredData$;
   }
 
   disconnect(): void {
@@ -94,9 +103,56 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
     }
 
     if (criteriaQuery) {
+
       Object.keys(criteriaQuery).forEach(key => {
-        console.log(criteriaQuery[key]);
+        if (TechnologyDataSource.canFilter(criteriaQuery[key])) {
+          result = result.filter(t => {
+            let filteringResult = false;
+            for (let c of t.dossier.reviewedCriteria) {
+              if (c.criterionId === key) {
+                for (let v of c.values) {
+                  // TODO: split into separate methods
+                  if (criteriaQuery[key].filterType === CriterionFilterType.lte) {
+                    filteringResult = c.values[0].value <= criteriaQuery[key].value;
+                  } else if (criteriaQuery[key].filterType === CriterionFilterType.bool) {
+
+
+                    if (c.values.size > 0 && typeof c.values[0].value === 'boolean') {
+                      filteringResult = c.values[0].value === criteriaQuery[key].value;
+                    } else {
+                      filteringResult = c.values.size > 0;
+                    }
+
+
+
+                  } else if (criteriaQuery[key].filterType === CriterionFilterType.containsOne) {
+                    let chosenValues = criteriaQuery[key].value as string[];
+                    if (chosenValues && chosenValues.length > 0) {
+                      for (let entry of c.values) {
+                        let value = entry.value as string;
+                        if (chosenValues.indexOf(value) !== -1) {
+                          filteringResult = true;
+                          break;
+                        }
+                      }
+                    } else {
+                      filteringResult = true;
+                    }
+                  } else if (criteriaQuery[key].filterType === CriterionFilterType.containsAll) {
+                    let allValues = [];
+                    c.values.forEach(v => allValues.push(v.value));
+                    filteringResult = JSON.stringify(allValues) === JSON.stringify(criteriaQuery[key].value);
+                  }
+                }
+                break;
+              }
+            }
+            return filteringResult;
+          });
+        }
       });
+
+      console.log(result);
     }
 
     if (sort && sort.order === 'asc') {
@@ -106,5 +162,18 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
     }
 
     return result;
+  }
+
+  private static canFilter(filterValue: CriterionFilterValue): boolean {
+    if (filterValue.filterType === CriterionFilterType.lte) {
+      let v = filterValue.value as number;
+      return !isNaN(v);
+    } else if (filterValue.filterType === CriterionFilterType.containsAll ||
+      filterValue.filterType === CriterionFilterType.containsOne ||
+      filterValue.filterType === CriterionFilterType.excludesAll) {
+      let v = filterValue.value as string[];
+      return v && v.length > 0;
+    }
+    return true;
   }
 }

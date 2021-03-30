@@ -1,22 +1,23 @@
-<ng-container *ngIf="filter.filterType === FilterType.containsOne">
+<ng-container *ngIf="filter.filterType === FilterType.bool || filter.filterType === FilterType.containsAny">
   {{filter.displayName}}
-  <ul class="filter-block__filter-values">
-    <li *ngFor="let value of filter.filterValues">
-      <mat-checkbox color="primary">{{value}}</mat-checkbox>
-    </li>
-  </ul>
-</ng-container>
-
-<ng-container *ngIf="filter.filterType === FilterType.exists">
-  {{filter.displayName}}
-  <mat-slide-toggle>
-  </mat-slide-toggle>
+  <mat-slide-toggle [formControl]="filterElement"></mat-slide-toggle>
 </ng-container>
 
 <ng-container *ngIf="filter.filterType === FilterType.lte">
   {{filter.displayName}}
-  <mat-slider thumbLabel
-              min="{{filter.filterValues[0]}}"
-              max="{{filter.filterValues[1]}}">
-  </mat-slider>
+  <mat-slider [formControl]="filterElement" thumbLabel min="{{filter.filterValues[0]}}"
+              max="{{filter.filterValues[1]}}"></mat-slider>
 </ng-container>
+
+<ng-container *ngIf="filter.filterType === FilterType.containsOne || filter.filterType === FilterType.containsAll || filter.filterType === FilterType.excludesAll">
+  {{filter.displayName}}
+  <form [formGroup]="filterElement">
+    <ul class="filter-block__filter-values" formArrayName="checkboxes">
+      <li *ngFor="let value of filter.filterValues; let i = index">
+        <mat-checkbox color="primary" [formControlName]="i" [checked]="false">{{value}}</mat-checkbox>
+      </li>
+    </ul>
+  </form>
+
+</ng-container>
+

@@ -32,7 +32,7 @@
       {
         "criterionId": "platform.code.repository",
         "displayName": "Source Code Repository",
-        "filterType": "containsOne"
+        "filterType": "containsAny"
       },
       {
         "criterionId": "platform.code.language",
@@ -77,7 +77,7 @@
       {
         "criterionId": "platform.function.runtime-customization",
         "displayName": "Function Runtime Customization",
-        "filterType": "exists"
+        "filterType": "bool"
       },
       {
         "criterionId": "platform.development.ide-support",
@@ -92,12 +92,12 @@
       {
         "criterionId": "platform.quotas.dep-pkg-size",
         "displayName": "Deployment Package Size Quota",
-        "filterType": "exists"
+        "filterType": "bool"
       },
       {
         "criterionId": "platform.quotas.execution-time",
         "displayName": "Execution Time Quota",
-        "filterType": "exists"
+        "filterType": "bool"
       },
       {
         "criterionId": "platform.function.versioning",
@@ -122,12 +122,12 @@
       {
         "criterionId": "platform.event-source.endpoint.customization",
         "displayName": "Endpoint Customization",
-        "filterType": "exists"
+        "filterType": "bool"
       },
       {
         "criterionId": "platform.event-source.endpoint.tls",
         "displayName": "TLS Support",
-        "filterType": "exists"
+        "filterType": "bool"
       },
       {
         "criterionId": "platform.event-source.datastore.file-level",
@@ -142,7 +142,7 @@
       {
         "criterionId": "platform.event-source.scheduler",
         "displayName": "Scheduled Function Calls",
-        "filterType": "exists"
+        "filterType": "bool"
       },
       {
         "criterionId": "platform.event-source.messaging",
@@ -167,7 +167,7 @@
       {
         "criterionId": "platform.function.orchestrator",
         "displayName": "Native Function Orchestrators",
-        "filterType": "exists"
+        "filterType": "containsAny"
       },
       {
         "criterionId": "platform.function.orchestrator.workflow-definition-type",
@@ -182,77 +182,77 @@
       {
         "criterionId": "platform.function.orchestrator.quotas.execution-time",
         "displayName": "Workflow Execution Time Quota",
-        "filterType": "exists"
+        "filterType": "bool"
       },
       {
         "criterionId": "platform.function.orchestrator.quotas.io-size",
         "displayName": "Workflow I/O Size Quota",
-        "filterType": "exists"
+        "filterType": "bool"
       },
       {
         "criterionId": "platform.testing.functional",
         "displayName": "Functional Testing",
-        "filterType": "exists"
+        "filterType": "containsAny"
       },
       {
         "criterionId": "platform.testing.non-functional",
         "displayName": "Non-functional Testing",
-        "filterType": "exists"
+        "filterType": "containsAny"
       },
       {
         "criterionId": "platform.debugging.local",
         "displayName": "Local Debugging",
-        "filterType": "exists"
+        "filterType": "containsAny"
       },
       {
         "criterionId": "platform.debugging.remote",
         "displayName": "Remote Debugging",
-        "filterType": "exists"
+        "filterType": "containsAny"
       },
       {
         "criterionId": "platform.observability.logging",
         "displayName": "Logging",
-        "filterType": "exists"
+        "filterType": "containsAny"
       },
       {
         "criterionId": "platform.observability.monitoring",
         "displayName": "Monitoring",
-        "filterType": "exists"
+        "filterType": "containsAny"
       },
       {
         "criterionId": "platform.observability.integration",
         "displayName": "Logging/Monitoring Integration",
-        "filterType": "exists"
+        "filterType": "containsAny"
       },
       {
         "criterionId": "platform.deployment-automation",
         "displayName": "Deployment Automation",
-        "filterType": "exists"
+        "filterType": "containsAny"
       },
       {
         "criterionId": "platform.ci-cd",
         "displayName": "CI/CD",
-        "filterType": "exists"
+        "filterType": "containsAny"
       },
       {
         "criterionId": "platform.function.marketplaces",
         "displayName": "Function Marketplaces",
-        "filterType": "exists"
+        "filterType": "containsAny"
       },
       {
         "criterionId": "platform.function.code-sample-repositories",
         "displayName": "Code Sample Repositories",
-        "filterType": "exists"
+        "filterType": "bool"
       },
       {
         "criterionId": "platform.authentication",
         "displayName": "Authentication",
-        "filterType": "exists"
+        "filterType": "containsAny"
       },
       {
         "criterionId": "platform.access-control",
         "displayName": "Access Control",
-        "filterType": "exists"
+        "filterType": "containsAny"
       }
     ]
   }

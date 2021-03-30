@@ -15,13 +15,7 @@
               </mat-panel-title>
             </mat-expansion-panel-header>
 
-            <form novalidate>
-                  <!--[formGroup]="customerForm"-->
-            </form>
-
-            <ng-container *ngFor="let filter of filterBlock.filters">
-              <app-criterion-filter [filter]="filter"></app-criterion-filter>
-            </ng-container>
+            <app-criterion-filter [filter]="filter" *ngFor="let filter of filterBlock.filters" (updateQuery)="onQueryUpdate($event)"></app-criterion-filter>
 
           </mat-expansion-panel>
 

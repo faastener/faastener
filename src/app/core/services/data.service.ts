@@ -288,7 +288,7 @@ export class DataService {
             if (f.filterType === CriterionFilterType.lte) {
               const range: number[] = Array.from(criteriaValues.get(f.criterionId)).sort(((a, b) => a > b ? 1 : -1));
               f.filterValues = [range[0], range[range.length - 1]];
-            } else if (f.filterType !== CriterionFilterType.exists) {
+            } else if (f.filterType !== CriterionFilterType.bool) {
               f.filterValues = Array.from(criteriaValues.get(f.criterionId).values());
             }
           });

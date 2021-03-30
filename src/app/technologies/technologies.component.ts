@@ -13,7 +13,7 @@ import {
 } from '../shared/interfaces/filtering';
 import {MatSidenav} from '@angular/material/sidenav';
 import {MediaMatcher} from '@angular/cdk/layout';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-technologies',
@@ -32,15 +32,7 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
   browsingMode = 'explore';
 
   renderedFilter: RenderedFilterBlock[] = [];
-
-
-  renderedForms: FormGroup[] = [];
-
-
-
-  criteriaBasedQuery: CriteriaBasedQuery = {};
-
-
+  
   @ViewChild('sidenav') sidenav: MatSidenav;
   mobileQuery: MediaQueryList;
 
@@ -69,7 +61,7 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.route.data.subscribe(data => {
         this.technologies = data['resolvedData'][0];
-        this.dataSource = new TechnologyDataSource(this.technologies, {property: 'platformName', order: 'asc'}, this.criteriaBasedQuery);
+        this.dataSource = new TechnologyDataSource(this.technologies, {property: 'platformName', order: 'asc'}, {});
         this.framework = data['resolvedData'][1];
         this.filterConfiguration = data['resolvedData'][2];
 
@@ -95,41 +87,31 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
   private generateFilterStructure() {
     const criteriaFilterLookup = new Map(this.filterConfiguration.filters.map(c => [c.criterionId, c] as [string, CriterionFilterConfiguration]));
     let placement: Map<String, RenderedFilterBlock> = new Map<String, RenderedFilterBlock>();
-    let generatedForms: Map<String, FormGroup> = new Map<String, FormGroup>();
-
-    this.groupings.forEach(g => this.populateRenderBlocks(g, criteriaFilterLookup, placement, generatedForms));
+    this.groupings.forEach(g => this.populateRenderBlocks(g, criteriaFilterLookup, placement));
     this.renderedFilter = Array.from(placement.values());
   }
 
-  private populateRenderBlocks(grouping: CriteriaGrouping, filterLookup: Map<string, CriterionFilterConfiguration>, placement: Map<String, RenderedFilterBlock>, generatedForms: Map<String, FormGroup>, parentGroup?: string) {
+  private populateRenderBlocks(grouping: CriteriaGrouping, filterLookup: Map<string, CriterionFilterConfiguration>, placement: Map<String, RenderedFilterBlock>, parentGroup?: string) {
     let current = placement.get(grouping.name);
-    let currentForm = generatedForms.get(grouping.name);
 
     if (current === undefined && grouping.criteria && grouping.criteria.size > 0) {
       placement.set(grouping.name, {blockName: parentGroup ? parentGroup.concat(' : ').concat(grouping.name) : grouping.name, filters: []});
-
-      generatedForms.set(grouping.name, this.fb.group({}));
-
       current = placement.get(grouping.name);
-      currentForm = generatedForms.get(grouping.name);
     }
 
     grouping.criteria.forEach(c => {
       let config = filterLookup.get(c.id);
       if (config) {
         current.filters.push(config);
-
-        /*if (config.filterSettings.existenceFilter) {
-          currentForm[config.criterionId] = false;
-        } else if (config.filterSettings.numericLTEFilter) {
-          currentForm[config.criterionId] = config.filterValues[0];
-        } else if (config.filterSettings.textContainmentFilter)*/
-
       }
     });
 
     if (grouping.groupings) {
-      grouping.groupings.forEach(g => this.populateRenderBlocks(g, filterLookup, placement, generatedForms, grouping.name));
+      grouping.groupings.forEach(g => this.populateRenderBlocks(g, filterLookup, placement, grouping.name));
     }
+  }
+
+  onQueryUpdate($event: CriteriaBasedQuery) {
+    this.dataSource.queryByCriteria($event);
   }
 }

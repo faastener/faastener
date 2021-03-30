@@ -32,16 +32,20 @@ export interface CriterionFilterConfiguration {
  *
  * @remarks
  * Available options:
- * -- exists:  indicates whether any value is present for a given criterion, translates to a toggle in the UI
+ * -- bool:  indicates whether a value for a given criterion is true / false, translates to a toggle in the UI
  * -- lte: indicates whether a value should be less than or equal to a given number, translates to a slider in the UI
+ * -- gte: indicates whether a value should be greater than or equal to a given number, translates to a slider in the UI
  * -- containsOne: at least 1 specified text value must be contained, translates to a group of checkboxes in the UI
+ * -- containsAny: at least 1 arbitrary text value must be contained, translates to a toggle in the UI
  * -- containsAll: all specified text values must be contained, translates to a group of checkboxes in the UI
  * -- excludesAll: all specified text values must not be contained, translates to a group of checkboxes in the UI
  */
 export enum CriterionFilterType {
-  exists = 'exists',
+  bool = 'bool',
   lte = 'lte',
+  gte = 'gte',
   containsOne = 'containsOne',
+  containsAny = 'containsAny',
   containsAll = 'containsAll',
   excludesAll = 'excludesAll'
 }

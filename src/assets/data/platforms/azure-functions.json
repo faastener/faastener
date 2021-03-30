@@ -118,8 +118,8 @@
       ]
     },
     { "criterionId": "platform.function.orchestrator.control-flow-docs", "values": [ { "value": true, "references": [ "https://docs.microsoft.com/azure/azure-functions/durable/durable-functions-code-constraints" ] } ] },
-    { "criterionId": "platform.function.orchestrator.quotas.execution-time", "values": [] },
-    { "criterionId": "platform.function.orchestrator.quotas.io-size", "values": [] },
+    { "criterionId": "platform.function.orchestrator.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
+    { "criterionId": "platform.function.orchestrator.quotas.io-size", "values": [ { "value": false, "references": [] } ] },
     { "criterionId": "platform.testing.functional", "values": [ { "value": "via external tools", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-test-a-function" ], "comment": "Only guidelines are provided" } ] },
     { "criterionId": "platform.testing.non-functional", "values": [] },
     { "criterionId": "platform.debugging.local", "values": [ { "value": "step-through debugging", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-debug-powershell-local" ], "comment": "Using dedicated functions development framework" } ] },
