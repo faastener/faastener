@@ -108,33 +108,32 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
       Object.keys(criteriaQuery).forEach(key => {
         if (TechnologyDataSource.canFilter(criteriaQuery[key])) {
           result = result.filter(t => {
-
-
             let filteringResult = false;
-            for (let c of t.dossier.reviewedCriteria) {
-              if (c.criterionId === key) {
+            for (let reviewedCriterion of t.dossier.reviewedCriteria) {
 
+              if (reviewedCriterion.criterionId === key) {
                 if (criteriaQuery[key].filterType === CriterionFilterType.containsAny) {
                   let chosenValue = criteriaQuery[key].value as boolean;
                   if (chosenValue) {
-                    filteringResult = Array.from(c.values).length > 0;
+                    filteringResult = Array.from(reviewedCriterion.values).length > 0;
                   } else {
-                    filteringResult = Array.from(c.values).length === 0;
+                    filteringResult = Array.from(reviewedCriterion.values).length === 0;
                   }
+                  break;
                 }
 
-                for (let v of c.values) {
+                for (let reviewValue of reviewedCriterion.values) {
                   // TODO: split into separate methods
                   if (criteriaQuery[key].filterType === CriterionFilterType.lte) {
-                    filteringResult = c.values[0].value <= criteriaQuery[key].value;
+                    filteringResult = reviewedCriterion.values[0].value <= criteriaQuery[key].value;
                   } else if (criteriaQuery[key].filterType === CriterionFilterType.bool) {
                     if (criteriaQuery[key].value !== null) {
-                      c.values[0]?.value === criteriaQuery[key].value ? filteringResult = true : false;
+                      reviewedCriterion.values[0]?.value === criteriaQuery[key].value ? filteringResult = true : false;
                     }
                   } else if (criteriaQuery[key].filterType === CriterionFilterType.containsOne) {
                     let chosenValues = criteriaQuery[key].value as string[];
                     if (chosenValues && chosenValues.length > 0) {
-                      for (let entry of c.values) {
+                      for (let entry of reviewedCriterion.values) {
                         let value = entry.value as string;
                         if (chosenValues.indexOf(value) !== -1) {
                           filteringResult = true;
@@ -142,10 +141,16 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
                         }
                       }
                     }
-                  } else if (criteriaQuery[key].filterType === CriterionFilterType.containsAll) {
+                  } else {
                     let allValues = [];
-                    c.values.forEach(v => allValues.push(v.value));
-                    filteringResult = JSON.stringify(allValues) === JSON.stringify(criteriaQuery[key].value);
+                    reviewedCriterion.values.forEach(v => allValues.push(v.value));
+                    let target = Array.from(criteriaQuery[key].value as string[]);
+
+                    if (criteriaQuery[key].filterType === CriterionFilterType.containsAll) {
+                      filteringResult = target.every(v => allValues.includes(v));
+                    } else if (criteriaQuery[key].filterType === CriterionFilterType.excludesAll) {
+                      filteringResult = target.every(v => !allValues.includes(v));
+                    }
                   }
                 }
                 break;
@@ -169,28 +174,34 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
   }
 
   private static canFilter(filterValue: CriterionFilterValue): boolean {
-    if (filterValue.filterType === CriterionFilterType.lte) {
-      let v = filterValue.value as number;
-      return !isNaN(v);
-    } else if (filterValue.filterType === CriterionFilterType.containsAll ||
+    if (filterValue.filterType && filterValue.filterType === CriterionFilterType.lte) {
+      return typeof filterValue.value === 'number';
+    } else if (filterValue.filterType && filterValue.filterType === CriterionFilterType.containsAll ||
       filterValue.filterType === CriterionFilterType.containsOne ||
       filterValue.filterType === CriterionFilterType.excludesAll) {
       let v = filterValue.value as string[];
       return v && v.length > 0;
+    } else if (filterValue.filterType === CriterionFilterType.bool || filterValue.filterType === CriterionFilterType.containsAny) {
+      return typeof filterValue.value === 'boolean';
     }
-    return true;
+
+    return false;
   }
 
   private pruneQuery(nextQuery: { [p: string]: CriterionFilterValue }) {
     let keysToDelete = [];
     Object.keys(nextQuery).forEach(key => {
-        if (nextQuery[key].filterType === CriterionFilterType.bool ||
+        if (nextQuery[key].filterType === null) {
+          keysToDelete.push(key);
+        } else if (nextQuery[key].filterType === CriterionFilterType.bool ||
           nextQuery[key].filterType === CriterionFilterType.containsAny ||
           nextQuery[key].filterType === CriterionFilterType.lte) {
           if (nextQuery[key].value === null) {
             keysToDelete.push(key);
           }
-        } else if (nextQuery[key].filterType === CriterionFilterType.containsOne) {
+        } else if (nextQuery[key].filterType === CriterionFilterType.containsOne ||
+          nextQuery[key].filterType === CriterionFilterType.containsAll ||
+          nextQuery[key].filterType === CriterionFilterType.excludesAll) {
           let valueToCheck = nextQuery[key].value as string[];
           if (valueToCheck.length === 0) {
             keysToDelete.push(key);
