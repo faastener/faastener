@@ -33,7 +33,7 @@
   <mat-paginator class="platforms-list__paginator"
                  [length]="dataSource.totalInputSize"
                  [pageSize]="dataSource.pageSize"
-                 [pageSizeOptions]="[5, 10]"
+                 [pageSizeOptions]="pageSizeOptions"
                  [pageIndex]="dataSource.currentIndex"
                  (page)="dataSource.fetch($event)">
   </mat-paginator>

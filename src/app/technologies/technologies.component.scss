@@ -1,4 +1,5 @@
 @import "../_scss/shared";
+@import "../_scss/global/variables";
 
 :host {
   height: 100vh;
@@ -21,6 +22,19 @@
   flex: 1;
   width: 80%;
   max-width: 30em;
+}
+
+.sidenav__accordion {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.sidenav__filter-block {
+  flex-grow: 1;
+  flex-shrink: 0;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid $gray-30;
 }
 
 .content-container {
@@ -53,18 +67,6 @@
 
 .platforms__settings {
   @include nav_item;
-}
-
-.filter-block {
-  box-shadow: none;
-  color: #3f51b5;
-  background: #e8eaf6;
-  border-radius: 0;
-  border-bottom: 1px solid #93999c;
-}
-
-.filter-block__filter-values {
-  @include list-style-none;
 }
 
 @media screen and (min-width: 900px) {

@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {DataService} from '../core/services/data.service';
 import {Subscription} from 'rxjs';
 import {Technology} from '../shared/interfaces/technology';
@@ -32,7 +32,7 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
   browsingMode = 'explore';
 
   renderedFilter: RenderedFilterBlock[] = [];
-  
+
   @ViewChild('sidenav') sidenav: MatSidenav;
   mobileQuery: MediaQueryList;
 

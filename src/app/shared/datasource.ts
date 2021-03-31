@@ -30,7 +30,7 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
   public filteredData$: Observable<Technology[]>;
   public paginatedData$: Observable<Technology[]>;
 
-  constructor(data: Technology[], initialSort: Sort<Technology>, initialQuery: CriteriaBasedQuery, public pageSize = 5) {
+  constructor(data: Technology[], initialSort: Sort<Technology>, initialQuery: CriteriaBasedQuery, public pageSize = 10) {
     this.data = data;
     this.sort = new BehaviorSubject<Sort<Technology>>(initialSort);
     this.criteriaBasedQuery = new BehaviorSubject<CriteriaBasedQuery>(initialQuery);
@@ -67,9 +67,10 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
   queryByCriteria(query: CriteriaBasedQuery): void {
     const lastQuery = this.criteriaBasedQuery.getValue();
     const nextQuery = {...lastQuery, ...query};
+    console.log('new query:');
+    this.pruneQuery(nextQuery);
     console.log(nextQuery);
     this.criteriaBasedQuery.next(nextQuery);
-
   }
 
   queryByName(query: string): void {
@@ -102,29 +103,34 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
       result = data.filter(platform => nameQuery ? platform.platformName.toLocaleLowerCase().includes(nameQuery) : true);
     }
 
-    if (criteriaQuery) {
+    if (criteriaQuery && Object.keys(criteriaQuery).length !== 0) {
 
       Object.keys(criteriaQuery).forEach(key => {
         if (TechnologyDataSource.canFilter(criteriaQuery[key])) {
           result = result.filter(t => {
+
+
             let filteringResult = false;
             for (let c of t.dossier.reviewedCriteria) {
               if (c.criterionId === key) {
+
+                if (criteriaQuery[key].filterType === CriterionFilterType.containsAny) {
+                  let chosenValue = criteriaQuery[key].value as boolean;
+                  if (chosenValue) {
+                    filteringResult = Array.from(c.values).length > 0;
+                  } else {
+                    filteringResult = Array.from(c.values).length === 0;
+                  }
+                }
+
                 for (let v of c.values) {
                   // TODO: split into separate methods
                   if (criteriaQuery[key].filterType === CriterionFilterType.lte) {
                     filteringResult = c.values[0].value <= criteriaQuery[key].value;
                   } else if (criteriaQuery[key].filterType === CriterionFilterType.bool) {
-
-
-                    if (c.values.size > 0 && typeof c.values[0].value === 'boolean') {
-                      filteringResult = c.values[0].value === criteriaQuery[key].value;
-                    } else {
-                      filteringResult = c.values.size > 0;
+                    if (criteriaQuery[key].value !== null) {
+                      c.values[0]?.value === criteriaQuery[key].value ? filteringResult = true : false;
                     }
-
-
-
                   } else if (criteriaQuery[key].filterType === CriterionFilterType.containsOne) {
                     let chosenValues = criteriaQuery[key].value as string[];
                     if (chosenValues && chosenValues.length > 0) {
@@ -135,8 +141,6 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
                           break;
                         }
                       }
-                    } else {
-                      filteringResult = true;
                     }
                   } else if (criteriaQuery[key].filterType === CriterionFilterType.containsAll) {
                     let allValues = [];
@@ -152,7 +156,7 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
         }
       });
 
-      console.log(result);
+      console.log('found: ' + result.length);
     }
 
     if (sort && sort.order === 'asc') {
@@ -175,5 +179,25 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
       return v && v.length > 0;
     }
     return true;
+  }
+
+  private pruneQuery(nextQuery: { [p: string]: CriterionFilterValue }) {
+    let keysToDelete = [];
+    Object.keys(nextQuery).forEach(key => {
+        if (nextQuery[key].filterType === CriterionFilterType.bool ||
+          nextQuery[key].filterType === CriterionFilterType.containsAny ||
+          nextQuery[key].filterType === CriterionFilterType.lte) {
+          if (nextQuery[key].value === null) {
+            keysToDelete.push(key);
+          }
+        } else if (nextQuery[key].filterType === CriterionFilterType.containsOne) {
+          let valueToCheck = nextQuery[key].value as string[];
+          if (valueToCheck.length === 0) {
+            keysToDelete.push(key);
+          }
+        }
+      }
+    );
+    keysToDelete.forEach(key => delete nextQuery[key]);
   }
 }

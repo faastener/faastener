@@ -1,29 +1,26 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav class="sidenav"
-               [mode]="mobileQuery.matches ? 'over' : 'side'">
+  <mat-sidenav #sidenav class="sidenav" [mode]="mobileQuery.matches ? 'over' : 'side'">
+    <mat-accordion class="sidenav__accordion" *ngIf="renderedFilter" multi displayMode="flat">
+      <ng-container *ngFor="let filterBlock of renderedFilter">
+        <mat-expansion-panel *ngIf="filterBlock.filters && filterBlock.filters.length > 0" class="sidenav__filter-block">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon *ngIf="filterBlock.blockIcon">{{filterBlock.blockIcon}}</mat-icon>
+              {{filterBlock.blockName}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-divider></mat-divider>
 
-    <ng-container *ngIf="renderedFilter">
+          <app-criterion-filter *ngFor="let filter of filterBlock.filters"
+                                [filter]="filter"
+                                (updateQuery)="onQueryUpdate($event)">
+          </app-criterion-filter>
 
-      <mat-accordion multi displayMode="flat">
-        <ng-container *ngFor="let filterBlock of renderedFilter">
-          <mat-expansion-panel *ngIf="filterBlock.filters && filterBlock.filters.length > 0"
-                               class="filter-block">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                <mat-icon *ngIf="filterBlock.blockIcon">{{filterBlock.blockIcon}}</mat-icon>
-                {{filterBlock.blockName}}
-              </mat-panel-title>
-            </mat-expansion-panel-header>
+        </mat-expansion-panel>
 
-            <app-criterion-filter [filter]="filter" *ngFor="let filter of filterBlock.filters" (updateQuery)="onQueryUpdate($event)"></app-criterion-filter>
+      </ng-container>
 
-          </mat-expansion-panel>
-
-        </ng-container>
-
-      </mat-accordion>
-    </ng-container>
-
+    </mat-accordion>
   </mat-sidenav>
 
   <mat-sidenav-content class="content-container">
@@ -34,7 +31,7 @@
         <div class="g__spacer"></div>
         <mat-button-toggle-group [(ngModel)]="browsingMode">
           <mat-button-toggle class="platforms__settings" value="explore" aria-label="explore platforms"
-                             matTooltip="Explore Mode">
+                             matTooltip="Browsing Mode">
             <mat-icon>subject</mat-icon>
           </mat-button-toggle>
           <mat-button-toggle class="platforms__settings" value="search" aria-label="search platforms"

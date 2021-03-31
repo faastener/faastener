@@ -24,6 +24,7 @@ import {MatTreeModule} from '@angular/material/tree';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   imports: [
@@ -51,7 +52,8 @@ import {MatSliderModule} from '@angular/material/slider';
     MatTreeModule,
     MatButtonToggleModule,
     MatBottomSheetModule,
-    MatSliderModule
+    MatSliderModule,
+    MatRadioModule
   ],
   exports: [
     MatButtonModule,
@@ -78,7 +80,8 @@ import {MatSliderModule} from '@angular/material/slider';
     MatTreeModule,
     MatButtonToggleModule,
     MatBottomSheetModule,
-    MatSliderModule
+    MatSliderModule,
+    MatRadioModule
   ]
 })
 export class MaterialModule {

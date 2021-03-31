@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {TechnologyDataSource} from '../../shared/datasource';
 
 @Component({
@@ -6,9 +6,9 @@ import {TechnologyDataSource} from '../../shared/datasource';
   templateUrl: './technology-list.component.html',
   styleUrls: ['./technology-list.component.scss']
 })
-export class TechnologyListComponent {
+export class TechnologyListComponent implements OnInit {
   @Input() dataSource: TechnologyDataSource;
-  readMore: Map<string, boolean> = new Map<string, boolean>();
+  pageSizeOptions: number[] = [5, 10];
 
   constructor() {
   }
@@ -17,4 +17,8 @@ export class TechnologyListComponent {
     this.dataSource.queryByName(name);
     this.dataSource.fetch({pageIndex: 0, length: this.dataSource.totalInputSize, pageSize: this.dataSource.pageSize});
   }
+
+  ngOnInit(): void {
+  }
 }
+

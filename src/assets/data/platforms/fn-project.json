@@ -76,7 +76,7 @@
     { "criterionId": "platform.event-source.endpoint.tls", "values": [] },
     { "criterionId": "platform.event-source.datastore.file-level", "values": [] },
     { "criterionId": "platform.event-source.datastore.database-mode", "values": [] },
-    { "criterionId": "platform.event-source.scheduler", "values": [] },
+    { "criterionId": "platform.event-source.scheduler", "values": [ { "value": false, "references": [] } ] },
     { "criterionId": "platform.event-source.messaging", "values": [] },
     { "criterionId": "platform.event-source.streaming", "values": [] },
     { "criterionId": "platform.event-source.special-purpose-service", "values": [] },
