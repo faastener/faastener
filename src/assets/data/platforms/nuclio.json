@@ -76,7 +76,7 @@
     { "criterionId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://nuclio.io/docs/latest/reference/triggers/"] } ] },
     { "criterionId": "platform.event-source.endpoint.async-call", "values": [] },
     { "criterionId": "platform.event-source.endpoint.customization", "values": [ { "value": true, "references": [ "https://nuclio.io/docs/latest/reference/triggers/" ] } ] },
-    { "criterionId": "platform.event-source.endpoint.tls", "values": [] },
+    { "criterionId": "platform.event-source.endpoint.tls", "values": [ { "value": false, "references": [] } ] },
     { "criterionId": "platform.event-source.datastore.file-level", "values": [] },
     { "criterionId": "platform.event-source.datastore.database-mode", "values": [] },
     { "criterionId": "platform.event-source.scheduler", "values": [ { "value": true, "references": [ "https://nuclio.io/docs/latest/reference/triggers/cron/" ] } ] },

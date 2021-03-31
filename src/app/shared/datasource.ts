@@ -4,6 +4,7 @@ import {map, shareReplay, switchMap} from 'rxjs/operators';
 import {Technology} from './interfaces/technology';
 import {PageEvent} from '@angular/material/paginator';
 import {CriteriaBasedQuery, CriterionFilterType, CriterionFilterValue} from './interfaces/filtering';
+import {CriterionInstance} from './interfaces/classification';
 
 export interface SimpleDataSource<T> extends DataSource<T> {
   connect(): Observable<T[]>;
@@ -104,55 +105,13 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
     }
 
     if (criteriaQuery && Object.keys(criteriaQuery).length !== 0) {
-
       Object.keys(criteriaQuery).forEach(key => {
         if (TechnologyDataSource.canFilter(criteriaQuery[key])) {
           result = result.filter(t => {
             let filteringResult = false;
             for (let reviewedCriterion of t.dossier.reviewedCriteria) {
-
               if (reviewedCriterion.criterionId === key) {
-                if (criteriaQuery[key].filterType === CriterionFilterType.containsAny) {
-                  let chosenValue = criteriaQuery[key].value as boolean;
-                  if (chosenValue) {
-                    filteringResult = Array.from(reviewedCriterion.values).length > 0;
-                  } else {
-                    filteringResult = Array.from(reviewedCriterion.values).length === 0;
-                  }
-                  break;
-                }
-
-                for (let reviewValue of reviewedCriterion.values) {
-                  // TODO: split into separate methods
-                  if (criteriaQuery[key].filterType === CriterionFilterType.lte) {
-                    filteringResult = reviewedCriterion.values[0].value <= criteriaQuery[key].value;
-                  } else if (criteriaQuery[key].filterType === CriterionFilterType.bool) {
-                    if (criteriaQuery[key].value !== null) {
-                      reviewedCriterion.values[0]?.value === criteriaQuery[key].value ? filteringResult = true : false;
-                    }
-                  } else if (criteriaQuery[key].filterType === CriterionFilterType.containsOne) {
-                    let chosenValues = criteriaQuery[key].value as string[];
-                    if (chosenValues && chosenValues.length > 0) {
-                      for (let entry of reviewedCriterion.values) {
-                        let value = entry.value as string;
-                        if (chosenValues.indexOf(value) !== -1) {
-                          filteringResult = true;
-                          break;
-                        }
-                      }
-                    }
-                  } else {
-                    let allValues = [];
-                    reviewedCriterion.values.forEach(v => allValues.push(v.value));
-                    let target = Array.from(criteriaQuery[key].value as string[]);
-
-                    if (criteriaQuery[key].filterType === CriterionFilterType.containsAll) {
-                      filteringResult = target.every(v => allValues.includes(v));
-                    } else if (criteriaQuery[key].filterType === CriterionFilterType.excludesAll) {
-                      filteringResult = target.every(v => !allValues.includes(v));
-                    }
-                  }
-                }
+                filteringResult = this.getFilteringResult(criteriaQuery[key], reviewedCriterion);
                 break;
               }
             }
@@ -160,7 +119,6 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
           });
         }
       });
-
       console.log('found: ' + result.length);
     }
 
@@ -210,5 +168,54 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
       }
     );
     keysToDelete.forEach(key => delete nextQuery[key]);
+  }
+
+  private getFilteringResult(filterValue: CriterionFilterValue, reviewedCriterion: CriterionInstance): boolean {
+    if (filterValue.filterType === CriterionFilterType.containsAny) {
+      return TechnologyDataSource.containsAny(filterValue, reviewedCriterion);
+    }
+
+    for (let reviewValue of reviewedCriterion.values) {
+      if (filterValue.filterType === CriterionFilterType.lte) {
+        return reviewedCriterion.values[0].value <= filterValue.value;
+      } else if (filterValue.filterType === CriterionFilterType.bool) {
+        if (filterValue.value !== null) {
+          return reviewedCriterion.values[0]?.value === filterValue.value;
+        }
+      } else if (filterValue.filterType === CriterionFilterType.containsOne) {
+        return TechnologyDataSource.containsOne(filterValue, reviewedCriterion);
+      } else {
+        let allValues = [];
+        reviewedCriterion.values.forEach(v => allValues.push(v.value));
+        let target = Array.from(filterValue.value as string[]);
+
+        if (filterValue.filterType === CriterionFilterType.containsAll) {
+          return target.every(v => allValues.includes(v));
+        } else if (filterValue.filterType === CriterionFilterType.excludesAll) {
+          return target.every(v => !allValues.includes(v));
+        }
+      }
+    }
+  }
+
+  private static containsAny(filterValue: CriterionFilterValue, reviewedCriterion: CriterionInstance): boolean {
+    let chosenValue = filterValue.value as boolean;
+    if (chosenValue) {
+      return Array.from(reviewedCriterion.values).length > 0;
+    } else {
+      return Array.from(reviewedCriterion.values).length === 0;
+    }
+  }
+
+  private static containsOne(filterValue: CriterionFilterValue, reviewedCriterion: CriterionInstance): boolean {
+    let chosenValues = filterValue.value as string[];
+    if (chosenValues && chosenValues.length > 0) {
+      for (let entry of reviewedCriterion.values) {
+        let value = entry.value as string;
+        if (chosenValues.indexOf(value) !== -1) {
+          return true;
+        }
+      }
+    }
   }
 }
