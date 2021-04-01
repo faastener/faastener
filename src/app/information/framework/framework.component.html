@@ -21,6 +21,7 @@
                               [attr.id]="view.id"
                               [groupings]="[selectedGrouping.get(view.id)]"
                               [parent]="view.name"
+                              [extraCriterionTitle]="'Criterion: '"
                               class="framework__grouping-details">
           </app-child-grouping>
           <mat-card *ngFor="let g of view.groupings"
@@ -40,6 +41,7 @@
                             [groupings]="view.groupings | setToArray"
                             [parent]="view.name"
                             [subGroups]="true"
+                            [extraCriterionTitle]="'Criterion: '"
                             class="framework__grouping-details">
         </app-child-grouping>
       </ng-template>

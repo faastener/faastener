@@ -7,7 +7,9 @@
     </div>
 
     <div class="child-grouping__criterion" *ngFor="let criterion of g.criteria">
-      <app-criterion [criterion]="criterion"></app-criterion>
+      <app-criterion [criterion]="criterion"
+                     [extraTitleText]="extraCriterionTitle">
+      </app-criterion>
     </div>
     <app-child-grouping *ngIf="g.groupings?.size"
                         [groupings]="g.groupings | setToArray"

@@ -10,6 +10,7 @@ export class ChildGroupingComponent {
   @Input('groupings') groupings: CriteriaGrouping[];
   @Input('subGroups') subGroups: boolean = false;
   @Input('parent') parent: string = '';
+  @Input('extraCriterionTitle') extraCriterionTitle: string;
 
   constructor() {
   }

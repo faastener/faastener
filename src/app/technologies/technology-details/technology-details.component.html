@@ -1,22 +1,10 @@
-<div [attr.id]="platform.id" class="technology" *ngIf="platform$ | async as platform">
-  <mat-toolbar class="technology__back-button-toolbar">
-    <button class="technology__toolbar-button" mat-button color="primary" [routerLink]="['/platforms']">
-      <mat-icon>arrow_back</mat-icon>
-      Back
-    </button>
-    <div class="g__spacer"></div>
-    <button class="technology__toolbar-button" mat-button color="primary" (click)="onScrollToTop(platform.id)">
-      <mat-icon>arrow_upward</mat-icon>
-      To Top
-    </button>
-  </mat-toolbar>
-
+<app-header id="header"></app-header>
+<div class="g__page-section technology" *ngIf="platform$ | async as platform" (scroll)="onWindowScroll($event);">
   <ng-container>
-
     <img class="technology__logo" src="{{platform.logoLocation}}" alt="{{platform.platformName}}"/>
     <h1 class="g__page-section-header technology__header">{{platform.platformName}}</h1>
 
-    <mat-form-field appearance="fill" *ngIf="framework">
+    <mat-form-field class="technology__view-combinations" appearance="fill" *ngIf="framework">
       <mat-label>Technology View Mode</mat-label>
       <mat-select [(value)]="selectedViewCombination">
         <mat-option [value]="option" *ngFor="let option of framework.viewCombinations">{{ option.name }}</mat-option>
@@ -26,26 +14,33 @@
 
     <ng-container *ngIf="selectedViewCombination">
       <div *ngFor="let view of selectedViewCombination.views" class="framework__view">
-
+        <h2 class="g__page-section-header--h2 technology__view-title">{{view.name}}</h2>
         <app-child-grouping [attr.id]="view.id"
                             [groupings]="view.groupings | setToArray"
                             [parent]="view.name"
                             [subGroups]="true">
         </app-child-grouping>
-
-
       </div>
     </ng-container>
-
-
-    <!--<ng-container *ngFor="let c of platform.dossier?.reviewedCriteria">
-
-      <span *ngFor="let v of c.values">{{v.value}} </span>
-
-    </ng-container>-->
-
   </ng-container>
 </div>
+
+<mat-toolbar class="technology__mobile-nav-toolbar">
+  <button class="technology__toolbar-button" mat-button color="primary" [routerLink]="['/platforms']">
+    <mat-icon>arrow_back</mat-icon>
+    Platforms
+  </button>
+  <button class="technology__toolbar-button" mat-button color="primary" [routerLink]="['/home']">
+    <mat-icon>home</mat-icon>
+    Home
+  </button>
+  <button *ngIf="toTop" class="technology__toolbar-button" mat-button color="primary" (click)="onScrollToTop('header')">
+    <mat-icon>arrow_upward</mat-icon>
+    To Top
+  </button>
+</mat-toolbar>
+
+<app-footer></app-footer>
 
 
 

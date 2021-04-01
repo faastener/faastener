@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {DataService} from '../../core/services/data.service';
 import {Observable, Subscription} from 'rxjs';
@@ -13,6 +13,7 @@ import {ClassificationFramework, ClassificationViewCombination} from '../../shar
 })
 export class TechnologyDetailsComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
+  toTop = false;
 
   framework: ClassificationFramework;
   platform$: Observable<Technology>;
@@ -55,5 +56,10 @@ export class TechnologyDetailsComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.viewportScroller.scrollToAnchor(platformId);
     }, 50);
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(e) {
+    this.toTop = window.pageYOffset > 200;
   }
 }

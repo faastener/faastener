@@ -1,5 +1,20 @@
+@import "../../_scss/shared";
+@import "../../_scss/global/variables";
+
+:host {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: flex-end;
+}
+
+.child-grouping__criterion-heading {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
 .child-grouping__criterion-title {
-  flex: 1 1 auto;
+  padding: .2rem 0 0 .5rem;
 }
 
 .child-grouping__criterion-description {
