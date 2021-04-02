@@ -1,5 +1,5 @@
 <app-header id="header"></app-header>
-<div class="g__page-section technology" *ngIf="platform$ | async as platform" (scroll)="onWindowScroll($event);">
+<div class="g__page-section technology" *ngIf="platform" (scroll)="onWindowScroll($event);">
   <ng-container>
     <img class="technology__logo" src="{{platform.logoLocation}}" alt="{{platform.platformName}}"/>
     <h1 class="g__page-section-header technology__header">{{platform.platformName}}</h1>
@@ -18,7 +18,8 @@
         <app-child-grouping [attr.id]="view.id"
                             [groupings]="view.groupings | setToArray"
                             [parent]="view.name"
-                            [subGroups]="true">
+                            [subGroups]="true"
+                            [reviewData]="reviewData">
         </app-child-grouping>
       </div>
     </ng-container>
@@ -27,7 +28,7 @@
 
 <mat-toolbar class="technology__mobile-nav-toolbar">
   <button class="technology__toolbar-button" mat-button color="primary" [routerLink]="['/platforms']">
-    <mat-icon>arrow_back</mat-icon>
+    <mat-icon>view_list</mat-icon>
     Platforms
   </button>
   <button class="technology__toolbar-button" mat-button color="primary" [routerLink]="['/home']">

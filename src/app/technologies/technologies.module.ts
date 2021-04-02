@@ -7,12 +7,13 @@ import {TechnologyListComponent} from './technology-list/technology-list.compone
 import {TechnologyDetailsComponent} from './technology-details/technology-details.component';
 import {TechnologyTableComponent} from './technology-table/technology-table.component';
 import {TechnologiesResolver} from './technologies-resolver.service';
-import { CriterionFilterComponent } from './criterion-filter/criterion-filter.component';
+import {CriterionFilterComponent} from './criterion-filter/criterion-filter.component';
+import {TechnologyDetailsResolverService} from './technology-details-resolver.service';
 
 @NgModule({
   declarations: [TechnologiesComponent, TechnologyListComponent, TechnologyDetailsComponent, TechnologyTableComponent, CriterionFilterComponent],
   imports: [CommonModule, SharedModule, TechnologiesRoutingModule],
-  providers: [TechnologiesResolver]
+  providers: [TechnologiesResolver, TechnologyDetailsResolverService]
 
 })
 export class TechnologiesModule {

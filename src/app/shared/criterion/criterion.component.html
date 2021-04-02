@@ -4,7 +4,25 @@
 </div>
 
 
-<p class="child-grouping__criterion-description"> {{criterion.description }}</p>
-<span *ngIf="!criterionInstance" class="child-grouping__criterion-examples">
-  <span class="text-muted"> Examples: {{criterion.exampleValues | json }} </span>
-</span>
+<div *ngIf="!criterionInstance">
+  <p class="child-grouping__criterion-description"> {{criterion.description }}</p>
+  <div class="child-grouping__criterion-examples">
+    <span class="text-muted"> Examples: {{criterion.exampleValues | json }} </span>
+  </div>
+</div>
+
+<mat-list *ngIf="criterionInstance">
+  <mat-list-item *ngFor="let v of criterionInstance.values">
+    <mat-icon mat-list-icon>arrow_right_alt</mat-icon>
+    <div mat-line matTooltip="{{v.comment}}">
+      {{v.value}}
+      <a *ngFor="let ref of v.references; let i = index " href="{{ref}}" mat-icon-button color="primary" matTooltip="Reference {{i}}">
+        <mat-icon>link</mat-icon>
+        link
+      </a>
+    </div>
+
+  </mat-list-item>
+</mat-list>
+
+

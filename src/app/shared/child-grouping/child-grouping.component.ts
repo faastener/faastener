@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {CriteriaGrouping} from '../interfaces/classification';
+import {CriteriaGrouping, CriterionInstance} from '../interfaces/classification';
 
 @Component({
   selector: 'app-child-grouping',
@@ -11,6 +11,7 @@ export class ChildGroupingComponent {
   @Input('subGroups') subGroups: boolean = false;
   @Input('parent') parent: string = '';
   @Input('extraCriterionTitle') extraCriterionTitle: string;
+  @Input('reviewData') reviewData: Map<string, CriterionInstance>;
 
   constructor() {
   }

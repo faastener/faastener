@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {combineLatest, Observable, throwError} from 'rxjs';
-import {catchError, map, mergeAll, mergeMap, shareReplay, toArray} from 'rxjs/operators';
+import {catchError, map, mergeAll, mergeMap, shareReplay, take, toArray} from 'rxjs/operators';
 import {LogoLocatorService} from './logo-locator.service';
 import {
   ClassificationCriterion,
@@ -184,37 +184,28 @@ export class DataService {
   }
 
   getTechnologies(withDossier = false): Observable<Technology[]> {
-    if (withDossier) {
-      return this.http.get<Technology[]>(supportedPlatformsPath)
-        .pipe(
-          map((items) =>
-            items.map(
-              item => {
-                let result: Technology = {
-                  ...item,
-                  logoLocation: this.logoLocator.getLogoPath(item.logoLocator)
-                };
-                this.getDossier(item.id).subscribe({next: value => value ? result.dossier = value : false, error: catchError});
-                return result;
+    return this.http.get<Technology[]>(supportedPlatformsPath)
+      .pipe(
+        map((items) =>
+          items.map(
+            item => {
+              let result: Technology = {
+                ...item,
+                logoLocation: this.logoLocator.getLogoPath(item.logoLocator)
+              };
+              if (withDossier) {
+                this.getDossier(item.id).pipe(take(1)).subscribe({
+                  next: value => value ? result.dossier = value : false,
+                  error: catchError
+                });
               }
-            )
-          ),
-          shareReplay(1),
-          catchError(DataService.handleError)
-        );
-    } else {
-      return this.http.get<Technology[]>(supportedPlatformsPath)
-        .pipe(
-          map((platforms) => platforms.map(
-            platform => ({
-              ...platform,
-              logoLocation: this.logoLocator.getLogoPath(platform.logoLocator)
-            }) as Technology)
-          ),
-          shareReplay(1),
-          catchError(DataService.handleError)
-        );
-    }
+              return result;
+            }
+          )
+        ),
+        shareReplay(1),
+        catchError(DataService.handleError)
+      );
   }
 
   getTechnologiesOfCategory(category: string, withDossier = false): Observable<Technology[]> {
@@ -228,18 +219,26 @@ export class DataService {
   }
 
   getTechnology(id: string, withDossier = false): Observable<Technology> {
-    return this.getTechnologies().pipe(
-      map((techs) => {
-          let t: Technology = techs.find(t => t.id === id);
-          if (t && withDossier) {
-            this.getDossier(t.id).subscribe({next: value => value ? t.dossier = value : false, error: catchError});
+    return combineLatest([
+      this.http.get<Technology[]>(supportedPlatformsPath),
+      this.getDossier(id)
+    ]).pipe(
+      map(([items, dossier]) => {
+          let technology: Technology = items.find(item => item.id === id);
+          let result: Technology = {
+            ...technology,
+            logoLocation: this.logoLocator.getLogoPath(technology.logoLocator)
+          };
+          if (withDossier) {
+            result.dossier = dossier;
           }
-          return t;
+          return result;
         }
       ),
       shareReplay(1),
       catchError(DataService.handleError)
     );
+
   }
 
   getDossier(technologyId: string): Observable<TechnologyDossier> {
