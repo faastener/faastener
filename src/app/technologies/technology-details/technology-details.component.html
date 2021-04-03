@@ -1,5 +1,5 @@
 <app-header id="header"></app-header>
-<div class="g__page-section technology" *ngIf="platform" (scroll)="onWindowScroll($event);">
+<div class="g__page-section technology" *ngIf="platform" (scroll)="onWindowScroll($event)">
   <ng-container>
     <img class="technology__logo" src="{{platform.logoLocation}}" alt="{{platform.platformName}}"/>
     <h1 class="g__page-section-header technology__header">{{platform.platformName}}</h1>
@@ -12,35 +12,13 @@
     </mat-form-field>
 
 
-    <ng-container *ngIf="selectedViewCombination">
-      <div *ngFor="let view of selectedViewCombination.views" class="framework__view">
-        <h2 class="g__page-section-header--h2 technology__view-title">{{view.name}}</h2>
-        <app-child-grouping [attr.id]="view.id"
-                            [groupings]="view.groupings | setToArray"
-                            [parent]="view.name"
-                            [subGroups]="true"
-                            [reviewData]="reviewData">
-        </app-child-grouping>
-      </div>
-    </ng-container>
+    <app-framework-renderer [framework]="framework"
+                            [reviewData]="reviewData"
+                            [includeFrameworkInfo]="false">
+    </app-framework-renderer>
   </ng-container>
 </div>
-
-<mat-toolbar class="technology__mobile-nav-toolbar">
-  <button class="technology__toolbar-button" mat-button color="primary" [routerLink]="['/platforms']">
-    <mat-icon>view_list</mat-icon>
-    Platforms
-  </button>
-  <button class="technology__toolbar-button" mat-button color="primary" [routerLink]="['/home']">
-    <mat-icon>home</mat-icon>
-    Home
-  </button>
-  <button *ngIf="toTop" class="technology__toolbar-button" mat-button color="primary" (click)="onScrollToTop('header')">
-    <mat-icon>arrow_upward</mat-icon>
-    To Top
-  </button>
-</mat-toolbar>
-
+<app-bottom-nav #bottomNavComponent></app-bottom-nav>
 <app-footer></app-footer>
 
 

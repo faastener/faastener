@@ -1,5 +1,5 @@
 <div class="framework">
-  <div class="framework__info">
+  <div *ngIf="includeFrameworkInfo" class="framework__info">
     <h1 class="g__page-section-header text-center">{{framework.name}}</h1>
     <p class="text-justify">{{framework.description}}</p>
   </div>
@@ -22,6 +22,7 @@
                               [groupings]="[selectedGrouping.get(view.id)]"
                               [parent]="view.name"
                               [extraCriterionTitle]="'Criterion: '"
+                              [reviewData]="reviewData"
                               class="framework__grouping-details">
           </app-child-grouping>
           <mat-card *ngFor="let g of view.groupings"
@@ -42,6 +43,7 @@
                             [parent]="view.name"
                             [subGroups]="true"
                             [extraCriterionTitle]="'Criterion: '"
+                            [reviewData]="reviewData"
                             class="framework__grouping-details">
         </app-child-grouping>
       </ng-template>

@@ -1,0 +1,14 @@
+<mat-toolbar class="bottom-navbar">
+  <button class="bottom-navbar__button" mat-button color="primary" [routerLink]="['/platforms']">
+    <mat-icon>view_list</mat-icon>
+    Platforms
+  </button>
+  <button class="bottom-navbar__button" mat-button color="primary" [routerLink]="['/home']">
+    <mat-icon>home</mat-icon>
+    Home
+  </button>
+  <button *ngIf="toTop" class="bottom-navbar__button" mat-button color="primary" (click)="onScrollToTop('header')">
+    <mat-icon>arrow_upward</mat-icon>
+    To Top
+  </button>
+</mat-toolbar>
