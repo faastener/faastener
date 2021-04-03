@@ -1,0 +1,52 @@
+<div class="framework">
+  <div class="framework__info">
+    <h1 class="g__page-section-header text-center">{{framework.name}}</h1>
+    <p class="text-justify">{{framework.description}}</p>
+  </div>
+
+  <ng-container *ngIf="defaultViewCombination">
+    <div *ngFor="let view of defaultViewCombination.views" class="framework__view">
+      <div class="framework__view-config-row">
+        <h2 class="g__page-section-header--h2 framework__view-title">{{view.name}}</h2>
+        <span class="g__spacer"></span>
+        <mat-slide-toggle class="framework__view-toggle" [ngModel]="viewToggles.get(view.id)"
+                          (ngModelChange)="viewToggles.set(view.id, $event)">Flat View
+        </mat-slide-toggle>
+      </div>
+      <p>{{view.description}}</p>
+
+      <ng-container *ngIf="!viewToggles.get(view.id); else flatView">
+        <div class="framework__root-groupings">
+          <app-child-grouping *ngIf="selectedGrouping.get(view.id)"
+                              [attr.id]="view.id"
+                              [groupings]="[selectedGrouping.get(view.id)]"
+                              [parent]="view.name"
+                              [extraCriterionTitle]="'Criterion: '"
+                              class="framework__grouping-details">
+          </app-child-grouping>
+          <mat-card *ngFor="let g of view.groupings"
+                    [attr.id]="g.id"
+                    [class.framework__root-grouping-card--first]="selectedGrouping.get(view.id)?.id === g.id"
+                    class="framework__root-grouping-card"
+                    (click)="onGroupingSelected(view.id, g)">
+            <mat-card-header>
+              <mat-card-title class="text-center">{{g.name}}</mat-card-title>
+            </mat-card-header>
+          </mat-card>
+        </div>
+      </ng-container>
+
+      <ng-template #flatView>
+        <app-child-grouping [attr.id]="view.id"
+                            [groupings]="view.groupings | setToArray"
+                            [parent]="view.name"
+                            [subGroups]="true"
+                            [extraCriterionTitle]="'Criterion: '"
+                            class="framework__grouping-details">
+        </app-child-grouping>
+      </ng-template>
+
+
+    </div>
+  </ng-container>
+</div>

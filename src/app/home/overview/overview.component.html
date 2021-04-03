@@ -9,7 +9,7 @@
     <ul class="platforms__logos">
       <ng-container *ngFor="let p of platforms">
         <li class="platforms__item">
-          <a [routerLink]="['/platforms', p.category.toLocaleLowerCase(), p.id]">
+          <a [routerLink]="['/platforms', p.id]">
             <img class="platforms__logo" src="{{p.logoLocation}}" alt="{{p.platformName}}" matTooltip="{{p.platformName}}"/>
           </a>
         </li>

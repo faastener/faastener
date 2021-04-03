@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {ClassificationFramework} from '../shared/interfaces/classification';
 
 @Component({
   selector: 'app-information',
@@ -6,12 +7,13 @@ import {Component} from '@angular/core';
   styleUrls: ['./information.component.scss']
 })
 export class InformationComponent {
-  navLinks = [
-    {location: './framework', label: 'Framework', icon: 'menu_book'},
-    {location: './docs', label: 'Docs', icon: 'cloud_done'},
-    {location: './resources', label: 'Resources', icon: 'library_books'},
-    {location: './faq', label: 'FAQ', icon: 'question_answer'}
+  readonly navLinks = [
+    {location: 'framework', label: 'Framework', icon: 'menu_book'},
+    {location: 'docs', label: 'Docs', icon: 'cloud_done'},
+    {location: 'resources', label: 'Resources', icon: 'library_books'},
+    {location: 'faq', label: 'FAQ', icon: 'question_answer'}
   ];
+  framework: ClassificationFramework;
 
   constructor() {
   }

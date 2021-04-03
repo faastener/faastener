@@ -41,7 +41,7 @@ export class DataService {
     if (err.error instanceof ErrorEvent) {
       errorMessage = `An error occurred: ${err.error.message}`;
     } else {
-      errorMessage = `Backend returned code ${err.status}: ${err.body.error}`;
+      errorMessage = `Backend returned code ${err.status}: ${err.body?.error}`;
     }
     console.error(err);
     return throwError(errorMessage);
@@ -167,9 +167,32 @@ export class DataService {
     );
   }
 
-  getFramework(frameworkId: string): Observable<ClassificationFramework> {
-    return this.getFrameworks().pipe(
-      map((f) => f.find(item => item.id === frameworkId)),
+  getFrameworkForCategory(techCategory: TechnologyCategory): Observable<ClassificationFramework> {
+    return combineLatest([
+      this.getViewCombinations(),
+      this.http.get<ClassificationFrameworkResponse[]>(frameworksPath)
+    ]).pipe(
+      map(([combs, frameworks]) => {
+        let result: ClassificationFramework;
+        let f = frameworks.find(f => f.technologyCategory === techCategory);
+
+        result = {
+          id: f.id,
+          technologyCategory: f.technologyCategory,
+          name: f.name,
+          description: f.description,
+          viewCombinations: new Set<ClassificationViewCombination>()
+        };
+
+        f.viewCombinationIds.forEach(id => {
+          let viewCombination = combs.find(v => id === v.id);
+          if (viewCombination) {
+            result.viewCombinations.add(viewCombination);
+          }
+        });
+
+        return result;
+      }),
       shareReplay(1),
       catchError(DataService.handleError)
     );

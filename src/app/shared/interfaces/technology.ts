@@ -27,5 +27,5 @@ export interface TechnologyDossier {
 }
 
 export enum TechnologyCategory {
-  FAAS = "FAAS"
+  faas = "faas"
 }

@@ -6,6 +6,7 @@ export interface InfoResourceSection {
   id: string;
   title: string;
   description: string;
+  technologyCategory: string;
   resources: InfoResource[];
 }
 
@@ -14,7 +15,6 @@ export interface InfoResourceSection {
  */
 export interface InfoResource {
   id?: string;
-  technologyCategory: string;
   resource: string;
   reference: string;
 }

@@ -1,7 +1,7 @@
 [
   {
     "filterId": "faas-filter",
-    "technologyCategory": "FAAS",
+    "technologyCategory": "faas",
     "name": "Main filter",
     "filters": [
       {
