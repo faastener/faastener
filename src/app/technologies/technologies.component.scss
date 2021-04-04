@@ -24,6 +24,17 @@
   max-width: 30em;
 }
 
+.sidenav__filter-header {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1rem;
+}
+
+.sidenav__filter-title {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
 .sidenav__accordion {
   display: flex;
   flex-flow: column nowrap;

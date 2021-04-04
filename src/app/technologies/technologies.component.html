@@ -1,5 +1,19 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav class="sidenav" [mode]="mobileQuery.matches ? 'over' : 'side'">
+    <div class="sidenav__filter-header">
+      <div class="sidenav__filter-title">
+        <h3>Filter Panel</h3>
+        <div class="g__spacer"></div>
+        <button mat-icon-button color="primary" aria-label="close filter panel" (click)="sidenav.close()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <p>
+        Filter platforms by combining criteria values.
+      </p>
+
+    </div>
+
     <mat-accordion class="sidenav__accordion" *ngIf="renderedFilter" multi displayMode="flat">
       <ng-container *ngFor="let filterBlock of renderedFilter">
         <mat-expansion-panel *ngIf="filterBlock.filters && filterBlock.filters.length > 0" class="sidenav__filter-block">
