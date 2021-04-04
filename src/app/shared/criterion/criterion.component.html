@@ -1,28 +1,59 @@
-<div class="child-grouping__criterion-heading">
-  <mat-icon>{{icon}}</mat-icon>
-  <span class="child-grouping__criterion-title"><strong>{{title}}</strong></span>
-</div>
-
-
-<div *ngIf="!criterionInstance">
+<div *ngIf="!criterionInstance; else instanceData">
+  <div class="criterion__heading-line">
+    <div class="criterion__value-block">
+      <mat-icon>{{icon}}</mat-icon>
+      <strong class="criterion__title">{{title}}</strong>
+    </div>
+  </div>
   <p class="child-grouping__criterion-description"> {{criterion.description }}</p>
   <div class="child-grouping__criterion-examples">
     <span class="text-muted"> Examples: {{criterion.exampleValues | json }} </span>
   </div>
 </div>
 
-<mat-list *ngIf="criterionInstance">
-  <mat-list-item *ngFor="let v of criterionInstance.values">
-    <mat-icon mat-list-icon>arrow_right_alt</mat-icon>
-    <div mat-line matTooltip="{{v.comment}}">
-      {{v.value}}
-      <a *ngFor="let ref of v.references; let i = index " href="{{ref}}" mat-icon-button color="primary" matTooltip="Reference {{i}}">
-        <mat-icon>link</mat-icon>
-        link
-      </a>
+<ng-template #instanceData>
+  <div class="criterion__heading-line">
+    <div class="criterion__title-block">
+      <mat-icon class="criterion__heading-line-block-item criterion__icon">{{icon}}</mat-icon>
+      <strong class="criterion__title criterion__heading-line-block-item">{{title}}: </strong>
     </div>
 
-  </mat-list-item>
-</mat-list>
 
+    <ng-container *ngIf="!values || values.length === 0">
+      <div class="criterion__value-block">
+        <div class="criterion__heading-line-block-item">N/A</div>
+        <mat-icon class="criterion__heading-line-block-item criterion__icon">block</mat-icon>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="values && values.length === 1">
+      <div class="criterion__value-block">
+        <div class="criterion__heading-line-block-item text-right">{{values[0].value | yesNo }}</div>
+        <mat-icon *ngIf="values[0].comment" class="criterion__heading-line-block-item criterion__icon"
+                  matTooltip="{{values[0].comment}}">info
+        </mat-icon>
+        <a class="criterion__heading-line-block-item criterion__reference"
+           *ngFor="let ref of values[0].references; let i = index"
+           href="{{ref}}"> [{{i + 1}}] </a>
+      </div>
+    </ng-container>
+  </div>
+
+  <div *ngIf="values && values.length > 1" class="criterion__value-list-block">
+    <div *ngFor="let v of values; let valueIndex = index">
+      <div class="criterion__value-list-item">
+        <span>{{valueIndex + 1 + ". " + v.value}}</span>
+        <mat-icon *ngIf="values[0].comment"
+                  class="criterion__heading-line-block-item criterion__icon"
+                  matTooltip="{{values[0].comment}}">info
+        </mat-icon>
+        <a class="criterion__reference" *ngFor="let ref of v.references; let i = index" href="{{ref}}">
+          [{{i + 1}}]
+        </a>
+        <mat-divider *ngIf="valueIndex !== values.length-1" class="criterion__value-list-item-divider"></mat-divider>
+      </div>
+    </div>
+  </div>
+
+</ng-template>
 

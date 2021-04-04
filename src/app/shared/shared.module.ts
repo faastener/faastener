@@ -13,11 +13,37 @@ import {FooterComponent} from './footer/footer.component';
 import {FrameworkResolver} from '../information/resolvers/framework-resolver.service';
 import {FrameworkRendererComponent} from './framework-renderer/framework-renderer.component';
 import {BottomNavComponent} from './bottom-nav/bottom-nav.component';
+import {YesNoPipe} from './yes-no.pipe';
 
 @NgModule({
-  declarations: [PageNotFoundComponent, TruncatePipe, SetToArrayPipe, ChildGroupingComponent, CriterionComponent, HeaderComponent, FooterComponent, FrameworkRendererComponent, BottomNavComponent],
+  declarations: [
+    PageNotFoundComponent,
+    TruncatePipe,
+    SetToArrayPipe,
+    YesNoPipe,
+    ChildGroupingComponent,
+    CriterionComponent,
+    HeaderComponent,
+    FooterComponent,
+    FrameworkRendererComponent,
+    BottomNavComponent
+  ],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, MaterialModule, RouterModule],
-  exports: [CommonModule, FormsModule, ReactiveFormsModule, MaterialModule, PageNotFoundComponent, TruncatePipe, SetToArrayPipe, ChildGroupingComponent, HeaderComponent, FooterComponent, FrameworkRendererComponent, BottomNavComponent],
+  exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule,
+    PageNotFoundComponent,
+    TruncatePipe,
+    SetToArrayPipe,
+    YesNoPipe,
+    ChildGroupingComponent,
+    HeaderComponent,
+    FooterComponent,
+    FrameworkRendererComponent,
+    BottomNavComponent
+  ],
   providers: [FrameworkResolver]
 })
 export class SharedModule {

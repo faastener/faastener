@@ -4,8 +4,8 @@
     <p class="text-justify">{{framework.description}}</p>
   </div>
 
-  <ng-container *ngIf="defaultViewCombination">
-    <div *ngFor="let view of defaultViewCombination.views" class="framework__view">
+  <ng-container *ngIf="selectedViewCombination">
+    <div *ngFor="let view of selectedViewCombination.views" class="framework__view">
       <div class="framework__view-config-row">
         <h2 class="g__page-section-header--h2 framework__view-title">{{view.name}}</h2>
         <span class="g__spacer"></span>
@@ -21,7 +21,8 @@
                               [attr.id]="view.id"
                               [groupings]="[selectedGrouping.get(view.id)]"
                               [parent]="view.name"
-                              [extraCriterionTitle]="'Criterion: '"
+                              [extraCriterionTitle]="extraCriterionTitle"
+                              [renderReviewData]="renderReviewData"
                               [reviewData]="reviewData"
                               class="framework__grouping-details">
           </app-child-grouping>
@@ -42,13 +43,13 @@
                             [groupings]="view.groupings | setToArray"
                             [parent]="view.name"
                             [subGroups]="true"
-                            [extraCriterionTitle]="'Criterion: '"
+                            [extraCriterionTitle]="extraCriterionTitle"
+                            [renderReviewData]="renderReviewData"
                             [reviewData]="reviewData"
                             class="framework__grouping-details">
         </app-child-grouping>
       </ng-template>
-
-
     </div>
   </ng-container>
+
 </div>

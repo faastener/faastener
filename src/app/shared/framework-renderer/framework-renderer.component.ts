@@ -10,10 +10,12 @@ import {ViewportScroller} from '@angular/common';
 })
 export class FrameworkRendererComponent implements OnInit {
   @Input() framework: ClassificationFramework;
-  @Input() reviewData: Map<string, CriterionInstance> = new Map<string, CriterionInstance>();
   @Input() includeFrameworkInfo = true;
+  @Input() selectedViewCombination: ClassificationViewCombination;
+  @Input() extraCriterionTitle: string;
+  @Input() renderReviewData: boolean = false;
+  @Input() reviewData: Map<string, CriterionInstance>;
 
-  defaultViewCombination: ClassificationViewCombination;
   viewToggles: Map<string, boolean> = new Map<string, boolean>();
   selectedGrouping: Map<string, CriteriaGrouping> = new Map<string, CriteriaGrouping>();
 
@@ -21,14 +23,16 @@ export class FrameworkRendererComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    for (let vc of this.framework.viewCombinations) {
-      if (vc.default) {
-        this.defaultViewCombination = vc;
-        break;
+    if (!this.selectedViewCombination) {
+      for (let vc of this.framework.viewCombinations) {
+        if (vc.default) {
+          this.selectedViewCombination = vc;
+          break;
+        }
       }
     }
     // Initialize default view configuration
-    this.defaultViewCombination.views.forEach(v => this.viewToggles.set(v.id, false));
+    this.selectedViewCombination.views.forEach(v => this.viewToggles.set(v.id, false));
   }
 
   onGroupingSelected(viewId: string, grouping: CriteriaGrouping) {

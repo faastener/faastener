@@ -32,7 +32,7 @@
     "id": "grouping:github",
     "locator": "github",
     "name":"GitHub",
-    "criteriaIds": [ "platform.github.stars", "platform.github.forks", "platform.github.issues", "platform.github.commits", "platform.github.contributors", "platform.stackoverflow.questions" ],
+    "criteriaIds": [ "platform.github.stars", "platform.github.forks", "platform.github.issues", "platform.github.commits", "platform.github.contributors" ],
     "parentId": "grouping:community"
   },
   {

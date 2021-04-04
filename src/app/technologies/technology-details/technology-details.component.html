@@ -1,8 +1,9 @@
 <app-header id="header"></app-header>
 <div class="g__page-section technology" *ngIf="platform" (scroll)="onWindowScroll($event)">
-  <ng-container>
+  <div class="technology__header-block">
     <img class="technology__logo" src="{{platform.logoLocation}}" alt="{{platform.platformName}}"/>
     <h1 class="g__page-section-header technology__header">{{platform.platformName}}</h1>
+    <p class="text-justify">{{platform.description}}</p>
 
     <mat-form-field class="technology__view-combinations" appearance="fill" *ngIf="framework">
       <mat-label>Technology View Mode</mat-label>
@@ -10,13 +11,14 @@
         <mat-option [value]="option" *ngFor="let option of framework.viewCombinations">{{ option.name }}</mat-option>
       </mat-select>
     </mat-form-field>
+  </div>
+  <app-framework-renderer [framework]="framework"
+                          [selectedViewCombination]="selectedViewCombination"
+                          [includeFrameworkInfo]="false"
+                          [renderReviewData]="true"
+                          [reviewData]="reviewData">
+  </app-framework-renderer>
 
-
-    <app-framework-renderer [framework]="framework"
-                            [reviewData]="reviewData"
-                            [includeFrameworkInfo]="false">
-    </app-framework-renderer>
-  </ng-container>
 </div>
 <app-bottom-nav #bottomNavComponent></app-bottom-nav>
 <app-footer></app-footer>

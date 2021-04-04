@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ClassificationCriterion, CriterionInstance} from '../interfaces/classification';
+import {ClassificationCriterion, CriterionInstance, CriterionValue} from '../interfaces/classification';
 
 @Component({
   selector: 'app-criterion',
@@ -7,17 +7,22 @@ import {ClassificationCriterion, CriterionInstance} from '../interfaces/classifi
   styleUrls: ['./criterion.component.scss']
 })
 export class CriterionComponent implements OnInit {
-  @Input('criterion') criterion: ClassificationCriterion;
-  @Input('extraTitleText') extraTitleText: string;
-  @Input('criterionInstance') criterionInstance: CriterionInstance;
-  @Input('icon') icon: string = 'text_snippet';
+  @Input() criterion: ClassificationCriterion;
+  @Input() extraTitleText: string;
+  @Input() criterionInstance: CriterionInstance;
+  @Input() reviewMode: boolean;
+  @Input() icon: string = 'text_snippet';
   title: string;
+  values: CriterionValue[];
 
   constructor() {
   }
 
   ngOnInit(): void {
     this.extraTitleText ? this.title = this.extraTitleText + this.criterion.name : this.title = this.criterion.name;
+    if (this.criterionInstance) {
+      this.values = Array.from(this.criterionInstance.values);
+    }
   }
 
 }

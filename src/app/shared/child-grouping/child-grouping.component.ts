@@ -7,11 +7,12 @@ import {CriteriaGrouping, CriterionInstance} from '../interfaces/classification'
   styleUrls: ['./child-grouping.component.scss']
 })
 export class ChildGroupingComponent {
-  @Input('groupings') groupings: CriteriaGrouping[];
-  @Input('subGroups') subGroups: boolean = false;
-  @Input('parent') parent: string = '';
-  @Input('extraCriterionTitle') extraCriterionTitle: string;
-  @Input('reviewData') reviewData: Map<string, CriterionInstance>;
+  @Input() groupings: CriteriaGrouping[];
+  @Input() subGroups: boolean = false;
+  @Input() parent: string = '';
+  @Input() extraCriterionTitle: string;
+  @Input() renderReviewData = false;
+  @Input() reviewData: Map<string, CriterionInstance>;
 
   constructor() {
   }

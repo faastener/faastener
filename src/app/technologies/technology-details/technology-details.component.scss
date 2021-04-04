@@ -9,9 +9,16 @@
 }
 
 .technology {
+  flex: 1;
   display: flex;
   flex-flow: column nowrap;
   margin: 0 auto;
+}
+
+.technology__header-block {
+  padding: 0 1rem;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .technology__logo {
