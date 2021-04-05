@@ -15,7 +15,7 @@ import {
   ClassificationFrameworkResponse,
   ClassificationViewCombinationResponse,
   ClassificationViewResponse,
-  CriteriaGroupingResponse
+  CriteriaGroupingResponse, TechnologyDossierResponse
 } from '../../shared/interfaces/responses';
 import {CriterionFilterType, TechnologyFilterConfiguration} from '../../shared/interfaces/filtering';
 import {InfoResourceSection} from '../../shared/interfaces/info';
@@ -266,8 +266,15 @@ export class DataService {
 
   getDossier(technologyId: string): Observable<TechnologyDossier> {
     const dossierPath = dossiersPath.concat(technologyId, '.json');
-    return this.http.get<TechnologyDossier>(dossierPath)
+    return this.http.get<TechnologyDossierResponse>(dossierPath)
       .pipe(
+        map( (res) => {
+          return {
+            platformId: technologyId,
+            reviewDate: res.reviewDate,
+            reviewedCriteria: new Map(Object.entries(res.reviewedCriteria))
+          } as TechnologyDossier;
+        }),
         catchError(DataService.handleError),
         shareReplay(1)
       );
@@ -293,15 +300,16 @@ export class DataService {
       map(([filter, dossiers]) => {
           const criteriaValues = new Map<string, Set<any>>();
           dossiers.forEach(d => {
-            d.reviewedCriteria.forEach((c) => {
-              const distinctValues = new Set<any>();
-              const previous: Set<any> = criteriaValues.get(c.criterionId);
 
-              c.values.forEach(v => distinctValues.add(v.value));
+            d.reviewedCriteria.forEach((criterionInstance, key) => {
+              const distinctValues = new Set<any>();
+              const previous: Set<any> = criteriaValues.get(key);
+
+              criterionInstance.values.forEach(v => distinctValues.add(v.value));
               if (previous) {
-                criteriaValues.set(c.criterionId, new Set([...previous, ...distinctValues]));
+                criteriaValues.set(key, new Set([...previous, ...distinctValues]));
               } else {
-                criteriaValues.set(c.criterionId, distinctValues);
+                criteriaValues.set(key, distinctValues);
               }
             });
           });

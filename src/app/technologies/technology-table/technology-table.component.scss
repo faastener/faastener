@@ -1,0 +1,40 @@
+@import "../../_scss/shared";
+@import "../../_scss/global/variables";
+
+:host {
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+}
+
+.table-container {
+  overflow: auto;
+  max-width: 90vw;
+}
+
+.tech-table {
+  margin-top: 2rem;
+}
+
+.tech-name-cell {
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  max-width: 5rem;
+}
+
+.tech-name-cell__logo {
+  max-width: 2rem;
+}
+
+.tech-name-cell__title {
+  margin: 0;
+}
+
+@media screen and (min-width: 900px) {
+  .table-container {
+    max-width: 65vw;
+  }
+}

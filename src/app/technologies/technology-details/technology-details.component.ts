@@ -14,7 +14,6 @@ export class TechnologyDetailsComponent implements OnInit {
   @ViewChild('bottomNavComponent') bottomNav: BottomNavComponent;
   platform: Technology;
   framework: ClassificationFramework;
-  reviewData: Map<string, CriterionInstance> = new Map<string, CriterionInstance>();
   selectedViewCombination: ClassificationViewCombination;
 
   constructor(private route: ActivatedRoute, private dataService: DataService) {
@@ -25,7 +24,6 @@ export class TechnologyDetailsComponent implements OnInit {
       this.platform = data['resolvedData'][0];
       this.framework = data['resolvedData'][1];
 
-      this.platform.dossier.reviewedCriteria.forEach(c => this.reviewData.set(c.criterionId, c));
       this.framework.viewCombinations.forEach(vc => vc.default ? this.selectedViewCombination = vc : false);
     });
   }

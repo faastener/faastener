@@ -2,6 +2,7 @@
  * An interface representing a server response with available classification frameworks.
  */
 import {TechnologyCategory} from './technology';
+import {CriterionInstance} from './classification';
 
 export interface ClassificationFrameworkResponse {
   id: string;
@@ -41,4 +42,14 @@ export interface CriteriaGroupingResponse {
   locator: string; // e.g. "licensing" or "community.github"
   parentId?: string;
   criteriaIds?: Set<string>;
+}
+
+export interface TechnologyDossierResponse {
+  platformId: string;
+  reviewDate?: Date;
+  reviewedCriteria: CriteriaReview;
+}
+
+export interface CriteriaReview {
+  [key: string]: CriterionInstance;
 }

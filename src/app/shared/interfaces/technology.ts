@@ -23,9 +23,9 @@ export interface Technology {
 export interface TechnologyDossier {
   platformId: string;
   reviewDate?: Date;
-  reviewedCriteria: Set<CriterionInstance>;
+  reviewedCriteria: Map<string, CriterionInstance>;
 }
 
 export enum TechnologyCategory {
-  faas = "faas"
+  faas = 'faas'
 }

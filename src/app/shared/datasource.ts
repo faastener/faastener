@@ -109,11 +109,8 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
         if (TechnologyDataSource.canFilter(criteriaQuery[key])) {
           result = result.filter(t => {
             let filteringResult = false;
-            for (let reviewedCriterion of t.dossier.reviewedCriteria) {
-              if (reviewedCriterion.criterionId === key) {
-                filteringResult = this.getFilteringResult(criteriaQuery[key], reviewedCriterion);
-                break;
-              }
+            if (t.dossier.reviewedCriteria.has(key)) {
+              filteringResult = this.getFilteringResult(criteriaQuery[key], t.dossier.reviewedCriteria.get(key));
             }
             return filteringResult;
           });
