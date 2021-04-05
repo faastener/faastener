@@ -33,6 +33,12 @@
   margin: 0;
 }
 
+th.mat-header-cell, td.mat-cell {
+  text-align: center;
+  border: 1px solid #CCC;
+  padding: 0 !important;
+}
+
 @media screen and (min-width: 900px) {
   .table-container {
     max-width: 65vw;

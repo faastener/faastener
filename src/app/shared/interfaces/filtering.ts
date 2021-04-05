@@ -50,7 +50,6 @@ export enum CriterionFilterType {
   excludesAll = 'excludesAll'
 }
 
-
 export interface CriteriaBasedQuery {
   [key: string]: CriterionFilterValue;
 }
