@@ -1,55 +1,55 @@
 {
   "platformID": "nuclio",
-  "reviewedCriteria": [
-    { "criterionId": "platform.license", "values": [ { "value": "Apache 2.0", "references": [ "https://github.com/nuclio/nuclio/blob/master/LICENSE" ] } ] },
-    { "criterionId": "platform.license.type", "values": [ { "value": "permissive" } ] },
-    { "criterionId": "platform.installation.type", "values": [
+  "reviewedCriteria": {
+    "platform.license": { "criterionId": "platform.license", "values": [ { "value": "Apache 2.0", "references": [ "https://github.com/nuclio/nuclio/blob/master/LICENSE" ] } ] },
+    "platform.license.type": { "criterionId": "platform.license.type", "values": [ { "value": "permissive" } ] },
+    "platform.installation.type": { "criterionId": "platform.installation.type", "values": [
       { "value": "installable", "references": [ "https://github.com/nuclio/nuclio" ] },
       { "value": "as-a-service", "references": [ "https://nuclio.io" ] }
     ]
     },
-    { "criterionId": "platform.installation.targets", "values": [
+    "platform.installation.targets": { "criterionId": "platform.installation.targets", "values": [
       { "value": "Kubernetes", "references": [ "https://nuclio.io/docs/latest/setup/k8s/" ] }
     ]
     },
-    { "criterionId": "platform.code.availability", "values": [ { "value": "open source", "references": [ "https://github.com/nuclio/nuclio" ] } ] },
-    { "criterionId": "platform.code.repository", "values": [ { "value": "GitHub", "references": [ "https://github.com/nuclio/nuclio" ] } ] },
-    { "criterionId": "platform.code.language", "values": [ { "value": "Go", "references": [ "https://github.com/nuclio/nuclio/search?l=go" ] } ] },
-    { "criterionId": "platform.interface.types", "values": [
+    "platform.code.availability": { "criterionId": "platform.code.availability", "values": [ { "value": "open source", "references": [ "https://github.com/nuclio/nuclio" ] } ] },
+    "platform.code.repository": { "criterionId": "platform.code.repository", "values": [ { "value": "GitHub", "references": [ "https://github.com/nuclio/nuclio" ] } ] },
+    "platform.code.language": { "criterionId": "platform.code.language", "values": [ { "value": "Go", "references": [ "https://github.com/nuclio/nuclio/search?l=go" ] } ] },
+    "platform.interface.types": { "criterionId": "platform.interface.types", "values": [
       { "value": "CLI", "references": [ "https://nuclio.io/docs/latest/reference/nuctl/" ] },
       { "value": "GUI", "references": [ "https://github.com/nuclio/nuclio/blob/master/README.md#dashboard" ] }
     ]
     },
-    { "criterionId": "platform.interface.ops.app-mgmt", "values": [
+    "platform.interface.ops.app-mgmt": { "criterionId": "platform.interface.ops.app-mgmt", "values": [
       { "value": "create", "references": [ "https://nuclio.io/docs/latest/reference/nuctl/" ] },
       { "value": "retrieve", "references": [ "https://nuclio.io/docs/latest/reference/nuctl/" ] },
       { "value": "update", "references": [ "https://nuclio.io/docs/latest/reference/nuctl/" ] },
       { "value": "delete", "references": [ "https://nuclio.io/docs/latest/reference/nuctl/" ] }
     ]
     },
-    { "criterionId": "platform.interface.ops.platform-adm", "values": [
+    "platform.interface.ops.platform-adm": { "criterionId": "platform.interface.ops.platform-adm", "values": [
       { "value": "deployment", "references": [ "https://nuclio.io/docs/latest/setup/k8s/" ] },
       { "value": "configuration", "references": [ "https://nuclio.io/docs/latest/tasks/configuring-a-platform/" ] },
       { "value": "enactment", "references": [ "https://nuclio.io/docs/latest/setup/k8s/" ] }
     ]
     },
-    { "criterionId": "platform.github.stars", "values": [ { "value": 3818, "references": [ "https://github.com/nuclio/nuclio/stargazers" ] } ] },
-    { "criterionId": "platform.github.forks", "values": [ { "value": 384, "references": [ "https://github.com/nuclio/nuclio/network/members" ] } ] },
-    { "criterionId": "platform.github.issues", "values": [ { "value": 80, "references": [ "https://github.com/nuclio/nuclio/issues" ] } ] },
-    { "criterionId": "platform.github.commits", "values": [ { "value": 1394, "references": [ "https://github.com/nuclio/nuclio/commits/development" ] } ] },
-    { "criterionId": "platform.github.contributors", "values": [ { "value": 61, "references": [ "https://github.com/nuclio/nuclio/graphs/contributors" ] } ] },
-    { "criterionId": "platform.stackoverflow.questions", "values": [ { "value": 6, "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=nuclio" ] } ] },
-    { "criterionId": "platform.documentation", "values": [
+    "platform.github.stars": { "criterionId": "platform.github.stars", "values": [ { "value": 3818, "references": [ "https://github.com/nuclio/nuclio/stargazers" ] } ] },
+    "platform.github.forks": { "criterionId": "platform.github.forks", "values": [ { "value": 384, "references": [ "https://github.com/nuclio/nuclio/network/members" ] } ] },
+    "platform.github.issues": { "criterionId": "platform.github.issues", "values": [ { "value": 80, "references": [ "https://github.com/nuclio/nuclio/issues" ] } ] },
+    "platform.github.commits": { "criterionId": "platform.github.commits", "values": [ { "value": 1394, "references": [ "https://github.com/nuclio/nuclio/commits/development" ] } ] },
+    "platform.github.contributors": { "criterionId": "platform.github.contributors", "values": [ { "value": 61, "references": [ "https://github.com/nuclio/nuclio/graphs/contributors" ] } ] },
+    "platform.stackoverflow.questions": { "criterionId": "platform.stackoverflow.questions", "values": [ { "value": 6, "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=nuclio" ] } ] },
+    "platform.documentation": { "criterionId": "platform.documentation", "values": [
       { "value": "usage", "references": [ "https://nuclio.io/docs/latest/introduction/" ] },
       { "value": "deployment", "references": [ "https://nuclio.io/docs/latest/setup/" ] },
       { "value": "architecture", "references": [ "https://nuclio.io/docs/latest/concepts/architecture/" ] }
     ]
     },
-    { "criterionId": "platform.documentation.functions", "values": [
+    "platform.documentation.functions": { "criterionId": "platform.documentation.functions", "values": [
       { "value": "deployment", "references": [ "https://nuclio.io/docs/latest/tasks/deploying-functions/" ] }
     ]
     },
-    { "criterionId": "platform.function.runtimes", "values": [
+    "platform.function.runtimes": { "criterionId": "platform.function.runtimes", "values": [
       { "value": "Binary", "references": [ "https://nuclio.io/docs/latest/reference/runtimes/shell/writing-a-shell-function" ] },
       { "value": "Docker Image", "references": [ "https://nuclio.io/docs/latest/tasks/deploy-functions-from-dockerfile/" ] },
       { "value": "C#", "references": [ "https://nuclio.io/docs/latest/reference/runtimes/dotnetcore/" ] },
@@ -60,71 +60,71 @@
       { "value": "Shell", "references": [ "https://nuclio.io/docs/latest/reference/runtimes/shell/" ] }
     ]
     },
-    { "criterionId": "platform.function.runtime-customization", "values": [ { "value": true, "references": [ "https://nuclio.io/docs/latest/reference/function-configuration/function-configuration-reference/" ] } ] },
-    { "criterionId": "platform.development.ide-support", "values": [ { "value": "Jupyter Notebooks", "references": [ "https://github.com/nuclio/nuclio-jupyter" ] } ] },
-    { "criterionId": "platform.function.client-libraries", "values": [
+    "platform.function.runtime-customization": { "criterionId": "platform.function.runtime-customization", "values": [ { "value": true, "references": [ "https://nuclio.io/docs/latest/reference/function-configuration/function-configuration-reference/" ] } ] },
+    "platform.development.ide-support": { "criterionId": "platform.development.ide-support", "values": [ { "value": "Jupyter Notebooks", "references": [ "https://github.com/nuclio/nuclio-jupyter" ] } ] },
+    "platform.function.client-libraries": { "criterionId": "platform.function.client-libraries", "values": [
       { "value": "Go", "references": [ "https://github.com/nuclio/nuclio-sdk-go" ] },
       { "value": "Java", "references": [ "https://github.com/nuclio/nuclio-sdk-java" ] },
       { "value": "C#", "references": [ "https://github.com/nuclio/nuclio-sdk-dotnetcore" ] },
       { "value": "Python", "references": [ "https://github.com/nuclio/nuclio-sdk-py" ] }
     ]
     },
-    { "criterionId": "platform.quotas.dep-pkg-size", "values": [ { "value": false, "references": [] } ] },
-    { "criterionId": "platform.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
-    { "criterionId": "platform.function.versioning", "values": [ { "value": "dedicated mechanisms", "references": [ "https://github.com/nuclio/nuclio/blob/master/docs/concepts/architecture.md#function-versioning" ] } ] },
-    { "criterionId": "platform.function.versioning-app", "values": [] },
-    { "criterionId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://nuclio.io/docs/latest/reference/triggers/"] } ] },
-    { "criterionId": "platform.event-source.endpoint.async-call", "values": [] },
-    { "criterionId": "platform.event-source.endpoint.customization", "values": [ { "value": true, "references": [ "https://nuclio.io/docs/latest/reference/triggers/" ] } ] },
-    { "criterionId": "platform.event-source.endpoint.tls", "values": [ { "value": false, "references": [] } ] },
-    { "criterionId": "platform.event-source.datastore.file-level", "values": [] },
-    { "criterionId": "platform.event-source.datastore.database-mode", "values": [] },
-    { "criterionId": "platform.event-source.scheduler", "values": [ { "value": true, "references": [ "https://nuclio.io/docs/latest/reference/triggers/cron/" ] } ] },
-    { "criterionId": "platform.event-source.messaging", "values": [
+    "platform.quotas.dep-pkg-size": { "criterionId": "platform.quotas.dep-pkg-size", "values": [ { "value": false, "references": [] } ] },
+    "platform.quotas.execution-time": { "criterionId": "platform.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
+    "platform.function.versioning": { "criterionId": "platform.function.versioning", "values": [ { "value": "dedicated mechanisms", "references": [ "https://github.com/nuclio/nuclio/blob/master/docs/concepts/architecture.md#function-versioning" ] } ] },
+    "platform.function.versioning-app": { "criterionId": "platform.function.versioning-app", "values": [] },
+    "platform.event-source.endpoint.sync-call": { "criterionId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://nuclio.io/docs/latest/reference/triggers/"] } ] },
+    "platform.event-source.endpoint.async-call": { "criterionId": "platform.event-source.endpoint.async-call", "values": [] },
+    "platform.event-source.endpoint.customization": { "criterionId": "platform.event-source.endpoint.customization", "values": [ { "value": true, "references": [ "https://nuclio.io/docs/latest/reference/triggers/" ] } ] },
+    "platform.event-source.endpoint.tls": { "criterionId": "platform.event-source.endpoint.tls", "values": [ { "value": false, "references": [] } ] },
+    "platform.event-source.datastore.file-level": { "criterionId": "platform.event-source.datastore.file-level", "values": [] },
+    "platform.event-source.datastore.database-mode": { "criterionId": "platform.event-source.datastore.database-mode", "values": [] },
+    "platform.event-source.scheduler": { "criterionId": "platform.event-source.scheduler", "values": [ { "value": true, "references": [ "https://nuclio.io/docs/latest/reference/triggers/cron/" ] } ] },
+    "platform.event-source.messaging": { "criterionId": "platform.event-source.messaging", "values": [
       { "value": "RabbitMQ", "references": [ "https://nuclio.io/docs/latest/reference/triggers/rabbitmq/"] },
       { "value": "MQTT", "references": [ "https://nuclio.io/docs/latest/reference/triggers/mqtt/"] },
       { "value": "NATS", "references": [ "https://nuclio.io/docs/latest/reference/triggers/nats/"] }
     ]
     },
-    { "criterionId": "platform.event-source.streaming", "values": [
+    "platform.event-source.streaming": { "criterionId": "platform.event-source.streaming", "values": [
       { "value": "Apache Kafka", "references": [ "https://nuclio.io/docs/latest/reference/triggers/kafka/"] },
       { "value": "AWS Kinesis", "references": [ "https://nuclio.io/docs/latest/reference/triggers/kinesis/"] },
       { "value": "Iguazio Data Science Platform", "references": [ "https://nuclio.io/docs/latest/reference/triggers/v3iostream/"] },
       { "value": "Azure Event Hubs", "references": [ "https://nuclio.io/docs/latest/reference/triggers/eventhub/"] }
     ]
     },
-    { "criterionId": "platform.event-source.special-purpose-service", "values": [] },
-    { "criterionId": "platform.event-source.integration", "values": [] },
-    { "criterionId": "platform.function.orchestrator", "values": [] },
-    { "criterionId": "platform.function.orchestrator.workflow-definition-type", "values": [] },
-    { "criterionId": "platform.function.orchestrator.workflow-definition-languages", "values": [] },
-    { "criterionId": "platform.function.orchestrator.control-flow-docs", "values": [] },
-    { "criterionId": "platform.function.orchestrator.quotas.execution-time", "values": [] },
-    { "criterionId": "platform.function.orchestrator.quotas.io-size", "values": [] },
-    { "criterionId": "platform.testing.functional", "values": [] },
-    { "criterionId": "platform.testing.non-functional", "values": [] },
-    { "criterionId": "platform.debugging.local", "values": [] },
-    { "criterionId": "platform.debugging.remote", "values": [] },
-    { "criterionId": "platform.observability.logging", "values": [
+    "platform.event-source.special-purpose-service": { "criterionId": "platform.event-source.special-purpose-service", "values": [] },
+    "platform.event-source.integration": { "criterionId": "platform.event-source.integration", "values": [] },
+    "platform.function.orchestrator": { "criterionId": "platform.function.orchestrator", "values": [] },
+    "platform.function.orchestrator.workflow-definition-type": { "criterionId": "platform.function.orchestrator.workflow-definition-type", "values": [] },
+    "platform.function.orchestrator.workflow-definition-languages": { "criterionId": "platform.function.orchestrator.workflow-definition-languages", "values": [] },
+    "platform.function.orchestrator.control-flow-docs": { "criterionId": "platform.function.orchestrator.control-flow-docs", "values": [] },
+    "platform.function.orchestrator.quotas.execution-time": { "criterionId": "platform.function.orchestrator.quotas.execution-time", "values": [] },
+    "platform.function.orchestrator.quotas.io-size": { "criterionId": "platform.function.orchestrator.quotas.io-size", "values": [] },
+    "platform.testing.functional": { "criterionId": "platform.testing.functional", "values": [] },
+    "platform.testing.non-functional": { "criterionId": "platform.testing.non-functional", "values": [] },
+    "platform.debugging.local": { "criterionId": "platform.debugging.local", "values": [] },
+    "platform.debugging.remote": { "criterionId": "platform.debugging.remote", "values": [] },
+    "platform.observability.logging": { "criterionId": "platform.observability.logging", "values": [
       { "value": "stdout", "references": [ "https://nuclio.io/docs/latest/tasks/configuring-a-platform/#supported-metric-sinks" ] },
       { "value": "Azure Application Insights", "references": [ "https://nuclio.io/docs/latest/tasks/configuring-a-platform/#supported-metric-sinks" ] }
     ]
     },
-    { "criterionId": "platform.observability.monitoring", "values": [
+    "platform.observability.monitoring": { "criterionId": "platform.observability.monitoring", "values": [
       { "value": "Prometheus", "references": [ "https://nuclio.io/docs/latest/tasks/configuring-a-platform/#supported-log-sinks" ] },
       { "value": "Azure Application Insights", "references": [ "https://nuclio.io/docs/latest/tasks/configuring-a-platform/#supported-log-sinks" ] }
     ]
     },
-    { "criterionId": "platform.observability.integration", "values": [
+    "platform.observability.integration": { "criterionId": "platform.observability.integration", "values": [
       { "value": "push-based", "references": [ "https://nuclio.io/docs/latest/tasks/configuring-a-platform/" ] },
       { "value": "pull-based", "references": [ "https://nuclio.io/docs/latest/tasks/configuring-a-platform/" ] }
     ]
     },
-    { "criterionId": "platform.deployment-automation", "values": [ { "value": "nuctl", "references": [ "https://nuclio.io/docs/latest/reference/nuctl/" ] } ] },
-    { "criterionId": "platform.ci-cd", "values": [] },
-    { "criterionId": "platform.function.marketplaces", "values": [] },
-    { "criterionId": "platform.function.code-sample-repositories", "values": [ { "value": true, "references": [ "https://nuclio.io/docs/latest/examples/" ] } ] },
-    { "criterionId": "platform.authentication", "values": [] },
-    { "criterionId": "platform.access-control", "values": [] }
-  ]
+    "platform.deployment-automation": { "criterionId": "platform.deployment-automation", "values": [ { "value": "nuctl", "references": [ "https://nuclio.io/docs/latest/reference/nuctl/" ] } ] },
+    "platform.ci-cd": { "criterionId": "platform.ci-cd", "values": [] },
+    "platform.function.marketplaces": { "criterionId": "platform.function.marketplaces", "values": [] },
+    "platform.function.code-sample-repositories": { "criterionId": "platform.function.code-sample-repositories", "values": [ { "value": true, "references": [ "https://nuclio.io/docs/latest/examples/" ] } ] },
+    "platform.authentication": { "criterionId": "platform.authentication", "values": [] },
+    "platform.access-control": { "criterionId": "platform.access-control", "values": [] }
+  }
 }

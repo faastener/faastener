@@ -1,86 +1,86 @@
 {
   "platformID": "knative",
-  "reviewedCriteria": [
-    { "criterionId": "platform.license", "values": [ { "value": "Apache 2.0", "references": [ "https://github.com/knative/serving/blob/master/LICENSE" ] } ] },
-    { "criterionId": "platform.license.type", "values": [ { "value": "permissive" } ] },
-    { "criterionId": "platform.installation.type", "values": [ { "value": "installable", "references": [ "https://knative.dev/docs/install" ] } ] },
-    { "criterionId": "platform.installation.targets", "values": [
+  "reviewedCriteria": {
+    "platform.license": { "criterionId": "platform.license", "values": [ { "value": "Apache 2.0", "references": [ "https://github.com/knative/serving/blob/master/LICENSE" ] } ] },
+    "platform.license.type": { "criterionId": "platform.license.type", "values": [ { "value": "permissive" } ] },
+    "platform.installation.type": { "criterionId": "platform.installation.type", "values": [ { "value": "installable", "references": [ "https://knative.dev/docs/install" ] } ] },
+    "platform.installation.targets": { "criterionId": "platform.installation.targets", "values": [
       { "value": "Kubernetes", "references": [ "https://knative.dev/docs/install" ] }
     ]
     },
-    { "criterionId": "platform.code.availability", "values": [ { "value": "open source", "references": [ "https://github.com/knative/serving" ] } ] },
-    { "criterionId": "platform.code.repository", "values": [ { "value": "GitHub", "references": [ "https://github.com/knative/serving" ] } ] },
-    { "criterionId": "platform.code.language", "values": [ { "value": "Go", "references": [ "https://github.com/knative/serving/search?l=go" ] } ] },
-    { "criterionId": "platform.interface.types", "values": [
+    "platform.code.availability": { "criterionId": "platform.code.availability", "values": [ { "value": "open source", "references": [ "https://github.com/knative/serving" ] } ] },
+    "platform.code.repository": { "criterionId": "platform.code.repository", "values": [ { "value": "GitHub", "references": [ "https://github.com/knative/serving" ] } ] },
+    "platform.code.language": { "criterionId": "platform.code.language", "values": [ { "value": "Go", "references": [ "https://github.com/knative/serving/search?l=go" ] } ] },
+    "platform.interface.types": { "criterionId": "platform.interface.types", "values": [
       { "value": "CLI", "references": [ "https://github.com/knative/client" ] },
       { "value": "API", "references": [ "https://github.com/knative/docs/blob/master/docs/serving/spec/knative-api-specification-1.0.md" ] }
     ]
     },
-    { "criterionId": "platform.interface.ops.app-mgmt", "values": [
+    "platform.interface.ops.app-mgmt": { "criterionId": "platform.interface.ops.app-mgmt", "values": [
       { "value": "create", "references": [ "https://github.com/knative/client/blob/master/docs/cmd/kn_service.md" ] },
       { "value": "retrieve", "references": [ "https://github.com/knative/client/blob/master/docs/cmd/kn_service.md" ] },
       { "value": "update", "references": [ "https://github.com/knative/client/blob/master/docs/cmd/kn_service.md" ] },
       { "value": "delete", "references": [ "https://github.com/knative/client/blob/master/docs/cmd/kn_service.md" ] }
     ]
     },
-    { "criterionId": "platform.interface.ops.platform-adm", "values": [
+    "platform.interface.ops.platform-adm": { "criterionId": "platform.interface.ops.platform-adm", "values": [
       { "value": "deployment", "references": [ "https://knative.dev/docs/install/any-kubernetes-cluster" ] },
       { "value": "configuration", "references": [ "https://knative.dev/docs/install/any-kubernetes-cluster" ] },
       { "value": "enactment", "references": [ "https://knative.dev/docs/install/any-kubernetes-cluster" ] }
     ]
     },
-    { "criterionId": "platform.github.stars", "values": [ { "value": 3600, "references": [ "https://github.com/knative/serving/stargazers" ] } ] },
-    { "criterionId": "platform.github.forks", "values": [ { "value": 764, "references": [ "https://github.com/knative/serving/network/members" ] } ] },
-    { "criterionId": "platform.github.issues", "values": [ { "value": 173, "references": [ "https://github.com/knative/serving/issues" ] } ] },
-    { "criterionId": "platform.github.commits", "values": [ { "value": 6323, "references": [ "https://github.com/knative/serving/commits/master" ] } ] },
-    { "criterionId": "platform.github.contributors", "values": [ { "value": 218, "references": [ "https://github.com/knative/serving/graphs/contributors" ] } ] },
-    { "criterionId": "platform.stackoverflow.questions", "values": [ { "value": 93, "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=knative" ] } ] },
-    { "criterionId": "platform.documentation", "values": [
+    "platform.github.stars": { "criterionId": "platform.github.stars", "values": [ { "value": 3600, "references": [ "https://github.com/knative/serving/stargazers" ] } ] },
+    "platform.github.forks": { "criterionId": "platform.github.forks", "values": [ { "value": 764, "references": [ "https://github.com/knative/serving/network/members" ] } ] },
+    "platform.github.issues": { "criterionId": "platform.github.issues", "values": [ { "value": 173, "references": [ "https://github.com/knative/serving/issues" ] } ] },
+    "platform.github.commits": { "criterionId": "platform.github.commits", "values": [ { "value": 6323, "references": [ "https://github.com/knative/serving/commits/master" ] } ] },
+    "platform.github.contributors": { "criterionId": "platform.github.contributors", "values": [ { "value": 218, "references": [ "https://github.com/knative/serving/graphs/contributors" ] } ] },
+    "platform.stackoverflow.questions": { "criterionId": "platform.stackoverflow.questions", "values": [ { "value": 93, "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=knative" ] } ] },
+    "platform.documentation": { "criterionId": "platform.documentation", "values": [
       { "value": "usage", "references": [ "https://knative.dev/docs/serving" ] },
       { "value": "development", "references": [ "https://github.com/knative/serving/blob/master/DEVELOPMENT.md" ] },
       { "value": "deployment", "references": [ "https://knative.dev/docs/install/" ] }
     ]
     },
-    { "criterionId": "platform.documentation.functions", "values": [
+    "platform.documentation.functions": { "criterionId": "platform.documentation.functions", "values": [
       { "value": "deployment", "references": [ "https://knative.dev/docs/serving/getting-started-knative-app" ] }
     ]
     },
-    { "criterionId": "platform.function.runtimes", "values": [
+    "platform.function.runtimes": { "criterionId": "platform.function.runtimes", "values": [
       { "value": "Docker", "references": [ "https://knative.dev/docs/serving/getting-started-knative-app" ] }
     ]
     },
-    { "criterionId": "platform.function.runtime-customization", "values": [ { "value": true, "references": [ "https://github.com/knative/serving/blob/master/docs/spec/overview.md#service" ] } ] },
-    { "criterionId": "platform.development.ide-support", "values": [] },
-    { "criterionId": "platform.function.client-libraries", "values": [] },
-    { "criterionId": "platform.quotas.dep-pkg-size", "values": [ { "value": false, "references": [] } ] },
-    { "criterionId": "platform.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
-    { "criterionId": "platform.function.versioning", "values": [ { "value": "dedicated mechanisms", "references": [ "https://github.com/knative/serving/blob/master/docs/spec/overview.md#revision" ], "comment": "Revision resource represents an immutable version of a function" } ] },
-    { "criterionId": "platform.function.versioning-app", "values": [] },
-    { "criterionId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://knative.dev/docs/serving/getting-started-knative-app"] } ] },
-    { "criterionId": "platform.event-source.endpoint.async-call", "values": [] },
-    { "criterionId": "platform.event-source.endpoint.customization", "values": [ { "value": true, "references": [ "https://knative.dev/docs/serving/samples/knative-routing-go/index.html" ] } ] },
-    { "criterionId": "platform.event-source.endpoint.tls", "values": [ { "value": true, "references": [ "https://knative.dev/docs/serving/using-auto-tls" ] } ] },
-    { "criterionId": "platform.event-source.datastore.file-level", "values": [ { "value": "Google Cloud Storage", "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] } ] },
-    { "criterionId": "platform.event-source.datastore.database-mode", "values": [
+    "platform.function.runtime-customization": { "criterionId": "platform.function.runtime-customization", "values": [ { "value": true, "references": [ "https://github.com/knative/serving/blob/master/docs/spec/overview.md#service" ] } ] },
+    "platform.development.ide-support": { "criterionId": "platform.development.ide-support", "values": [] },
+    "platform.function.client-libraries": { "criterionId": "platform.function.client-libraries", "values": [] },
+    "platform.quotas.dep-pkg-size": { "criterionId": "platform.quotas.dep-pkg-size", "values": [ { "value": false, "references": [] } ] },
+    "platform.quotas.execution-time": { "criterionId": "platform.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
+    "platform.function.versioning": { "criterionId": "platform.function.versioning", "values": [ { "value": "dedicated mechanisms", "references": [ "https://github.com/knative/serving/blob/master/docs/spec/overview.md#revision" ], "comment": "Revision resource represents an immutable version of a function" } ] },
+    "platform.function.versioning-app": { "criterionId": "platform.function.versioning-app", "values": [] },
+    "platform.event-source.endpoint.sync-call": { "criterionId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://knative.dev/docs/serving/getting-started-knative-app"] } ] },
+    "platform.event-source.endpoint.async-call": { "criterionId": "platform.event-source.endpoint.async-call", "values": [] },
+    "platform.event-source.endpoint.customization": { "criterionId": "platform.event-source.endpoint.customization", "values": [ { "value": true, "references": [ "https://knative.dev/docs/serving/samples/knative-routing-go/index.html" ] } ] },
+    "platform.event-source.endpoint.tls": { "criterionId": "platform.event-source.endpoint.tls", "values": [ { "value": true, "references": [ "https://knative.dev/docs/serving/using-auto-tls" ] } ] },
+    "platform.event-source.datastore.file-level": { "criterionId": "platform.event-source.datastore.file-level", "values": [ { "value": "Google Cloud Storage", "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] } ] },
+    "platform.event-source.datastore.database-mode": { "criterionId": "platform.event-source.datastore.database-mode", "values": [
       { "value": "Apache CouchDB", "references": [ "https://knative.dev/docs/eventing/sources/index.html", "https://github.com/knative-sandbox/eventing-couchdb/tree/main/source" ] },
       { "value": "AWS DynamoDB", "references": [ "https://knative.dev/docs/eventing/sources/index.html", "https://github.com/triggermesh/aws-event-sources/blob/master/cmd/awsdynamodbsource/README.md" ] }
     ]
     },
-    { "criterionId": "platform.event-source.scheduler", "values": [ { "value": true, "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] } ] },
-    { "criterionId": "platform.event-source.messaging", "values": [
+    "platform.event-source.scheduler": { "criterionId": "platform.event-source.scheduler", "values": [ { "value": true, "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] } ] },
+    "platform.event-source.messaging": { "criterionId": "platform.event-source.messaging", "values": [
       { "value": "AWS SQS", "references": [ "https://knative.dev/docs/eventing/sources/index.html", "https://github.com/knative-sandbox/eventing-awssqs/blob/main/pkg/apis/sources/v1alpha1/aws_sqs_types.go", "https://github.com/triggermesh/aws-event-sources/blob/master/cmd/awssqssource/README.md" ] },
       { "value": "AWS SNS", "references": [ "https://knative.dev/docs/eventing/sources/index.html", "https://github.com/triggermesh/aws-event-sources/tree/master/cmd/awssnssource" ] },
       { "value": "Google Cloud PubSub", "references": [ "https://knative.dev/docs/eventing/sources/index.html", "https://github.com/google/knative-gcp/blob/main/docs/examples/cloudpubsubsource/README.md" ] },
       { "value": "RabbitMQ", "references": [ "https://knative.dev/docs/eventing/sources/index.html", "https://github.com/knative-sandbox/eventing-rabbitmq" ] }
     ]
     },
-    { "criterionId": "platform.event-source.streaming", "values": [
+    "platform.event-source.streaming": { "criterionId": "platform.event-source.streaming", "values": [
       { "value": "Apache Kafka", "references": [ "https://knative.dev/docs/eventing/sources/index.html", "https://github.com/knative-sandbox/eventing-kafka/blob/master/pkg/apis/sources/v1beta1/kafka_types.go" ] },
       { "value": "AWS Kinesis", "references": [ "https://knative.dev/docs/eventing/sources/index.html", "https://github.com/triggermesh/aws-event-sources/blob/master/cmd/awskinesissource/README.md" ] },
       { "value": "Google Cloud PubSub", "references": [ "https://knative.dev/docs/eventing/sources/index.html", "https://github.com/google/knative-gcp/blob/main/docs/examples/cloudpubsubsource/README.md" ] }
     ]
     },
-    { "criterionId": "platform.event-source.special-purpose-service", "values": [
+    "platform.event-source.special-purpose-service": { "criterionId": "platform.event-source.special-purpose-service", "values": [
       { "value": "Apache Camel", "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] },
       { "value": "Kubernetes API server events", "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] },
       { "value": "GitHub", "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] },
@@ -94,28 +94,28 @@
       { "value": "Websocket", "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] }
     ]
     },
-    { "criterionId": "platform.event-source.integration", "values": [ {"value": "plugin-based", "references": [ "https://knative.dev/docs/eventing/samples/writing-receive-adapter-source/" ] } ] },
-    { "criterionId": "platform.function.orchestrator", "values": [ { "value": "Knative Eventing", "references": [ "https://knative.dev/docs/eventing/" ], "comment": "Only limited orchestration capabilities (sequence & parallel execution)" } ] },
-    { "criterionId": "platform.function.orchestrator.workflow-definition-type", "values": [ { "value": "custom DSL", "references": [ "https://knative.dev/docs/eventing/parallel", "https://knative.dev/docs/eventing/sequence" ] } ] },
-    { "criterionId": "platform.function.orchestrator.workflow-definition-languages", "values": [] },
-    { "criterionId": "platform.function.orchestrator.control-flow-docs", "values": [ { "value": true, "references": [ "https://knative.dev/docs/eventing/flows/sequence", "https://knative.dev/docs/eventing/flows/parallel" ] } ] },
-    { "criterionId": "platform.function.orchestrator.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
-    { "criterionId": "platform.function.orchestrator.quotas.io-size", "values": [ { "value": false, "references": [] } ] },
-    { "criterionId": "platform.testing.functional", "values": [] },
-    { "criterionId": "platform.testing.non-functional", "values": [] },
-    { "criterionId": "platform.debugging.local", "values": [ { "value": "log-based debugging", "references": [ "https://knative.dev/docs/serving/debugging-application-issues/" ], "comment": "Using Kubernetes" } ] },
-    { "criterionId": "platform.debugging.remote", "values": [] },
-    { "criterionId": "platform.observability.logging", "values": [
+    "platform.event-source.integration": { "criterionId": "platform.event-source.integration", "values": [ {"value": "plugin-based", "references": [ "https://knative.dev/docs/eventing/samples/writing-receive-adapter-source/" ] } ] },
+    "platform.function.orchestrator": { "criterionId": "platform.function.orchestrator", "values": [ { "value": "Knative Eventing", "references": [ "https://knative.dev/docs/eventing/" ], "comment": "Only limited orchestration capabilities (sequence & parallel execution)" } ] },
+    "platform.function.orchestrator.workflow-definition-type": { "criterionId": "platform.function.orchestrator.workflow-definition-type", "values": [ { "value": "custom DSL", "references": [ "https://knative.dev/docs/eventing/parallel", "https://knative.dev/docs/eventing/sequence" ] } ] },
+    "platform.function.orchestrator.workflow-definition-languages": { "criterionId": "platform.function.orchestrator.workflow-definition-languages", "values": [] },
+    "platform.function.orchestrator.control-flow-docs": { "criterionId": "platform.function.orchestrator.control-flow-docs", "values": [ { "value": true, "references": [ "https://knative.dev/docs/eventing/flows/sequence", "https://knative.dev/docs/eventing/flows/parallel" ] } ] },
+    "platform.function.orchestrator.quotas.execution-time": { "criterionId": "platform.function.orchestrator.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
+    "platform.function.orchestrator.quotas.io-size": { "criterionId": "platform.function.orchestrator.quotas.io-size", "values": [ { "value": false, "references": [] } ] },
+    "platform.testing.functional": { "criterionId": "platform.testing.functional", "values": [] },
+    "platform.testing.non-functional": { "criterionId": "platform.testing.non-functional", "values": [] },
+    "platform.debugging.local": { "criterionId": "platform.debugging.local", "values": [ { "value": "log-based debugging", "references": [ "https://knative.dev/docs/serving/debugging-application-issues/" ], "comment": "Using Kubernetes" } ] },
+    "platform.debugging.remote": { "criterionId": "platform.debugging.remote", "values": [] },
+    "platform.observability.logging": { "criterionId": "platform.observability.logging", "values": [
       { "value": "Fluentbit", "references": [ "https://knative.dev/docs/install/collecting-logs" ] }
     ]
     },
-    { "criterionId": "platform.observability.monitoring", "values": [] },
-    { "criterionId": "platform.observability.integration", "values": [ { "value": "push-based", "references": [ "https://knative.dev/docs/install/collecting-logs/#setting-up-the-forwarders" ] } ] },
-    { "criterionId": "platform.deployment-automation", "values": [ { "value": "Kubernetes", "references": [ "https://knative.dev/docs/serving/getting-started-knative-app/" ] } ] },
-    { "criterionId": "platform.ci-cd", "values": [] },
-    { "criterionId": "platform.function.marketplaces", "values": [] },
-    { "criterionId": "platform.function.code-sample-repositories", "values": [ { "value": true, "references": [ "https://knative.dev/docs/serving/samples/" ] } ] },
-    { "criterionId": "platform.authentication", "values": [] },
-    { "criterionId": "platform.access-control", "values": [] }
-  ]
+    "platform.observability.monitoring": { "criterionId": "platform.observability.monitoring", "values": [] },
+    "platform.observability.integration": { "criterionId": "platform.observability.integration", "values": [ { "value": "push-based", "references": [ "https://knative.dev/docs/install/collecting-logs/#setting-up-the-forwarders" ] } ] },
+    "platform.deployment-automation": { "criterionId": "platform.deployment-automation", "values": [ { "value": "Kubernetes", "references": [ "https://knative.dev/docs/serving/getting-started-knative-app/" ] } ] },
+    "platform.ci-cd": { "criterionId": "platform.ci-cd", "values": [] },
+    "platform.function.marketplaces": { "criterionId": "platform.function.marketplaces", "values": [] },
+    "platform.function.code-sample-repositories": { "criterionId": "platform.function.code-sample-repositories", "values": [ { "value": true, "references": [ "https://knative.dev/docs/serving/samples/" ] } ] },
+    "platform.authentication": { "criterionId": "platform.authentication", "values": [] },
+    "platform.access-control": { "criterionId": "platform.access-control", "values": [] }
+  }
 }
