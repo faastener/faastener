@@ -72,6 +72,26 @@
   width: 90%;
 }
 
+.platforms__description-block {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 90%;
+}
+
+.platforms__description {
+  flex: 1 1 max-content;
+}
+
+.platforms__filter-button {
+  height: 2.5rem;
+  @include nav_item;
+}
+
+.platforms__filter-button-title {
+  display: none;
+}
+
 .platforms__header {
   flex: 1 1 auto;
 }
@@ -81,7 +101,11 @@
 }
 
 @media screen and (min-width: 900px) {
-  .platforms__controls {
+  .platforms__controls, .platforms__description-block  {
     max-width: 910px;
+  }
+
+  .platforms__filter-button-title {
+    display: inline;
   }
 }

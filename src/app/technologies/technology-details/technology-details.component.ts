@@ -1,8 +1,7 @@
 import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {DataService} from '../../core/services/data.service';
 import {Technology} from '../../shared/interfaces/technology';
-import {ClassificationFramework, ClassificationViewCombination, CriterionInstance} from '../../shared/interfaces/classification';
+import {ClassificationFramework, ClassificationViewCombination} from '../../shared/interfaces/classification';
 import {BottomNavComponent} from '../../shared/bottom-nav/bottom-nav.component';
 
 @Component({
@@ -12,11 +11,12 @@ import {BottomNavComponent} from '../../shared/bottom-nav/bottom-nav.component';
 })
 export class TechnologyDetailsComponent implements OnInit {
   @ViewChild('bottomNavComponent') bottomNav: BottomNavComponent;
+
   platform: Technology;
   framework: ClassificationFramework;
   selectedViewCombination: ClassificationViewCombination;
 
-  constructor(private route: ActivatedRoute, private dataService: DataService) {
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {

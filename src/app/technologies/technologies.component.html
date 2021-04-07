@@ -16,7 +16,8 @@
 
     <mat-accordion class="sidenav__accordion" *ngIf="renderedFilter" multi displayMode="flat">
       <ng-container *ngFor="let filterBlock of renderedFilter">
-        <mat-expansion-panel *ngIf="filterBlock.filters && filterBlock.filters.length > 0" class="sidenav__filter-block">
+        <mat-expansion-panel *ngIf="filterBlock.filters && filterBlock.filters.length > 0"
+                             class="sidenav__filter-block">
           <mat-expansion-panel-header>
             <mat-panel-title>
               <mat-icon *ngIf="filterBlock.blockIcon">{{filterBlock.blockIcon}}</mat-icon>
@@ -55,9 +56,15 @@
         </mat-button-toggle-group>
       </div>
 
-      <p class="g__page-section__description">
-        Browse through the list of available platforms, for a detailed view click on the corresponding platform.
-      </p>
+      <div class="platforms__description-block">
+        <p class="g__page-section__description platforms__description">
+          Browse through the list of available platforms, for a detailed view click on the corresponding platform.
+        </p>
+        <button class="platforms__filter-button" *ngIf="browsingMode === 'search'" mat-raised-button (click)="sidenav.toggle()">
+          <mat-icon>filter_alt</mat-icon>
+          <span class="platforms__filter-button-title">Filters</span>
+        </button>
+      </div>
 
       <app-technology-list *ngIf="browsingMode === 'explore'"
                            [dataSource]="dataSource">

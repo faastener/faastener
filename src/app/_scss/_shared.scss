@@ -47,6 +47,15 @@
   flex-grow: 10;
 }
 
+.g__nav-button {
+  height: 100%;
+  flex: 1;
+
+  &:focus{
+    outline: none;
+  }
+}
+
 .text-center {
   text-align: center !important;
 }

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {TechnologyDataSource} from '../../shared/datasource';
 import {ClassificationFramework, CriteriaGrouping} from '../../shared/interfaces/classification';
 import {TechnologyFilterConfiguration} from '../../shared/interfaces/filtering';
@@ -22,13 +22,14 @@ export class TechnologyTableComponent implements OnInit {
   @Input() filterConfiguration: TechnologyFilterConfiguration;
   @Input() sidenav: MatSidenav;
 
+  @ViewChild('content') tableContainer: ElementRef;
+
   criteriaColumns: TableColumn[] = [];
   groupingColumns: TableColumn[] = [];
-  groupingColumnIds: string[] = [];
-  viewColumnIds: string[] = ['techNameHeader'];
-  viewColumns: TableColumn[] = [];
+  groupingColumnIds: string[] = ['techNameHeader'];
 
   columnsToDisplay = ['techName'];
+
 
   constructor() {
   }
@@ -36,34 +37,24 @@ export class TechnologyTableComponent implements OnInit {
   ngOnInit(): void {
 
     this.framework.viewCombinations.forEach(viewComb => {
-        if (viewComb.default) {
-          viewComb.views.forEach(view => {
-              let groupingColumns: TableColumn[] = [];
-              view.groupings.forEach(grouping => {
-                this.generateGroupingColumns(grouping, groupingColumns);
-              });
-              if (groupingColumns.length > 0) {
-                this.groupingColumns.push(...groupingColumns);
-                let viewColspan = 0;
-                groupingColumns.forEach(c => {
-                  if (c.colSpan) {
-                    viewColspan += c.colSpan;
-                  }
-                });
-
-                this.viewColumns.push({
-                  id: view.id,
-                  displayName: view.name,
-                  colSpan: viewColspan
-                } as TableColumn);
-
-                this.viewColumnIds.push(view.id);
+      if (viewComb.default) {
+        viewComb.views.forEach(view => {
+          let groupingColumns: TableColumn[] = [];
+          view.groupings.forEach(grouping => {
+            this.generateGroupingColumns(grouping, groupingColumns);
+          });
+          if (groupingColumns.length > 0) {
+            this.groupingColumns.push(...groupingColumns);
+            let viewColspan = 0;
+            groupingColumns.forEach(c => {
+              if (c.colSpan) {
+                viewColspan += c.colSpan;
               }
-            }
-          );
-        }
+            });
+          }
+        });
       }
-    );
+    });
   }
 
   private generateGroupingColumns(grouping: CriteriaGrouping, groupingColumns: TableColumn[], parentGroupingName?: string) {
@@ -88,6 +79,14 @@ export class TechnologyTableComponent implements OnInit {
     if (grouping.groupings) {
       grouping.groupings.forEach(g => this.generateGroupingColumns(g, groupingColumns, grouping.name));
     }
+  }
+
+  scrollLeft() {
+    this.tableContainer.nativeElement.scrollLeft -= 150;
+  }
+
+  scrollRight() {
+    this.tableContainer.nativeElement.scrollLeft += 150;
   }
 
 }

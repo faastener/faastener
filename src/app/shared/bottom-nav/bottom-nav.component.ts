@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ViewportScroller} from '@angular/common';
 
 @Component({
@@ -8,6 +8,7 @@ import {ViewportScroller} from '@angular/common';
 })
 export class BottomNavComponent implements OnInit {
   toTop = false;
+  @Input() scrollToAnchor: string;
 
   constructor(private viewportScroller: ViewportScroller) {
   }

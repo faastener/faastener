@@ -66,6 +66,13 @@ export class CriterionFilterComponent implements OnInit {
 
   clearFilter() {
     this.filterElement.reset();
+    if (
+      this.filter.filterType === this.FilterType.containsAll ||
+      this.filter.filterType === this.FilterType.containsOne ||
+      this.filter.filterType === this.FilterType.excludesAll
+    ) {
+      this.filterElement.get('filterType').setValue(this.FilterType.containsOne);
+    }
     this.filterElement.markAsPristine();
   }
 }
