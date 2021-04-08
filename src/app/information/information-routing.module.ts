@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {DocsComponent} from './docs/docs.component';
 import {ResourcesComponent} from './resources/resources.component';
 import {FaqComponent} from './faq/faq.component';
 import {InformationComponent} from './information.component';
@@ -15,7 +14,6 @@ const infoRoutes: Routes = [
     children: [
       {path: '', pathMatch: 'full', redirectTo: 'framework'},
       {path: 'framework', component: FrameworkComponent, resolve: {resolvedData: FrameworkResolver}},
-      {path: 'docs', component: DocsComponent},
       {path: 'resources', component: ResourcesComponent, resolve: {resolvedData: ResourcesResolver}},
       {path: 'faq', component: FaqComponent}
     ]
