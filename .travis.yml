@@ -2,7 +2,6 @@ language: node_js
 node_js:
   - '12'
 dist: trusty
-sudo: required
 branches:
   only:
     - master
@@ -13,7 +12,6 @@ script:
   - npm run build:doc
 deploy:
   provider: pages
-  skip_cleanup: true
   github_token: $GITHUB_TOKEN
   local_dir: dist/apps/documentation/
   on:
