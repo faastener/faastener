@@ -2,7 +2,7 @@
 @import "../../_scss/global/variables";
 
 :host {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
@@ -12,39 +12,73 @@
 .table-container {
   align-self: center;
   flex-grow: 1;
-  height: 100vh;
-  width: 95vw;
-  overflow-x: scroll;
+  height: auto;
+  width: 93vw;
+  margin-bottom: 3rem;
+  overflow: scroll;
   scroll-behavior: smooth;
-  white-space: nowrap;
+}
+
+.tech-name-header-cell {
+  display:table-cell;
+  background: white;
+  min-width: 3.5rem;
+  border-right: 2px solid $violet-600;
+}
+
+.grouping-header-cell {
+  display:table-cell;
+  min-width: 3.5rem;
+  padding: 0 .5rem;
+  border-right: 1px solid $gray-10;
+}
+
+.criterion-header-cell {
+  display:table-cell;
+  min-width: 5rem;
+  padding: 0 1rem;
+  border-right: 1px solid $gray-10;
+  border-bottom: 1px solid $gray-10;
 }
 
 .tech-name-cell {
+  height: 100%;
+  padding: 0 !important;
+  display:table-cell;
+  background: white;
+  min-width: 3.5rem;
+  border-right: 2px solid $violet-600;
+
+  img {
+    max-width: 2rem;
+  }
+}
+
+.tech-name-content {
+  height: 100%;
   display: flex;
   flex-flow: column nowrap;
-  align-content: center;
-  justify-content: flex-start;
-  max-width: 5rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .value-cell {
-  min-width: 3rem;
-  overflow: hidden;
+  padding: 0 1rem !important;
+  word-wrap: break-word !important;
 }
 
-.tech-name-cell__logo {
-  max-width: 2rem;
+.value-list {
+  display: flex;
+  flex-flow: row wrap;
 }
 
-.tech-name-cell__title {
-  margin: 0;
+.value {
+  font-size: .8rem;
 }
 
-th.mat-header-cell, td.mat-cell {
-  text-align: center;
-  border: 1px solid #CCC;
-  padding: 0 !important;
-}
+/*.tech-row:nth-child(even) {
+  background-color: $gray-10;
+}*/
 
 @media screen and (min-width: 900px) {
   .table-container {
