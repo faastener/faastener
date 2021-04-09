@@ -8,7 +8,6 @@ branches:
 before_script:
   - npm install -g @angular/cli
 script:
-  - ng build --prod --base-href https://faastener.github.io/faastener/
   - npm run build:doc
 deploy:
   provider: pages
