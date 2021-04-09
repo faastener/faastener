@@ -1,0 +1,214 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>faastener documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">faastener documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li>CriteriaBasedQuery</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/shared/interfaces/filtering.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="inputs">Indexable</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <code>[key: string]:        <code><a href="../interfaces/CriterionFilterValue.html" target="_self" >CriterionFilterValue</a></code>
+</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/shared/interfaces/filtering.ts:53</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface RenderedFilterBlock {
+  blockName: string;
+  blockIcon?: string;
+  filters: CriterionFilterConfiguration[];
+}
+
+/**
+ * An interface representing a filter configuration for a given technology {@link TechnologyCategory}.
+ * This configuration defines which criteria have dedicated filter elements in the UI.
+ */
+export interface TechnologyFilterConfiguration {
+  filterId: string;
+  technologyCategory: string;
+  name: string;
+  filters: CriterionFilterConfiguration[];
+}
+
+/**
+ * An interface representing a filter configuration for a given {@link ClassificationCriterion}.
+ * This configuration defines the desired filtering behavior.
+ */
+export interface CriterionFilterConfiguration {
+  criterionId: string;
+  displayName: string;
+  filterType: CriterionFilterType;
+  filterValues?: [number, number] | string[];
+}
+
+/**
+ * An enum representing a filter type for a given {@link CriterionFilterConfiguration}.
+ * Based on these settings the respective filtering behavior is generated.
+ *
+ * @remarks
+ * Available options:
+ * -- bool:  indicates whether a value for a given criterion is true / false, translates to a toggle in the UI
+ * -- lte: indicates whether a value should be less than or equal to a given number, translates to a slider in the UI
+ * -- gte: indicates whether a value should be greater than or equal to a given number, translates to a slider in the UI
+ * -- containsOne: at least 1 specified text value must be contained, translates to a group of checkboxes in the UI
+ * -- containsAny: at least 1 arbitrary text value must be contained, translates to a toggle in the UI
+ * -- containsAll: all specified text values must be contained, translates to a group of checkboxes in the UI
+ * -- excludesAll: all specified text values must not be contained, translates to a group of checkboxes in the UI
+ */
+export enum CriterionFilterType {
+  bool &#x3D; &#x27;bool&#x27;,
+  lte &#x3D; &#x27;lte&#x27;,
+  gte &#x3D; &#x27;gte&#x27;,
+  containsOne &#x3D; &#x27;containsOne&#x27;,
+  containsAny &#x3D; &#x27;containsAny&#x27;,
+  containsAll &#x3D; &#x27;containsAll&#x27;,
+  excludesAll &#x3D; &#x27;excludesAll&#x27;
+}
+
+export interface CriteriaBasedQuery {
+  [key: string]: CriterionFilterValue;
+}
+
+export interface CriterionFilterValue {
+  filterType?: CriterionFilterType;
+  value: boolean | number | string[];
+}
+</code></pre>
+    </div>
+</div>
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'CriteriaBasedQuery.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

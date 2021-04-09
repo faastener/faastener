@@ -1,0 +1,1998 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>faastener documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">faastener documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>DataService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/services/data.service.ts</code>
+        </p>
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#buildGroupings">buildGroupings</a>
+                            </li>
+                            <li>
+                                <a href="#getCriteria">getCriteria</a>
+                            </li>
+                            <li>
+                                <a href="#getDefaultViewCombinationData">getDefaultViewCombinationData</a>
+                            </li>
+                            <li>
+                                <a href="#getDossier">getDossier</a>
+                            </li>
+                            <li>
+                                <a href="#getDossiersOfCategory">getDossiersOfCategory</a>
+                            </li>
+                            <li>
+                                <a href="#getFrameworkForCategory">getFrameworkForCategory</a>
+                            </li>
+                            <li>
+                                <a href="#getFrameworkForTechnologyType">getFrameworkForTechnologyType</a>
+                            </li>
+                            <li>
+                                <a href="#getFrameworkGroupingsData">getFrameworkGroupingsData</a>
+                            </li>
+                            <li>
+                                <a href="#getFrameworks">getFrameworks</a>
+                            </li>
+                            <li>
+                                <a href="#getGroupings">getGroupings</a>
+                            </li>
+                            <li>
+                                <a href="#getInfoResources">getInfoResources</a>
+                            </li>
+                            <li>
+                                <a href="#getTechnologies">getTechnologies</a>
+                            </li>
+                            <li>
+                                <a href="#getTechnologiesOfCategory">getTechnologiesOfCategory</a>
+                            </li>
+                            <li>
+                                <a href="#getTechnology">getTechnology</a>
+                            </li>
+                            <li>
+                                <a href="#getTechnologyFilter">getTechnologyFilter</a>
+                            </li>
+                            <li>
+                                <a href="#getViewCombinations">getViewCombinations</a>
+                            </li>
+                            <li>
+                                <a href="#getViewGroupingsData">getViewGroupingsData</a>
+                            </li>
+                            <li>
+                                <a href="#getViews">getViews</a>
+                            </li>
+                            <li>
+                                <a href="#getViewsData">getViewsData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Static</span>
+                                <a href="#handleError">handleError</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, logoLocator: <a href="../injectables/LogoLocatorService.html">LogoLocatorService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/core/services/data.service.ts:34</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>logoLocator</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LogoLocatorService.html" target="_self" >LogoLocatorService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buildGroupings"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            buildGroupings
+                        </b>
+                        <a href="#buildGroupings"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>buildGroupings(data: CriteriaGroupingResponse[], criteria: <a href="../interfaces/ClassificationCriterion.html">Map<string | ClassificationCriterion></a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="413"
+                            class="link-to-prism">src/app/core/services/data.service.ts:413</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                            <code>CriteriaGroupingResponse[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>criteria</td>
+                                    <td>
+                                                <code><a href="../interfaces/ClassificationCriterion.html" target="_self" >Map&lt;string | ClassificationCriterion&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/CriteriaGrouping.html" target="_self" >CriteriaGrouping[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCriteria"></a>
+                    <span class="name">
+                        <b>
+                            getCriteria
+                        </b>
+                        <a href="#getCriteria"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCriteria()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/core/services/data.service.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/ClassificationCriterion.html" target="_self" >Observable&lt;ClassificationCriterion[]&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDefaultViewCombinationData"></a>
+                    <span class="name">
+                        <b>
+                            getDefaultViewCombinationData
+                        </b>
+                        <a href="#getDefaultViewCombinationData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDefaultViewCombinationData(frameworkId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="345"
+                            class="link-to-prism">src/app/core/services/data.service.ts:345</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>frameworkId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;ClassificationViewCombinationResponse&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDossier"></a>
+                    <span class="name">
+                        <b>
+                            getDossier
+                        </b>
+                        <a href="#getDossier"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDossier(technologyId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="267"
+                            class="link-to-prism">src/app/core/services/data.service.ts:267</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>technologyId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;TechnologyDossier&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDossiersOfCategory"></a>
+                    <span class="name">
+                        <b>
+                            getDossiersOfCategory
+                        </b>
+                        <a href="#getDossiersOfCategory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDossiersOfCategory(category: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="283"
+                            class="link-to-prism">src/app/core/services/data.service.ts:283</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>category</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;TechnologyDossier[]&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFrameworkForCategory"></a>
+                    <span class="name">
+                        <b>
+                            getFrameworkForCategory
+                        </b>
+                        <a href="#getFrameworkForCategory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFrameworkForCategory(techCategory: <a href="../interfaces/Technology.html">TechnologyCategory</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="170"
+                            class="link-to-prism">src/app/core/services/data.service.ts:170</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>techCategory</td>
+                                    <td>
+                                                <code><a href="../interfaces/Technology.html" target="_self" >TechnologyCategory</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/ClassificationFramework.html" target="_self" >Observable&lt;ClassificationFramework&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFrameworkForTechnologyType"></a>
+                    <span class="name">
+                        <b>
+                            getFrameworkForTechnologyType
+                        </b>
+                        <a href="#getFrameworkForTechnologyType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFrameworkForTechnologyType(category: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="201"
+                            class="link-to-prism">src/app/core/services/data.service.ts:201</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>category</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/ClassificationFramework.html" target="_self" >Observable&lt;ClassificationFramework&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFrameworkGroupingsData"></a>
+                    <span class="name">
+                        <b>
+                            getFrameworkGroupingsData
+                        </b>
+                        <a href="#getFrameworkGroupingsData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFrameworkGroupingsData(frameworkId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="333"
+                            class="link-to-prism">src/app/core/services/data.service.ts:333</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>frameworkId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;CriteriaGroupingResponse[]&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFrameworks"></a>
+                    <span class="name">
+                        <b>
+                            getFrameworks
+                        </b>
+                        <a href="#getFrameworks"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFrameworks()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="138"
+                            class="link-to-prism">src/app/core/services/data.service.ts:138</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/ClassificationFramework.html" target="_self" >Observable&lt;ClassificationFramework[]&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getGroupings"></a>
+                    <span class="name">
+                        <b>
+                            getGroupings
+                        </b>
+                        <a href="#getGroupings"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getGroupings()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/core/services/data.service.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/CriteriaGrouping.html" target="_self" >Observable&lt;CriteriaGrouping[]&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getInfoResources"></a>
+                    <span class="name">
+                        <b>
+                            getInfoResources
+                        </b>
+                        <a href="#getInfoResources"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getInfoResources()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="405"
+                            class="link-to-prism">src/app/core/services/data.service.ts:405</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;InfoResourceSection[]&gt;</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTechnologies"></a>
+                    <span class="name">
+                        <b>
+                            getTechnologies
+                        </b>
+                        <a href="#getTechnologies"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTechnologies(withDossier)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="209"
+                            class="link-to-prism">src/app/core/services/data.service.ts:209</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>withDossier</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/Technology.html" target="_self" >Observable&lt;Technology[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTechnologiesOfCategory"></a>
+                    <span class="name">
+                        <b>
+                            getTechnologiesOfCategory
+                        </b>
+                        <a href="#getTechnologiesOfCategory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTechnologiesOfCategory(category: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, withDossier)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="234"
+                            class="link-to-prism">src/app/core/services/data.service.ts:234</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>category</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>withDossier</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/Technology.html" target="_self" >Observable&lt;Technology[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTechnology"></a>
+                    <span class="name">
+                        <b>
+                            getTechnology
+                        </b>
+                        <a href="#getTechnology"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTechnology(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, withDossier)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="244"
+                            class="link-to-prism">src/app/core/services/data.service.ts:244</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>withDossier</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/Technology.html" target="_self" >Observable&lt;Technology&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTechnologyFilter"></a>
+                    <span class="name">
+                        <b>
+                            getTechnologyFilter
+                        </b>
+                        <a href="#getTechnologyFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTechnologyFilter(category: <a href="../interfaces/Technology.html">TechnologyCategory</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="293"
+                            class="link-to-prism">src/app/core/services/data.service.ts:293</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>category</td>
+                                    <td>
+                                                <code><a href="../interfaces/Technology.html" target="_self" >TechnologyCategory</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;TechnologyFilterConfiguration&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getViewCombinations"></a>
+                    <span class="name">
+                        <b>
+                            getViewCombinations
+                        </b>
+                        <a href="#getViewCombinations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getViewCombinations()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/app/core/services/data.service.ts:105</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;ClassificationViewCombination[]&gt;</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getViewGroupingsData"></a>
+                    <span class="name">
+                        <b>
+                            getViewGroupingsData
+                        </b>
+                        <a href="#getViewGroupingsData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getViewGroupingsData(viewId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="386"
+                            class="link-to-prism">src/app/core/services/data.service.ts:386</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>viewId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;CriteriaGroupingResponse[]&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getViews"></a>
+                    <span class="name">
+                        <b>
+                            getViews
+                        </b>
+                        <a href="#getViews"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getViews()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/core/services/data.service.ts:72</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/ClassificationView.html" target="_self" >Observable&lt;ClassificationView[]&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getViewsData"></a>
+                    <span class="name">
+                        <b>
+                            getViewsData
+                        </b>
+                        <a href="#getViewsData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getViewsData(viewCombinationId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="367"
+                            class="link-to-prism">src/app/core/services/data.service.ts:367</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>viewCombinationId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;ClassificationViewResponse[]&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleError"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Static</span>
+                            handleError
+                        </b>
+                        <a href="#handleError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleError(err: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/core/services/data.service.ts:39</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>err</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;never&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
+import {HttpClient} from &#x27;@angular/common/http&#x27;;
+import {combineLatest, Observable, throwError} from &#x27;rxjs&#x27;;
+import {catchError, map, mergeAll, mergeMap, shareReplay, take, toArray} from &#x27;rxjs/operators&#x27;;
+import {LogoLocatorService} from &#x27;./logo-locator.service&#x27;;
+import {
+  ClassificationCriterion,
+  ClassificationFramework,
+  ClassificationView,
+  ClassificationViewCombination,
+  CriteriaGrouping
+} from &#x27;../../shared/interfaces/classification&#x27;;
+import {Technology, TechnologyCategory, TechnologyDossier} from &#x27;../../shared/interfaces/technology&#x27;;
+import {
+  ClassificationFrameworkResponse,
+  ClassificationViewCombinationResponse,
+  ClassificationViewResponse,
+  CriteriaGroupingResponse, TechnologyDossierResponse
+} from &#x27;../../shared/interfaces/responses&#x27;;
+import {CriterionFilterType, TechnologyFilterConfiguration} from &#x27;../../shared/interfaces/filtering&#x27;;
+import {InfoResourceSection} from &#x27;../../shared/interfaces/info&#x27;;
+
+const criteriaPath &#x3D; &#x27;/assets/data/framework/criteria.json&#x27;;
+const criteriaGroupingsPath &#x3D; &#x27;/assets/data/framework/groupings.json&#x27;;
+const frameworkViewsPath &#x3D; &#x27;/assets/data/framework/views.json&#x27;;
+const frameworkViewCombinationsPath &#x3D; &#x27;/assets/data/framework/view-combinations.json&#x27;;
+const frameworksPath &#x3D; &#x27;/assets/data/framework/frameworks.json&#x27;;
+const supportedPlatformsPath &#x3D; &#x27;/assets/data/platforms/platforms.json&#x27;;
+const dossiersPath: string &#x3D; &#x27;/assets/data/platforms/&#x27;;
+const filterConfigurationsPath &#x3D; &#x27;/assets/data/framework/filters.json&#x27;;
+const infoResourcesPath &#x3D; &#x27;/assets/data/info/resources.json&#x27;;
+
+@Injectable()
+export class DataService {
+
+  constructor(private http: HttpClient, private logoLocator: LogoLocatorService) {
+  }
+
+  private static handleError(err: any): Observable&lt;never&gt; {
+    let errorMessage: string;
+    if (err.error instanceof ErrorEvent) {
+      errorMessage &#x3D; &#x60;An error occurred: ${err.error.message}&#x60;;
+    } else {
+      errorMessage &#x3D; &#x60;Backend returned code ${err.status}: ${err.body?.error}&#x60;;
+    }
+    console.error(err);
+    return throwError(errorMessage);
+  }
+
+  getCriteria(): Observable&lt;ClassificationCriterion[]&gt; {
+    return this.http.get&lt;ClassificationCriterion[]&gt;(criteriaPath)
+      .pipe(
+        catchError(DataService.handleError),
+        shareReplay(1)
+      );
+  }
+
+  getGroupings(): Observable&lt;CriteriaGrouping[]&gt; {
+    return combineLatest([
+      this.getCriteria(),
+      this.http.get&lt;CriteriaGroupingResponse[]&gt;(criteriaGroupingsPath)
+    ]).pipe(
+      map(([criteria, groupings]) &#x3D;&gt; {
+        const criteriaLookup &#x3D; new Map(criteria.map(c &#x3D;&gt; [c.id, c] as [string, ClassificationCriterion]));
+        return this.buildGroupings(groupings, criteriaLookup);
+      }),
+      catchError(DataService.handleError),
+      shareReplay(1)
+    );
+  }
+
+  getViews(): Observable&lt;ClassificationView[]&gt; {
+    return combineLatest([
+      this.getGroupings(),
+      this.http.get&lt;ClassificationViewResponse[]&gt;(frameworkViewsPath)
+    ]).pipe(
+      map(([groupings, views]) &#x3D;&gt; {
+          const groupingsLookup &#x3D; new Map(groupings.map(c &#x3D;&gt; [c.id, c] as [string, CriteriaGrouping]));
+          let result: ClassificationView[] &#x3D; [];
+
+          views.forEach(v &#x3D;&gt; {
+            let view: ClassificationView &#x3D; {
+              id: v.id,
+              name: v.name,
+              description: v.description,
+              groupings: new Set&lt;CriteriaGrouping&gt;()
+            };
+
+            v.groupingIds.forEach(id &#x3D;&gt; {
+              if (groupingsLookup.has(id)) {
+                view.groupings.add(groupingsLookup.get(id));
+              }
+            });
+            result.push(view);
+          });
+
+          return result;
+        }
+      ),
+      catchError(DataService.handleError),
+      shareReplay(1)
+    );
+  }
+
+  getViewCombinations(): Observable&lt;ClassificationViewCombination[]&gt; {
+    return combineLatest([
+      this.getViews(),
+      this.http.get&lt;ClassificationViewCombinationResponse[]&gt;(frameworkViewCombinationsPath)
+    ]).pipe(
+      map(([views, viewCombinations]) &#x3D;&gt; {
+          let result: ClassificationViewCombination[] &#x3D; [];
+          viewCombinations.forEach(c &#x3D;&gt; {
+            let combination: ClassificationViewCombination &#x3D; {
+              id: c.id,
+              name: c.name,
+              description: c.description,
+              default: c.default,
+              views: new Set&lt;ClassificationView&gt;()
+            };
+
+            c.viewIds.forEach(id &#x3D;&gt; {
+              let view &#x3D; views.find(v &#x3D;&gt; id &#x3D;&#x3D;&#x3D; v.id);
+              if (view) {
+                combination.views.add(view);
+              }
+            });
+            result.push(combination);
+          });
+
+          return result;
+        }
+      ),
+      catchError(DataService.handleError),
+      shareReplay(1)
+    );
+  }
+
+  getFrameworks(): Observable&lt;ClassificationFramework[]&gt; {
+    return combineLatest([
+      this.getViewCombinations(),
+      this.http.get&lt;ClassificationFrameworkResponse[]&gt;(frameworksPath)
+    ]).pipe(
+      map(([combs, frameworks]) &#x3D;&gt; {
+        let result: ClassificationFramework[] &#x3D; [];
+        frameworks.forEach(f &#x3D;&gt; {
+          let framework: ClassificationFramework &#x3D; {
+            id: f.id,
+            technologyCategory: f.technologyCategory,
+            name: f.name,
+            description: f.description,
+            viewCombinations: new Set&lt;ClassificationViewCombination&gt;()
+          };
+
+          f.viewCombinationIds.forEach(id &#x3D;&gt; {
+            let viewCombination &#x3D; combs.find(v &#x3D;&gt; id &#x3D;&#x3D;&#x3D; v.id);
+            if (viewCombination) {
+              framework.viewCombinations.add(viewCombination);
+            }
+          });
+          result.push(framework);
+        });
+
+        return result;
+      }),
+      shareReplay(1),
+      catchError(DataService.handleError)
+    );
+  }
+
+  getFrameworkForCategory(techCategory: TechnologyCategory): Observable&lt;ClassificationFramework&gt; {
+    return combineLatest([
+      this.getViewCombinations(),
+      this.http.get&lt;ClassificationFrameworkResponse[]&gt;(frameworksPath)
+    ]).pipe(
+      map(([combs, frameworks]) &#x3D;&gt; {
+        let result: ClassificationFramework;
+        let f &#x3D; frameworks.find(f &#x3D;&gt; f.technologyCategory &#x3D;&#x3D;&#x3D; techCategory);
+
+        result &#x3D; {
+          id: f.id,
+          technologyCategory: f.technologyCategory,
+          name: f.name,
+          description: f.description,
+          viewCombinations: new Set&lt;ClassificationViewCombination&gt;()
+        };
+
+        f.viewCombinationIds.forEach(id &#x3D;&gt; {
+          let viewCombination &#x3D; combs.find(v &#x3D;&gt; id &#x3D;&#x3D;&#x3D; v.id);
+          if (viewCombination) {
+            result.viewCombinations.add(viewCombination);
+          }
+        });
+
+        return result;
+      }),
+      shareReplay(1),
+      catchError(DataService.handleError)
+    );
+  }
+
+  getFrameworkForTechnologyType(category: string): Observable&lt;ClassificationFramework&gt; {
+    return this.getFrameworks().pipe(
+      map((f) &#x3D;&gt; f.find(item &#x3D;&gt; item.technologyCategory.toLocaleLowerCase() &#x3D;&#x3D;&#x3D; category.toLocaleLowerCase())),
+      shareReplay(1),
+      catchError(DataService.handleError)
+    );
+  }
+
+  getTechnologies(withDossier &#x3D; false): Observable&lt;Technology[]&gt; {
+    return this.http.get&lt;Technology[]&gt;(supportedPlatformsPath)
+      .pipe(
+        map((items) &#x3D;&gt;
+          items.map(
+            item &#x3D;&gt; {
+              let result: Technology &#x3D; {
+                ...item,
+                logoLocation: this.logoLocator.getLogoPath(item.logoLocator)
+              };
+              if (withDossier) {
+                this.getDossier(item.id).pipe(take(1)).subscribe({
+                  next: value &#x3D;&gt; value ? result.dossier &#x3D; value : false,
+                  error: catchError
+                });
+              }
+              return result;
+            }
+          )
+        ),
+        shareReplay(1),
+        catchError(DataService.handleError)
+      );
+  }
+
+  getTechnologiesOfCategory(category: string, withDossier &#x3D; false): Observable&lt;Technology[]&gt; {
+    return this.getTechnologies(withDossier).pipe(
+      map((techs) &#x3D;&gt;
+        techs.filter(t &#x3D;&gt; t.category.toLocaleLowerCase() &#x3D;&#x3D;&#x3D; category.toLocaleLowerCase())
+      ),
+      shareReplay(1),
+      catchError(DataService.handleError)
+    );
+  }
+
+  getTechnology(id: string, withDossier &#x3D; false): Observable&lt;Technology&gt; {
+    return combineLatest([
+      this.http.get&lt;Technology[]&gt;(supportedPlatformsPath),
+      this.getDossier(id)
+    ]).pipe(
+      map(([items, dossier]) &#x3D;&gt; {
+          let technology: Technology &#x3D; items.find(item &#x3D;&gt; item.id &#x3D;&#x3D;&#x3D; id);
+          let result: Technology &#x3D; {
+            ...technology,
+            logoLocation: this.logoLocator.getLogoPath(technology.logoLocator)
+          };
+          if (withDossier) {
+            result.dossier &#x3D; dossier;
+          }
+          return result;
+        }
+      ),
+      shareReplay(1),
+      catchError(DataService.handleError)
+    );
+
+  }
+
+  getDossier(technologyId: string): Observable&lt;TechnologyDossier&gt; {
+    const dossierPath &#x3D; dossiersPath.concat(technologyId, &#x27;.json&#x27;);
+    return this.http.get&lt;TechnologyDossierResponse&gt;(dossierPath)
+      .pipe(
+        map( (res) &#x3D;&gt; {
+          return {
+            platformId: technologyId,
+            reviewDate: res.reviewDate,
+            reviewedCriteria: new Map(Object.entries(res.reviewedCriteria))
+          } as TechnologyDossier;
+        }),
+        catchError(DataService.handleError),
+        shareReplay(1)
+      );
+  }
+
+  getDossiersOfCategory(category: string): Observable&lt;TechnologyDossier[]&gt; {
+    return this.getTechnologiesOfCategory(category).pipe(
+      mergeMap((techs) &#x3D;&gt; techs),
+      mergeMap((t) &#x3D;&gt; this.getDossier(t.id)),
+      toArray(),
+      shareReplay(1),
+      catchError(DataService.handleError)
+    );
+  }
+
+  getTechnologyFilter(category: TechnologyCategory): Observable&lt;TechnologyFilterConfiguration&gt; {
+    return combineLatest([
+      this.http.get&lt;TechnologyFilterConfiguration[]&gt;(filterConfigurationsPath).pipe(
+        map((conf) &#x3D;&gt; conf.find(c &#x3D;&gt; c.technologyCategory.toLocaleLowerCase() &#x3D;&#x3D;&#x3D; category.toLocaleLowerCase())),
+      ),
+      this.getDossiersOfCategory(category)
+    ]).pipe(
+      map(([filter, dossiers]) &#x3D;&gt; {
+          const criteriaValues &#x3D; new Map&lt;string, Set&lt;any&gt;&gt;();
+          dossiers.forEach(d &#x3D;&gt; {
+
+            d.reviewedCriteria.forEach((criterionInstance, key) &#x3D;&gt; {
+              const distinctValues &#x3D; new Set&lt;any&gt;();
+              const previous: Set&lt;any&gt; &#x3D; criteriaValues.get(key);
+
+              criterionInstance.values.forEach(v &#x3D;&gt; distinctValues.add(v.value));
+              if (previous) {
+                criteriaValues.set(key, new Set([...previous, ...distinctValues]));
+              } else {
+                criteriaValues.set(key, distinctValues);
+              }
+            });
+          });
+
+          filter.filters.forEach((f) &#x3D;&gt; {
+            if (f.filterType &#x3D;&#x3D;&#x3D; CriterionFilterType.lte) {
+              const range: number[] &#x3D; Array.from(criteriaValues.get(f.criterionId)).sort(((a, b) &#x3D;&gt; a &gt; b ? 1 : -1));
+              f.filterValues &#x3D; [range[0], range[range.length - 1]];
+            } else if (f.filterType !&#x3D;&#x3D; CriterionFilterType.bool) {
+              f.filterValues &#x3D; Array.from(criteriaValues.get(f.criterionId).values());
+            }
+          });
+          return filter;
+        }
+      ),
+      catchError(DataService.handleError),
+      shareReplay(1)
+    );
+  }
+
+  getFrameworkGroupingsData(frameworkId: string): Observable&lt;CriteriaGroupingResponse[]&gt; {
+    return this.getDefaultViewCombinationData(frameworkId).pipe(
+      mergeMap((vc) &#x3D;&gt; this.getViewsData(vc.id)),
+      mergeAll(),
+      mergeMap(v &#x3D;&gt; this.getViewGroupingsData(v.id)),
+      mergeAll(),
+      toArray(),
+      catchError(DataService.handleError),
+      shareReplay(1)
+    );
+  }
+
+  getDefaultViewCombinationData(frameworkId: string): Observable&lt;ClassificationViewCombinationResponse&gt; {
+    return combineLatest([
+      this.http.get&lt;ClassificationViewCombinationResponse[]&gt;(frameworkViewCombinationsPath),
+      this.http.get&lt;ClassificationFrameworkResponse[]&gt;(frameworksPath),
+    ]).pipe(
+      map(([vcs, fws]) &#x3D;&gt; {
+        const vcLookup &#x3D; new Map(vcs.map(vc &#x3D;&gt; [vc.id, vc] as [string, ClassificationViewCombinationResponse]));
+        let framework &#x3D; fws.find(f &#x3D;&gt; f.id &#x3D;&#x3D;&#x3D; frameworkId);
+        if (framework) {
+          for (let id of framework.viewCombinationIds) {
+            let temp &#x3D; vcLookup.get(id);
+            if (temp &amp;&amp; temp.default) {
+              return temp;
+            }
+          }
+        }
+      }),
+      catchError(DataService.handleError),
+      shareReplay(1)
+    );
+  }
+
+  getViewsData(viewCombinationId: string): Observable&lt;ClassificationViewResponse[]&gt; {
+    return combineLatest([
+      this.http.get&lt;ClassificationViewCombinationResponse[]&gt;(frameworkViewCombinationsPath),
+      this.http.get&lt;ClassificationViewResponse[]&gt;(frameworkViewsPath)
+    ]).pipe(
+      map(([combs, views]) &#x3D;&gt; {
+        const viewsLookup &#x3D; new Map(views.map(v &#x3D;&gt; [v.id, v] as [string, ClassificationViewResponse]));
+        let result &#x3D; [];
+        let vc &#x3D; combs.find(c &#x3D;&gt; c.id &#x3D;&#x3D;&#x3D; viewCombinationId);
+        if (vc) {
+          vc.viewIds.forEach(id &#x3D;&gt; result.push(viewsLookup.get(id)));
+        }
+        return result;
+      }),
+      catchError(DataService.handleError),
+      shareReplay(1)
+    );
+  }
+
+  getViewGroupingsData(viewId: string): Observable&lt;CriteriaGroupingResponse[]&gt; {
+    return combineLatest([
+      this.http.get&lt;ClassificationViewResponse[]&gt;(frameworkViewsPath),
+      this.http.get&lt;CriteriaGroupingResponse[]&gt;(criteriaGroupingsPath)])
+      .pipe(
+        map(([views, groupings]) &#x3D;&gt; {
+          const groupingsLookup &#x3D; new Map(groupings.map(g &#x3D;&gt; [g.id, g] as [string, CriteriaGroupingResponse]));
+          let result &#x3D; [];
+          let view &#x3D; views.find(v &#x3D;&gt; v.id &#x3D;&#x3D;&#x3D; viewId);
+          if (view) {
+            view.groupingIds.forEach(id &#x3D;&gt; result.push(groupingsLookup.get(id)));
+          }
+          return result;
+        }),
+        catchError(DataService.handleError),
+        shareReplay(1)
+      );
+  }
+
+  getInfoResources(): Observable&lt;InfoResourceSection[]&gt; {
+    return this.http.get&lt;InfoResourceSection[]&gt;(infoResourcesPath)
+      .pipe(
+        catchError(DataService.handleError),
+        shareReplay(1)
+      );
+  }
+
+  private buildGroupings(data: CriteriaGroupingResponse[], criteria: Map&lt;string, ClassificationCriterion&gt;): CriteriaGrouping[] {
+    const result: CriteriaGrouping[] &#x3D; [];
+    const lookup: Map&lt;string, CriteriaGrouping&gt; &#x3D; new Map&lt;string, CriteriaGrouping&gt;();
+
+    data.forEach(g &#x3D;&gt; {
+        let relatedCriteria: Set&lt;ClassificationCriterion&gt; &#x3D; new Set&lt;ClassificationCriterion&gt;();
+        if (g.criteriaIds) {
+          g.criteriaIds.forEach(id &#x3D;&gt; criteria.has(id) ? relatedCriteria.add(criteria.get(id)) : false);
+        }
+        lookup.set(g.id, ({
+          id: g.id,
+          name: g.name,
+          locator: g.locator,
+          groupings: new Set&lt;CriteriaGrouping&gt;(),
+          criteria: relatedCriteria
+        } as CriteriaGrouping));
+      }
+    );
+
+    data.forEach(g &#x3D;&gt; {
+      if (g.parentId) {
+        lookup.get(g.parentId).groupings.add(lookup.get(g.id));
+      } else {
+        result.push(lookup.get(g.id));
+      }
+    });
+
+    return result;
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'DataService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

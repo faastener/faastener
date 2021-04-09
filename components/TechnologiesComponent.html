@@ -1,0 +1,1401 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>faastener documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">faastener documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>TechnologiesComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/technologies/technologies.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-technologies</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./technologies.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./technologies.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#browsingMode">browsingMode</a>
+                            </li>
+                            <li>
+                                <a href="#dataSource">dataSource</a>
+                            </li>
+                            <li>
+                                <a href="#filterConfiguration">filterConfiguration</a>
+                            </li>
+                            <li>
+                                <a href="#framework">framework</a>
+                            </li>
+                            <li>
+                                <a href="#groupings">groupings</a>
+                            </li>
+                            <li>
+                                <a href="#mobileQuery">mobileQuery</a>
+                            </li>
+                            <li>
+                                <a href="#renderedFilter">renderedFilter</a>
+                            </li>
+                            <li>
+                                <a href="#sidenav">sidenav</a>
+                            </li>
+                            <li>
+                                <a href="#subscriptions">subscriptions</a>
+                            </li>
+                            <li>
+                                <a href="#technologies">technologies</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#extractGroupings">extractGroupings</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#generateFilterStructure">generateFilterStructure</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onQueryUpdate">onQueryUpdate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#populateRenderBlocks">populateRenderBlocks</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dataService: <a href="../injectables/DataService.html">DataService</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, changeDetectorRef: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, media: MediaMatcher)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/technologies/technologies.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dataService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>changeDetectorRef</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>media</td>
+                                                  
+                                                        <td>
+                                                                    <code>MediaMatcher</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="extractGroupings"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            extractGroupings
+                        </b>
+                        <a href="#extractGroupings"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>extractGroupings()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/technologies/technologies.component.ts:78</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateFilterStructure"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            generateFilterStructure
+                        </b>
+                        <a href="#generateFilterStructure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>generateFilterStructure()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/app/technologies/technologies.component.ts:87</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">src/app/technologies/technologies.component.ts:74</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/technologies/technologies.component.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onQueryUpdate"></a>
+                    <span class="name">
+                        <b>
+                            onQueryUpdate
+                        </b>
+                        <a href="#onQueryUpdate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onQueryUpdate($event: <a href="../interfaces/CriteriaBasedQuery.html">CriteriaBasedQuery</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="114"
+                            class="link-to-prism">src/app/technologies/technologies.component.ts:114</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$event</td>
+                                    <td>
+                                                <code><a href="../interfaces/CriteriaBasedQuery.html" target="_self" >CriteriaBasedQuery</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="populateRenderBlocks"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            populateRenderBlocks
+                        </b>
+                        <a href="#populateRenderBlocks"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>populateRenderBlocks(grouping: <a href="../interfaces/CriteriaGrouping.html">CriteriaGrouping</a>, filterLookup: <a href="../interfaces/CriterionFilterConfiguration.html">Map<string | CriterionFilterConfiguration></a>, placement: <a href="../interfaces/RenderedFilterBlock.html">Map<String | RenderedFilterBlock></a>, parentGroup?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/app/technologies/technologies.component.ts:94</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>grouping</td>
+                                    <td>
+                                                <code><a href="../interfaces/CriteriaGrouping.html" target="_self" >CriteriaGrouping</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>filterLookup</td>
+                                    <td>
+                                                <code><a href="../interfaces/CriterionFilterConfiguration.html" target="_self" >Map&lt;string | CriterionFilterConfiguration&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>placement</td>
+                                    <td>
+                                                <code><a href="../interfaces/RenderedFilterBlock.html" target="_self" >Map&lt;String | RenderedFilterBlock&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>parentGroup</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="browsingMode"></a>
+                        <span class="name">
+                            <b>
+                            browsingMode</b>
+                            <a href="#browsingMode"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;explore&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/technologies/technologies.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSource"></a>
+                        <span class="name">
+                            <b>
+                            dataSource</b>
+                            <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Technology.html" target="_self" >TechnologyDataSource</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/technologies/technologies.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filterConfiguration"></a>
+                        <span class="name">
+                            <b>
+                            filterConfiguration</b>
+                            <a href="#filterConfiguration"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/TechnologyFilterConfiguration.html" target="_self" >TechnologyFilterConfiguration</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/technologies/technologies.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="framework"></a>
+                        <span class="name">
+                            <b>
+                            framework</b>
+                            <a href="#framework"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/ClassificationFramework.html" target="_self" >ClassificationFramework</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/technologies/technologies.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="groupings"></a>
+                        <span class="name">
+                            <b>
+                            groupings</b>
+                            <a href="#groupings"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/CriteriaGrouping.html" target="_self" >CriteriaGrouping[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/technologies/technologies.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mobileQuery"></a>
+                        <span class="name">
+                            <b>
+                            mobileQuery</b>
+                            <a href="#mobileQuery"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MediaQueryList</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/technologies/technologies.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="renderedFilter"></a>
+                        <span class="name">
+                            <b>
+                            renderedFilter</b>
+                            <a href="#renderedFilter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/RenderedFilterBlock.html" target="_self" >RenderedFilterBlock[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/technologies/technologies.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sidenav"></a>
+                        <span class="name">
+                            <b>
+                            sidenav</b>
+                            <a href="#sidenav"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatSidenav</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;sidenav&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/technologies/technologies.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="subscriptions"></a>
+                        <span class="name">
+                            <b>
+                            subscriptions</b>
+                            <a href="#subscriptions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/technologies/technologies.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="technologies"></a>
+                        <span class="name">
+                            <b>
+                            technologies</b>
+                            <a href="#technologies"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Technology.html" target="_self" >Technology[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/technologies/technologies.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild} from &#x27;@angular/core&#x27;;
+import {DataService} from &#x27;../core/services/data.service&#x27;;
+import {Subscription} from &#x27;rxjs&#x27;;
+import {Technology} from &#x27;../shared/interfaces/technology&#x27;;
+import {ActivatedRoute} from &#x27;@angular/router&#x27;;
+import {TechnologyDataSource} from &#x27;../shared/datasource&#x27;;
+import {ClassificationFramework, CriteriaGrouping} from &#x27;../shared/interfaces/classification&#x27;;
+import {
+  CriteriaBasedQuery,
+  CriterionFilterConfiguration,
+  RenderedFilterBlock,
+  TechnologyFilterConfiguration
+} from &#x27;../shared/interfaces/filtering&#x27;;
+import {MatSidenav} from &#x27;@angular/material/sidenav&#x27;;
+import {MediaMatcher} from &#x27;@angular/cdk/layout&#x27;;
+import {FormBuilder} from &#x27;@angular/forms&#x27;;
+
+@Component({
+  selector: &#x27;app-technologies&#x27;,
+  templateUrl: &#x27;./technologies.component.html&#x27;,
+  styleUrls: [&#x27;./technologies.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class TechnologiesComponent implements OnInit, OnDestroy {
+  subscriptions: Subscription[] &#x3D; [];
+  technologies: Technology[];
+  framework: ClassificationFramework;
+  filterConfiguration: TechnologyFilterConfiguration;
+  groupings: CriteriaGrouping[] &#x3D; [];
+
+  dataSource: TechnologyDataSource;
+  browsingMode &#x3D; &#x27;explore&#x27;;
+
+  renderedFilter: RenderedFilterBlock[] &#x3D; [];
+
+  @ViewChild(&#x27;sidenav&#x27;) sidenav: MatSidenav;
+  mobileQuery: MediaQueryList;
+
+  constructor(
+    private dataService: DataService,
+    private route: ActivatedRoute,
+    private fb: FormBuilder,
+    private changeDetectorRef: ChangeDetectorRef,
+    private media: MediaMatcher
+  ) {
+    this.mobileQuery &#x3D; media.matchMedia(&#x27;(max-width: 850px)&#x27;);
+    this.mobileQuery.addEventListener(&#x27;change&#x27;, () &#x3D;&gt; changeDetectorRef.detectChanges());
+  }
+
+
+  ngOnInit(): void {
+    this.subscriptions.push(
+      this.route.queryParams.subscribe(params &#x3D;&gt; {
+        const mode &#x3D; params[&#x27;browsingMode&#x27;];
+        if (mode) {
+          this.browsingMode &#x3D; mode;
+        }
+      })
+    );
+
+    this.subscriptions.push(
+      this.route.data.subscribe(data &#x3D;&gt; {
+        this.technologies &#x3D; data[&#x27;resolvedData&#x27;][0];
+        this.dataSource &#x3D; new TechnologyDataSource(this.technologies, {property: &#x27;platformName&#x27;, order: &#x27;asc&#x27;}, {});
+        this.framework &#x3D; data[&#x27;resolvedData&#x27;][1];
+        this.filterConfiguration &#x3D; data[&#x27;resolvedData&#x27;][2];
+
+        this.extractGroupings();
+        this.generateFilterStructure();
+      })
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach(s &#x3D;&gt; s.unsubscribe());
+  }
+
+  private extractGroupings() {
+    for (let vc of this.framework.viewCombinations) {
+      if (vc.default) {
+        vc.views.forEach(v &#x3D;&gt; this.groupings.push(...Array.from(v.groupings)));
+        break;
+      }
+    }
+  }
+
+  private generateFilterStructure() {
+    const criteriaFilterLookup &#x3D; new Map(this.filterConfiguration.filters.map(c &#x3D;&gt; [c.criterionId, c] as [string, CriterionFilterConfiguration]));
+    let placement: Map&lt;String, RenderedFilterBlock&gt; &#x3D; new Map&lt;String, RenderedFilterBlock&gt;();
+    this.groupings.forEach(g &#x3D;&gt; this.populateRenderBlocks(g, criteriaFilterLookup, placement));
+    this.renderedFilter &#x3D; Array.from(placement.values());
+  }
+
+  private populateRenderBlocks(grouping: CriteriaGrouping, filterLookup: Map&lt;string, CriterionFilterConfiguration&gt;, placement: Map&lt;String, RenderedFilterBlock&gt;, parentGroup?: string) {
+    let current &#x3D; placement.get(grouping.name);
+
+    if (current &#x3D;&#x3D;&#x3D; undefined &amp;&amp; grouping.criteria &amp;&amp; grouping.criteria.size &gt; 0) {
+      placement.set(grouping.name, {blockName: parentGroup ? parentGroup.concat(&#x27; : &#x27;).concat(grouping.name) : grouping.name, filters: []});
+      current &#x3D; placement.get(grouping.name);
+    }
+
+    grouping.criteria.forEach(c &#x3D;&gt; {
+      let config &#x3D; filterLookup.get(c.id);
+      if (config) {
+        current.filters.push(config);
+      }
+    });
+
+    if (grouping.groupings) {
+      grouping.groupings.forEach(g &#x3D;&gt; this.populateRenderBlocks(g, filterLookup, placement, grouping.name));
+    }
+  }
+
+  onQueryUpdate($event: CriteriaBasedQuery) {
+    this.dataSource.queryByCriteria($event);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-sidenav-container class&#x3D;&quot;sidenav-container&quot;&gt;
+  &lt;mat-sidenav #sidenav class&#x3D;&quot;sidenav&quot; [mode]&#x3D;&quot;mobileQuery.matches ? &#x27;over&#x27; : &#x27;side&#x27;&quot;&gt;
+    &lt;div class&#x3D;&quot;sidenav__filter-header&quot;&gt;
+      &lt;div class&#x3D;&quot;sidenav__filter-title&quot;&gt;
+        &lt;h3&gt;Filter Panel&lt;/h3&gt;
+        &lt;div class&#x3D;&quot;g__spacer&quot;&gt;&lt;/div&gt;
+        &lt;button mat-icon-button color&#x3D;&quot;primary&quot; aria-label&#x3D;&quot;close filter panel&quot; (click)&#x3D;&quot;sidenav.close()&quot;&gt;
+          &lt;mat-icon&gt;close&lt;/mat-icon&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+        Filter platforms by combining criteria values.
+      &lt;/p&gt;
+
+    &lt;/div&gt;
+
+    &lt;mat-accordion class&#x3D;&quot;sidenav__accordion&quot; *ngIf&#x3D;&quot;renderedFilter&quot; multi displayMode&#x3D;&quot;flat&quot;&gt;
+      &lt;ng-container *ngFor&#x3D;&quot;let filterBlock of renderedFilter&quot;&gt;
+        &lt;mat-expansion-panel *ngIf&#x3D;&quot;filterBlock.filters &amp;&amp; filterBlock.filters.length &gt; 0&quot;
+                             class&#x3D;&quot;sidenav__filter-block&quot;&gt;
+          &lt;mat-expansion-panel-header&gt;
+            &lt;mat-panel-title&gt;
+              &lt;mat-icon *ngIf&#x3D;&quot;filterBlock.blockIcon&quot;&gt;{{filterBlock.blockIcon}}&lt;/mat-icon&gt;
+              {{filterBlock.blockName}}
+            &lt;/mat-panel-title&gt;
+          &lt;/mat-expansion-panel-header&gt;
+          &lt;mat-divider&gt;&lt;/mat-divider&gt;
+
+          &lt;app-criterion-filter *ngFor&#x3D;&quot;let filter of filterBlock.filters&quot;
+                                [filter]&#x3D;&quot;filter&quot;
+                                (updateQuery)&#x3D;&quot;onQueryUpdate($event)&quot;&gt;
+          &lt;/app-criterion-filter&gt;
+
+        &lt;/mat-expansion-panel&gt;
+
+      &lt;/ng-container&gt;
+
+    &lt;/mat-accordion&gt;
+  &lt;/mat-sidenav&gt;
+
+  &lt;mat-sidenav-content class&#x3D;&quot;content-container&quot;&gt;
+    &lt;app-header&gt;&lt;/app-header&gt;
+    &lt;section class&#x3D;&quot;platforms-main&quot;&gt;
+      &lt;div class&#x3D;&quot;platforms__controls&quot;&gt;
+        &lt;h1 class&#x3D;&quot;g__page-section-header platforms__header&quot;&gt;Platform Browser&lt;/h1&gt;
+        &lt;div class&#x3D;&quot;g__spacer&quot;&gt;&lt;/div&gt;
+        &lt;mat-button-toggle-group [(ngModel)]&#x3D;&quot;browsingMode&quot;&gt;
+          &lt;mat-button-toggle class&#x3D;&quot;platforms__settings&quot; value&#x3D;&quot;explore&quot; aria-label&#x3D;&quot;explore platforms&quot;
+                             matTooltip&#x3D;&quot;Browsing Mode&quot;&gt;
+            &lt;mat-icon&gt;subject&lt;/mat-icon&gt;
+          &lt;/mat-button-toggle&gt;
+          &lt;mat-button-toggle class&#x3D;&quot;platforms__settings&quot; value&#x3D;&quot;search&quot; aria-label&#x3D;&quot;search platforms&quot;
+                             matTooltip&#x3D;&quot;Search Mode&quot;&gt;
+            &lt;mat-icon&gt;search&lt;/mat-icon&gt;
+          &lt;/mat-button-toggle&gt;
+        &lt;/mat-button-toggle-group&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;platforms__description-block&quot;&gt;
+        &lt;p class&#x3D;&quot;g__page-section__description platforms__description&quot;&gt;
+          Browse through the list of available platforms, for a detailed view click on the corresponding platform.
+        &lt;/p&gt;
+        &lt;button class&#x3D;&quot;platforms__filter-button&quot; *ngIf&#x3D;&quot;browsingMode &#x3D;&#x3D;&#x3D; &#x27;search&#x27;&quot; mat-raised-button (click)&#x3D;&quot;sidenav.toggle()&quot;&gt;
+          &lt;mat-icon&gt;filter_alt&lt;/mat-icon&gt;
+          &lt;span class&#x3D;&quot;platforms__filter-button-title&quot;&gt;Filters&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+
+      &lt;app-technology-list *ngIf&#x3D;&quot;browsingMode &#x3D;&#x3D;&#x3D; &#x27;explore&#x27;&quot;
+                           [dataSource]&#x3D;&quot;dataSource&quot;&gt;
+      &lt;/app-technology-list&gt;
+
+      &lt;app-technology-table *ngIf&#x3D;&quot;browsingMode &#x3D;&#x3D;&#x3D; &#x27;search&#x27;&quot;
+                            [dataSource]&#x3D;&quot;dataSource&quot;
+                            [framework]&#x3D;&quot;framework&quot;
+                            [filterConfiguration]&#x3D;&quot;filterConfiguration&quot;
+                            [sidenav]&#x3D;&quot;sidenav&quot;&gt;
+      &lt;/app-technology-table&gt;
+    &lt;/section&gt;
+    &lt;app-footer&gt;&lt;/app-footer&gt;
+  &lt;/mat-sidenav-content&gt;
+
+
+&lt;/mat-sidenav-container&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./technologies.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &quot;../_scss/shared&quot;;
+@import &quot;../_scss/global/variables&quot;;
+
+:host {
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+}
+
+.sidenav-container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  flex: 1;
+}
+
+.sidenav {
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  flex: 1;
+  width: 80%;
+  max-width: 30em;
+}
+
+.sidenav__filter-header {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1rem;
+}
+
+.sidenav__filter-title {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.sidenav__accordion {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.sidenav__filter-block {
+  flex-grow: 1;
+  flex-shrink: 0;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid $gray-30;
+}
+
+.content-container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  flex: 1;
+}
+
+.platforms-main {
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  @include bg-grey;
+  padding-top: 1.5rem;
+}
+
+.platforms__controls {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90%;
+}
+
+.platforms__description-block {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 90%;
+}
+
+.platforms__description {
+  flex: 1 1 max-content;
+}
+
+.platforms__filter-button {
+  height: 2.5rem;
+  @include nav_item;
+}
+
+.platforms__filter-button-title {
+  display: none;
+}
+
+.platforms__header {
+  flex: 1 1 auto;
+}
+
+.platforms__settings {
+  @include nav_item;
+}
+
+@media screen and (min-width: 900px) {
+  .platforms__controls, .platforms__description-block  {
+    max-width: 910px;
+  }
+
+  .platforms__filter-button-title {
+    display: inline;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-sidenav-container class="sidenav-container">  <mat-sidenav #sidenav class="sidenav" [mode]="mobileQuery.matches ? \'over\' : \'side\'">    <div class="sidenav__filter-header">      <div class="sidenav__filter-title">        <h3>Filter Panel</h3>        <div class="g__spacer"></div>        <button mat-icon-button color="primary" aria-label="close filter panel" (click)="sidenav.close()">          <mat-icon>close</mat-icon>        </button>      </div>      <p>        Filter platforms by combining criteria values.      </p>    </div>    <mat-accordion class="sidenav__accordion" *ngIf="renderedFilter" multi displayMode="flat">      <ng-container *ngFor="let filterBlock of renderedFilter">        <mat-expansion-panel *ngIf="filterBlock.filters && filterBlock.filters.length > 0"                             class="sidenav__filter-block">          <mat-expansion-panel-header>            <mat-panel-title>              <mat-icon *ngIf="filterBlock.blockIcon">{{filterBlock.blockIcon}}</mat-icon>              {{filterBlock.blockName}}            </mat-panel-title>          </mat-expansion-panel-header>          <mat-divider></mat-divider>          <app-criterion-filter *ngFor="let filter of filterBlock.filters"                                [filter]="filter"                                (updateQuery)="onQueryUpdate($event)">          </app-criterion-filter>        </mat-expansion-panel>      </ng-container>    </mat-accordion>  </mat-sidenav>  <mat-sidenav-content class="content-container">    <app-header></app-header>    <section class="platforms-main">      <div class="platforms__controls">        <h1 class="g__page-section-header platforms__header">Platform Browser</h1>        <div class="g__spacer"></div>        <mat-button-toggle-group [(ngModel)]="browsingMode">          <mat-button-toggle class="platforms__settings" value="explore" aria-label="explore platforms"                             matTooltip="Browsing Mode">            <mat-icon>subject</mat-icon>          </mat-button-toggle>          <mat-button-toggle class="platforms__settings" value="search" aria-label="search platforms"                             matTooltip="Search Mode">            <mat-icon>search</mat-icon>          </mat-button-toggle>        </mat-button-toggle-group>      </div>      <div class="platforms__description-block">        <p class="g__page-section__description platforms__description">          Browse through the list of available platforms, for a detailed view click on the corresponding platform.        </p>        <button class="platforms__filter-button" *ngIf="browsingMode === \'search\'" mat-raised-button (click)="sidenav.toggle()">          <mat-icon>filter_alt</mat-icon>          <span class="platforms__filter-button-title">Filters</span>        </button>      </div>      <app-technology-list *ngIf="browsingMode === \'explore\'"                           [dataSource]="dataSource">      </app-technology-list>      <app-technology-table *ngIf="browsingMode === \'search\'"                            [dataSource]="dataSource"                            [framework]="framework"                            [filterConfiguration]="filterConfiguration"                            [sidenav]="sidenav">      </app-technology-table>    </section>    <app-footer></app-footer>  </mat-sidenav-content></mat-sidenav-container></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-home-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BannerComponent', 'selector': 'app-home-banner'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'ChildGroupingComponent', 'selector': 'app-child-grouping'},{'name': 'CriterionComponent', 'selector': 'app-criterion'},{'name': 'CriterionFilterComponent', 'selector': 'app-criterion-filter'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FrameworkComponent', 'selector': 'app-framework'},{'name': 'FrameworkRendererComponent', 'selector': 'app-framework-renderer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': ''},{'name': 'InformationComponent', 'selector': 'app-information'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'TechnologiesComponent', 'selector': 'app-technologies'},{'name': 'TechnologyDetailsComponent', 'selector': 'app-technology-details'},{'name': 'TechnologyListComponent', 'selector': 'app-technology-list'},{'name': 'TechnologyTableComponent', 'selector': 'app-technology-table'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'TechnologiesComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TechnologiesComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
