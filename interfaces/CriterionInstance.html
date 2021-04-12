@@ -193,7 +193,7 @@ Reserved for future use.</p>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>values:         <code><a href="../classes/CriterionValue.html" target="_self" >Set&lt;CriterionValue&gt;</a></code>
+                                        <code>values:         <code><a href="../interfaces/CriterionValue.html" target="_self" >Set&lt;CriterionValue&gt;</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -201,7 +201,7 @@ Reserved for future use.</p>
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../classes/CriterionValue.html" target="_self" >Set&lt;CriterionValue&gt;</a></code>
+                                            <i>Type : </i>        <code><a href="../interfaces/CriterionValue.html" target="_self" >Set&lt;CriterionValue&gt;</a></code>
 
                                         </td>
                                     </tr>
@@ -212,7 +212,7 @@ Reserved for future use.</p>
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>A set of <a href="../classes/CriterionValue.html">CriterionValue</a> which store the criterion-specific review data for the reviewed technology.</p>
+                                    <div class="io-description"><p>A set of <a href="../interfaces/CriterionValue.html">CriterionValue</a> which store the criterion-specific review data for the reviewed technology.</p>
 </div>
                                 </td>
                             </tr>
@@ -225,6 +225,10 @@ Reserved for future use.</p>
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {TechnologyCategory} from &#x27;./technology&#x27;;
 
+/**
+ * An interface representing a generic classification framework, which comprises one or more {@link ClassificationViewCombination}.
+ * Different combinations of classification views can be used to flexibly switch between different review representations for a given {@link TechnologyCategory}.
+ */
 export interface ClassificationFramework {
   /**
    * Unique framework identifier.
@@ -235,7 +239,7 @@ export interface ClassificationFramework {
    */
   name: string;
   /**
-   * Category of technologies this framework helps to review.
+   * [Category]{@link TechnologyCategory} of technologies this framework helps to review.
    *
    * @example
    * Function-as-a-Service platforms
@@ -382,7 +386,7 @@ export interface CriterionInstance {
 /**
  * An interface representing a generic data value for the given {@link CriterionInstance}.
  */
-export class CriterionValue {
+export interface CriterionValue {
   /**
    * A value of primitive type representing criterion-specific review data.
    *

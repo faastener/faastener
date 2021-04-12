@@ -275,9 +275,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/AppPage.html" data-type="entity-link">AppPage</a>
                             </li>
                             <li class="link">
-                                <a href="classes/CriterionValue.html" data-type="entity-link">CriterionValue</a>
-                            </li>
-                            <li class="link">
                                 <a href="classes/EnsureModuleLoadedOnceGuard.html" data-type="entity-link">EnsureModuleLoadedOnceGuard</a>
                             </li>
                             <li class="link">
@@ -359,6 +356,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/CriterionInstance.html" data-type="entity-link">CriterionInstance</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/CriterionValue.html" data-type="entity-link">CriterionValue</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/InfoResource.html" data-type="entity-link">InfoResource</a>
