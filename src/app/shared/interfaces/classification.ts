@@ -1,9 +1,9 @@
+import {TechnologyCategory} from './technology';
+
 /**
  * An interface representing a generic classification framework, which comprises one or more {@link ClassificationViewCombination}.
  * Different combinations of classification views can be used to flexibly switch between different review representations for a given {@link TechnologyCategory}.
  */
-import {TechnologyCategory} from './technology';
-
 export interface ClassificationFramework {
   /**
    * Unique framework identifier.
@@ -14,7 +14,7 @@ export interface ClassificationFramework {
    */
   name: string;
   /**
-   * Category of technologies this framework helps to review.
+   * [Category]{@link TechnologyCategory} of technologies this framework helps to review.
    *
    * @example
    * Function-as-a-Service platforms
