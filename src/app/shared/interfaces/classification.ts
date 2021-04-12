@@ -161,7 +161,7 @@ export interface CriterionInstance {
 /**
  * An interface representing a generic data value for the given {@link CriterionInstance}.
  */
-export class CriterionValue {
+export interface CriterionValue {
   /**
    * A value of primitive type representing criterion-specific review data.
    *
