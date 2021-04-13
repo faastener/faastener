@@ -3,17 +3,17 @@ import {CommonModule} from '@angular/common';
 import {MaterialModule} from './material.module';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {RouterModule} from '@angular/router';
-import {TruncatePipe} from './truncate.pipe';
+import {TruncatePipe} from './pipes/truncate.pipe';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ChildGroupingComponent} from './child-grouping/child-grouping.component';
-import {SetToArrayPipe} from './set-to-array.pipe';
+import {SetToArrayPipe} from './pipes/set-to-array.pipe';
 import {CriterionComponent} from './criterion/criterion.component';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {FrameworkResolver} from '../information/resolvers/framework-resolver.service';
 import {FrameworkRendererComponent} from './framework-renderer/framework-renderer.component';
 import {BottomNavComponent} from './bottom-nav/bottom-nav.component';
-import {YesNoPipe} from './yes-no.pipe';
+import {YesNoPipe} from './pipes/yes-no.pipe';
 
 @NgModule({
   declarations: [
