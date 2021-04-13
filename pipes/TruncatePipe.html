@@ -61,7 +61,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/shared/truncate.pipe.ts</code>
+            <code>src/app/shared/pipes/truncate.pipe.ts</code>
         </p>
 
 
@@ -98,7 +98,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>transform(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, completeWords, reverse, ellipsis: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>transform(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, completeWords, ellipsis: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -106,7 +106,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="7"
-                            class="link-to-prism">src/app/shared/truncate.pipe.ts:7</a></div>
+                            class="link-to-prism">src/app/shared/pipes/truncate.pipe.ts:7</a></div>
                 </td>
             </tr>
 
@@ -170,20 +170,6 @@
 
                                 </tr>
                                 <tr>
-                                    <td>reverse</td>
-                                    <td>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-                                    <td>
-                                        <code>false</code>
-                                    </td>
-
-                                </tr>
-                                <tr>
                                     <td>ellipsis</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
@@ -204,7 +190,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                     </div>
                     <div class="io-description">
@@ -226,15 +212,11 @@
   name: &#x27;truncate&#x27;
 })
 export class TruncatePipe implements PipeTransform {
-  transform(value: string, limit &#x3D; 25, completeWords &#x3D; false, reverse &#x3D; false, ellipsis &#x3D; &#x27;...&#x27;) {
+  transform(value: string, limit &#x3D; 25, completeWords &#x3D; false, ellipsis &#x3D; &#x27;...&#x27;) {
     if (completeWords) {
       limit &#x3D; value.substr(0, limit).lastIndexOf(&#x27; &#x27;);
     }
-    if (!reverse) {
-      return value.length &gt; limit ? value.substr(0, limit) + ellipsis : value;
-    } else {
-      return value.length &gt; limit ? value.substr(limit, value.length) : value;
-    }
+    return value.length &gt; limit ? value.substr(0, limit) + ellipsis : value;
   }
 }
 </code></pre>

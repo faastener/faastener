@@ -163,13 +163,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/SharedModule.html" data-type="entity-link">SharedModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-SharedModule-6aadae6e22b9801db2869e2bdd65e15a"' : 'data-target="#xs-components-links-module-SharedModule-6aadae6e22b9801db2869e2bdd65e15a"' }>
+                                            'data-target="#components-links-module-SharedModule-26f207b58cc747aea541aad393dce343"' : 'data-target="#xs-components-links-module-SharedModule-26f207b58cc747aea541aad393dce343"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SharedModule-6aadae6e22b9801db2869e2bdd65e15a"' :
-                                            'id="xs-components-links-module-SharedModule-6aadae6e22b9801db2869e2bdd65e15a"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SharedModule-26f207b58cc747aea541aad393dce343"' :
+                                            'id="xs-components-links-module-SharedModule-26f207b58cc747aea541aad393dce343"' }>
                                             <li class="link">
                                                 <a href="components/BottomNavComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">BottomNavComponent</a>
@@ -202,13 +202,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#pipes-links-module-SharedModule-6aadae6e22b9801db2869e2bdd65e15a"' : 'data-target="#xs-pipes-links-module-SharedModule-6aadae6e22b9801db2869e2bdd65e15a"' }>
+                                            'data-target="#pipes-links-module-SharedModule-26f207b58cc747aea541aad393dce343"' : 'data-target="#xs-pipes-links-module-SharedModule-26f207b58cc747aea541aad393dce343"' }>
                                             <span class="icon ion-md-add"></span>
                                             <span>Pipes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-SharedModule-6aadae6e22b9801db2869e2bdd65e15a"' :
-                                            'id="xs-pipes-links-module-SharedModule-6aadae6e22b9801db2869e2bdd65e15a"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-SharedModule-26f207b58cc747aea541aad393dce343"' :
+                                            'id="xs-pipes-links-module-SharedModule-26f207b58cc747aea541aad393dce343"' }>
                                             <li class="link">
                                                 <a href="pipes/SetToArrayPipe.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">SetToArrayPipe</a>
