@@ -65,6 +65,13 @@
             <code>src/app/shared/interfaces/filtering.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>An interface representing a filter value used in a user&#39;s query.</p>
+
+            </p>
 
 
         <section>
@@ -129,6 +136,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Filter type</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -158,6 +171,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Actual value, type depends on the filter type and respective UI elements.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -165,9 +184,25 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface RenderedFilterBlock {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {TechnologyCategory} from &#x27;./technology&#x27;;
+
+/**
+ * An interface representing a rendered filter block in the UI which may comprise multiple filters with {@link CriterionFilterConfiguration}.
+ */
+export interface RenderedFilterBlock {
+  /**
+   * Name of the filter block
+   */
   blockName: string;
+
+  /**
+   * Material Icon name
+   */
   blockIcon?: string;
+
+  /**
+   * List of filters to be rendered in this block defined using {@link CriterionFilterConfiguration}
+   */
   filters: CriterionFilterConfiguration[];
 }
 
@@ -176,9 +211,24 @@
  * This configuration defines which criteria have dedicated filter elements in the UI.
  */
 export interface TechnologyFilterConfiguration {
+  /**
+   * Unique filter configuration identifier
+   */
   filterId: string;
-  technologyCategory: string;
+
+  /**
+   * Technology category
+   */
+  technologyCategory: TechnologyCategory;
+
+  /**
+   * Configuration name
+   */
   name: string;
+
+  /**
+   * List of filters to be rendered in this block defined using {@link CriterionFilterConfiguration}
+   */
   filters: CriterionFilterConfiguration[];
 }
 
@@ -187,42 +237,90 @@ export interface TechnologyFilterConfiguration {
  * This configuration defines the desired filtering behavior.
  */
 export interface CriterionFilterConfiguration {
+  /**
+   * Unique criterion identifier
+   */
   criterionId: string;
+
+  /**
+   * Filter name
+   */
   displayName: string;
+
+  /**
+   * Filter type {@see CriterionFilterType}
+   */
   filterType: CriterionFilterType;
+
+  /**
+   * Distinct filter values obtained from the review data
+   */
   filterValues?: [number, number] | string[];
 }
 
 /**
  * An enum representing a filter type for a given {@link CriterionFilterConfiguration}.
  * Based on these settings the respective filtering behavior is generated.
- *
- * @remarks
- * Available options:
- * -- bool:  indicates whether a value for a given criterion is true / false, translates to a toggle in the UI
- * -- lte: indicates whether a value should be less than or equal to a given number, translates to a slider in the UI
- * -- gte: indicates whether a value should be greater than or equal to a given number, translates to a slider in the UI
- * -- containsOne: at least 1 specified text value must be contained, translates to a group of checkboxes in the UI
- * -- containsAny: at least 1 arbitrary text value must be contained, translates to a toggle in the UI
- * -- containsAll: all specified text values must be contained, translates to a group of checkboxes in the UI
- * -- excludesAll: all specified text values must not be contained, translates to a group of checkboxes in the UI
  */
 export enum CriterionFilterType {
+  /**
+   * Indicates whether a value for a given criterion is true / false, translates to a toggle in the UI
+   */
   bool &#x3D; &#x27;bool&#x27;,
+
+  /**
+   * Indicates whether a value should be less than or equal to a given number, translates to a slider in the UI
+   */
   lte &#x3D; &#x27;lte&#x27;,
+
+  /**
+   * Indicates whether a value should be greater than or equal to a given number, translates to a slider in the UI
+   */
   gte &#x3D; &#x27;gte&#x27;,
+
+  /**
+   * At least 1 specified text value must be contained, translates to a group of checkboxes in the UI
+   */
   containsOne &#x3D; &#x27;containsOne&#x27;,
+
+  /**
+   * At least 1 arbitrary text value must be contained, translates to a toggle in the UI
+   */
   containsAny &#x3D; &#x27;containsAny&#x27;,
+
+  /**
+   * All specified text values must be contained, translates to a group of checkboxes in the UI
+   */
   containsAll &#x3D; &#x27;containsAll&#x27;,
+
+  /**
+   * All specified text values must not be contained, translates to a group of checkboxes in the UI
+   */
   excludesAll &#x3D; &#x27;excludesAll&#x27;
 }
 
+/**
+ * An interface representing a filter-based query mapping unique criteria IDs to respective [CriterionFilterValues]{@link CriterionFilterValue}.
+ */
 export interface CriteriaBasedQuery {
   [key: string]: CriterionFilterValue;
 }
 
+/**
+ * An interface representing a filter value used in a user&#x27;s query.
+ */
 export interface CriterionFilterValue {
+  /**
+   * Filter type
+   */
   filterType?: CriterionFilterType;
+
+  /**
+   * Actual value, type depends on the filter type and respective UI elements.
+   *
+   * @example
+   * a list of selected checkboxes resulting in a list of string values   *
+   */
   value: boolean | number | string[];
 }
 </code></pre>
