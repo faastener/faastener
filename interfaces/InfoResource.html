@@ -139,6 +139,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Unique resource identifier.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -168,6 +174,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Resource reference.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -197,6 +209,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Resource name.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -204,11 +222,32 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface InfoResourceSection {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {TechnologyCategory} from &#x27;./technology&#x27;;
+
+export interface InfoResourceSection {
+  /**
+   * Unique info section identifier.
+   */
   id: string;
+
+  /**
+   * Section title.
+   */
   title: string;
+
+  /**
+   * Section description.
+   */
   description: string;
-  technologyCategory: string;
+
+  /**
+   * Technology category.
+   */
+  technologyCategory: TechnologyCategory;
+
+  /**
+   * A list of [InfoResources]{@link InfoResource} related to this section.
+   */
   resources: InfoResource[];
 }
 
@@ -216,8 +255,19 @@
  * An interface representing an information resource related to a specific technology category.
  */
 export interface InfoResource {
+  /**
+   * Unique resource identifier.
+   */
   id?: string;
+
+  /**
+   * Resource name.
+   */
   resource: string;
+
+  /**
+   * Resource reference.
+   */
   reference: string;
 }
 </code></pre>

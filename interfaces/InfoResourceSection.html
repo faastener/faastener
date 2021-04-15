@@ -65,14 +65,6 @@
             <code>src/app/shared/interfaces/info.ts</code>
         </p>
 
-            <p class="comment">
-                <h3>Description</h3>
-            </p>
-            <p class="comment">
-                <p>An interface representing a section grouping information resources.
-Such sections represent different categories of additional information, e.g., research publications, blog posts, etc.</p>
-
-            </p>
 
 
         <section>
@@ -140,6 +132,12 @@ Such sections represent different categories of additional information, e.g., re
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Section description.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -169,6 +167,12 @@ Such sections represent different categories of additional information, e.g., re
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Unique info section identifier.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -198,6 +202,12 @@ Such sections represent different categories of additional information, e.g., re
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>A list of <a href="../interfaces/InfoResource.html">InfoResources</a> related to this section.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -210,7 +220,7 @@ Such sections represent different categories of additional information, e.g., re
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>technologyCategory:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>technologyCategory:         <code><a href="../interfaces/Technology.html" target="_self" >TechnologyCategory</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -218,7 +228,7 @@ Such sections represent different categories of additional information, e.g., re
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            <i>Type : </i>        <code><a href="../interfaces/Technology.html" target="_self" >TechnologyCategory</a></code>
 
                                         </td>
                                     </tr>
@@ -227,6 +237,12 @@ Such sections represent different categories of additional information, e.g., re
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Technology category.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -256,6 +272,12 @@ Such sections represent different categories of additional information, e.g., re
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Section title.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -263,11 +285,32 @@ Such sections represent different categories of additional information, e.g., re
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface InfoResourceSection {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {TechnologyCategory} from &#x27;./technology&#x27;;
+
+export interface InfoResourceSection {
+  /**
+   * Unique info section identifier.
+   */
   id: string;
+
+  /**
+   * Section title.
+   */
   title: string;
+
+  /**
+   * Section description.
+   */
   description: string;
-  technologyCategory: string;
+
+  /**
+   * Technology category.
+   */
+  technologyCategory: TechnologyCategory;
+
+  /**
+   * A list of [InfoResources]{@link InfoResource} related to this section.
+   */
   resources: InfoResource[];
 }
 
@@ -275,8 +318,19 @@ Such sections represent different categories of additional information, e.g., re
  * An interface representing an information resource related to a specific technology category.
  */
 export interface InfoResource {
+  /**
+   * Unique resource identifier.
+   */
   id?: string;
+
+  /**
+   * Resource name.
+   */
   resource: string;
+
+  /**
+   * Resource reference.
+   */
   reference: string;
 }
 </code></pre>
