@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
         <link rel="stylesheet" href="../styles/material.css">
     </head>
     <body>
@@ -39,7 +40,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>DataService</li>
+  <li >DataService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -63,6 +64,7 @@
 
 
 
+
             <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
@@ -78,66 +80,66 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#buildGroupings">buildGroupings</a>
+                                <a href="#buildGroupings" >buildGroupings</a>
                             </li>
                             <li>
-                                <a href="#getCriteria">getCriteria</a>
+                                <a href="#getCriteria" >getCriteria</a>
                             </li>
                             <li>
-                                <a href="#getDefaultViewCombinationData">getDefaultViewCombinationData</a>
+                                <a href="#getDefaultViewCombinationData" >getDefaultViewCombinationData</a>
                             </li>
                             <li>
-                                <a href="#getDossier">getDossier</a>
+                                <a href="#getDossier" >getDossier</a>
                             </li>
                             <li>
-                                <a href="#getDossiersOfCategory">getDossiersOfCategory</a>
+                                <a href="#getDossiersOfCategory" >getDossiersOfCategory</a>
                             </li>
                             <li>
-                                <a href="#getFrameworkForCategory">getFrameworkForCategory</a>
+                                <a href="#getFrameworkForCategory" >getFrameworkForCategory</a>
                             </li>
                             <li>
-                                <a href="#getFrameworkForTechnologyType">getFrameworkForTechnologyType</a>
+                                <a href="#getFrameworkForTechnologyType" >getFrameworkForTechnologyType</a>
                             </li>
                             <li>
-                                <a href="#getFrameworkGroupingsData">getFrameworkGroupingsData</a>
+                                <a href="#getFrameworkGroupingsData" >getFrameworkGroupingsData</a>
                             </li>
                             <li>
-                                <a href="#getFrameworks">getFrameworks</a>
+                                <a href="#getFrameworks" >getFrameworks</a>
                             </li>
                             <li>
-                                <a href="#getGroupings">getGroupings</a>
+                                <a href="#getGroupings" >getGroupings</a>
                             </li>
                             <li>
-                                <a href="#getInfoResources">getInfoResources</a>
+                                <a href="#getInfoResources" >getInfoResources</a>
                             </li>
                             <li>
-                                <a href="#getTechnologies">getTechnologies</a>
+                                <a href="#getTechnologies" >getTechnologies</a>
                             </li>
                             <li>
-                                <a href="#getTechnologiesOfCategory">getTechnologiesOfCategory</a>
+                                <a href="#getTechnologiesOfCategory" >getTechnologiesOfCategory</a>
                             </li>
                             <li>
-                                <a href="#getTechnology">getTechnology</a>
+                                <a href="#getTechnology" >getTechnology</a>
                             </li>
                             <li>
-                                <a href="#getTechnologyFilter">getTechnologyFilter</a>
+                                <a href="#getTechnologyFilter" >getTechnologyFilter</a>
                             </li>
                             <li>
-                                <a href="#getViewCombinations">getViewCombinations</a>
+                                <a href="#getViewCombinations" >getViewCombinations</a>
                             </li>
                             <li>
-                                <a href="#getViewGroupingsData">getViewGroupingsData</a>
+                                <a href="#getViewGroupingsData" >getViewGroupingsData</a>
                             </li>
                             <li>
-                                <a href="#getViews">getViews</a>
+                                <a href="#getViews" >getViews</a>
                             </li>
                             <li>
-                                <a href="#getViewsData">getViewsData</a>
+                                <a href="#getViewsData" >getViewsData</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
                                     <span class="modifier">Static</span>
-                                <a href="#handleError">handleError</a>
+                                <a href="#handleError" >handleError</a>
                             </li>
                         </ul>
                     </td>
@@ -157,7 +159,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, logoLocator: <a href="../injectables/LogoLocatorService.html">LogoLocatorService</a>)</code>
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, logoLocator: <a href="../injectables/LogoLocatorService.html" target="_self">LogoLocatorService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -223,10 +225,8 @@
                 <td class="col-md-4">
                     <a name="buildGroupings"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            buildGroupings
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>buildGroupings</b></span>
                         <a href="#buildGroupings"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -234,7 +234,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>buildGroupings(data: CriteriaGroupingResponse[], criteria: <a href="../interfaces/ClassificationCriterion.html">Map<string | ClassificationCriterion></a>)</code>
+                    <code>buildGroupings(data: CriteriaGroupingResponse[], criteria: <a href="../interfaces/ClassificationCriterion.html" target="_self">Map&lt;string | ClassificationCriterion&gt;</a>)</code>
                 </td>
             </tr>
 
@@ -252,6 +252,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -307,9 +308,7 @@
                 <td class="col-md-4">
                     <a name="getCriteria"></a>
                     <span class="name">
-                        <b>
-                            getCriteria
-                        </b>
+                        <span ><b>getCriteria</b></span>
                         <a href="#getCriteria"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -346,9 +345,7 @@
                 <td class="col-md-4">
                     <a name="getDefaultViewCombinationData"></a>
                     <span class="name">
-                        <b>
-                            getDefaultViewCombinationData
-                        </b>
+                        <span ><b>getDefaultViewCombinationData</b></span>
                         <a href="#getDefaultViewCombinationData"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -373,6 +370,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -416,9 +414,7 @@
                 <td class="col-md-4">
                     <a name="getDossier"></a>
                     <span class="name">
-                        <b>
-                            getDossier
-                        </b>
+                        <span ><b>getDossier</b></span>
                         <a href="#getDossier"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -443,6 +439,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -486,9 +483,7 @@
                 <td class="col-md-4">
                     <a name="getDossiersOfCategory"></a>
                     <span class="name">
-                        <b>
-                            getDossiersOfCategory
-                        </b>
+                        <span ><b>getDossiersOfCategory</b></span>
                         <a href="#getDossiersOfCategory"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -513,6 +508,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -556,16 +552,14 @@
                 <td class="col-md-4">
                     <a name="getFrameworkForCategory"></a>
                     <span class="name">
-                        <b>
-                            getFrameworkForCategory
-                        </b>
+                        <span ><b>getFrameworkForCategory</b></span>
                         <a href="#getFrameworkForCategory"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getFrameworkForCategory(techCategory: <a href="../interfaces/Technology.html">TechnologyCategory</a>)</code>
+<code>getFrameworkForCategory(techCategory: <a href="../interfaces/Technology.html" target="_self">TechnologyCategory</a>)</code>
                 </td>
             </tr>
 
@@ -583,6 +577,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -626,9 +621,7 @@
                 <td class="col-md-4">
                     <a name="getFrameworkForTechnologyType"></a>
                     <span class="name">
-                        <b>
-                            getFrameworkForTechnologyType
-                        </b>
+                        <span ><b>getFrameworkForTechnologyType</b></span>
                         <a href="#getFrameworkForTechnologyType"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -653,6 +646,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -696,9 +690,7 @@
                 <td class="col-md-4">
                     <a name="getFrameworkGroupingsData"></a>
                     <span class="name">
-                        <b>
-                            getFrameworkGroupingsData
-                        </b>
+                        <span ><b>getFrameworkGroupingsData</b></span>
                         <a href="#getFrameworkGroupingsData"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -723,6 +715,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -766,9 +759,7 @@
                 <td class="col-md-4">
                     <a name="getFrameworks"></a>
                     <span class="name">
-                        <b>
-                            getFrameworks
-                        </b>
+                        <span ><b>getFrameworks</b></span>
                         <a href="#getFrameworks"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -805,9 +796,7 @@
                 <td class="col-md-4">
                     <a name="getGroupings"></a>
                     <span class="name">
-                        <b>
-                            getGroupings
-                        </b>
+                        <span ><b>getGroupings</b></span>
                         <a href="#getGroupings"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -844,9 +833,7 @@
                 <td class="col-md-4">
                     <a name="getInfoResources"></a>
                     <span class="name">
-                        <b>
-                            getInfoResources
-                        </b>
+                        <span ><b>getInfoResources</b></span>
                         <a href="#getInfoResources"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -883,9 +870,7 @@
                 <td class="col-md-4">
                     <a name="getTechnologies"></a>
                     <span class="name">
-                        <b>
-                            getTechnologies
-                        </b>
+                        <span ><b>getTechnologies</b></span>
                         <a href="#getTechnologies"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -910,6 +895,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -953,9 +939,7 @@
                 <td class="col-md-4">
                     <a name="getTechnologiesOfCategory"></a>
                     <span class="name">
-                        <b>
-                            getTechnologiesOfCategory
-                        </b>
+                        <span ><b>getTechnologiesOfCategory</b></span>
                         <a href="#getTechnologiesOfCategory"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -980,6 +964,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -1040,9 +1025,7 @@
                 <td class="col-md-4">
                     <a name="getTechnology"></a>
                     <span class="name">
-                        <b>
-                            getTechnology
-                        </b>
+                        <span ><b>getTechnology</b></span>
                         <a href="#getTechnology"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -1067,6 +1050,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -1127,16 +1111,14 @@
                 <td class="col-md-4">
                     <a name="getTechnologyFilter"></a>
                     <span class="name">
-                        <b>
-                            getTechnologyFilter
-                        </b>
+                        <span ><b>getTechnologyFilter</b></span>
                         <a href="#getTechnologyFilter"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getTechnologyFilter(category: <a href="../interfaces/Technology.html">TechnologyCategory</a>)</code>
+<code>getTechnologyFilter(category: <a href="../interfaces/Technology.html" target="_self">TechnologyCategory</a>)</code>
                 </td>
             </tr>
 
@@ -1154,6 +1136,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -1197,9 +1180,7 @@
                 <td class="col-md-4">
                     <a name="getViewCombinations"></a>
                     <span class="name">
-                        <b>
-                            getViewCombinations
-                        </b>
+                        <span ><b>getViewCombinations</b></span>
                         <a href="#getViewCombinations"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -1236,9 +1217,7 @@
                 <td class="col-md-4">
                     <a name="getViewGroupingsData"></a>
                     <span class="name">
-                        <b>
-                            getViewGroupingsData
-                        </b>
+                        <span ><b>getViewGroupingsData</b></span>
                         <a href="#getViewGroupingsData"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -1263,6 +1242,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -1306,9 +1286,7 @@
                 <td class="col-md-4">
                     <a name="getViews"></a>
                     <span class="name">
-                        <b>
-                            getViews
-                        </b>
+                        <span ><b>getViews</b></span>
                         <a href="#getViews"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -1345,9 +1323,7 @@
                 <td class="col-md-4">
                     <a name="getViewsData"></a>
                     <span class="name">
-                        <b>
-                            getViewsData
-                        </b>
+                        <span ><b>getViewsData</b></span>
                         <a href="#getViewsData"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -1372,6 +1348,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -1415,11 +1392,9 @@
                 <td class="col-md-4">
                     <a name="handleError"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            <span class="modifier">Static</span>
-                            handleError
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span class="modifier">Static</span>
+                        <span ><b>handleError</b></span>
                         <a href="#handleError"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -1445,6 +1420,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -1941,14 +1917,14 @@ export class DataService {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -1969,9 +1945,9 @@ export class DataService {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
