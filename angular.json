@@ -24,7 +24,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/app/_scss/app.scss"
+              "src/app/_scss/app.scss",
+              "src/assets/vendor/normalize.css",
+              "src/assets/vendor/font-awesome/css/font-awesome.min.css"
             ],
             "scripts": [
               "node_modules/randomcolor/randomColor.js"
