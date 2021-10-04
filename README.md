@@ -1,6 +1,5 @@
 # FaaStener
-
-[![build status](https://github.com/faastener/faastener/actions/workflows/build/badge.svg)](https://github.com/faastener/faastener/actions)
+[![build](https://github.com/faastener/faastener/actions/workflows/build.yml/badge.svg)](https://github.com/faastener/faastener/actions/workflows/build.yml)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 FaaStener is an open source selection support system intended to simplify browsing and filtering Function-as-a-Service (FaaS) platforms.

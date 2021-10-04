@@ -32,17 +32,11 @@ jobs:
           npm ci
           npm run build:ci
 
-  build-documentation:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: Generate docs with compodoc
-        run: npm run build:doc
+        run: |
+          npm run clean
+          npm run build:doc
 
-  deploy-documentation:
-    needs: build-documentation
-    runs-on: ubuntu-latest
-    steps:
       - name: Deploy documentation to GitHub pages
         uses: peaceiris/actions-gh-pages@v3
         with:
