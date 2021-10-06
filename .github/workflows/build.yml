@@ -55,7 +55,9 @@ jobs:
           node-version: '12.x'
 
       - name: Generate docs with compodoc
-        run: npm run build:doc
+        run: |
+          npm ci
+          npm run build:doc
 
       - name: Deploy documentation to GitHub pages
         uses: peaceiris/actions-gh-pages@v3
