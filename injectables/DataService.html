@@ -241,8 +241,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="413"
-                            class="link-to-prism">src/app/core/services/data.service.ts:413</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="411"
+                            class="link-to-prism">src/app/core/services/data.service.ts:411</a></div>
                 </td>
             </tr>
 
@@ -359,8 +359,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="345"
-                            class="link-to-prism">src/app/core/services/data.service.ts:345</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="343"
+                            class="link-to-prism">src/app/core/services/data.service.ts:343</a></div>
                 </td>
             </tr>
 
@@ -497,8 +497,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="283"
-                            class="link-to-prism">src/app/core/services/data.service.ts:283</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="281"
+                            class="link-to-prism">src/app/core/services/data.service.ts:281</a></div>
                 </td>
             </tr>
 
@@ -704,8 +704,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="333"
-                            class="link-to-prism">src/app/core/services/data.service.ts:333</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="331"
+                            class="link-to-prism">src/app/core/services/data.service.ts:331</a></div>
                 </td>
             </tr>
 
@@ -847,8 +847,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="405"
-                            class="link-to-prism">src/app/core/services/data.service.ts:405</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="403"
+                            class="link-to-prism">src/app/core/services/data.service.ts:403</a></div>
                 </td>
             </tr>
 
@@ -1125,8 +1125,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="293"
-                            class="link-to-prism">src/app/core/services/data.service.ts:293</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="291"
+                            class="link-to-prism">src/app/core/services/data.service.ts:291</a></div>
                 </td>
             </tr>
 
@@ -1231,8 +1231,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="386"
-                            class="link-to-prism">src/app/core/services/data.service.ts:386</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="384"
+                            class="link-to-prism">src/app/core/services/data.service.ts:384</a></div>
                 </td>
             </tr>
 
@@ -1337,8 +1337,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="367"
-                            class="link-to-prism">src/app/core/services/data.service.ts:367</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="365"
+                            class="link-to-prism">src/app/core/services/data.service.ts:365</a></div>
                 </td>
             </tr>
 
@@ -1492,7 +1492,7 @@ const frameworkViewsPath &#x3D; &#x27;/assets/data/framework/views.json&#x27;;
 const frameworkViewCombinationsPath &#x3D; &#x27;/assets/data/framework/view-combinations.json&#x27;;
 const frameworksPath &#x3D; &#x27;/assets/data/framework/frameworks.json&#x27;;
 const supportedPlatformsPath &#x3D; &#x27;/assets/data/platforms/platforms.json&#x27;;
-const dossiersPath: string &#x3D; &#x27;/assets/data/platforms/&#x27;;
+const dossiersPath &#x3D; &#x27;/assets/data/platforms/&#x27;;
 const filterConfigurationsPath &#x3D; &#x27;/assets/data/framework/filters.json&#x27;;
 const infoResourcesPath &#x3D; &#x27;/assets/data/info/resources.json&#x27;;
 
@@ -1542,10 +1542,10 @@ export class DataService {
     ]).pipe(
       map(([groupings, views]) &#x3D;&gt; {
           const groupingsLookup &#x3D; new Map(groupings.map(c &#x3D;&gt; [c.id, c] as [string, CriteriaGrouping]));
-          let result: ClassificationView[] &#x3D; [];
+          const result: ClassificationView[] &#x3D; [];
 
           views.forEach(v &#x3D;&gt; {
-            let view: ClassificationView &#x3D; {
+            const view: ClassificationView &#x3D; {
               id: v.id,
               name: v.name,
               description: v.description,
@@ -1574,9 +1574,9 @@ export class DataService {
       this.http.get&lt;ClassificationViewCombinationResponse[]&gt;(frameworkViewCombinationsPath)
     ]).pipe(
       map(([views, viewCombinations]) &#x3D;&gt; {
-          let result: ClassificationViewCombination[] &#x3D; [];
+          const result: ClassificationViewCombination[] &#x3D; [];
           viewCombinations.forEach(c &#x3D;&gt; {
-            let combination: ClassificationViewCombination &#x3D; {
+            const combination: ClassificationViewCombination &#x3D; {
               id: c.id,
               name: c.name,
               description: c.description,
@@ -1585,7 +1585,7 @@ export class DataService {
             };
 
             c.viewIds.forEach(id &#x3D;&gt; {
-              let view &#x3D; views.find(v &#x3D;&gt; id &#x3D;&#x3D;&#x3D; v.id);
+              const view &#x3D; views.find(v &#x3D;&gt; id &#x3D;&#x3D;&#x3D; v.id);
               if (view) {
                 combination.views.add(view);
               }
@@ -1607,9 +1607,9 @@ export class DataService {
       this.http.get&lt;ClassificationFrameworkResponse[]&gt;(frameworksPath)
     ]).pipe(
       map(([combs, frameworks]) &#x3D;&gt; {
-        let result: ClassificationFramework[] &#x3D; [];
+        const result: ClassificationFramework[] &#x3D; [];
         frameworks.forEach(f &#x3D;&gt; {
-          let framework: ClassificationFramework &#x3D; {
+          const framework: ClassificationFramework &#x3D; {
             id: f.id,
             technologyCategory: f.technologyCategory,
             name: f.name,
@@ -1618,7 +1618,7 @@ export class DataService {
           };
 
           f.viewCombinationIds.forEach(id &#x3D;&gt; {
-            let viewCombination &#x3D; combs.find(v &#x3D;&gt; id &#x3D;&#x3D;&#x3D; v.id);
+            const viewCombination &#x3D; combs.find(v &#x3D;&gt; id &#x3D;&#x3D;&#x3D; v.id);
             if (viewCombination) {
               framework.viewCombinations.add(viewCombination);
             }
@@ -1640,7 +1640,7 @@ export class DataService {
     ]).pipe(
       map(([combs, frameworks]) &#x3D;&gt; {
         let result: ClassificationFramework;
-        let f &#x3D; frameworks.find(f &#x3D;&gt; f.technologyCategory &#x3D;&#x3D;&#x3D; techCategory);
+        const f &#x3D; frameworks.find(f &#x3D;&gt; f.technologyCategory &#x3D;&#x3D;&#x3D; techCategory);
 
         result &#x3D; {
           id: f.id,
@@ -1651,7 +1651,7 @@ export class DataService {
         };
 
         f.viewCombinationIds.forEach(id &#x3D;&gt; {
-          let viewCombination &#x3D; combs.find(v &#x3D;&gt; id &#x3D;&#x3D;&#x3D; v.id);
+          const viewCombination &#x3D; combs.find(v &#x3D;&gt; id &#x3D;&#x3D;&#x3D; v.id);
           if (viewCombination) {
             result.viewCombinations.add(viewCombination);
           }
@@ -1678,7 +1678,7 @@ export class DataService {
         map((items) &#x3D;&gt;
           items.map(
             item &#x3D;&gt; {
-              let result: Technology &#x3D; {
+              const result: Technology &#x3D; {
                 ...item,
                 logoLocation: this.logoLocator.getLogoPath(item.logoLocator)
               };
@@ -1713,8 +1713,8 @@ export class DataService {
       this.getDossier(id)
     ]).pipe(
       map(([items, dossier]) &#x3D;&gt; {
-          let technology: Technology &#x3D; items.find(item &#x3D;&gt; item.id &#x3D;&#x3D;&#x3D; id);
-          let result: Technology &#x3D; {
+          const technology: Technology &#x3D; items.find(item &#x3D;&gt; item.id &#x3D;&#x3D;&#x3D; id);
+          const result: Technology &#x3D; {
             ...technology,
             logoLocation: this.logoLocator.getLogoPath(technology.logoLocator)
           };
@@ -1734,13 +1734,11 @@ export class DataService {
     const dossierPath &#x3D; dossiersPath.concat(technologyId, &#x27;.json&#x27;);
     return this.http.get&lt;TechnologyDossierResponse&gt;(dossierPath)
       .pipe(
-        map( (res) &#x3D;&gt; {
-          return {
+        map( (res) &#x3D;&gt; ({
             platformId: technologyId,
             reviewDate: res.reviewDate,
             reviewedCriteria: new Map(Object.entries(res.reviewedCriteria))
-          } as TechnologyDossier;
-        }),
+          } as TechnologyDossier)),
         catchError(DataService.handleError),
         shareReplay(1)
       );
@@ -1815,10 +1813,10 @@ export class DataService {
     ]).pipe(
       map(([vcs, fws]) &#x3D;&gt; {
         const vcLookup &#x3D; new Map(vcs.map(vc &#x3D;&gt; [vc.id, vc] as [string, ClassificationViewCombinationResponse]));
-        let framework &#x3D; fws.find(f &#x3D;&gt; f.id &#x3D;&#x3D;&#x3D; frameworkId);
+        const framework &#x3D; fws.find(f &#x3D;&gt; f.id &#x3D;&#x3D;&#x3D; frameworkId);
         if (framework) {
-          for (let id of framework.viewCombinationIds) {
-            let temp &#x3D; vcLookup.get(id);
+          for (const id of framework.viewCombinationIds) {
+            const temp &#x3D; vcLookup.get(id);
             if (temp &amp;&amp; temp.default) {
               return temp;
             }
@@ -1837,8 +1835,8 @@ export class DataService {
     ]).pipe(
       map(([combs, views]) &#x3D;&gt; {
         const viewsLookup &#x3D; new Map(views.map(v &#x3D;&gt; [v.id, v] as [string, ClassificationViewResponse]));
-        let result &#x3D; [];
-        let vc &#x3D; combs.find(c &#x3D;&gt; c.id &#x3D;&#x3D;&#x3D; viewCombinationId);
+        const result &#x3D; [];
+        const vc &#x3D; combs.find(c &#x3D;&gt; c.id &#x3D;&#x3D;&#x3D; viewCombinationId);
         if (vc) {
           vc.viewIds.forEach(id &#x3D;&gt; result.push(viewsLookup.get(id)));
         }
@@ -1856,8 +1854,8 @@ export class DataService {
       .pipe(
         map(([views, groupings]) &#x3D;&gt; {
           const groupingsLookup &#x3D; new Map(groupings.map(g &#x3D;&gt; [g.id, g] as [string, CriteriaGroupingResponse]));
-          let result &#x3D; [];
-          let view &#x3D; views.find(v &#x3D;&gt; v.id &#x3D;&#x3D;&#x3D; viewId);
+          const result &#x3D; [];
+          const view &#x3D; views.find(v &#x3D;&gt; v.id &#x3D;&#x3D;&#x3D; viewId);
           if (view) {
             view.groupingIds.forEach(id &#x3D;&gt; result.push(groupingsLookup.get(id)));
           }
@@ -1881,7 +1879,7 @@ export class DataService {
     const lookup: Map&lt;string, CriteriaGrouping&gt; &#x3D; new Map&lt;string, CriteriaGrouping&gt;();
 
     data.forEach(g &#x3D;&gt; {
-        let relatedCriteria: Set&lt;ClassificationCriterion&gt; &#x3D; new Set&lt;ClassificationCriterion&gt;();
+        const relatedCriteria: Set&lt;ClassificationCriterion&gt; &#x3D; new Set&lt;ClassificationCriterion&gt;();
         if (g.criteriaIds) {
           g.criteriaIds.forEach(id &#x3D;&gt; criteria.has(id) ? relatedCriteria.add(criteria.get(id)) : false);
         }

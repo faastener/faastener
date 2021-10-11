@@ -464,7 +464,7 @@ export class CriterionFilterComponent implements OnInit {
     if (this.filter.filterType &#x3D;&#x3D;&#x3D; this.FilterType.bool || this.filter.filterType &#x3D;&#x3D;&#x3D; this.FilterType.containsAny || this.filter.filterType &#x3D;&#x3D;&#x3D; this.FilterType.lte) {
       this.filterElement &#x3D; this.fb.control(null);
     } else {
-      let controls &#x3D; this.fb.array([]);
+      const controls &#x3D; this.fb.array([]);
       this.filter.filterValues.forEach(v &#x3D;&gt; controls.push(this.fb.control(false)));
       this.filterElement &#x3D; this.fb.group({
         checkboxes: controls,
@@ -473,7 +473,7 @@ export class CriterionFilterComponent implements OnInit {
     }
 
     this.filterElement.valueChanges.subscribe(value &#x3D;&gt; {
-      let obj &#x3D; {};
+      const obj &#x3D; {};
       if (this.filter.filterType &#x3D;&#x3D;&#x3D; this.FilterType.bool || this.filter.filterType &#x3D;&#x3D;&#x3D; this.FilterType.containsAny) {
         obj[this.filter.criterionId] &#x3D; {
           filterType: this.filter.filterType,
@@ -485,8 +485,8 @@ export class CriterionFilterComponent implements OnInit {
           value: value as number
         };
       } else {
-        let initialValues &#x3D; this.filter.filterValues as string[];
-        let selectedStrings &#x3D; initialValues.filter((x, i) &#x3D;&gt; !!this.filterElement.value.checkboxes[i]);
+        const initialValues &#x3D; this.filter.filterValues as string[];
+        const selectedStrings &#x3D; initialValues.filter((x, i) &#x3D;&gt; !!this.filterElement.value.checkboxes[i]);
 
         obj[this.filter.criterionId] &#x3D; {
           filterType: this.filterElement.value.filterType,

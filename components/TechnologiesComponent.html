@@ -1002,7 +1002,7 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscriptions.push(
       this.route.queryParams.subscribe(params &#x3D;&gt; {
-        const mode &#x3D; params[&#x27;browsingMode&#x27;];
+        const mode &#x3D; params.browsingMode;
         if (mode) {
           this.browsingMode &#x3D; mode;
         }
@@ -1011,10 +1011,10 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
 
     this.subscriptions.push(
       this.route.data.subscribe(data &#x3D;&gt; {
-        this.technologies &#x3D; data[&#x27;resolvedData&#x27;][0];
+        this.technologies &#x3D; data.resolvedData[0];
         this.dataSource &#x3D; new TechnologyDataSource(this.technologies, {property: &#x27;platformName&#x27;, order: &#x27;asc&#x27;}, {});
-        this.framework &#x3D; data[&#x27;resolvedData&#x27;][1];
-        this.filterConfiguration &#x3D; data[&#x27;resolvedData&#x27;][2];
+        this.framework &#x3D; data.resolvedData[1];
+        this.filterConfiguration &#x3D; data.resolvedData[2];
 
         this.extractGroupings();
         this.generateFilterStructure();
@@ -1027,7 +1027,7 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
   }
 
   private extractGroupings() {
-    for (let vc of this.framework.viewCombinations) {
+    for (const vc of this.framework.viewCombinations) {
       if (vc.default) {
         vc.views.forEach(v &#x3D;&gt; this.groupings.push(...Array.from(v.groupings)));
         break;
@@ -1037,7 +1037,7 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
 
   private generateFilterStructure() {
     const criteriaFilterLookup &#x3D; new Map(this.filterConfiguration.filters.map(c &#x3D;&gt; [c.criterionId, c] as [string, CriterionFilterConfiguration]));
-    let placement: Map&lt;String, RenderedFilterBlock&gt; &#x3D; new Map&lt;String, RenderedFilterBlock&gt;();
+    const placement: Map&lt;String, RenderedFilterBlock&gt; &#x3D; new Map&lt;String, RenderedFilterBlock&gt;();
     this.groupings.forEach(g &#x3D;&gt; this.populateRenderBlocks(g, criteriaFilterLookup, placement));
     this.renderedFilter &#x3D; Array.from(placement.values());
   }
@@ -1051,7 +1051,7 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
     }
 
     grouping.criteria.forEach(c &#x3D;&gt; {
-      let config &#x3D; filterLookup.get(c.id);
+      const config &#x3D; filterLookup.get(c.id);
       if (config) {
         current.filters.push(config);
       }

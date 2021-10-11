@@ -341,8 +341,8 @@ import {CriteriaGrouping, CriterionInstance} from &#x27;../interfaces/classifica
 })
 export class ChildGroupingComponent {
   @Input() groupings: CriteriaGrouping[];
-  @Input() subGroups: boolean &#x3D; false;
-  @Input() parent: string &#x3D; &#x27;&#x27;;
+  @Input() subGroups &#x3D; false;
+  @Input() parent &#x3D; &#x27;&#x27;;
   @Input() extraCriterionTitle: string;
   @Input() renderReviewData &#x3D; false;
   @Input() reviewData: Map&lt;string, CriterionInstance&gt;;

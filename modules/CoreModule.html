@@ -200,12 +200,9 @@ import {AppConfigService} from &#x27;./services/app-config.service&#x27;;
       provide: APP_INITIALIZER,
       multi: true,
       deps: [AppConfigService],
-      useFactory: (appConfigService: AppConfigService) &#x3D;&gt; {
-        return () &#x3D;&gt; {
-          return appConfigService.loadAppConfig();
-        };
-      }
-    }]
+      useFactory: (appConfigService: AppConfigService) &#x3D;&gt; (() &#x3D;&gt; appConfigService.loadAppConfig())
+    }
+  ]
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {
 

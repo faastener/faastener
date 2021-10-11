@@ -539,8 +539,8 @@ export class TechnologyDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data &#x3D;&gt; {
-      this.platform &#x3D; data[&#x27;resolvedData&#x27;][0];
-      this.framework &#x3D; data[&#x27;resolvedData&#x27;][1];
+      this.platform &#x3D; data.resolvedData[0];
+      this.framework &#x3D; data.resolvedData[1];
 
       this.framework.viewCombinations.forEach(vc &#x3D;&gt; vc.default ? this.selectedViewCombination &#x3D; vc : false);
     });

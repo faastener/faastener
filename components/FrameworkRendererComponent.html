@@ -614,7 +614,7 @@ export class FrameworkRendererComponent implements OnInit {
   @Input() includeFrameworkInfo &#x3D; true;
   @Input() selectedViewCombination: ClassificationViewCombination;
   @Input() extraCriterionTitle: string;
-  @Input() renderReviewData: boolean &#x3D; false;
+  @Input() renderReviewData &#x3D; false;
   @Input() reviewData: Map&lt;string, CriterionInstance&gt;;
 
   viewToggles: Map&lt;string, boolean&gt; &#x3D; new Map&lt;string, boolean&gt;();
@@ -625,7 +625,7 @@ export class FrameworkRendererComponent implements OnInit {
 
   ngOnInit(): void {
     if (!this.selectedViewCombination) {
-      for (let vc of this.framework.viewCombinations) {
+      for (const vc of this.framework.viewCombinations) {
         if (vc.default) {
           this.selectedViewCombination &#x3D; vc;
           break;

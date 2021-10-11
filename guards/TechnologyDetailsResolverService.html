@@ -262,7 +262,7 @@ export class TechnologyDetailsResolverService implements Resolve&lt;[Technology,
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable&lt;[Technology, ClassificationFramework]&gt; {
-    const id &#x3D; route.params[&#x27;platformId&#x27;];
+    const id &#x3D; route.params.platformId;
     const category &#x3D; this.config.defaultTechCategory;
 
     return forkJoin([

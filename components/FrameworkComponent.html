@@ -314,7 +314,7 @@ export class FrameworkComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data &#x3D;&gt; {
-      this.framework &#x3D; data[&#x27;resolvedData&#x27;];
+      this.framework &#x3D; data.resolvedData;
     });
   }
 }

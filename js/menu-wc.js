@@ -91,13 +91,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/CoreModule.html" data-type="entity-link" >CoreModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-CoreModule-958a089d36eed0e7d17bfde48d80279d"' : 'data-target="#xs-injectables-links-module-CoreModule-958a089d36eed0e7d17bfde48d80279d"' }>
+                                        'data-target="#injectables-links-module-CoreModule-cbccad1c31add81ecf620ede93892bbf"' : 'data-target="#xs-injectables-links-module-CoreModule-cbccad1c31add81ecf620ede93892bbf"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-CoreModule-958a089d36eed0e7d17bfde48d80279d"' :
-                                        'id="xs-injectables-links-module-CoreModule-958a089d36eed0e7d17bfde48d80279d"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-CoreModule-cbccad1c31add81ecf620ede93892bbf"' :
+                                        'id="xs-injectables-links-module-CoreModule-cbccad1c31add81ecf620ede93892bbf"' }>
                                         <li class="link">
                                             <a href="injectables/AppConfigService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AppConfigService</a>
                                         </li>

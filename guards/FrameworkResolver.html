@@ -262,7 +262,7 @@ export class FrameworkResolver implements Resolve&lt;ClassificationFramework&gt;
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable&lt;ClassificationFramework&gt; {
-    let defaultCategory &#x3D; this.config.defaultTechCategory;
+    const defaultCategory &#x3D; this.config.defaultTechCategory;
     return this.dataService.getFrameworkForCategory(defaultCategory);
   }
 }
