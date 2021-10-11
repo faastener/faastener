@@ -5,8 +5,7 @@ import {NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Route
   selector: 'app-root',
   template: `
     <main>
-      <div *ngIf="loading"
-           style="position: fixed; z-index: 90; background-blend-mode: multiply; background-color: rgba(255, 255, 255, .3); width: 100%; height: 100%">
+      <div *ngIf="loading" class="loader-overlay">
         <mat-spinner style="margin: 35vh auto 0"></mat-spinner>
       </div>
       <router-outlet></router-outlet>
