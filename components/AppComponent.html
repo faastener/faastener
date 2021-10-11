@@ -98,8 +98,7 @@
             <tr>
                 <td class="col-md-3">template</td>
                 <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;main&gt;
-  &lt;div *ngIf&#x3D;&quot;loading&quot;
-       style&#x3D;&quot;position: fixed; z-index: 90; background-blend-mode: multiply; background-color: rgba(255, 255, 255, .3); width: 100%; height: 100%&quot;&gt;
+  &lt;div *ngIf&#x3D;&quot;loading&quot; class&#x3D;&quot;loader-overlay&quot;&gt;
     &lt;mat-spinner style&#x3D;&quot;margin: 35vh auto 0&quot;&gt;&lt;/mat-spinner&gt;
   &lt;/div&gt;
   &lt;router-outlet&gt;&lt;/router-outlet&gt;
@@ -176,7 +175,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/app.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/app.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -245,8 +244,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/app.component.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/app.component.ts:25</a></div>
                 </td>
             </tr>
 
@@ -310,8 +309,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/app.component.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/app.component.ts:22</a></div>
                 </td>
             </tr>
 
@@ -352,7 +351,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/app.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/app.component.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -372,8 +371,7 @@ import {NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Route
   selector: &#x27;app-root&#x27;,
   template: &#x60;
     &lt;main&gt;
-      &lt;div *ngIf&#x3D;&quot;loading&quot;
-           style&#x3D;&quot;position: fixed; z-index: 90; background-blend-mode: multiply; background-color: rgba(255, 255, 255, .3); width: 100%; height: 100%&quot;&gt;
+      &lt;div *ngIf&#x3D;&quot;loading&quot; class&#x3D;&quot;loader-overlay&quot;&gt;
         &lt;mat-spinner style&#x3D;&quot;margin: 35vh auto 0&quot;&gt;&lt;/mat-spinner&gt;
       &lt;/div&gt;
       &lt;router-outlet&gt;&lt;/router-outlet&gt;
@@ -430,7 +428,7 @@ export class AppComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><main>  <div *ngIf="loading"       style="position: fixed; z-index: 90; background-blend-mode: multiply; background-color: rgba(255, 255, 255, .3); width: 100%; height: 100%">    <mat-spinner style="margin: 35vh auto 0"></mat-spinner>  </div>  <router-outlet></router-outlet></main></div>'
+        var COMPONENT_TEMPLATE = '<div><main>  <div *ngIf="loading" class="loader-overlay">    <mat-spinner style="margin: 35vh auto 0"></mat-spinner>  </div>  <router-outlet></router-outlet></main></div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-home-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BannerComponent', 'selector': 'app-home-banner'},{'name': 'BottomNavComponent', 'selector': 'app-bottom-nav'},{'name': 'ChildGroupingComponent', 'selector': 'app-child-grouping'},{'name': 'CriterionComponent', 'selector': 'app-criterion'},{'name': 'CriterionFilterComponent', 'selector': 'app-criterion-filter'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FrameworkComponent', 'selector': 'app-framework'},{'name': 'FrameworkRendererComponent', 'selector': 'app-framework-renderer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': ''},{'name': 'InformationComponent', 'selector': 'app-information'},{'name': 'OverviewComponent', 'selector': 'app-overview'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'TechnologiesComponent', 'selector': 'app-technologies'},{'name': 'TechnologyDetailsComponent', 'selector': 'app-technology-details'},{'name': 'TechnologyListComponent', 'selector': 'app-technology-list'},{'name': 'TechnologyTableComponent', 'selector': 'app-technology-table'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
