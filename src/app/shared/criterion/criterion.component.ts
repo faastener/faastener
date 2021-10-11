@@ -11,7 +11,7 @@ export class CriterionComponent implements OnInit {
   @Input() extraTitleText: string;
   @Input() criterionInstance: CriterionInstance;
   @Input() reviewMode: boolean;
-  @Input() icon: string = 'text_snippet';
+  @Input() icon = 'text_snippet';
   title: string;
   values: CriterionValue[];
 

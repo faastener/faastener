@@ -21,7 +21,7 @@ export class CriterionFilterComponent implements OnInit {
     if (this.filter.filterType === this.FilterType.bool || this.filter.filterType === this.FilterType.containsAny || this.filter.filterType === this.FilterType.lte) {
       this.filterElement = this.fb.control(null);
     } else {
-      let controls = this.fb.array([]);
+      const controls = this.fb.array([]);
       this.filter.filterValues.forEach(v => controls.push(this.fb.control(false)));
       this.filterElement = this.fb.group({
         checkboxes: controls,
@@ -30,7 +30,7 @@ export class CriterionFilterComponent implements OnInit {
     }
 
     this.filterElement.valueChanges.subscribe(value => {
-      let obj = {};
+      const obj = {};
       if (this.filter.filterType === this.FilterType.bool || this.filter.filterType === this.FilterType.containsAny) {
         obj[this.filter.criterionId] = {
           filterType: this.filter.filterType,
@@ -42,8 +42,8 @@ export class CriterionFilterComponent implements OnInit {
           value: value as number
         };
       } else {
-        let initialValues = this.filter.filterValues as string[];
-        let selectedStrings = initialValues.filter((x, i) => !!this.filterElement.value.checkboxes[i]);
+        const initialValues = this.filter.filterValues as string[];
+        const selectedStrings = initialValues.filter((x, i) => !!this.filterElement.value.checkboxes[i]);
 
         obj[this.filter.criterionId] = {
           filterType: this.filterElement.value.filterType,

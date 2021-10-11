@@ -15,7 +15,7 @@ export class FrameworkComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => {
-      this.framework = data['resolvedData'];
+      this.framework = data.resolvedData;
     });
   }
 }

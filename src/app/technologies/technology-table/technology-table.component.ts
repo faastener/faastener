@@ -39,9 +39,9 @@ export class TechnologyTableComponent implements OnInit {
     this.framework.viewCombinations.forEach(viewComb => {
       if (viewComb.default) {
         viewComb.views.forEach(view => {
-          let groupingColumns: TableColumn[] = [];
+          const groupingColumns: TableColumn[] = [];
           Array.from(view.groupings).forEach((grouping, index) => {
-            let color = index % 2 === 0 ? '#ccc' : 'white';
+            const color = index % 2 === 0 ? '#ccc' : 'white';
             this.generateGroupingColumns(grouping, groupingColumns, color);
           });
           if (groupingColumns.length > 0) {
@@ -58,23 +58,23 @@ export class TechnologyTableComponent implements OnInit {
     });
   }
 
-  private generateGroupingColumns(grouping: CriteriaGrouping, groupingColumns: TableColumn[], color:string, parentGroupingName?: string) {
+  private generateGroupingColumns(grouping: CriteriaGrouping, groupingColumns: TableColumn[], color: string, parentGroupingName?: string) {
     let counter = 0;
     grouping.criteria.forEach((c, index) => {
       this.criteriaColumns.push({
         id: c.id,
         displayName: c.name,
-        color: color
+        color
       } as TableColumn);
       this.columnsToDisplay.push(c.id);
       counter += 1;
     });
     if (counter > 0) {
-      let name = parentGroupingName ? parentGroupingName.concat('.').concat(grouping.name) : grouping.name;
+      const name = parentGroupingName ? parentGroupingName.concat('.').concat(grouping.name) : grouping.name;
       groupingColumns.push({
         id: grouping.id,
         displayName: name,
-        color: color,
+        color,
         colSpan: counter
       } as TableColumn);
       this.groupingColumnIds.push(grouping.id);

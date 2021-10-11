@@ -13,7 +13,7 @@ export class TechnologiesResolver implements Resolve<[Technology[], Classificati
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<[Technology[], ClassificationFramework, TechnologyFilterConfiguration]> {
-    let category = this.config.defaultTechCategory;
+    const category = this.config.defaultTechCategory;
 
     const technologies = this.dataService.getTechnologiesOfCategory(category, true);
     const framework = this.dataService.getFrameworkForTechnologyType(category);

@@ -21,8 +21,8 @@ export class TechnologyDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => {
-      this.platform = data['resolvedData'][0];
-      this.framework = data['resolvedData'][1];
+      this.platform = data.resolvedData[0];
+      this.framework = data.resolvedData[1];
 
       this.framework.viewCombinations.forEach(vc => vc.default ? this.selectedViewCombination = vc : false);
     });

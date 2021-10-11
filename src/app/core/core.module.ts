@@ -18,12 +18,9 @@ import {AppConfigService} from './services/app-config.service';
       provide: APP_INITIALIZER,
       multi: true,
       deps: [AppConfigService],
-      useFactory: (appConfigService: AppConfigService) => {
-        return () => {
-          return appConfigService.loadAppConfig();
-        };
-      }
-    }]
+      useFactory: (appConfigService: AppConfigService) => (() => appConfigService.loadAppConfig())
+    }
+  ]
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {
 

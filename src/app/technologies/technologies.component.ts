@@ -51,7 +51,7 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscriptions.push(
       this.route.queryParams.subscribe(params => {
-        const mode = params['browsingMode'];
+        const mode = params.browsingMode;
         if (mode) {
           this.browsingMode = mode;
         }
@@ -60,10 +60,10 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
 
     this.subscriptions.push(
       this.route.data.subscribe(data => {
-        this.technologies = data['resolvedData'][0];
+        this.technologies = data.resolvedData[0];
         this.dataSource = new TechnologyDataSource(this.technologies, {property: 'platformName', order: 'asc'}, {});
-        this.framework = data['resolvedData'][1];
-        this.filterConfiguration = data['resolvedData'][2];
+        this.framework = data.resolvedData[1];
+        this.filterConfiguration = data.resolvedData[2];
 
         this.extractGroupings();
         this.generateFilterStructure();
@@ -76,7 +76,7 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
   }
 
   private extractGroupings() {
-    for (let vc of this.framework.viewCombinations) {
+    for (const vc of this.framework.viewCombinations) {
       if (vc.default) {
         vc.views.forEach(v => this.groupings.push(...Array.from(v.groupings)));
         break;
@@ -86,7 +86,7 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
 
   private generateFilterStructure() {
     const criteriaFilterLookup = new Map(this.filterConfiguration.filters.map(c => [c.criterionId, c] as [string, CriterionFilterConfiguration]));
-    let placement: Map<String, RenderedFilterBlock> = new Map<String, RenderedFilterBlock>();
+    const placement: Map<String, RenderedFilterBlock> = new Map<String, RenderedFilterBlock>();
     this.groupings.forEach(g => this.populateRenderBlocks(g, criteriaFilterLookup, placement));
     this.renderedFilter = Array.from(placement.values());
   }
@@ -100,7 +100,7 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
     }
 
     grouping.criteria.forEach(c => {
-      let config = filterLookup.get(c.id);
+      const config = filterLookup.get(c.id);
       if (config) {
         current.filters.push(config);
       }

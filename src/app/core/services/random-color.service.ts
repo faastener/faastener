@@ -10,7 +10,7 @@ export class RandomColorService {
 
   getRandomColor(hue?, luminosity?, count?, seed?, format?, alpha?) {
     return randomColor({
-      hue: hue, luminosity: luminosity, count: count, seed: seed, format: format, alpha: alpha
+      hue, luminosity, count, seed, format, alpha
     });
   }
 }

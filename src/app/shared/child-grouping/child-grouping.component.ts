@@ -8,8 +8,8 @@ import {CriteriaGrouping, CriterionInstance} from '../interfaces/classification'
 })
 export class ChildGroupingComponent {
   @Input() groupings: CriteriaGrouping[];
-  @Input() subGroups: boolean = false;
-  @Input() parent: string = '';
+  @Input() subGroups = false;
+  @Input() parent = '';
   @Input() extraCriterionTitle: string;
   @Input() renderReviewData = false;
   @Input() reviewData: Map<string, CriterionInstance>;

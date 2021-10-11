@@ -17,7 +17,7 @@ export class ResourcesComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscription = this.route.data.subscribe(data => {
-      this.resources = data['resolvedData'];
+      this.resources = data.resolvedData;
     });
   }
 

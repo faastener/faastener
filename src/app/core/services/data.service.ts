@@ -26,7 +26,7 @@ const frameworkViewsPath = '/assets/data/framework/views.json';
 const frameworkViewCombinationsPath = '/assets/data/framework/view-combinations.json';
 const frameworksPath = '/assets/data/framework/frameworks.json';
 const supportedPlatformsPath = '/assets/data/platforms/platforms.json';
-const dossiersPath: string = '/assets/data/platforms/';
+const dossiersPath = '/assets/data/platforms/';
 const filterConfigurationsPath = '/assets/data/framework/filters.json';
 const infoResourcesPath = '/assets/data/info/resources.json';
 
@@ -76,10 +76,10 @@ export class DataService {
     ]).pipe(
       map(([groupings, views]) => {
           const groupingsLookup = new Map(groupings.map(c => [c.id, c] as [string, CriteriaGrouping]));
-          let result: ClassificationView[] = [];
+          const result: ClassificationView[] = [];
 
           views.forEach(v => {
-            let view: ClassificationView = {
+            const view: ClassificationView = {
               id: v.id,
               name: v.name,
               description: v.description,
@@ -108,9 +108,9 @@ export class DataService {
       this.http.get<ClassificationViewCombinationResponse[]>(frameworkViewCombinationsPath)
     ]).pipe(
       map(([views, viewCombinations]) => {
-          let result: ClassificationViewCombination[] = [];
+          const result: ClassificationViewCombination[] = [];
           viewCombinations.forEach(c => {
-            let combination: ClassificationViewCombination = {
+            const combination: ClassificationViewCombination = {
               id: c.id,
               name: c.name,
               description: c.description,
@@ -119,7 +119,7 @@ export class DataService {
             };
 
             c.viewIds.forEach(id => {
-              let view = views.find(v => id === v.id);
+              const view = views.find(v => id === v.id);
               if (view) {
                 combination.views.add(view);
               }
@@ -141,9 +141,9 @@ export class DataService {
       this.http.get<ClassificationFrameworkResponse[]>(frameworksPath)
     ]).pipe(
       map(([combs, frameworks]) => {
-        let result: ClassificationFramework[] = [];
+        const result: ClassificationFramework[] = [];
         frameworks.forEach(f => {
-          let framework: ClassificationFramework = {
+          const framework: ClassificationFramework = {
             id: f.id,
             technologyCategory: f.technologyCategory,
             name: f.name,
@@ -152,7 +152,7 @@ export class DataService {
           };
 
           f.viewCombinationIds.forEach(id => {
-            let viewCombination = combs.find(v => id === v.id);
+            const viewCombination = combs.find(v => id === v.id);
             if (viewCombination) {
               framework.viewCombinations.add(viewCombination);
             }
@@ -174,7 +174,7 @@ export class DataService {
     ]).pipe(
       map(([combs, frameworks]) => {
         let result: ClassificationFramework;
-        let f = frameworks.find(f => f.technologyCategory === techCategory);
+        const f = frameworks.find(f => f.technologyCategory === techCategory);
 
         result = {
           id: f.id,
@@ -185,7 +185,7 @@ export class DataService {
         };
 
         f.viewCombinationIds.forEach(id => {
-          let viewCombination = combs.find(v => id === v.id);
+          const viewCombination = combs.find(v => id === v.id);
           if (viewCombination) {
             result.viewCombinations.add(viewCombination);
           }
@@ -212,7 +212,7 @@ export class DataService {
         map((items) =>
           items.map(
             item => {
-              let result: Technology = {
+              const result: Technology = {
                 ...item,
                 logoLocation: this.logoLocator.getLogoPath(item.logoLocator)
               };
@@ -247,8 +247,8 @@ export class DataService {
       this.getDossier(id)
     ]).pipe(
       map(([items, dossier]) => {
-          let technology: Technology = items.find(item => item.id === id);
-          let result: Technology = {
+          const technology: Technology = items.find(item => item.id === id);
+          const result: Technology = {
             ...technology,
             logoLocation: this.logoLocator.getLogoPath(technology.logoLocator)
           };
@@ -268,13 +268,11 @@ export class DataService {
     const dossierPath = dossiersPath.concat(technologyId, '.json');
     return this.http.get<TechnologyDossierResponse>(dossierPath)
       .pipe(
-        map( (res) => {
-          return {
+        map( (res) => ({
             platformId: technologyId,
             reviewDate: res.reviewDate,
             reviewedCriteria: new Map(Object.entries(res.reviewedCriteria))
-          } as TechnologyDossier;
-        }),
+          } as TechnologyDossier)),
         catchError(DataService.handleError),
         shareReplay(1)
       );
@@ -349,10 +347,10 @@ export class DataService {
     ]).pipe(
       map(([vcs, fws]) => {
         const vcLookup = new Map(vcs.map(vc => [vc.id, vc] as [string, ClassificationViewCombinationResponse]));
-        let framework = fws.find(f => f.id === frameworkId);
+        const framework = fws.find(f => f.id === frameworkId);
         if (framework) {
-          for (let id of framework.viewCombinationIds) {
-            let temp = vcLookup.get(id);
+          for (const id of framework.viewCombinationIds) {
+            const temp = vcLookup.get(id);
             if (temp && temp.default) {
               return temp;
             }
@@ -371,8 +369,8 @@ export class DataService {
     ]).pipe(
       map(([combs, views]) => {
         const viewsLookup = new Map(views.map(v => [v.id, v] as [string, ClassificationViewResponse]));
-        let result = [];
-        let vc = combs.find(c => c.id === viewCombinationId);
+        const result = [];
+        const vc = combs.find(c => c.id === viewCombinationId);
         if (vc) {
           vc.viewIds.forEach(id => result.push(viewsLookup.get(id)));
         }
@@ -390,8 +388,8 @@ export class DataService {
       .pipe(
         map(([views, groupings]) => {
           const groupingsLookup = new Map(groupings.map(g => [g.id, g] as [string, CriteriaGroupingResponse]));
-          let result = [];
-          let view = views.find(v => v.id === viewId);
+          const result = [];
+          const view = views.find(v => v.id === viewId);
           if (view) {
             view.groupingIds.forEach(id => result.push(groupingsLookup.get(id)));
           }
@@ -415,7 +413,7 @@ export class DataService {
     const lookup: Map<string, CriteriaGrouping> = new Map<string, CriteriaGrouping>();
 
     data.forEach(g => {
-        let relatedCriteria: Set<ClassificationCriterion> = new Set<ClassificationCriterion>();
+        const relatedCriteria: Set<ClassificationCriterion> = new Set<ClassificationCriterion>();
         if (g.criteriaIds) {
           g.criteriaIds.forEach(id => criteria.has(id) ? relatedCriteria.add(criteria.get(id)) : false);
         }

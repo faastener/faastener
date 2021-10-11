@@ -13,8 +13,8 @@ export interface SimpleDataSource<T> extends DataSource<T> {
 }
 
 export interface Sort<T> {
-  property: keyof T
-  order: 'asc' | 'desc'
+  property: keyof T;
+  order: 'asc' | 'desc';
 }
 
 export class TechnologyDataSource implements SimpleDataSource<Technology> {
@@ -26,7 +26,7 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
 
   public isPaginated = true;
   public totalInputSize: number;
-  public currentIndex: number = 0;
+  public currentIndex = 0;
   public pageNumber$ = this.pageNumber.asObservable();
   public filteredData$: Observable<Technology[]>;
   public paginatedData$: Observable<Technology[]>;
@@ -39,7 +39,7 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
 
     this.filteredData$ = combineLatest([this.criteriaBasedQuery, this.nameBasedQuery, this.sort]).pipe(
       switchMap(([criteriaQuery, nameQuery, sort]) => {
-          let result = this.processData(this.data, criteriaQuery, nameQuery, sort);
+          const result = this.processData(this.data, criteriaQuery, nameQuery, sort);
           this.totalInputSize = result.length;
           return of(result);
         }
@@ -49,7 +49,7 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
 
     this.paginatedData$ = combineLatest([this.filteredData$, this.pageNumber$]).pipe(
       map(([data, pageNumber]) => {
-        let startIndex = pageNumber * this.pageSize;
+        const startIndex = pageNumber * this.pageSize;
         let endIndex = startIndex + this.pageSize;
         if (endIndex > data.length) {
           endIndex = data.length;
@@ -134,7 +134,7 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
     } else if (filterValue.filterType && filterValue.filterType === CriterionFilterType.containsAll ||
       filterValue.filterType === CriterionFilterType.containsOne ||
       filterValue.filterType === CriterionFilterType.excludesAll) {
-      let v = filterValue.value as string[];
+      const v = filterValue.value as string[];
       return v && v.length > 0;
     } else if (filterValue.filterType === CriterionFilterType.bool || filterValue.filterType === CriterionFilterType.containsAny) {
       return typeof filterValue.value === 'boolean';
@@ -144,7 +144,7 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
   }
 
   private pruneQuery(nextQuery: { [p: string]: CriterionFilterValue }) {
-    let keysToDelete = [];
+    const keysToDelete = [];
     Object.keys(nextQuery).forEach(key => {
         if (nextQuery[key].filterType === null) {
           keysToDelete.push(key);
@@ -157,7 +157,7 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
         } else if (nextQuery[key].filterType === CriterionFilterType.containsOne ||
           nextQuery[key].filterType === CriterionFilterType.containsAll ||
           nextQuery[key].filterType === CriterionFilterType.excludesAll) {
-          let valueToCheck = nextQuery[key].value as string[];
+          const valueToCheck = nextQuery[key].value as string[];
           if (valueToCheck.length === 0) {
             keysToDelete.push(key);
           }
@@ -172,7 +172,7 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
       return TechnologyDataSource.containsAny(filterValue, reviewedCriterion);
     }
 
-    for (let reviewValue of reviewedCriterion.values) {
+    for (const reviewValue of reviewedCriterion.values) {
       if (filterValue.filterType === CriterionFilterType.lte) {
         return reviewedCriterion.values[0].value <= filterValue.value;
       } else if (filterValue.filterType === CriterionFilterType.bool) {
@@ -182,9 +182,9 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
       } else if (filterValue.filterType === CriterionFilterType.containsOne) {
         return TechnologyDataSource.containsOne(filterValue, reviewedCriterion);
       } else {
-        let allValues = [];
+        const allValues = [];
         reviewedCriterion.values.forEach(v => allValues.push(v.value));
-        let target = Array.from(filterValue.value as string[]);
+        const target = Array.from(filterValue.value as string[]);
 
         if (filterValue.filterType === CriterionFilterType.containsAll) {
           return target.every(v => allValues.includes(v));
@@ -196,7 +196,7 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
   }
 
   private static containsAny(filterValue: CriterionFilterValue, reviewedCriterion: CriterionInstance): boolean {
-    let chosenValue = filterValue.value as boolean;
+    const chosenValue = filterValue.value as boolean;
     if (chosenValue) {
       return Array.from(reviewedCriterion.values).length > 0;
     } else {
@@ -205,10 +205,10 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
   }
 
   private static containsOne(filterValue: CriterionFilterValue, reviewedCriterion: CriterionInstance): boolean {
-    let chosenValues = filterValue.value as string[];
+    const chosenValues = filterValue.value as string[];
     if (chosenValues && chosenValues.length > 0) {
-      for (let entry of reviewedCriterion.values) {
-        let value = entry.value as string;
+      for (const entry of reviewedCriterion.values) {
+        const value = entry.value as string;
         if (chosenValues.indexOf(value) !== -1) {
           return true;
         }
