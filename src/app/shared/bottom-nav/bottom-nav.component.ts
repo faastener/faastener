@@ -7,8 +7,8 @@ import {ViewportScroller} from '@angular/common';
   styleUrls: ['./bottom-nav.component.scss']
 })
 export class BottomNavComponent implements OnInit {
-  toTop = false;
   @Input() scrollToAnchor: string;
+  toTop = false;
 
   constructor(private viewportScroller: ViewportScroller) {
   }

@@ -173,18 +173,17 @@ export class DataService {
       this.http.get<ClassificationFrameworkResponse[]>(frameworksPath)
     ]).pipe(
       map(([combs, frameworks]) => {
-        let result: ClassificationFramework;
-        const f = frameworks.find(f => f.technologyCategory === techCategory);
+        const fw = frameworks.find(f => f.technologyCategory === techCategory);
 
-        result = {
-          id: f.id,
-          technologyCategory: f.technologyCategory,
-          name: f.name,
-          description: f.description,
+        const result: ClassificationFramework = {
+          id: fw.id,
+          technologyCategory: fw.technologyCategory,
+          name: fw.name,
+          description: fw.description,
           viewCombinations: new Set<ClassificationViewCombination>()
         };
 
-        f.viewCombinationIds.forEach(id => {
+        fw.viewCombinationIds.forEach(id => {
           const viewCombination = combs.find(v => id === v.id);
           if (viewCombination) {
             result.viewCombinations.add(viewCombination);
