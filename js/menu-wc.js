@@ -91,18 +91,15 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/CoreModule.html" data-type="entity-link" >CoreModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-CoreModule-cbccad1c31add81ecf620ede93892bbf"' : 'data-target="#xs-injectables-links-module-CoreModule-cbccad1c31add81ecf620ede93892bbf"' }>
+                                        'data-target="#injectables-links-module-CoreModule-1a5d12a21b783b7a3025794c60241da8"' : 'data-target="#xs-injectables-links-module-CoreModule-1a5d12a21b783b7a3025794c60241da8"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-CoreModule-cbccad1c31add81ecf620ede93892bbf"' :
-                                        'id="xs-injectables-links-module-CoreModule-cbccad1c31add81ecf620ede93892bbf"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-CoreModule-1a5d12a21b783b7a3025794c60241da8"' :
+                                        'id="xs-injectables-links-module-CoreModule-1a5d12a21b783b7a3025794c60241da8"' }>
                                         <li class="link">
                                             <a href="injectables/AppConfigService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AppConfigService</a>
-                                        </li>
-                                        <li class="link">
-                                            <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DataService</a>
                                         </li>
                                         <li class="link">
                                             <a href="injectables/LogoLocatorService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >LogoLocatorService</a>
@@ -246,6 +243,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/AppPage.html" data-type="entity-link" >AppPage</a>
                             </li>
                             <li class="link">
+                                <a href="classes/DataService.html" data-type="entity-link" >DataService</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/EnsureModuleLoadedOnceGuard.html" data-type="entity-link" >EnsureModuleLoadedOnceGuard</a>
                             </li>
                             <li class="link">
@@ -256,6 +256,19 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                         </ul>
                     </li>
+                        <li class="chapter">
+                            <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#injectables-links"' :
+                                'data-target="#xs-injectables-links"' }>
+                                <span class="icon ion-md-arrow-round-down"></span>
+                                <span>Injectables</span>
+                                <span class="icon ion-ios-arrow-down"></span>
+                            </div>
+                            <ul class="links collapse " ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
+                                <li class="link">
+                                    <a href="injectables/FileBasedDataService.html" data-type="entity-link" >FileBasedDataService</a>
+                                </li>
+                            </ul>
+                        </li>
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#guards-links"' :
                             'data-target="#xs-guards-links"' }>
