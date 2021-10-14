@@ -19,10 +19,14 @@ export class CriterionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.extraTitleText ? this.title = this.extraTitleText + this.criterion.name : this.title = this.criterion.name;
+    if (this.extraTitleText) {
+      this.title = this.extraTitleText + this.criterion.name;
+    } else {
+      this.title = this.criterion.name;
+    }
+
     if (this.criterionInstance) {
       this.values = Array.from(this.criterionInstance.values);
     }
   }
-
 }
