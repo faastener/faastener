@@ -455,12 +455,16 @@ export class CriterionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.extraTitleText ? this.title &#x3D; this.extraTitleText + this.criterion.name : this.title &#x3D; this.criterion.name;
+    if (this.extraTitleText) {
+      this.title &#x3D; this.extraTitleText + this.criterion.name;
+    } else {
+      this.title &#x3D; this.criterion.name;
+    }
+
     if (this.criterionInstance) {
       this.values &#x3D; Array.from(this.criterionInstance.values);
     }
   }
-
 }
 </code></pre>
     </div>
