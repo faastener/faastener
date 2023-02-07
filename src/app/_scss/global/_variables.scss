@@ -1,6 +1,6 @@
 @use "sass:math";
 @import "../theming/faastener-palette";
-@import "~@angular/material/theming";
+@import "@angular/material/theming";
 
 // Typography
 $font-family-base: Roboto, "Helvetica Neue", sans-serif !default;
