@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {CriteriaBasedQuery, CriterionFilterConfiguration, CriterionFilterType} from '../../shared/interfaces/filtering';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormControl, UntypedFormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-criterion-filter',
@@ -11,10 +11,10 @@ export class CriterionFilterComponent implements OnInit {
   @Input() filter: CriterionFilterConfiguration;
   @Output() updateQuery = new EventEmitter<CriteriaBasedQuery>();
 
-  filterElement: FormControl | FormGroup;
+  filterElement: UntypedFormControl | UntypedFormGroup;
   public FilterType = CriterionFilterType;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: UntypedFormBuilder) {
   }
 
   ngOnInit(): void {

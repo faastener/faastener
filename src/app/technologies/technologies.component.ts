@@ -13,7 +13,7 @@ import {
 } from '../shared/interfaces/filtering';
 import {MatSidenav} from '@angular/material/sidenav';
 import {MediaMatcher} from '@angular/cdk/layout';
-import {FormBuilder} from '@angular/forms';
+import {UntypedFormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-technologies',
@@ -39,7 +39,7 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private changeDetectorRef: ChangeDetectorRef,
     private media: MediaMatcher
   ) {
