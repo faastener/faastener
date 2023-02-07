@@ -2,7 +2,7 @@ import {DataSource} from '@angular/cdk/collections';
 import {BehaviorSubject, combineLatest, Observable, of} from 'rxjs';
 import {map, shareReplay, switchMap} from 'rxjs/operators';
 import {Technology} from './interfaces/technology';
-import {LegacyPageEvent as PageEvent} from '@angular/material/legacy-paginator';
+import {PageEvent} from '@angular/material/paginator';
 import {CriteriaBasedQuery, CriterionFilterType, CriterionFilterValue} from './interfaces/filtering';
 import {CriterionInstance} from './interfaces/classification';
 
