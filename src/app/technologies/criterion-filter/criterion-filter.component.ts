@@ -11,7 +11,7 @@ export class CriterionFilterComponent implements OnInit {
   @Input() filter: CriterionFilterConfiguration;
   @Output() updateQuery = new EventEmitter<CriteriaBasedQuery>();
 
-  filterElement: UntypedFormControl | UntypedFormGroup;
+  filterElement!: UntypedFormControl | UntypedFormGroup;
   public FilterType = CriterionFilterType;
 
   constructor(private fb: UntypedFormBuilder) {
@@ -32,12 +32,12 @@ export class CriterionFilterComponent implements OnInit {
     this.filterElement.valueChanges.subscribe(value => {
       const obj = {};
       if (this.filter.filterType === this.FilterType.bool || this.filter.filterType === this.FilterType.containsAny) {
-        obj[this.filter.criterionId] = {
+        obj[this.filter.criterionTypeId] = {
           filterType: this.filter.filterType,
           value: value as boolean
         };
       } else if (this.filter.filterType === this.FilterType.lte) {
-        obj[this.filter.criterionId] = {
+        obj[this.filter.criterionTypeId] = {
           filterType: this.filter.filterType,
           value: value as number
         };
@@ -45,7 +45,7 @@ export class CriterionFilterComponent implements OnInit {
         const initialValues = this.filter.filterValues as string[];
         const selectedStrings = initialValues.filter((x, i) => !!this.filterElement.value.checkboxes[i]);
 
-        obj[this.filter.criterionId] = {
+        obj[this.filter.criterionTypeId] = {
           filterType: this.filterElement.value.filterType,
           value: selectedStrings
         };

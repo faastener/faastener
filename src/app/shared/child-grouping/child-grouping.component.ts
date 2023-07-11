@@ -12,8 +12,15 @@ export class ChildGroupingComponent {
   @Input() parent = '';
   @Input() extraCriterionTitle: string;
   @Input() renderReviewData = false;
-  @Input() reviewData: Map<string, CriterionInstance>;
+  @Input() reviewData: Set<CriterionInstance>;
 
   constructor() {
+  }
+
+  findCriterionInstance(id: string): CriterionInstance {
+    this.reviewData.forEach(item => {
+      if (item.typeId === id) return item;
+    });
+    return null;
   }
 }

@@ -12,7 +12,7 @@
         <app-criterion [extraTitleText]="extraCriterionTitle"
                        [criterion]="criterion"
                        [reviewMode]="true"
-                       [criterionInstance]="reviewData?.get(criterion.id)">
+                       [criterionInstance]="findCriterionInstance(criterion.id)">
         </app-criterion>
       </ng-container>
 
@@ -24,8 +24,8 @@
     </div>
 
 
-    <app-child-grouping *ngIf="g.groupings?.size"
-                        [groupings]="g.groupings | setToArray"
+    <app-child-grouping *ngIf="g.criteriaGroupings?.size"
+                        [groupings]="g.criteriaGroupings | setToArray"
                         [subGroups]="true" [parent]="parent + ' > ' + g.name"
                         [renderReviewData]="renderReviewData"
                         [reviewData]="reviewData">

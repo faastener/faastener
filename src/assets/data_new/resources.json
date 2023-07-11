@@ -1,0 +1,97 @@
+[
+  {
+    "id": "basis-publication",
+    "title": "About this Framework",
+    "description": "This research publication served as a basis for this selection support system and provides more information about the underlying approach and the data collection process.",
+    "technologyCategory": "faas",
+    "resources": [
+      {
+        "resource": "Yussupov et al.: FaaSten your decisions: A classification framework and technology review of function-as-a-Service platforms. In: Journal of Systems and Software. Vol. 175, Elsevier, 2021",
+        "reference": "https://www.sciencedirect.com/science/article/pii/S0164121221000030"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-white-literature",
+    "title": "Research Publications",
+    "description": "Reviewed research publications",
+    "technologyCategory": "faas",
+    "resources": [
+      {
+        "resource": "Kritikos and Skrzypek: A review of serverless frameworks. In: IEEE/ACM International Conference on Utility and Cloud Computing Companion (UCC Companion), 2018",
+        "reference": "https://ieeexplore.ieee.org/document/8605774"
+      },
+      {
+        "resource": "Lee et al.: Evaluation of production serverless computing environments. In: IEEE 11th International Conference on Cloud Computing (CLOUD), 2018",
+        "reference": "https://ieeexplore.ieee.org/document/8457830"
+      },
+      {
+        "resource": "Lynn et al.: A preliminary review of enterprise serverless cloud computing (function-as-a-service) platforms. In: IEEE International Conference on Cloud Computing Technology and Science (CloudCom), 2017",
+        "reference": "https://ieeexplore.ieee.org/document/8241104"
+      },
+      {
+        "resource": "Mohanty et al.: An evaluation of open source serverless computing frameworks. In: IEEE International Conference on Cloud Computing Technology and Science (CloudCom), 2018",
+        "reference": "https://ieeexplore.ieee.org/document/8591002"
+      },
+      {
+        "resource": "García López et al.: Comparison of faas orchestration systems. In: IEEE/ACM International Conference on Utility and Cloud Computing Companion (UCC Companion), 2018",
+        "reference": "https://ieeexplore.ieee.org/document/8605772"
+      },
+      {
+        "resource": "Spillner: Quantitative analysis of cloud function evolution in the AWS serverless application repository. In: arXiv preprint, 2019",
+        "reference": "https://arxiv.org/abs/1905.04800"
+      },
+      {
+        "resource": "Rajan: Serverless architecture-a revolution in cloud computing. In: IEEE Tenth International Conference on Advanced Computing (ICoAC), 2018",
+        "reference": "https://ieeexplore.ieee.org/document/8939081"
+      },
+      {
+        "resource": "Palade et al.: An evaluation of open source serverless computing frameworks support at the edge. In: IEEE World Congress on Services (SERVICES), 2019",
+        "reference": "https://ieeexplore.ieee.org/document/8817155"
+      },
+      {
+        "resource": "Kumar: Serverless architectures review, future trend and the solutions to open problems. In: American Journal of Software Engineering, 2019",
+        "reference": "http://pubs.sciepub.com/ajse/6/1/1/index.html"
+      },
+      {
+        "resource": "Kalnauz and Speranskiy: Productivity estimation of serverless computing. In: Appl. Aspects Inf. Technol. (1), 2019",
+        "reference": "https://aait.opu.ua/?fetch=articles&with=info&id=11"
+      },
+      {
+        "resource": "Gand et al.: Serverless container cluster management for lightweight edge clouds. In: International Conference on Cloud Computing and Services Science CLOSER, 2020",
+        "reference": "https://www.scitepress.org/PublicationsDetail.aspx?ID=/f8qOC1rl3o=&t=1"
+      },
+      {
+        "resource": "Bortolini and Obelheiro: Investigating performance and cost in function-as-a-service platforms. In: International Conference on P2P, Parallel, Grid, Cloud and Internet Computing, Springer, 2019",
+        "reference": "https://link.springer.com/chapter/10.1007/978-3-030-33509-0_16"
+      },
+      {
+        "resource": "Wang et al.: Peeking behind the curtains of serverless platforms. In: Proceedings of the 2018 USENIX Conference on Usenix Annual Technical Conference, 2018",
+        "reference": "https://www.usenix.org/system/files/conference/atc18/atc18-wang-liang.pdf"
+      },
+      {
+        "resource": "Back and Andrikopoulos: Using a microbenchmark to compare function as a service solutions. In: Service-Oriented and Cloud Computing, Springer International Publishing, 2018",
+        "reference": "https://link.springer.com/chapter/10.1007%2F978-3-319-99819-0_11"
+      },
+      {
+        "resource": "Jonas et al.: Cloud programming simplified: A berkeley view on serverless computing. In: arXiv preprint, 2019",
+        "reference": "https://arxiv.org/abs/1902.03383"
+      }
+    ]
+  },
+  {
+    "id": "gray-literature",
+    "title": "Gray Literature Sources",
+    "technologyCategory": "faas",
+    "resources": [
+      {
+        "resource": "Cloud Native Computing Foundation Serverless Whitepaper",
+        "reference": "https://github.com/cncf/wg-serverless/tree/master/whitepapers/serverless-overview"
+      },
+      {
+        "resource": "Cloud Native Computing Foundation Serverless Technology Landscape",
+        "reference": "https://landscape.cncf.io/serverless"
+      }
+    ]
+  }
+]

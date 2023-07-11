@@ -1,59 +1,42 @@
-import {TechnologyCategory} from './technology';
+import {TechnologyType} from './dossier';
 
 /**
  * An interface representing a generic classification framework, which comprises one or more {@link ClassificationViewCombination}.
- * Different combinations of classification views can be used to flexibly switch between different review representations for a given {@link TechnologyCategory}.
+ * Different combinations of classification views can be used to flexibly switch between different review representations for a given {@link TechnologyType}.
  */
 export interface ClassificationFramework {
   /**
    * Unique framework identifier.
    */
   id: string;
+
   /**
    * Framework name.
    */
   name: string;
+
   /**
-   * [Category]{@link TechnologyCategory} of technologies this framework helps to review.
+   * [Type]{@link TechnologyType} of technologies this framework helps to review.
    *
    * @example
    * Function-as-a-Service platforms
    */
-  technologyCategory: TechnologyCategory;
+  technologyType: TechnologyType;
+
+  /**
+   * Framework version (optional).
+   */
+  version?: string;
+
   /**
    * Framework description (optional).
    */
   description?: string;
-  /**
-   * A set of {@link ClassificationViewCombination} which organize the representation of views comprising different criteria groupings.
-   */
-  viewCombinations: Set<ClassificationViewCombination>;
-}
 
-/**
- * An interface representing a combination of classifications view which comprises one or more [ClassificationViews]{@link ClassificationView}.
- */
-export interface ClassificationViewCombination {
-  /**
-   * Unique view combination identifier.
-   */
-  id: string;
-  /**
-   * View combination name.
-   */
-  name: string;
-  /**
-   * View combination description.
-   */
-  description: string;
   /**
    * A set of {@link ClassificationView} which organize the representation of criteria groupings.
    */
-  views: Set<ClassificationView>;
-  /**
-   * Indicates whether this combination needs to be used for default UI rendering (optional).
-   */
-  default?: boolean;
+  frameworkViews: Set<ClassificationView>;
 }
 
 /**
@@ -64,18 +47,21 @@ export interface ClassificationView {
    * Unique view identifier.
    */
   id: string;
+
   /**
    * View name.
    */
   name: string;
+
   /**
    * View description.
    */
   description: string;
+
   /**
    * A set of {@link CriteriaGrouping} which organize the representation of criteria and optional sub-groupings.
    */
-  groupings: Set<CriteriaGrouping>;
+  criteriaGroupings: Set<CriteriaGrouping>;
 }
 
 /**
@@ -87,6 +73,7 @@ export interface CriteriaGrouping {
    * Unique grouping identifier.
    */
   id: string;
+
   /**
    * Grouping locator which can be used, e.g., for custom breadcrumbs generation.
    * Reserved for future use.
@@ -95,14 +82,17 @@ export interface CriteriaGrouping {
    * "licensing", "community.github"
    */
   locator: string;
+
   /**
    * Grouping name.
    */
   name: string;
+
   /**
    * A set of [Sub-groupings]{@link CriteriaGrouping} which organize the representation of criteria and optional sub-groupings.
    */
-  groupings?: Set<CriteriaGrouping>;
+  criteriaGroupings?: Set<CriteriaGrouping>;
+
   /**
    * A set of {@link ClassificationCriterion} which describe a particular aspect of the reviewed technology.
    */
@@ -120,14 +110,17 @@ export interface ClassificationCriterion {
    * Unique criterion identifier.
    */
   id: string;
+
   /**
    * Criterion name.
    */
   name: string;
+
   /**
    * Criterion description.
    */
   description: string;
+
   /**
    * Example values which an instance of this criterion {@link CriterionInstance} can store.
    *
@@ -146,7 +139,7 @@ export interface CriterionInstance {
   /**
    * Unique {@link ClassificationCriterion} identifier.
    */
-  criterionId: string;
+  typeId: string;
   /**
    * A set of {@link CriterionValue} which store the criterion-specific review data for the reviewed technology.
    */

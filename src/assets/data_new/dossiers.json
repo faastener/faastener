@@ -1,0 +1,1379 @@
+[
+  {
+    "id": "azure-functions",
+    "technologyName": "Microsoft Azure Functions",
+    "reviewDate": "2021-02-12",
+    "technologyInfo": {
+      "technologyType": "FAAS",
+      "logoLocator": "azure.functions",
+      "shortDescription": "Azure Functions is a commercial FaaS platform offered by Microsoft.",
+      "description": "Azure Functions allows you to run small pieces of code (called \"functions\") without worrying about application infrastructure. With Azure Functions, the cloud infrastructure provides all the up-to-date servers you need to keep your application running at scale. A function is \"triggered\" by a specific type of event. Supported triggers include responding to changes in data, responding to messages, running on a schedule, or as the result of an HTTP request. While you can always code directly against a myriad of services, integrating with other services is streamlined by using bindings. Bindings give you declarative access to a wide variety of Azure and third-party services."
+    },
+    "reviewedCriteria": [
+      { "typeId": "platform.license", "values": [ { "value": "SLA for Azure Functions", "references": [ "https://azure.microsoft.com/en-gb/support/legal/sla/functions/v1_1/" ] } ] },
+      { "typeId": "platform.license.type", "values": [ { "value": "proprietary" } ] },
+      { "typeId": "platform.installation.type", "values": [
+        { "value": "installable", "references": [ "https://github.com/Azure/Azure-Functions/#github-repositories", "https://docs.microsoft.com/azure/azure-functions/functions-run-local"] },
+        { "value": "as-a-service", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-scale" ] }
+      ]
+      },
+      { "typeId": "platform.installation.targets", "values": [
+        { "value": "Linux", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-run-local" ] },
+        { "value": "Kubernetes", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-run-local" ] },
+        { "value": "MacOS", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-run-local" ] },
+        { "value": "Windows", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-run-local" ] }
+      ]
+      },
+      { "typeId": "platform.code.availability", "values": [ { "value": "open source", "references": [ "https://github.com/Azure/Azure-Functions/#github-repositories" ], "comment": "Partially open sourced" } ] },
+      { "typeId": "platform.code.repository", "values": [ { "value": "GitHub", "references": [ "https://github.com/Azure/azure-functions-host" ] } ] },
+      { "typeId": "platform.code.language", "values": [ { "value": "C#", "references": [ "https://github.com/Azure/azure-functions-host/search?l=c%23" ] } ] },
+      { "typeId": "platform.interface.types", "values": [
+        { "value": "CLI", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function-azure-cli" ] },
+        { "value": "API", "references": [ "https://docs.microsoft.com/rest/api/azure" ] },
+        { "value": "GUI", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function" ] }
+      ]
+      },
+      { "typeId": "platform.interface.ops.app-mgmt", "values": [
+        { "value": "create", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function-azure-cli" ] },
+        { "value": "retrieve", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function-azure-cli" ] },
+        { "value": "update", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function-azure-cli" ] },
+        { "value": "delete", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function-azure-cli" ] }
+      ]
+      },
+      { "typeId": "platform.interface.ops.platform-adm", "values": [] },
+      { "typeId": "platform.github.stars", "values": [ { "value": 1300, "references": [ "https://github.com/Azure/azure-functions-host/stargazers" ] } ] },
+      { "typeId": "platform.github.forks", "values": [ { "value": 279, "references": [ "https://github.com/Azure/azure-functions-host/network/members" ] } ] },
+      { "typeId": "platform.github.issues", "values": [ { "value": 948, "references": [ "https://github.com/Azure/azure-functions-host/issues" ] } ] },
+      { "typeId": "platform.github.commits", "values": [ { "value": 2339, "references": [ "https://github.com/Azure/azure-functions-host" ] } ] },
+      { "typeId": "platform.github.contributors", "values": [ { "value": 60, "references": [ "https://github.com/Azure/azure-functions-host" ] } ] },
+      { "typeId": "platform.stackoverflow.questions", "values": [ { "value": 7200, "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=azure-functions" ] } ] },
+      { "typeId": "platform.documentation", "values": [
+        { "value": "usage", "references": [ "https://docs.microsoft.com/en-us/cli/azure/functionapp" ] },
+        { "value": "deployment", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-run-local" ] }
+      ]
+      },
+      { "typeId": "platform.documentation.functions", "values": [
+        { "value": "development", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-reference" ] },
+        { "value": "deployment", "references": [ "https://docs.microsoft.com/cli/azure/functionapp/deployment" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtimes", "values": [
+        { "value": "Docker", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-image" ] },
+        { "value": "C#", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-csharp" ] },
+        { "value": "JavaScript", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node?tabs=v2#node-version" ] },
+        { "value": "F#", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-fsharp" ] },
+        { "value": "Java", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-java?tabs=bash%2Cconsumption" ] },
+        { "value": "Powershell", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-powershell?tabs=portal" ] },
+        { "value": "Python", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python#python-version" ] },
+        { "value": "TypeScript", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node?tabs=v2#typescript" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtime-customization", "values": [ { "value": true, "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-image", "https://github.com/Azure/azure-functions-host/wiki/Language-Extensibility" ] } ] },
+      { "typeId": "platform.development.ide-support", "values": [
+        { "value": "Visual Studio", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-develop-local" ] },
+        { "value": "Visual Studio Code", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-develop-local" ] }
+      ]
+      },
+      { "typeId": "platform.function.client-libraries", "values": [
+        { "value": "Java", "references": [ "https://docs.microsoft.com/en-us/java/api/overview/azure/readme?view=azure-java-stable" ] },
+        { "value": ".NET", "references": [ "https://docs.microsoft.com/en-us/dotnet/api/overview/azure/functions?view=azure-dotnet" ] },
+        { "value": "Python", "references": [ "https://docs.microsoft.com/en-us/python/api/overview/azure/functions?view=azure-python" ] }
+      ]
+      },
+      { "typeId": "platform.quotas.dep-pkg-size", "values": [ { "value": true, "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-scale" ] } ] },
+      { "typeId": "platform.quotas.execution-time", "values": [ { "value": true, "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-scale" ], "comment": "Execution time can be set to be unlimited" } ] },
+      { "typeId": "platform.function.versioning", "values": [ { "value": "implicit", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-reference" ] } ] },
+      { "typeId": "platform.function.versioning-app", "values": [ { "value": "implicit", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-reference" ] } ] },
+      { "typeId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-bindings-http-webhook" ] } ] },
+      { "typeId": "platform.event-source.endpoint.async-call", "values": [] },
+      { "typeId": "platform.event-source.endpoint.customization", "values": [ { "value": true, "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook-trigger?tabs=csharp#customize-the-http-endpoint" ] } ] },
+      { "typeId": "platform.event-source.endpoint.tls", "values": [ { "value": true, "references": [ "https://docs.microsoft.com/azure/app-service/app-service-web-configure-tls-mutual-auth" ] } ] },
+      { "typeId": "platform.event-source.datastore.file-level", "values": [ { "value": "Azure Blob Storage", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-storage-blob-triggered-function" ] } ] },
+      { "typeId": "platform.event-source.datastore.database-mode", "values": [
+        { "value": "Azure Cosmos DB", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-cosmos-db-triggered-function" ] },
+        { "value": "Azure Tables", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-table" ] }
+      ]
+      },
+      { "typeId": "platform.event-source.scheduler", "values": [ { "value": true, "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-scheduled-function" ] } ] },
+      { "typeId": "platform.event-source.messaging", "values": [
+        { "value": "Azure Queue Storage", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-create-storage-queue-triggered-function" ] },
+        { "value": "Azure Service Bus", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-bindings-service-bus" ] },
+        { "value": "RabbitMQ", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-rabbitmq" ] }
+      ]
+      },
+      { "typeId": "platform.event-source.streaming", "values": [
+        { "value": "Azure Event Hubs", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-bindings-event-hubs" ] },
+        { "value": "Apache Kafka", "references": [ "https://github.com/azure/azure-functions-kafka-extension" ] }
+      ]
+      },
+      { "typeId": "platform.event-source.special-purpose-service", "values": [
+        { "value": "Azure Event Grid", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-grid" ] },
+        { "value": "Azure IoT Hub", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-iot" ] },
+        { "value": "Azure Mobile Apps", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-mobile-apps" ], "comment": "Only available to Azure Functions 1.x" },
+        { "value": "Azure Notification Hubs", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-notification-hubs" ] },
+        { "value": "Azure SignalR Service", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-signalr-service" ] },
+        { "value": "SendGrid", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-sendgrid?tabs=csharp" ] },
+        { "value": "Twilio", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-twilio?tabs=csharp" ] }
+      ]
+      },
+      { "typeId": "platform.event-source.integration", "values": [ { "value": "custom I/O bindings", "references": [ "https://github.com/Azure/azure-webjobs-sdk/wiki/Creating-custom-input-and-output-bindings" ] } ] },
+      { "typeId": "platform.function.orchestrator", "values": [ { "value": "Azure Durable Functions", "references": [ "https://docs.microsoft.com/azure/azure-functions/durable/durable-functions-orchestrations" ] } ] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-type", "values": [ { "value": "orchestrating function", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-types-features-overview#orchestrator-functions" ] } ] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-languages", "values": [
+        { "value": "C#", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-create-first-csharp?pivots=code-editor-vscode" ] },
+        { "value": "JavaScript", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/durable/quickstart-js-vscode" ] },
+        { "value": "Python", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/durable/quickstart-python-vscode" ] },
+        { "value": "Powershell", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/durable/quickstart-powershell-vscode" ] }
+      ]
+      },
+      { "typeId": "platform.function.orchestrator.control-flow-docs", "values": [ { "value": true, "references": [ "https://docs.microsoft.com/azure/azure-functions/durable/durable-functions-code-constraints" ] } ] },
+      { "typeId": "platform.function.orchestrator.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.function.orchestrator.quotas.io-size", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.testing.functional", "values": [ { "value": "via external tools", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-test-a-function" ], "comment": "Only guidelines are provided" } ] },
+      { "typeId": "platform.testing.non-functional", "values": [] },
+      { "typeId": "platform.debugging.local", "values": [ { "value": "step-through debugging", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-debug-powershell-local" ], "comment": "Using dedicated functions development framework" } ] },
+      { "typeId": "platform.debugging.remote", "values": [] },
+      { "typeId": "platform.observability.logging", "values": [ { "value": "Azure Application Insights", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-monitoring" ] } ] },
+      { "typeId": "platform.observability.monitoring", "values": [ { "value": "Azure Application Insights", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-monitoring" ] } ] },
+      { "typeId": "platform.observability.integration", "values": [] },
+      { "typeId": "platform.deployment-automation", "values": [ { "value": "Azure Resource Manager", "references": [ "https://docs.microsoft.com/azure/azure-functions/functions-how-to-azure-devops" ] } ] },
+      { "typeId": "platform.ci-cd", "values": [
+        { "value": "Azure Pipelines", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-azure-devops?tabs=csharp" ] },
+        { "value": "Azure App Service", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/functions-continuous-deployment" ] },
+        { "value": "Jenkins", "references": [ "https://docs.microsoft.com/en-us/azure/developer/jenkins/deploy-to-azure-functions?toc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fazure-functions%2Ftoc.json&bc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fbread%2Ftoc.json" ] }
+      ]
+      },
+      { "typeId": "platform.function.marketplaces", "values": [] },
+      { "typeId": "platform.function.code-sample-repositories", "values": [ { "value": true, "references": [ "https://github.com/Azure/Azure-Functions/wiki/Samples-and-content" ] } ] },
+      { "typeId": "platform.authentication", "values": [
+        { "value": "Azure Active Directory", "references": [ "https://docs.microsoft.com/azure/app-service/configure-authentication-provider-aad" ] },
+        { "value": "Facebook", "references": [ "https://docs.microsoft.com/azure/app-service/configure-authentication-provider-facebook" ] },
+        { "value": "Google", "references": [ "https://docs.microsoft.com/azure/app-service/configure-authentication-provider-google" ] },
+        { "value": "Microsoft account", "references": [ "https://docs.microsoft.com/azure/app-service/configure-authentication-provider-microsoft" ] },
+        { "value": "Twitter", "references": [ "https://docs.microsoft.com/azure/app-service/configure-authentication-provider-twitter" ] }
+      ]
+      },
+      { "typeId": "platform.access-control", "values": [
+        { "value": "resources", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/security-concepts" ] },
+        { "value": "functions", "references": [ "https://docs.microsoft.com/en-us/azure/azure-functions/security-concepts" ] }
+      ]
+      }
+    ]
+  },
+  {
+    "id": "fission",
+    "technologyName": "Fission",
+    "reviewDate": "2021-02-12",
+    "technologyInfo": {
+      "technologyType": "FAAS",
+      "logoLocator": "fission",
+      "shortDescription": "Fission is an open source FaaS platform based on Kubernetes.",
+      "description": "Fission is a fast, open source serverless framework for Kubernetes with a focus on developer productivity and high performance. Fission operates on just the code: Docker and Kubernetes are abstracted away under normal operation, though you can use both to extend Fission if you want to. Fission is extensible to any language; the core is written in Go, and language-specific parts are isolated in something called environments (more below). Fission currently supports NodeJS, Python, Ruby, Go, PHP, Bash, and any Linux executable, with more languages coming soon."
+    },
+    "reviewedCriteria": [
+      { "typeId": "platform.license", "values": [ { "value": "Apache 2.0", "references": [ "https://github.com/fission/fission/blob/master/LICENSE" ] } ] },
+      { "typeId": "platform.license.type", "values": [ { "value": "permissive" } ] },
+      { "typeId": "platform.installation.type", "values": [ { "value": "installable", "references": [ "https://docs.fission.io/installation/" ] } ] },
+      { "typeId": "platform.installation.targets", "values": [ { "value": "Kubernetes", "references": [ "https://docs.fission.io/docs/installation/" ] } ] },
+      { "typeId": "platform.code.availability", "values": [ { "value": "open source", "references": [ "https://github.com/fission/fission/blob/master/LICENSE" ] } ] },
+      { "typeId": "platform.code.repository", "values": [ { "value": "GitHub", "references": [ "https://github.com/fission/fission" ] } ] },
+      { "typeId": "platform.code.language", "values": [ { "value": "Go", "references": [ "https://github.com/fission/fission/search?l=go" ] } ] },
+      { "typeId": "platform.interface.types", "values": [
+        { "value": "CLI", "references": [ "https://docs.fission.io/docs/installation/#install-fission-cli" ] },
+        { "value": "API", "references": [ "https://docs.fission.io/docs/concepts/components/core/controller/#api" ] }
+      ]
+      },
+      { "typeId": "platform.interface.ops.app-mgmt", "values": [
+        { "value": "create", "references": [ "https://docs.fission.io/docs/concepts/components/core/controller/#api" ] },
+        { "value": "retrieve", "references": [ "https://docs.fission.io/docs/concepts/components/core/controller/#api" ] },
+        { "value": "update", "references": [ "https://docs.fission.io/docs/concepts/components/core/controller/#api" ] },
+        { "value": "delete", "references": [ "https://docs.fission.io/docs/concepts/components/core/controller/#api" ] }
+      ]
+      },
+      { "typeId": "platform.interface.ops.platform-adm", "values": [
+        { "value": "deployment", "references": [ "https://github.com/fission/fission/blob/master/charts/README.md" ] },
+        { "value": "configuration", "references": [ "https://github.com/fission/fission/tree/master/charts#configuration" ] },
+        { "value": "enactment", "references": [ "https://github.com/fission/fission/blob/master/charts/README.md" ] }
+      ]
+      },
+      { "typeId": "platform.github.stars", "values": [ { "value": 5200, "references": [ "https://github.com/fission/fission/stargazers" ] } ] },
+      { "typeId": "platform.github.forks", "values": [ { "value": 487, "references": [ "https://github.com/fission/fission/network/members" ] } ] },
+      { "typeId": "platform.github.issues", "values": [ { "value": 215, "references": [ "https://github.com/fission/fission/issues" ] } ] },
+      { "typeId": "platform.github.commits", "values": [ { "value": 1156, "references": [ "https://github.com/fission/fission" ] } ] },
+      { "typeId": "platform.github.contributors", "values": [ { "value": 104, "references": [ "https://github.com/fission/fission" ] } ] },
+      { "typeId": "platform.stackoverflow.questions", "values": [ { "value": 7, "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=kubernetes-fission" ] } ] },
+      { "typeId": "platform.documentation", "values": [
+        { "value": "usage", "references": [ "https://docs.fission.io/docs/usage" ] },
+        { "value": "development", "references": [ "https://docs.fission.io/docs/contributing" ] },
+        { "value": "deployment", "references": [ "https://docs.fission.io/docs/installation" ] },
+        { "value": "architecture", "references": [ "https://github.com/fission/fission/blob/master/Documentation/Architecture.md" ] }
+      ]
+      },
+      { "typeId": "platform.documentation.functions", "values": [
+        { "value": "development", "references": [ "https://docs.fission.io/docs/usage/functions/" ] },
+        { "value": "deployment", "references": [ "https://docs.fission.io/docs/spec/" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtimes", "values": [
+        { "value": "Binary", "references": [ "https://docs.fission.io/docs/languages" ] },
+        { "value": "C#", "references": [ "https://docs.fission.io/docs/languages" ] },
+        { "value": "Go", "references": [ "https://docs.fission.io/docs/languages/go" ] },
+        { "value": "Java", "references": [ "https://docs.fission.io/docs/languages/java" ] },
+        { "value": "Node.js", "references": [ "https://docs.fission.io/docs/languages/nodejs" ] },
+        { "value": "Perl", "references": [ "https://docs.fission.io/docs/languages" ] },
+        { "value": "PHP", "references": [ "https://docs.fission.io/docs/languages" ] },
+        { "value": "Python", "references": [ "https://docs.fission.io/docs/languages/python" ] },
+        { "value": "Ruby", "references": [ "https://docs.fission.io/docs/languages" ] },
+        { "value": "Shell", "references": [ "https://github.com/fission/fission/tree/master/environments/binary" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtime-customization", "values": [ { "value": true, "references": [ "https://docs.fission.io/docs/concepts/#environments" ] } ] },
+      { "typeId": "platform.development.ide-support", "values": [] },
+      { "typeId": "platform.function.client-libraries", "values": [] },
+      { "typeId": "platform.quotas.dep-pkg-size", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.function.versioning", "values": [ { "value": "implicit", "references": [ "https://docs.fission.io/docs/usage/package/" ], "comment": "Package can group multiple functions and be implicitly versioned" } ] },
+      { "typeId": "platform.function.versioning-app", "values": [ { "value": "implicit", "references": [ "https://docs.fission.io/docs/usage/canary-deployments" ], "comment": "Versions can be encoded as in canary deployment spec" } ] },
+      { "typeId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://docs.fission.io/docs/triggers/http-trigger/"] } ] },
+      { "typeId": "platform.event-source.endpoint.async-call", "values": [] },
+      { "typeId": "platform.event-source.endpoint.customization", "values": [ { "value": true, "references": [ "https://docs.fission.io/docs/triggers/http-trigger/" ] } ] },
+      { "typeId": "platform.event-source.endpoint.tls", "values": [ { "value": true, "references": [ "https://docs.fission.io/docs/installation/advanced-setup/#setup-ssltls-for-functions" ] } ] },
+      { "typeId": "platform.event-source.datastore.file-level", "values": [] },
+      { "typeId": "platform.event-source.datastore.database-mode", "values": [] },
+      { "typeId": "platform.event-source.scheduler", "values": [ { "value": true, "references": [ "https://docs.fission.io/docs/triggers/timer" ] } ] },
+      { "typeId": "platform.event-source.messaging", "values": [
+        { "value": "NATS Streaming", "references": [ "https://docs.fission.io/docs/triggers/message-queue-trigger/nats-streaming" ] },
+        { "value": "Azure Storage Queue", "references": [ "https://docs.fission.io/docs/triggers/message-queue-trigger" ] },
+        { "value": "AWS SQS", "references": [ "https://docs.fission.io/docs/triggers/message-queue-trigger-kind-keda/aws-sqs" ] }
+      ]
+      },
+      { "typeId": "platform.event-source.streaming", "values": [
+        { "value": "Apache Kafka", "references": [ "https://docs.fission.io/docs/triggers/message-queue-trigger/kafka/" ] },
+        { "value": "AWS Kinesis", "references": [ "https://docs.fission.io/docs/triggers/message-queue-trigger-kind-keda/aws-kinesis" ] }
+      ]
+      },
+      { "typeId": "platform.event-source.special-purpose-service", "values": [
+        { "value": "KubeWatcher", "references": [ "https://docs.fission.io/docs/concepts/components/optional/kubewatcher" ] }
+      ]
+      },
+      { "typeId": "platform.event-source.integration", "values": [
+        { "value": "plugin-based", "references": [ "https://docs.fission.io/docs/triggers/message-queue-trigger/#how-to-add-new-message-queue-support" ] }
+      ]
+      },
+      { "typeId": "platform.function.orchestrator", "values": [ { "value": "Fission Workflows", "references": [ "https://docs.fission.io/docs/workflows" ] } ] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-type", "values": [ { "value": "custom DSL", "references": [ "https://docs.fission.io/docs/workflows/#creating-your-first-workflow" ] } ] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-languages", "values": [] },
+      { "typeId": "platform.function.orchestrator.control-flow-docs", "values": [ { "value": true, "references": [ "https://github.com/fission/fission-workflows/blob/master/Docs/functions.md" ] } ] },
+      { "typeId": "platform.function.orchestrator.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.function.orchestrator.quotas.io-size", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.testing.functional", "values": [ { "value": "function invocation testing", "references": [ "https://docs.fission.io/docs/usage/functions/#test-and-debug-function" ] } ] },
+      { "typeId": "platform.testing.non-functional", "values": [] },
+      { "typeId": "platform.debugging.local", "values": [ { "value": "log-based debugging", "references": [ "https://docs.fission.io/docs/usage/functions/#test-and-debug-function" ] } ] },
+      { "typeId": "platform.debugging.remote", "values": [] },
+      { "typeId": "platform.observability.logging", "values": [
+        { "value": "Fission Logger + InfluxDB", "references": [ "https://docs.fission.io/docs/concepts/components/optional/logger" ] },
+        { "value": "Istio + Jaeger", "references": [ "https://docs.fission.io/docs/usage/enabling-istio-on-fission/#jaeger" ] }
+      ]
+      },
+      { "typeId": "platform.observability.monitoring", "values": [
+        { "value": "Istio + Prometheus", "references": [ "https://docs.fission.io/docs/usage/enabling-istio-on-fission/#prometheus" ] }
+      ]
+      },
+      { "typeId": "platform.observability.integration", "values": [ { "value": "Via service mesh add-ons", "references": [ "https://docs.fission.io/docs/usage/enabling-istio-on-fission/#install-istio-add-ons" ] } ] },
+      { "typeId": "platform.deployment-automation", "values": [ { "value": "Fission CLI", "references": [ "https://docs.fission.io/docs/spec/#apply-deploy-your-functions-to-fission" ] } ] },
+      { "typeId": "platform.ci-cd", "values": [] },
+      { "typeId": "platform.function.marketplaces", "values": [] },
+      { "typeId": "platform.function.code-sample-repositories", "values": [ { "value": true, "references": [ "https://github.com/fission/fission/tree/master/examples" ] } ] },
+      { "typeId": "platform.authentication", "values": [ { "value": "Via Kubernetes mechanisms", "references": [ "https://docs.fission.io/docs/usage/access-secret-cfgmap-in-function/" ] } ] },
+      { "typeId": "platform.access-control", "values": [] }
+    ]
+  },
+  {
+    "id": "fn-project",
+    "technologyName": "Fn Project",
+    "reviewDate": "2021-02-12",
+    "technologyInfo": {
+      "technologyType": "FAAS",
+      "logoLocator": "fn-project",
+      "shortDescription": "The Fn project is an open-source container-native FaaS platform that can run on cloud or on-premises.",
+      "description": "The Fn project is an open-source container-native serverless platform that you can run anywhere -- any cloud or on-premise. It’s easy to use, supports every programming language, and is extensible and performant."
+    },
+    "reviewedCriteria": [
+      { "typeId": "platform.license", "values": [ { "value": "Apache 2.0", "references": [ "https://github.com/fnproject/docs/blob/master/LICENSE" ] } ] },
+      { "typeId": "platform.license.type", "values": [ { "value": "permissive" } ] },
+      { "typeId": "platform.installation.type", "values": [ { "value": "installable", "references": [ "https://fnproject.io/tutorials/install" ] } ] },
+      { "typeId": "platform.installation.targets", "values": [
+        { "value": "Docker", "references": [ "https://fnproject.io/tutorials/install/" ] },
+        { "value": "Linux", "references": [ "https://fnproject.io/tutorials/install/" ] },
+        { "value": "Unix", "references": [ "https://fnproject.io/tutorials/install/" ] },
+        { "value": "MacOS", "references": [ "https://fnproject.io/tutorials/install/" ] },
+        { "value": "Windows", "references": [ "https://fnproject.io/tutorials/install/" ] }
+      ]
+      },
+      { "typeId": "platform.code.availability", "values": [ { "value": "open source", "references": [ "https://github.com/fnproject/fn" ] } ] },
+      { "typeId": "platform.code.repository", "values": [ { "value": "GitHub", "references": [ "https://github.com/fnproject/fn" ] } ] },
+      { "typeId": "platform.code.language", "values": [ { "value": "Go", "references": [ "https://github.com/fnproject/fn/search?l=go" ] } ] },
+      { "typeId": "platform.interface.types", "values": [
+        { "value": "CLI", "references": [ "https://github.com/fnproject/cli" ] },
+        { "value": "API", "references": [ "https://github.com/fnproject/docs/blob/master/fn/develop/README.md#advanced" ] },
+        { "value": "GUI", "references": [ "https://github.com/fnproject/ui" ] }
+      ]
+      },
+      { "typeId": "platform.interface.ops.app-mgmt", "values": [
+        { "value": "create", "references": [ "https://github.com/fnproject/docs/blob/master/cli/README.md" ] },
+        { "value": "retrieve", "references": [ "https://github.com/fnproject/docs/blob/master/cli/README.md" ] },
+        { "value": "update", "references": [ "https://github.com/fnproject/docs/blob/master/cli/README.md" ] },
+        { "value": "delete", "references": [ "https://github.com/fnproject/docs/blob/master/cli/README.md" ] }
+      ]
+      },
+      { "typeId": "platform.interface.ops.platform-adm", "values": [
+        { "value": "deployment", "references": [ "https://fnproject.io/tutorials/install" ] },
+        { "value": "configuration", "references": [ "https://github.com/fnproject/docs/blob/master/cli/README.md" ] },
+        { "value": "enactment", "references": [ "https://github.com/fnproject/docs/blob/master/cli/README.md" ] },
+        { "value": "termination", "references": [ "https://github.com/fnproject/docs/blob/master/cli/ref/fn-stop.md" ] }
+      ]
+      },
+      { "typeId": "platform.github.stars", "values": [ { "value": 4900, "references": [ "https://github.com/fnproject/fn/stargazers" ] } ] },
+      { "typeId": "platform.github.forks", "values": [ { "value": 363, "references": [ "https://github.com/fnproject/fn/network/members" ] } ] },
+      { "typeId": "platform.github.issues", "values": [ { "value": 128, "references": [ "https://github.com/fnproject/fn/issues" ] } ] },
+      { "typeId": "platform.github.commits", "values": [ { "value": 3393, "references": [ "https://github.com/fnproject/fn/commits/master" ] } ] },
+      { "typeId": "platform.github.contributors", "values": [ { "value": 86, "references": [ "https://github.com/fnproject/fn/graphs/contributors" ] } ] },
+      { "typeId": "platform.stackoverflow.questions", "values": [ { "value": 30, "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=fn" ] } ] },
+      { "typeId": "platform.documentation", "values": [
+        { "value": "usage", "references": [ "https://github.com/fnproject/docs#getting-started" ] },
+        { "value": "development", "references": [ "https://github.com/fnproject/docs#for-contributors" ] },
+        { "value": "deployment", "references": [ "https://fnproject.io/tutorials/install/" ] },
+        { "value": "architecture", "references": [ "https://github.com/fnproject/docs/blob/master/fn/general/introduction.md#the-fn-architecture" ] }
+      ]
+      },
+      { "typeId": "platform.documentation.functions", "values": [
+        { "value": "development", "references": [ "https://github.com/fnproject/docs/blob/master/fn/general/introduction.md#functions-with-fn" ] },
+        { "value": "deployment", "references": [ "https://github.com/fnproject/docs/blob/master/fn/general/introduction.md#functions-with-fn" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtimes", "values": [
+        { "value": "Go", "references": [ "https://fnproject.io/tutorials/Introduction/" ] },
+        { "value": "Java", "references": [ "https://fnproject.io/tutorials/JavaFDKIntroduction/" ] },
+        { "value": "Node.js", "references": [ "https://fnproject.io/tutorials/node/intro/" ] },
+        { "value": "C#", "references": [ "https://fnproject.io/tutorials/csharp/intro/" ] },
+        { "value": "Python", "references": [ "https://fnproject.io/tutorials/python/intro/" ] },
+        { "value": "Ruby", "references": [ "https://fnproject.io/tutorials/ruby/intro/" ] },
+        { "value": "Docker", "references": [ "https://fnproject.io/tutorials/ContainerAsFunction/" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtime-customization", "values": [ { "value": true, "references": [ "https://github.com/fnproject/docs/blob/master/fn/develop/fdks.md#bring-your-own-container" ] } ] },
+      { "typeId": "platform.development.ide-support", "values": [] },
+      { "typeId": "platform.function.client-libraries", "values": [ { "value": "Go", "references": [ "https://github.com/fnproject/fn_go" ] } ] },
+      { "typeId": "platform.quotas.dep-pkg-size", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.function.versioning", "values": [ { "value": "dedicated mechanisms", "references": [ "https://github.com/fnproject/docs/blob/master/fn/develop/func-file.md" ], "comment": "Version property is appended as a tag to the function image" } ] },
+      { "typeId": "platform.function.versioning-app", "values": [ { "value": "implicit", "references": [ "https://github.com/fnproject/docs/blob/master/fn/develop/apps.md#applications" ], "comment": "" } ] },
+      { "typeId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://github.com/fnproject/docs/blob/master/fn/develop/triggers.md"] } ] },
+      { "typeId": "platform.event-source.endpoint.async-call", "values": [] },
+      { "typeId": "platform.event-source.endpoint.customization", "values": [ { "value": true, "references": [ "https://github.com/fnproject/docs/blob/master/fn/develop/triggers.md" ] } ] },
+      { "typeId": "platform.event-source.endpoint.tls", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.event-source.datastore.file-level", "values": [] },
+      { "typeId": "platform.event-source.datastore.database-mode", "values": [] },
+      { "typeId": "platform.event-source.scheduler", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.event-source.messaging", "values": [] },
+      { "typeId": "platform.event-source.streaming", "values": [] },
+      { "typeId": "platform.event-source.special-purpose-service", "values": [] },
+      { "typeId": "platform.event-source.integration", "values": [] },
+      { "typeId": "platform.function.orchestrator", "values": [ { "value": "FnFlows", "references": [ "https://github.com/fnproject/fdk-java/blob/master/docs/FnFlowsUserGuide.md" ] } ] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-type", "values": [ { "value": "orchestrating function", "references": [ "https://github.com/fnproject/flow#writing-flow-functions" ] } ] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-languages", "values": [{ "value": "Java", "references": [ "https://github.com/fnproject/fdk-java/blob/master/docs/FnFlowsUserGuide.md" ] }] },
+      { "typeId": "platform.function.orchestrator.control-flow-docs", "values": [ { "value": true, "references": [ "https://github.com/fnproject/flow/blob/master/docs/API.md#completion-stage-types" ] } ] },
+      { "typeId": "platform.function.orchestrator.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.function.orchestrator.quotas.io-size", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.testing.functional", "values": [ { "value": "unit testing", "references": [ "https://github.com/fnproject/docs/blob/master/fdks/fdk-java/TestingFunctions.md" ], "comment": "For Java only" } ] },
+      { "typeId": "platform.testing.non-functional", "values": [] },
+      { "typeId": "platform.debugging.local", "values": [ { "value": "log-based debugging", "references": [ "https://fnproject.io/tutorials/Troubleshooting/" ], "comment": "Using Fn CLI" } ] },
+      { "typeId": "platform.debugging.remote", "values": [] },
+      { "typeId": "platform.observability.logging", "values": [
+        { "value": "Docker container logs", "references": [ "https://github.com/fnproject/docs/blob/master/fn/operate/logging.md" ] }
+      ]
+      },
+      { "typeId": "platform.observability.monitoring", "values": [
+        { "value": "Jaeger", "references": [ "https://github.com/fnproject/docs/blob/master/fn/operate/metrics.md" ] },
+        { "value": "Prometheus", "references": [ "https://github.com/fnproject/docs/blob/master/fn/operate/metrics.md" ] },
+        { "value": "Zipkin", "references": [ "https://github.com/fnproject/docs/blob/master/fn/operate/metrics.md" ] }
+      ]
+      },
+      { "typeId": "platform.observability.integration", "values": [ { "value": "push-based", "references": [ "https://github.com/fnproject/tutorials/blob/master/Troubleshooting/README.md#log-capture-to-a-logging-service" ] } ] },
+      { "typeId": "platform.deployment-automation", "values": [ { "value": "Fn CLI", "references": [ "https://github.com/fnproject/docs/blob/master/fn/develop/packaging.md#option-1-recommended-use-the-fn-cli-tool" ] } ] },
+      { "typeId": "platform.ci-cd", "values": [] },
+      { "typeId": "platform.function.marketplaces", "values": [] },
+      { "typeId": "platform.function.code-sample-repositories", "values": [ { "value": true, "references": [ "https://github.com/fnproject/tutorials" ] } ] },
+      { "typeId": "platform.authentication", "values": [] },
+      { "typeId": "platform.access-control", "values": [] }
+    ]
+  },
+  {
+    "id": "google-cloud-functions",
+    "technologyName": "Google Cloud Functions",
+    "reviewDate": "2021-02-12",
+    "technologyInfo": {
+      "technologyType": "FAAS",
+      "logoLocator": "google.cloud-functions",
+      "shortDescription": "Google Cloud Functions is a commercial FaaS platform by Google.",
+      "description": "Cloud Functions is Google Cloud’s event-driven serverless compute platform. Run your code locally or in the cloud without having to provision servers. Go from code to deploy with continuous delivery and monitoring tools. Cloud Functions scales up or down, so you pay only for compute resources you use. Easily create end-to-end complex development scenarios by connecting with existing Google Cloud or third-party services."
+    },
+    "reviewedCriteria": [
+      { "typeId": "platform.license", "values": [ { "value": "Google Cloud Platform Terms", "references": [ "https://cloud.google.com/terms" ] } ] },
+      { "typeId": "platform.license.type", "values": [ { "value": "proprietary" } ] },
+      { "typeId": "platform.installation.type", "values": [ { "value": "as-a-service", "references": [ "https://cloud.google.com/functions/docs/concepts/overview" ] } ] },
+      { "typeId": "platform.installation.targets", "values": [] },
+      { "typeId": "platform.code.availability", "values": [ { "value": "closed source", "references": [] } ] },
+      { "typeId": "platform.code.repository", "values": [] },
+      { "typeId": "platform.code.language", "values": [] },
+      { "typeId": "platform.interface.types", "values": [
+        { "value": "CLI", "references": [ "https://cloud.google.com/sdk/gcloud/reference/functions/" ] },
+        { "value": "API", "references": [ "https://cloud.google.com/functions/docs/apis" ] },
+        { "value": "GUI", "references": [ "https://console.cloud.google.com/functions" ] }
+      ]
+      },
+      { "typeId": "platform.interface.ops.app-mgmt", "values": [
+        { "value": "create", "references": [ "https://cloud.google.com/functions/docs/reference/rest" ] },
+        { "value": "retrieve", "references": [ "https://cloud.google.com/functions/docs/reference/rest" ] },
+        { "value": "update", "references": [ "https://cloud.google.com/functions/docs/reference/rest" ] },
+        { "value": "delete", "references": [ "https://cloud.google.com/functions/docs/reference/rest" ] }
+      ]
+      },
+      { "typeId": "platform.interface.ops.platform-adm", "values": [] },
+      { "typeId": "platform.github.stars", "values": [] },
+      { "typeId": "platform.github.forks", "values": [] },
+      { "typeId": "platform.github.issues", "values": [] },
+      { "typeId": "platform.github.commits", "values": [] },
+      { "typeId": "platform.github.contributors", "values": [] },
+      { "typeId": "platform.stackoverflow.questions", "values": [ { "value": 12386, "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=google-cloud-functions" ] } ] },
+      { "typeId": "platform.documentation", "values": [
+        { "value": "usage", "references": [ "https://cloud.google.com/functions/docs/" ] }
+      ]
+      },
+      { "typeId": "platform.documentation.functions", "values": [
+        { "value": "development", "references": [ "https://cloud.google.com/functions/docs/" ] },
+        { "value": "deployment", "references": [ "https://cloud.google.com/functions/docs/" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtimes", "values": [
+        { "value": "Go", "references": [ "https://cloud.google.com/functions/docs/concepts/go-runtime" ] },
+        { "value": "Java", "references": [ "https://cloud.google.com/functions/docs/concepts/java-runtime" ] },
+        { "value": "Node.js", "references": [ "https://cloud.google.com/functions/docs/concepts/nodejs-10-runtime" ] },
+        { "value": "Python", "references": [ "https://cloud.google.com/functions/docs/concepts/python-runtime" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtime-customization", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.development.ide-support", "values": [] },
+      { "typeId": "platform.function.client-libraries", "values": [
+        { "value": "Go", "references": [ "https://godoc.org/google.golang.org/api/cloudfunctions" ] },
+        { "value": "Java", "references": [ "https://github.com/googleapis/google-api-java-client-services#supported-google-apis" ] },
+        { "value": "Node.js", "references": [ "https://github.com/googleapis/google-api-nodejs-client" ] },
+        { "value": "Python", "references": [ "https://github.com/googleapis/google-api-python-client/blob/master/docs/dyn/index.md#cloudfunctions" ] },
+        { "value": "C#", "references": [ "https://developers.google.com/api-client-library/dotnet/apis/cloudfunctions/v1" ] },
+        { "value": "Ruby", "references": [ "https://googleapis.dev/ruby/google-api-client/latest/Google/Apis/CloudfunctionsV1.html" ] },
+        { "value": "Dart", "references": [ "https://pub.dev/packages/googleapis#available-google-apis" ] }
+      ]
+      },
+      { "typeId": "platform.quotas.dep-pkg-size", "values": [ { "value": true, "references": [ "https://cloud.google.com/functions/quotas" ] } ] },
+      { "typeId": "platform.quotas.execution-time", "values": [ { "value": true, "references": [ "https://cloud.google.com/functions/docs/concepts/exec#timeout" ] } ] },
+      { "typeId": "platform.function.versioning", "values": [ { "value": "implicit", "references": [ "https://cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions#CloudFunction" ], "comment": "versionId is used only as output" } ] },
+      { "typeId": "platform.function.versioning-app", "values": [ { "value": "implicit", "references": [ "https://cloud.google.com/sdk/gcloud/reference/projects" ], "comment": "In GCP resources are grouped by projects, but no details on explicit project versioning" } ] },
+      { "typeId": "platform.event-source.endpoint.sync-call", "values": [
+        { "value": "HTTP", "references": [ "https://cloud.google.com/functions/docs/calling/direct", "https://cloud.google.com/functions/docs/calling/http" ] },
+        { "value": "RPC", "references": [ "https://cloud.google.com/functions/docs/reference/rpc/google.cloud.functions.v1#google.cloud.functions.v1.CloudFunctionsService"], "comment": "for testing" }
+      ]
+      },
+      { "typeId": "platform.event-source.endpoint.async-call", "values": [] },
+      { "typeId": "platform.event-source.endpoint.customization", "values": [ { "value": true, "references": [ "https://cloud.google.com/endpoints/docs/openapi/get-started-cloud-functions#endpoints_configure" ] } ] },
+      { "typeId": "platform.event-source.endpoint.tls", "values": [ { "value": true, "references": [ "https://cloud.google.com/endpoints/docs/openapi/enabling-ssl" ] } ] },
+      { "typeId": "platform.event-source.datastore.file-level", "values": [ { "value": "Google Cloud Storage", "references": [ "https://cloud.google.com/functions/docs/calling/storage" ] } ] },
+      { "typeId": "platform.event-source.datastore.database-mode", "values": [
+        { "value": "Cloud Firestore", "references": [ "https://cloud.google.com/functions/docs/calling/cloud-firestore" ] },
+        { "value": "Firebase Realtime Database", "references": [ "https://cloud.google.com/functions/docs/calling/realtime-database" ] }
+      ]
+      },
+      { "typeId": "platform.event-source.scheduler", "values": [ { "value": true, "references": [ "https://cloud.google.com/scheduler/docs/tut-pub-sub" ] } ] },
+      { "typeId": "platform.event-source.messaging", "values": [ { "value": "Google Cloud Pub/Sub", "references": [ "https://cloud.google.com/functions/docs/calling/pubsub" ] } ] },
+      { "typeId": "platform.event-source.streaming", "values": [ { "value": "Google Cloud Pub/Sub", "references": [ "https://cloud.google.com/functions/docs/calling/pubsub" ] } ] },
+      { "typeId": "platform.event-source.special-purpose-service", "values": [
+        { "value": "Google Analytics for Firebase", "references": [ "https://cloud.google.com/functions/docs/calling/google-analytics-firebase" ] },
+        { "value": "Firebase Authentication", "references": [ "https://cloud.google.com/functions/docs/calling/firebase-auth" ] },
+        { "value": "Firebase Remote Config", "references": [ "https://cloud.google.com/functions/docs/calling/firebase-remote-config" ] },
+        { "value": "Cloud Logging", "references": [ "https://cloud.google.com/functions/docs/calling#cloud_logging" ] },
+        { "value": "Gmail", "references": [ "https://cloud.google.com/functions/docs/calling#gmail" ] }
+      ]
+      },
+      { "typeId": "platform.event-source.integration", "values": [
+        { "value": "webhooks", "references": [ "https://cloud.google.com/functions/docs/calling" ] },
+        { "value": "messaging-based", "references": [ "https://cloud.google.com/functions/docs/calling/logging" ] }
+      ]
+      },
+      { "typeId": "platform.function.orchestrator", "values": [] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-type", "values": [] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-languages", "values": [] },
+      { "typeId": "platform.function.orchestrator.control-flow-docs", "values": [] },
+      { "typeId": "platform.function.orchestrator.quotas.execution-time", "values": [] },
+      { "typeId": "platform.function.orchestrator.quotas.io-size", "values": [] },
+      { "typeId": "platform.testing.functional", "values": [ { "value": "via external tools", "references": [ "https://cloud.google.com/functions/docs/bestpractices/testing" ], "comment": "guidelines only" } ] },
+      { "typeId": "platform.testing.non-functional", "values": [] },
+      { "typeId": "platform.debugging.local", "values": [ { "value": "step-through debugging", "references": [ "https://cloud.google.com/functions/docs/functions-framework" ], "comment": "Using dedicated functions development framework" } ] },
+      { "typeId": "platform.debugging.remote", "values": [] },
+      { "typeId": "platform.observability.logging", "values": [
+        { "value": "Google Cloud Operations", "references": [ "https://cloud.google.com/functions/docs/monitoring/logging" ] }
+      ]
+      },
+      { "typeId": "platform.observability.monitoring", "values": [
+        { "value": "Google Cloud Operations", "references": [ "https://cloud.google.com/functions/docs/monitoring/metrics" ] }
+      ]
+      },
+      { "typeId": "platform.observability.integration", "values": [] },
+      { "typeId": "platform.deployment-automation", "values": [ { "value": "Google Cloud Deployment Manager", "references": [ "https://cloud.google.com/deployment-manager/docs/configuration/supported-gcp-types" ] } ] },
+      { "typeId": "platform.ci-cd", "values": [ { "value": "CloudBuild", "references": [ "https://cloud.google.com/functions/docs/testing/test-cicd" ] } ] },
+      { "typeId": "platform.function.marketplaces", "values": [] },
+      { "typeId": "platform.function.code-sample-repositories", "values": [ { "value": true, "references": [ "https://cloud.google.com/functions/docs/writing" ] } ] },
+      { "typeId": "platform.authentication", "values": [ { "value": "Cloud IAM", "references": [ "https://cloud.google.com/functions/docs/securing/authenticating" ] } ] },
+      { "typeId": "platform.access-control", "values": [
+        { "value": "resources", "references": [ "https://cloud.google.com/functions/docs/securing/managing-access-iam" ] },
+        { "value": "functions", "references": [ "https://cloud.google.com/functions/docs/securing/function-identity" ] }
+      ]
+      }
+    ]
+  },
+  {
+    "id": "knative",
+    "technologyName": "Knative",
+    "reviewDate": "2021-02-12",
+    "technologyInfo": {
+      "technologyType": "FAAS",
+      "logoLocator": "knative",
+      "shortDescription": "Knative Serving is an open source FaaS platform running on Kubernetes.",
+      "description": "Knative (pronounced kay-nay-tiv) extends Kubernetes to provide a set of middleware components that are essential to build modern, source-centric, and container-based applications that can run anywhere: on premises, in the cloud, or even in a third-party data center."
+    },
+    "reviewedCriteria": [
+      { "typeId": "platform.license", "values": [ { "value": "Apache 2.0", "references": [ "https://github.com/knative/serving/blob/master/LICENSE" ] } ] },
+      { "typeId": "platform.license.type", "values": [ { "value": "permissive" } ] },
+      { "typeId": "platform.installation.type", "values": [ { "value": "installable", "references": [ "https://knative.dev/docs/install" ] } ] },
+      { "typeId": "platform.installation.targets", "values": [
+        { "value": "Kubernetes", "references": [ "https://knative.dev/docs/install" ] }
+      ]
+      },
+      { "typeId": "platform.code.availability", "values": [ { "value": "open source", "references": [ "https://github.com/knative/serving" ] } ] },
+      { "typeId": "platform.code.repository", "values": [ { "value": "GitHub", "references": [ "https://github.com/knative/serving" ] } ] },
+      { "typeId": "platform.code.language", "values": [ { "value": "Go", "references": [ "https://github.com/knative/serving/search?l=go" ] } ] },
+      { "typeId": "platform.interface.types", "values": [
+        { "value": "CLI", "references": [ "https://github.com/knative/client" ] },
+        { "value": "API", "references": [ "https://github.com/knative/docs/blob/master/docs/serving/spec/knative-api-specification-1.0.md" ] }
+      ]
+      },
+      { "typeId": "platform.interface.ops.app-mgmt", "values": [
+        { "value": "create", "references": [ "https://github.com/knative/client/blob/master/docs/cmd/kn_service.md" ] },
+        { "value": "retrieve", "references": [ "https://github.com/knative/client/blob/master/docs/cmd/kn_service.md" ] },
+        { "value": "update", "references": [ "https://github.com/knative/client/blob/master/docs/cmd/kn_service.md" ] },
+        { "value": "delete", "references": [ "https://github.com/knative/client/blob/master/docs/cmd/kn_service.md" ] }
+      ]
+      },
+      { "typeId": "platform.interface.ops.platform-adm", "values": [
+        { "value": "deployment", "references": [ "https://knative.dev/docs/install/any-kubernetes-cluster" ] },
+        { "value": "configuration", "references": [ "https://knative.dev/docs/install/any-kubernetes-cluster" ] },
+        { "value": "enactment", "references": [ "https://knative.dev/docs/install/any-kubernetes-cluster" ] }
+      ]
+      },
+      { "typeId": "platform.github.stars", "values": [ { "value": 3600, "references": [ "https://github.com/knative/serving/stargazers" ] } ] },
+      { "typeId": "platform.github.forks", "values": [ { "value": 764, "references": [ "https://github.com/knative/serving/network/members" ] } ] },
+      { "typeId": "platform.github.issues", "values": [ { "value": 173, "references": [ "https://github.com/knative/serving/issues" ] } ] },
+      { "typeId": "platform.github.commits", "values": [ { "value": 6323, "references": [ "https://github.com/knative/serving/commits/master" ] } ] },
+      { "typeId": "platform.github.contributors", "values": [ { "value": 218, "references": [ "https://github.com/knative/serving/graphs/contributors" ] } ] },
+      { "typeId": "platform.stackoverflow.questions", "values": [ { "value": 93, "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=knative" ] } ] },
+      { "typeId": "platform.documentation", "values": [
+        { "value": "usage", "references": [ "https://knative.dev/docs/serving" ] },
+        { "value": "development", "references": [ "https://github.com/knative/serving/blob/master/DEVELOPMENT.md" ] },
+        { "value": "deployment", "references": [ "https://knative.dev/docs/install/" ] }
+      ]
+      },
+      { "typeId": "platform.documentation.functions", "values": [
+        { "value": "deployment", "references": [ "https://knative.dev/docs/serving/getting-started-knative-app" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtimes", "values": [
+        { "value": "Docker", "references": [ "https://knative.dev/docs/serving/getting-started-knative-app" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtime-customization", "values": [ { "value": true, "references": [ "https://github.com/knative/serving/blob/master/docs/spec/overview.md#service" ] } ] },
+      { "typeId": "platform.development.ide-support", "values": [] },
+      { "typeId": "platform.function.client-libraries", "values": [] },
+      { "typeId": "platform.quotas.dep-pkg-size", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.function.versioning", "values": [ { "value": "dedicated mechanisms", "references": [ "https://github.com/knative/serving/blob/master/docs/spec/overview.md#revision" ], "comment": "Revision resource represents an immutable version of a function" } ] },
+      { "typeId": "platform.function.versioning-app", "values": [] },
+      { "typeId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://knative.dev/docs/serving/getting-started-knative-app"] } ] },
+      { "typeId": "platform.event-source.endpoint.async-call", "values": [] },
+      { "typeId": "platform.event-source.endpoint.customization", "values": [ { "value": true, "references": [ "https://knative.dev/docs/serving/samples/knative-routing-go/index.html" ] } ] },
+      { "typeId": "platform.event-source.endpoint.tls", "values": [ { "value": true, "references": [ "https://knative.dev/docs/serving/using-auto-tls" ] } ] },
+      { "typeId": "platform.event-source.datastore.file-level", "values": [ { "value": "Google Cloud Storage", "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] } ] },
+      { "typeId": "platform.event-source.datastore.database-mode", "values": [
+        { "value": "Apache CouchDB", "references": [ "https://knative.dev/docs/eventing/sources/index.html", "https://github.com/knative-sandbox/eventing-couchdb/tree/main/source" ] },
+        { "value": "AWS DynamoDB", "references": [ "https://knative.dev/docs/eventing/sources/index.html", "https://github.com/triggermesh/aws-event-sources/blob/master/cmd/awsdynamodbsource/README.md" ] }
+      ]
+      },
+      { "typeId": "platform.event-source.scheduler", "values": [ { "value": true, "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] } ] },
+      { "typeId": "platform.event-source.messaging", "values": [
+        { "value": "AWS SQS", "references": [ "https://knative.dev/docs/eventing/sources/index.html", "https://github.com/knative-sandbox/eventing-awssqs/blob/main/pkg/apis/sources/v1alpha1/aws_sqs_types.go", "https://github.com/triggermesh/aws-event-sources/blob/master/cmd/awssqssource/README.md" ] },
+        { "value": "AWS SNS", "references": [ "https://knative.dev/docs/eventing/sources/index.html", "https://github.com/triggermesh/aws-event-sources/tree/master/cmd/awssnssource" ] },
+        { "value": "Google Cloud PubSub", "references": [ "https://knative.dev/docs/eventing/sources/index.html", "https://github.com/google/knative-gcp/blob/main/docs/examples/cloudpubsubsource/README.md" ] },
+        { "value": "RabbitMQ", "references": [ "https://knative.dev/docs/eventing/sources/index.html", "https://github.com/knative-sandbox/eventing-rabbitmq" ] }
+      ]
+      },
+      { "typeId": "platform.event-source.streaming", "values": [
+        { "value": "Apache Kafka", "references": [ "https://knative.dev/docs/eventing/sources/index.html", "https://github.com/knative-sandbox/eventing-kafka/blob/master/pkg/apis/sources/v1beta1/kafka_types.go" ] },
+        { "value": "AWS Kinesis", "references": [ "https://knative.dev/docs/eventing/sources/index.html", "https://github.com/triggermesh/aws-event-sources/blob/master/cmd/awskinesissource/README.md" ] },
+        { "value": "Google Cloud PubSub", "references": [ "https://knative.dev/docs/eventing/sources/index.html", "https://github.com/google/knative-gcp/blob/main/docs/examples/cloudpubsubsource/README.md" ] }
+      ]
+      },
+      { "typeId": "platform.event-source.special-purpose-service", "values": [
+        { "value": "Apache Camel", "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] },
+        { "value": "Kubernetes API server events", "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] },
+        { "value": "GitHub", "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] },
+        { "value": "GitLab", "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] },
+        { "value": "BitBucket", "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] },
+        { "value": "Google Cloud Scheduler", "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] },
+        { "value": "AWS CodeCommit", "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] },
+        { "value": "AWS Cognito", "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] },
+        { "value": "FTP/SFTP", "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] },
+        { "value": "Heartbeat events", "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] },
+        { "value": "Websocket", "references": [ "https://knative.dev/docs/eventing/sources/index.html" ] }
+      ]
+      },
+      { "typeId": "platform.event-source.integration", "values": [ {"value": "plugin-based", "references": [ "https://knative.dev/docs/eventing/samples/writing-receive-adapter-source/" ] } ] },
+      { "typeId": "platform.function.orchestrator", "values": [ { "value": "Knative Eventing", "references": [ "https://knative.dev/docs/eventing/" ], "comment": "Only limited orchestration capabilities (sequence & parallel execution)" } ] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-type", "values": [ { "value": "custom DSL", "references": [ "https://knative.dev/docs/eventing/parallel", "https://knative.dev/docs/eventing/sequence" ] } ] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-languages", "values": [] },
+      { "typeId": "platform.function.orchestrator.control-flow-docs", "values": [ { "value": true, "references": [ "https://knative.dev/docs/eventing/flows/sequence", "https://knative.dev/docs/eventing/flows/parallel" ] } ] },
+      { "typeId": "platform.function.orchestrator.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.function.orchestrator.quotas.io-size", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.testing.functional", "values": [] },
+      { "typeId": "platform.testing.non-functional", "values": [] },
+      { "typeId": "platform.debugging.local", "values": [ { "value": "log-based debugging", "references": [ "https://knative.dev/docs/serving/debugging-application-issues/" ], "comment": "Using Kubernetes" } ] },
+      { "typeId": "platform.debugging.remote", "values": [] },
+      { "typeId": "platform.observability.logging", "values": [
+        { "value": "Fluentbit", "references": [ "https://knative.dev/docs/install/collecting-logs" ] }
+      ]
+      },
+      { "typeId": "platform.observability.monitoring", "values": [] },
+      { "typeId": "platform.observability.integration", "values": [ { "value": "push-based", "references": [ "https://knative.dev/docs/install/collecting-logs/#setting-up-the-forwarders" ] } ] },
+      { "typeId": "platform.deployment-automation", "values": [ { "value": "Kubernetes", "references": [ "https://knative.dev/docs/serving/getting-started-knative-app/" ] } ] },
+      { "typeId": "platform.ci-cd", "values": [] },
+      { "typeId": "platform.function.marketplaces", "values": [] },
+      { "typeId": "platform.function.code-sample-repositories", "values": [ { "value": true, "references": [ "https://knative.dev/docs/serving/samples/" ] } ] },
+      { "typeId": "platform.authentication", "values": [] },
+      { "typeId": "platform.access-control", "values": [] }
+    ]
+  },
+  {
+    "id": "kubeless",
+    "technologyName": "Kubeless",
+    "reviewDate": "2021-02-12",
+    "technologyInfo": {
+      "technologyType": "FAAS",
+      "logoLocator": "kubeless",
+      "shortDescription": "Kubeless is an open source, Kubernetes-native FaaS platform.",
+      "description": "Kubeless is a Kubernetes-native serverless framework that lets you deploy small bits of code (functions) without having to worry about the underlying infrastructure. It is designed to be deployed on top of a Kubernetes cluster and take advantage of all the great Kubernetes primitives. If you are looking for an open source serverless solution that clones what you can find on AWS Lambda, Azure Functions, and Google Cloud Functions, Kubeless is for you!"
+    },
+    "reviewedCriteria": [
+      { "typeId": "platform.license", "values": [ { "value": "Apache 2.0", "references": [ "https://github.com/kubeless/kubeless" ] } ] },
+      { "typeId": "platform.license.type", "values": [ { "value": "permissive" } ] },
+      { "typeId": "platform.installation.type", "values": [ { "value": "installable", "references": [ "https://kubeless.io/docs/quick-start/#installation" ] } ] },
+      { "typeId": "platform.installation.targets", "values": [
+        { "value": "Kubernetes", "references": [ "https://kubeless.io/docs/quick-start/#installation" ] },
+        { "value": "Linux", "references": [ "https://kubeless.io/docs/quick-start/#installation" ] },
+        { "value": "Unix", "references": [ "https://kubeless.io/docs/quick-start/#installation" ] },
+        { "value": "MacOS", "references": [ "https://kubeless.io/docs/quick-start/#installation" ] },
+        { "value": "Windows", "references": [ "https://kubeless.io/docs/quick-start/#installation" ] }
+      ]
+      },
+      { "typeId": "platform.code.availability", "values": [ { "value": "open source", "references": [ "https://github.com/kubeless/kubeless" ] } ] },
+      { "typeId": "platform.code.repository", "values": [ { "value": "GitHub", "references": [ "https://github.com/kubeless/kubeless" ] } ] },
+      { "typeId": "platform.code.language", "values": [ { "value": "Go", "references": [ "https://github.com/kubeless/kubeless/search?l=go" ] } ] },
+      { "typeId": "platform.interface.types", "values": [
+        { "value": "CLI", "references": [ "https://github.com/kubeless/kubeless/blob/master/docs/architecture.md#kubeless-command-line-client" ] }
+      ]
+      },
+      { "typeId": "platform.interface.ops.app-mgmt", "values": [
+        { "value": "create", "references": [ "https://github.com/kubeless/kubeless/tree/master/cmd/kubeless" ] },
+        { "value": "retrieve", "references": [ "https://github.com/kubeless/kubeless/tree/master/cmd/kubeless" ] },
+        { "value": "update", "references": [ "https://github.com/kubeless/kubeless/tree/master/cmd/kubeless" ] },
+        { "value": "delete", "references": [ "https://github.com/kubeless/kubeless/tree/master/cmd/kubeless" ] }
+      ]
+      },
+      { "typeId": "platform.interface.ops.platform-adm", "values": [
+        { "value": "deployment", "references": [ "https://kubeless.io/docs/quick-start/#installation" ] },
+        { "value": "configuration", "references": [ "https://kubeless.io/docs/quick-start/#installation" ] },
+        { "value": "enactment", "references": [ "https://kubeless.io/docs/quick-start/#installation" ] }
+      ]
+      },
+      { "typeId": "platform.github.stars", "values": [ { "value": 6400, "references": [ "https://github.com/kubeless/kubeless/stargazers" ] } ] },
+      { "typeId": "platform.github.forks", "values": [ { "value": 678, "references": [ "https://github.com/kubeless/kubeless/network/members" ] } ] },
+      { "typeId": "platform.github.issues", "values": [ { "value": 183, "references": [ "https://github.com/kubeless/kubeless/issues" ] } ] },
+      { "typeId": "platform.github.commits", "values": [ { "value": 1038, "references": [ "https://github.com/kubeless/kubeless/commits/master" ] } ] },
+      { "typeId": "platform.github.contributors", "values": [ { "value": 102, "references": [ "https://github.com/kubeless/kubeless/graphs/contributors" ] } ] },
+      { "typeId": "platform.stackoverflow.questions", "values": [ { "value": 12, "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=kubeless" ] } ] },
+      { "typeId": "platform.documentation", "values": [
+        { "value": "usage", "references": [ "https://kubeless.io/docs/quick-start" ] },
+        { "value": "development", "references": [ "https://kubeless.io/docs/dev-guide/" ] },
+        { "value": "deployment", "references": [ "https://kubeless.io/docs/quick-start" ] },
+        { "value": "architecture", "references": [ "https://kubeless.io/docs/architecture/" ] }
+      ]
+      },
+      { "typeId": "platform.documentation.functions", "values": [
+        { "value": "development", "references": [ "https://kubeless.io/docs/building-functions/" ] },
+        { "value": "deployment", "references": [ "https://kubeless.io/docs/advanced-function-deployment/" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtimes", "values": [
+        { "value": "Ballerina", "references": [ "https://kubeless.io/docs/runtimes" ] },
+        { "value": "C#", "references": [ "https://kubeless.io/docs/runtimes" ] },
+        { "value": "Docker Image", "references": [ "https://kubeless.io/docs/runtimes" ] },
+        { "value": "Go", "references": [ "https://kubeless.io/docs/runtimes" ] },
+        { "value": "Java", "references": [ "https://kubeless.io/docs/runtimes" ] },
+        { "value": "Node.js", "references": [ "https://kubeless.io/docs/runtimes" ] },
+        { "value": "Python", "references": [ "https://kubeless.io/docs/runtimes" ] },
+        { "value": "Ruby", "references": [ "https://kubeless.io/docs/runtimes" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtime-customization", "values": [ { "value": true, "references": [ "https://github.com/kubeless/runtimes" ] } ] },
+      { "typeId": "platform.development.ide-support", "values": [ { "value": "Visual Studio Code", "references": [ "https://github.com/kubeless/vscode-kubeless" ] } ] },
+      { "typeId": "platform.function.client-libraries", "values": [] },
+      { "typeId": "platform.quotas.dep-pkg-size", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.function.versioning", "values": [ { "value": "implicit", "references": [ "https://kubeless.io/docs/building-functions/" ], "comment": "Using function tagging" } ] },
+      { "typeId": "platform.function.versioning-app", "values": [] },
+      { "typeId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://kubeless.io/docs/http-triggers"] } ] },
+      { "typeId": "platform.event-source.endpoint.async-call", "values": [] },
+      { "typeId": "platform.event-source.endpoint.customization", "values": [ { "value": true, "references": [ "https://kubeless.io/docs/http-triggers/" ] } ] },
+      { "typeId": "platform.event-source.endpoint.tls", "values": [ { "value": true, "references": [ "https://kubeless.io/docs/http-triggers/" ] } ] },
+      { "typeId": "platform.event-source.datastore.file-level", "values": [] },
+      { "typeId": "platform.event-source.datastore.database-mode", "values": [] },
+      { "typeId": "platform.event-source.scheduler", "values": [ { "value": true, "references": [ "https://github.com/kubeless/kubeless/blob/master/docs/kubeless-functions.md#scheduled-functions" ] } ] },
+      { "typeId": "platform.event-source.messaging", "values": [] },
+      { "typeId": "platform.event-source.streaming", "values": [
+        { "value": "AWS Kinesis", "references": [ "https://kubeless.io/docs/streaming-functions/" ] },
+        { "value": "NATS", "references": [ "https://github.com/kubeless/nats-trigger" ] },
+        { "value": "Apache Kafka", "references": [ "https://github.com/kubeless/kafka-trigger" ] }
+      ]
+      },
+      { "typeId": "platform.event-source.special-purpose-service", "values": [] },
+      { "typeId": "platform.event-source.integration", "values": [ { "value": "plugin-based", "references": [ "https://kubeless.io/docs/implementing-new-trigger/" ] } ] },
+      { "typeId": "platform.function.orchestrator", "values": [] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-type", "values": [] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-languages", "values": [] },
+      { "typeId": "platform.function.orchestrator.control-flow-docs", "values": [] },
+      { "typeId": "platform.function.orchestrator.quotas.execution-time", "values": [] },
+      { "typeId": "platform.function.orchestrator.quotas.io-size", "values": [] },
+      { "typeId": "platform.testing.functional", "values": [] },
+      { "typeId": "platform.testing.non-functional", "values": [] },
+      { "typeId": "platform.debugging.local", "values": [ { "value": "log-based debugging", "references": [ "https://kubeless.io/docs/debug-functions" ], "comment": "Using Kubernetes" } ] },
+      { "typeId": "platform.debugging.remote", "values": [] },
+      { "typeId": "platform.observability.logging", "values": [] },
+      { "typeId": "platform.observability.monitoring", "values": [ { "value": "Prometheus + Grafana", "references": [ "https://kubeless.io/docs/monitoring/" ] } ] },
+      { "typeId": "platform.observability.integration", "values": [] },
+      { "typeId": "platform.deployment-automation", "values": [
+        { "value": "Kubernetes", "references": [ "https://kubeless.io/docs/advanced-function-deployment" ] },
+        { "value": "Serverless Framework", "references": [ "https://kubeless.io" ] }
+      ]
+      },
+      { "typeId": "platform.ci-cd", "values": [] },
+      { "typeId": "platform.function.marketplaces", "values": [] },
+      { "typeId": "platform.function.code-sample-repositories", "values": [ { "value": true, "references": [ "https://github.com/kubeless/kubeless/tree/master/examples" ] } ] },
+      { "typeId": "platform.authentication", "values": [ { "value": "Via Kubernetes", "references": [ "https://kubeless.io/docs/http-triggers" ] } ] },
+      { "typeId": "platform.access-control", "values": [ { "value": "Via Kubernetes", "references": [ "https://kubeless.io/docs/kubeless-functions" ] } ] }
+    ]
+  },
+  {
+    "id": "aws-lambda",
+    "technologyName": "AWS Lambda",
+    "reviewDate": "2021-02-12",
+    "technologyInfo": {
+      "technologyType": "FAAS",
+      "logoLocator": "aws.lambda",
+      "shortDescription": "AWS Lambda is a commerical FaaS platform offering from Amazon.",
+      "description": "AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume. With Lambda, you can run code for virtually any type of application or backend service - all with zero administration. Just upload your code and Lambda takes care of everything required to run and scale your code with high availability. You can set up your code to automatically trigger from other AWS services or call it directly from any web or mobile app."
+    },
+    "reviewedCriteria": [
+      { "typeId": "platform.license", "values": [ { "value": "AWS Service Terms", "references": [ "https://aws.amazon.com/service-terms" ] } ] },
+      { "typeId": "platform.license.type", "values": [ { "value": "proprietary" } ] },
+      { "typeId": "platform.installation.type", "values": [ { "value": "as-a-service", "references": [ "https://aws.amazon.com/lambda" ] } ] },
+      { "typeId": "platform.installation.targets", "values": [] },
+      { "typeId": "platform.code.availability", "values": [ { "value": "closed source", "references": [ "https://aws.amazon.com/lambda" ] } ] },
+      { "typeId": "platform.code.repository", "values": [] },
+      { "typeId": "platform.code.language", "values": [] },
+      { "typeId": "platform.interface.types", "values": [
+        { "value": "CLI", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-awscli.html" ] },
+        { "value": "API", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/API_Reference.html" ] },
+        { "value": "GUI", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html" ] }
+      ]
+      },
+      { "typeId": "platform.interface.ops.app-mgmt", "values": [
+        { "value": "create", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/API_Reference.html" ] },
+        { "value": "retrieve", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/API_Reference.html" ] },
+        { "value": "update", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/API_Reference.html" ] },
+        { "value": "delete", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/API_Reference.html" ] }
+      ]
+      },
+      { "typeId": "platform.interface.ops.platform-adm", "values": [] },
+      { "typeId": "platform.github.stars", "values": [] },
+      { "typeId": "platform.github.forks", "values": [] },
+      { "typeId": "platform.github.issues", "values": [] },
+      { "typeId": "platform.github.commits", "values": [] },
+      { "typeId": "platform.github.contributors", "values": [] },
+      { "typeId": "platform.stackoverflow.questions", "values": [ { "value": 16800, "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=aws-lambda" ] } ] },
+      { "typeId": "platform.documentation", "values": [ { "value": "usage", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html" ] } ] },
+      { "typeId": "platform.documentation.functions", "values": [
+        { "value": "development", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html" ] },
+        { "value": "deployment", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtimes", "values": [
+        { "value": "Go", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html" ] },
+        { "value": "Java", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html" ] },
+        { "value": ".NET", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html" ] },
+        { "value": "Node.js", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html" ] },
+        { "value": "Python", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html" ] },
+        { "value": "Ruby", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html" ] },
+        { "value": "Shell", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/powershell-programming-model.html" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtime-customization", "values": [ { "value": true, "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/runtimes-custom.html" ] } ] },
+      { "typeId": "platform.development.ide-support", "values": [
+        { "value": "AWS Cloud9", "references": [ "https://docs.aws.amazon.com/cloud9/latest/user-guide/tutorial-lambda.html" ] },
+        { "value": "Eclipse", "references": [ "https://docs.aws.amazon.com/toolkit-for-eclipse/v1/user-guide/lambda.html" ] },
+        { "value": "Jetbrains IntelliJ IDEA", "references": [ "https://docs.aws.amazon.com/toolkit-for-jetbrains/latest/userguide/building-lambda.html" ] },
+        { "value": "Jetbrains PyCharm", "references": [ "https://docs.aws.amazon.com/toolkit-for-jetbrains/latest/userguide/building-lambda.html" ] },
+        { "value": "Jetbrains Webstorm", "references": [ "https://docs.aws.amazon.com/toolkit-for-jetbrains/latest/userguide/building-lambda.html" ] },
+        { "value": "Jetbrains Rider", "references": [ "https://docs.aws.amazon.com/toolkit-for-jetbrains/latest/userguide/building-lambda.html" ] },
+        { "value": "Visual Studio", "references": [ "https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/lambda-index.html" ] },
+        { "value": "Visual Studio Code", "references": [ "https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/serverless-apps.html" ] }
+      ]
+      },
+      { "typeId": "platform.function.client-libraries", "values": [
+        { "value": "C++", "references": [ "https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/using-lambda-with-go-sdk.html" ] },
+        { "value": "Go", "references": [ "http://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_lambda_1_1_lambda_client.html" ] },
+        { "value": "Java", "references": [ "https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/lambda-examples.html" ] },
+        { "value": ".NET", "references": [ "https://docs.aws.amazon.com/sdkfornet/v3/apidocs/index.html" ] },
+        { "value": "Node.js", "references": [ "https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/using-lambda-functions.html" ] },
+        { "value": "Python", "references": [ "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html" ] },
+        { "value": "Ruby", "references": [ "https://docs.aws.amazon.com/sdk-for-ruby/v3/developer-guide/lambda-examples.html" ] }
+      ]
+      },
+      { "typeId": "platform.quotas.dep-pkg-size", "values": [ { "value": true, "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html" ] } ] },
+      { "typeId": "platform.quotas.execution-time", "values": [ { "value": true, "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html" ] } ] },
+      { "typeId": "platform.function.versioning", "values": [ { "value": "dedicated mechanisms", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html" ] } ] },
+      { "typeId": "platform.function.versioning-app", "values": [ { "value": "dedicated mechanisms", "references": [ "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-application.html" ] } ] },
+      { "typeId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/invocation-sync.html" ] } ] },
+      { "typeId": "platform.event-source.endpoint.async-call", "values": [ { "value": "HTTP", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/invocation-async.html" ] } ] },
+      { "typeId": "platform.event-source.endpoint.customization", "values": [ { "value": true, "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-apigateway.html" ] } ] },
+      { "typeId": "platform.event-source.endpoint.tls", "values": [ { "value": true, "references": [ "https://docs.aws.amazon.com/general/latest/gr/apigateway.html" ] } ] },
+      { "typeId": "platform.event-source.datastore.file-level", "values": [ { "value": "AWS S3", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/with-s3.html" ] } ] },
+      { "typeId": "platform.event-source.datastore.database-mode", "values": [ { "value": "Amazon DynamoDB", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/with-ddb.html" ] } ] },
+      { "typeId": "platform.event-source.scheduler", "values": [ { "value": true, "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents-expressions.html" ] } ] },
+      { "typeId": "platform.event-source.messaging", "values": [
+        { "value": "AWS SQS", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/with-sqs.html" ] },
+        { "value": "AWS SNS", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/with-sns.html" ] }
+      ]
+      },
+      { "typeId": "platform.event-source.streaming", "values": [ { "value": "Amazon Kinesis", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/with-kinesis-example.html" ] } ] },
+      { "typeId": "platform.event-source.special-purpose-service", "values": [
+        { "value": "Amazon Alexa", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-alexa.html" ] },
+        { "value": "AWS CloudTrail", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/with-cloudtrail.html" ] },
+        { "value": "AWS CloudWatch", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents.html", "https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchlogs.html" ] },
+        { "value": "AWS CodeCommit", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-codecommit.html" ] },
+        { "value": "AWS CodePipeline", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-codepipeline.html" ] },
+        { "value": "Amazon Cognito", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-cognito.html" ] },
+        { "value": "AWS Config", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-config.html" ] },
+        { "value": "AWS EC2", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-ec2.html" ], "comment": "Using AWS Cloudwatch events" },
+        { "value": "Elastic Load Balancing", "references": [ "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/lambda-functions.html" ] },
+        { "value": "AWS IoT", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-iot.html" ] },
+        { "value": "Amazon Kinesis Data Firehose", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-kinesisfirehose.html" ] },
+        { "value": "Amazon Lex", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-lex.html" ] },
+        { "value": "Amazon MQ", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html" ] },
+        { "value": "Amazon RDS", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-rds.html" ] },
+        { "value": "Amazon SES", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-ses.html" ] },
+        { "value": "AWS X-Ray", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html" ] }
+      ]
+      },
+      { "typeId": "platform.event-source.integration", "values": [ { "value": "event source mappings", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html" ] } ] },
+      { "typeId": "platform.function.orchestrator", "values": [ { "value": "AWS Step Functions", "references": [ "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html" ] } ] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-type", "values": [ { "value": "custom DSL", "references": [ "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html" ] } ] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-languages", "values": [] },
+      { "typeId": "platform.function.orchestrator.control-flow-docs", "values": [ { "value": true, "references": [ "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-states.html" ] } ] },
+      { "typeId": "platform.function.orchestrator.quotas.execution-time", "values": [ { "value": true, "references": [ "https://docs.aws.amazon.com/step-functions/latest/dg/limits-overview.html" ] } ] },
+      { "typeId": "platform.function.orchestrator.quotas.io-size", "values": [ { "value": true, "references": [ "https://docs.aws.amazon.com/step-functions/latest/dg/limits-overview.html" ] } ] },
+      { "typeId": "platform.testing.functional", "values": [ { "value": "function invocation testing", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html" ] } ] },
+      { "typeId": "platform.testing.non-functional", "values": [ { "value": "load testing guidelines", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html" ] } ] },
+      { "typeId": "platform.debugging.local", "values": [ { "value": "step-through debugging", "references": [ "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-using-debugging.html" ], "comment": "Using IDE plugins or AWS SAM CLI" } ] },
+      { "typeId": "platform.debugging.remote", "values": [] },
+      { "typeId": "platform.observability.logging", "values": [
+        { "value": "Amazon CloudWatch", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-logs.html" ] },
+        { "value": "AWS CloudTrail", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/with-cloudtrail.html" ] }
+      ]
+      },
+      { "typeId": "platform.observability.monitoring", "values": [
+        { "value": "Amazon CloudWatch", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-metrics.html" ] }
+      ]
+      },
+      { "typeId": "platform.observability.integration", "values": [] },
+      { "typeId": "platform.deployment-automation", "values": [
+        { "value": "AWS CloudFormation", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/lambda-rolling-deployments.html" ] },
+        { "value": "AWS SAM CLI", "references": [ "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-reference.html#serverless-sam-cli" ] }
+      ]
+      },
+      { "typeId": "platform.ci-cd", "values": [ { "value": "AWS CodePipeline", "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/build-pipeline.html" ] } ] },
+      { "typeId": "platform.function.marketplaces", "values": [ { "value": "Serverless Application Repository", "references": [ "https://aws.amazon.com/serverless/serverlessrepo" ] } ] },
+      { "typeId": "platform.function.code-sample-repositories", "values": [ { "value": true, "references": [ "https://docs.aws.amazon.com/lambda/latest/dg/lambda-samples.html" ] } ] },
+      { "typeId": "platform.authentication", "values": [ { "value": "AWS IAM", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/security-iam.html" ] } ] },
+      { "typeId": "platform.access-control", "values": [
+        { "value": "resources", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/access-control-identity-based.html" ] },
+        { "value": "functions", "references": [ "https://docs.aws.amazon.com/en_pv/lambda/latest/dg/access-control-identity-based.html" ] }
+      ]
+      }
+    ]
+  },
+  {
+    "id": "nuclio",
+    "technologyName": "Nuclio",
+    "reviewDate": "2021-02-12",
+    "technologyInfo": {
+      "technologyType": "FAAS",
+      "logoLocator": "nuclio",
+      "shortDescription": "Nuclio is an open source serverless platform focusing on data-science based applications.",
+      "description": "Nuclio is a high-performance \"serverless\" framework focused on data, I/O, and compute intensive workloads. It is well integrated with popular data science tools, such as Jupyter and Kubeflow; supports a variety of data and streaming sources; and supports execution over CPUs and GPUs. The Nuclio project began in 2017 and is constantly and rapidly evolving; many start-ups and enterprises are now using Nuclio in production."
+    },
+    "reviewedCriteria": [
+      { "typeId": "platform.license", "values": [ { "value": "Apache 2.0", "references": [ "https://github.com/nuclio/nuclio/blob/master/LICENSE" ] } ] },
+      { "typeId": "platform.license.type", "values": [ { "value": "permissive" } ] },
+      { "typeId": "platform.installation.type", "values": [
+        { "value": "installable", "references": [ "https://github.com/nuclio/nuclio" ] },
+        { "value": "as-a-service", "references": [ "https://nuclio.io" ] }
+      ]
+      },
+      { "typeId": "platform.installation.targets", "values": [
+        { "value": "Kubernetes", "references": [ "https://nuclio.io/docs/latest/setup/k8s/" ] }
+      ]
+      },
+      { "typeId": "platform.code.availability", "values": [ { "value": "open source", "references": [ "https://github.com/nuclio/nuclio" ] } ] },
+      { "typeId": "platform.code.repository", "values": [ { "value": "GitHub", "references": [ "https://github.com/nuclio/nuclio" ] } ] },
+      { "typeId": "platform.code.language", "values": [ { "value": "Go", "references": [ "https://github.com/nuclio/nuclio/search?l=go" ] } ] },
+      { "typeId": "platform.interface.types", "values": [
+        { "value": "CLI", "references": [ "https://nuclio.io/docs/latest/reference/nuctl/" ] },
+        { "value": "GUI", "references": [ "https://github.com/nuclio/nuclio/blob/master/README.md#dashboard" ] }
+      ]
+      },
+      { "typeId": "platform.interface.ops.app-mgmt", "values": [
+        { "value": "create", "references": [ "https://nuclio.io/docs/latest/reference/nuctl/" ] },
+        { "value": "retrieve", "references": [ "https://nuclio.io/docs/latest/reference/nuctl/" ] },
+        { "value": "update", "references": [ "https://nuclio.io/docs/latest/reference/nuctl/" ] },
+        { "value": "delete", "references": [ "https://nuclio.io/docs/latest/reference/nuctl/" ] }
+      ]
+      },
+      { "typeId": "platform.interface.ops.platform-adm", "values": [
+        { "value": "deployment", "references": [ "https://nuclio.io/docs/latest/setup/k8s/" ] },
+        { "value": "configuration", "references": [ "https://nuclio.io/docs/latest/tasks/configuring-a-platform/" ] },
+        { "value": "enactment", "references": [ "https://nuclio.io/docs/latest/setup/k8s/" ] }
+      ]
+      },
+      { "typeId": "platform.github.stars", "values": [ { "value": 3818, "references": [ "https://github.com/nuclio/nuclio/stargazers" ] } ] },
+      { "typeId": "platform.github.forks", "values": [ { "value": 384, "references": [ "https://github.com/nuclio/nuclio/network/members" ] } ] },
+      { "typeId": "platform.github.issues", "values": [ { "value": 80, "references": [ "https://github.com/nuclio/nuclio/issues" ] } ] },
+      { "typeId": "platform.github.commits", "values": [ { "value": 1394, "references": [ "https://github.com/nuclio/nuclio/commits/development" ] } ] },
+      { "typeId": "platform.github.contributors", "values": [ { "value": 61, "references": [ "https://github.com/nuclio/nuclio/graphs/contributors" ] } ] },
+      { "typeId": "platform.stackoverflow.questions", "values": [ { "value": 6, "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=nuclio" ] } ] },
+      { "typeId": "platform.documentation", "values": [
+        { "value": "usage", "references": [ "https://nuclio.io/docs/latest/introduction/" ] },
+        { "value": "deployment", "references": [ "https://nuclio.io/docs/latest/setup/" ] },
+        { "value": "architecture", "references": [ "https://nuclio.io/docs/latest/concepts/architecture/" ] }
+      ]
+      },
+      { "typeId": "platform.documentation.functions", "values": [
+        { "value": "deployment", "references": [ "https://nuclio.io/docs/latest/tasks/deploying-functions/" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtimes", "values": [
+        { "value": "Binary", "references": [ "https://nuclio.io/docs/latest/reference/runtimes/shell/writing-a-shell-function" ] },
+        { "value": "Docker Image", "references": [ "https://nuclio.io/docs/latest/tasks/deploy-functions-from-dockerfile/" ] },
+        { "value": "C#", "references": [ "https://nuclio.io/docs/latest/reference/runtimes/dotnetcore/" ] },
+        { "value": "Go", "references": [ "https://nuclio.io/docs/latest/reference/runtimes/golang/" ] },
+        { "value": "Java", "references": [ "https://nuclio.io/docs/latest/reference/runtimes/java/" ] },
+        { "value": "Node.js", "references": [ "https://nuclio.io/docs/latest/reference/runtimes/nodejs/" ] },
+        { "value": "Python", "references": [ "https://nuclio.io/docs/latest/reference/runtimes/python/" ] },
+        { "value": "Shell", "references": [ "https://nuclio.io/docs/latest/reference/runtimes/shell/" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtime-customization", "values": [ { "value": true, "references": [ "https://nuclio.io/docs/latest/reference/function-configuration/function-configuration-reference/" ] } ] },
+      { "typeId": "platform.development.ide-support", "values": [ { "value": "Jupyter Notebooks", "references": [ "https://github.com/nuclio/nuclio-jupyter" ] } ] },
+      { "typeId": "platform.function.client-libraries", "values": [
+        { "value": "Go", "references": [ "https://github.com/nuclio/nuclio-sdk-go" ] },
+        { "value": "Java", "references": [ "https://github.com/nuclio/nuclio-sdk-java" ] },
+        { "value": "C#", "references": [ "https://github.com/nuclio/nuclio-sdk-dotnetcore" ] },
+        { "value": "Python", "references": [ "https://github.com/nuclio/nuclio-sdk-py" ] }
+      ]
+      },
+      { "typeId": "platform.quotas.dep-pkg-size", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.function.versioning", "values": [ { "value": "dedicated mechanisms", "references": [ "https://github.com/nuclio/nuclio/blob/master/docs/concepts/architecture.md#function-versioning" ] } ] },
+      { "typeId": "platform.function.versioning-app", "values": [] },
+      { "typeId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://nuclio.io/docs/latest/reference/triggers/"] } ] },
+      { "typeId": "platform.event-source.endpoint.async-call", "values": [] },
+      { "typeId": "platform.event-source.endpoint.customization", "values": [ { "value": true, "references": [ "https://nuclio.io/docs/latest/reference/triggers/" ] } ] },
+      { "typeId": "platform.event-source.endpoint.tls", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.event-source.datastore.file-level", "values": [] },
+      { "typeId": "platform.event-source.datastore.database-mode", "values": [] },
+      { "typeId": "platform.event-source.scheduler", "values": [ { "value": true, "references": [ "https://nuclio.io/docs/latest/reference/triggers/cron/" ] } ] },
+      { "typeId": "platform.event-source.messaging", "values": [
+        { "value": "RabbitMQ", "references": [ "https://nuclio.io/docs/latest/reference/triggers/rabbitmq/"] },
+        { "value": "MQTT", "references": [ "https://nuclio.io/docs/latest/reference/triggers/mqtt/"] },
+        { "value": "NATS", "references": [ "https://nuclio.io/docs/latest/reference/triggers/nats/"] }
+      ]
+      },
+      { "typeId": "platform.event-source.streaming", "values": [
+        { "value": "Apache Kafka", "references": [ "https://nuclio.io/docs/latest/reference/triggers/kafka/"] },
+        { "value": "AWS Kinesis", "references": [ "https://nuclio.io/docs/latest/reference/triggers/kinesis/"] },
+        { "value": "Iguazio Data Science Platform", "references": [ "https://nuclio.io/docs/latest/reference/triggers/v3iostream/"] },
+        { "value": "Azure Event Hubs", "references": [ "https://nuclio.io/docs/latest/reference/triggers/eventhub/"] }
+      ]
+      },
+      { "typeId": "platform.event-source.special-purpose-service", "values": [] },
+      { "typeId": "platform.event-source.integration", "values": [] },
+      { "typeId": "platform.function.orchestrator", "values": [] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-type", "values": [] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-languages", "values": [] },
+      { "typeId": "platform.function.orchestrator.control-flow-docs", "values": [] },
+      { "typeId": "platform.function.orchestrator.quotas.execution-time", "values": [] },
+      { "typeId": "platform.function.orchestrator.quotas.io-size", "values": [] },
+      { "typeId": "platform.testing.functional", "values": [] },
+      { "typeId": "platform.testing.non-functional", "values": [] },
+      { "typeId": "platform.debugging.local", "values": [] },
+      { "typeId": "platform.debugging.remote", "values": [] },
+      { "typeId": "platform.observability.logging", "values": [
+        { "value": "stdout", "references": [ "https://nuclio.io/docs/latest/tasks/configuring-a-platform/#supported-metric-sinks" ] },
+        { "value": "Azure Application Insights", "references": [ "https://nuclio.io/docs/latest/tasks/configuring-a-platform/#supported-metric-sinks" ] }
+      ]
+      },
+      { "typeId": "platform.observability.monitoring", "values": [
+        { "value": "Prometheus", "references": [ "https://nuclio.io/docs/latest/tasks/configuring-a-platform/#supported-log-sinks" ] },
+        { "value": "Azure Application Insights", "references": [ "https://nuclio.io/docs/latest/tasks/configuring-a-platform/#supported-log-sinks" ] }
+      ]
+      },
+      { "typeId": "platform.observability.integration", "values": [
+        { "value": "push-based", "references": [ "https://nuclio.io/docs/latest/tasks/configuring-a-platform/" ] },
+        { "value": "pull-based", "references": [ "https://nuclio.io/docs/latest/tasks/configuring-a-platform/" ] }
+      ]
+      },
+      { "typeId": "platform.deployment-automation", "values": [ { "value": "nuctl", "references": [ "https://nuclio.io/docs/latest/reference/nuctl/" ] } ] },
+      { "typeId": "platform.ci-cd", "values": [] },
+      { "typeId": "platform.function.marketplaces", "values": [] },
+      { "typeId": "platform.function.code-sample-repositories", "values": [ { "value": true, "references": [ "https://nuclio.io/docs/latest/examples/" ] } ] },
+      { "typeId": "platform.authentication", "values": [] },
+      { "typeId": "platform.access-control", "values": [] }
+    ]
+  },
+  {
+    "id": "openfaas",
+    "technologyName": "OpenFaaS",
+    "reviewDate": "2021-02-12",
+    "technologyInfo": {
+      "technologyType": "FAAS",
+      "logoLocator": "openfaas",
+      "shortDescription": "OpenFaaS is an open source FaaS platform working with a variety of container platforms.",
+      "description": "OpenFaaS makes it easy for developers to deploy event-driven functions and microservices to Kubernetes without repetitive, boiler-plate coding. Package your code or an existing binary in a Docker image to get a highly scalable endpoint with auto-scaling and metrics."
+    },
+    "reviewedCriteria": [
+      { "typeId": "platform.license", "values": [ { "value": "MIT", "references": [ "https://github.com/openfaas/faas/blob/master/LICENSE" ] } ] },
+      { "typeId": "platform.license.type", "values": [ { "value": "permissive" } ] },
+      { "typeId": "platform.installation.type", "values": [ { "value": "installable", "references": [ "https://docs.openfaas.com/deployment/" ] } ] },
+      { "typeId": "platform.installation.targets", "values": [
+        { "value": "Docker", "references": [ "https://docs.openfaas.com/deployment/" ] },
+        { "value": "faasd", "references": [ "https://docs.openfaas.com/deployment/" ] },
+        { "value": "Kubernetes", "references": [ "https://docs.openfaas.com/deployment/" ] },
+        { "value": "Openshift", "references": [ "https://docs.openfaas.com/deployment/" ] }
+      ]
+      },
+      { "typeId": "platform.code.availability", "values": [ { "value": "open source", "references": [ "https://github.com/openfaas/faas" ] } ] },
+      { "typeId": "platform.code.repository", "values": [ { "value": "GitHub", "references": [ "https://github.com/openfaas/faas" ] } ] },
+      { "typeId": "platform.code.language", "values": [ { "value": "Go", "references": [ "https://github.com/openfaas/faas/search?l=go" ] } ] },
+      { "typeId": "platform.interface.types", "values": [
+        { "value": "CLI", "references": [ "https://docs.openfaas.com/cli/install/" ] },
+        { "value": "API", "references": [ "https://github.com/openfaas/faas/tree/master/api-docs" ] },
+        { "value": "GUI", "references": [ "https://github.com/openfaas/faas/blob/master/gateway/README.md#ui-portal" ] }
+      ]
+      },
+      { "typeId": "platform.interface.ops.app-mgmt", "values": [
+        { "value": "create", "references": [ "https://github.com/openfaas/faas-cli" ] },
+        { "value": "retrieve", "references": [ "https://github.com/openfaas/faas-cli" ] },
+        { "value": "update", "references": [ "https://github.com/openfaas/faas-cli" ] },
+        { "value": "delete", "references": [ "https://github.com/openfaas/faas-cli" ] }
+      ]
+      },
+      { "typeId": "platform.interface.ops.platform-adm", "values": [
+        { "value": "deployment", "references": [ "https://docs.openfaas.com/deployment/" ] },
+        { "value": "enactment", "references": [ "https://docs.openfaas.com/deployment/" ] }
+      ]
+      },
+      { "typeId": "platform.github.stars", "values": [ { "value": 19400, "references": [ "https://github.com/openfaas/faas/stargazers" ] } ] },
+      { "typeId": "platform.github.forks", "values": [ { "value": 1600, "references": [ "https://github.com/openfaas/faas/network/members" ] } ] },
+      { "typeId": "platform.github.issues", "values": [ { "value": 19, "references": [ "https://github.com/openfaas/faas/issues" ] } ] },
+      { "typeId": "platform.github.commits", "values": [ { "value": 1994, "references": [ "https://github.com/openfaas/faas/commits/master" ] } ] },
+      { "typeId": "platform.github.contributors", "values": [ { "value": 156, "references": [ "https://github.com/openfaas/faas/graphs/contributors" ] } ] },
+      { "typeId": "platform.stackoverflow.questions", "values": [ { "value": 45, "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=openfaas" ] } ] },
+      { "typeId": "platform.documentation", "values": [
+        { "value": "usage", "references": [ "https://docs.openfaas.com/" ] },
+        { "value": "development", "references": [ "https://docs.openfaas.com/contributing/get-started/" ] },
+        { "value": "deployment", "references": [ "https://docs.openfaas.com/deployment/" ] },
+        { "value": "architecture", "references": [ "https://docs.openfaas.com/architecture/stack/" ] }
+      ]
+      },
+      { "typeId": "platform.documentation.functions", "values": [
+        { "value": "deployment", "references": [ "https://github.com/openfaas/faas-cli" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtimes", "values": [
+        { "value": "C#", "references": [ "https://github.com/openfaas/templates" ] },
+        { "value": "Docker Image", "references": [ "https://github.com/openfaas/templates" ] },
+        { "value": "Go", "references": [ "https://github.com/openfaas/templates" ] },
+        { "value": "Java", "references": [ "https://github.com/openfaas/templates" ] },
+        { "value": "Node.js", "references": [ "https://github.com/openfaas/templates" ] },
+        { "value": "Python", "references": [ "https://github.com/openfaas/templates" ] },
+        { "value": "PHP", "references": [ "https://github.com/openfaas/templates" ] },
+        { "value": "Ruby", "references": [ "https://github.com/openfaas/templates" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtime-customization", "values": [ { "value": true, "references": [ "https://github.com/openfaas/templates" ] } ] },
+      { "typeId": "platform.development.ide-support", "values": [] },
+      { "typeId": "platform.function.client-libraries", "values": [] },
+      { "typeId": "platform.quotas.dep-pkg-size", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.quotas.execution-time", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.function.versioning", "values": [ { "value": "implicit", "references": [ "https://github.com/openfaas/faas/issues/1075" ] } ] },
+      { "typeId": "platform.function.versioning-app", "values": [] },
+      { "typeId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://docs.openfaas.com/reference/triggers/"] } ] },
+      { "typeId": "platform.event-source.endpoint.async-call", "values": [ { "value": "HTTP", "references": [ "https://docs.openfaas.com/reference/triggers/"] } ] },
+      { "typeId": "platform.event-source.endpoint.customization", "values": [ { "value": true, "references": [ "https://docs.openfaas.com/reference/ssl/kubernetes-with-cert-manager/#20-tls-and-custom-domains-for-functions" ] } ] },
+      { "typeId": "platform.event-source.endpoint.tls", "values": [ { "value": true, "references": [ "https://docs.openfaas.com/reference/ssl/kubernetes-with-cert-manager/" ] } ] },
+      { "typeId": "platform.event-source.datastore.file-level", "values": [ { "value": "Min.io", "references": [ "https://docs.openfaas.com/reference/triggers/"] } ] },
+      { "typeId": "platform.event-source.datastore.database-mode", "values": [ { "value": "Redis", "references": [ "https://docs.openfaas.com/reference/triggers/"] } ] },
+      { "typeId": "platform.event-source.scheduler", "values": [ { "value": true, "references": [ "https://docs.openfaas.com/reference/triggers/"] } ] },
+      { "typeId": "platform.event-source.messaging", "values": [
+        { "value": "AWS SQS", "references": [ "https://docs.openfaas.com/reference/triggers/"] },
+        { "value": "AWS SNS", "references": [ "https://docs.openfaas.com/reference/triggers/"] },
+        { "value": "MQTT", "references": [ "https://docs.openfaas.com/reference/triggers/"] }
+      ]
+      },
+      { "typeId": "platform.event-source.streaming", "values": [
+        { "value": "Apache Kafka", "references": [ "https://docs.openfaas.com/reference/triggers/"] },
+        { "value": "NATS", "references": [ "https://docs.openfaas.com/reference/triggers/"] }
+      ]
+      },
+      { "typeId": "platform.event-source.special-purpose-service", "values": [
+        { "value": "Azure Event Grid", "references": [ "https://docs.openfaas.com/reference/triggers/"] },
+        { "value": "IFTT", "references": [ "https://docs.openfaas.com/reference/triggers/"] },
+        { "value": "VMWare vCenter", "references": [ "https://docs.openfaas.com/reference/triggers/"] }
+      ]
+      },
+      { "typeId": "platform.event-source.integration", "values": [ { "value": "connector plugins", "references": [ "https://docs.openfaas.com/reference/triggers/"] }] },
+      { "typeId": "platform.function.orchestrator", "values": [] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-type", "values": [] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-languages", "values": [] },
+      { "typeId": "platform.function.orchestrator.control-flow-docs", "values": [] },
+      { "typeId": "platform.function.orchestrator.quotas.execution-time", "values": [] },
+      { "typeId": "platform.function.orchestrator.quotas.io-size", "values": [] },
+      { "typeId": "platform.testing.functional", "values": [] },
+      { "typeId": "platform.testing.non-functional", "values": [] },
+      { "typeId": "platform.debugging.local", "values": [ { "value": "log-based debugging", "references": [ "https://docs.openfaas.com/deployment/troubleshooting/" ] } ] },
+      { "typeId": "platform.debugging.remote", "values": [] },
+      { "typeId": "platform.observability.logging", "values": [
+        { "value": "Kubernetes Cluster API", "references": [ "https://docs.openfaas.com/architecture/logs-provider/" ] },
+        { "value": "Swarm Cluster API", "references": [ "https://docs.openfaas.com/architecture/logs-provider/" ] },
+        { "value": "Loki", "references": [ "https://docs.openfaas.com/architecture/logs-provider/" ] }
+      ]
+      },
+      { "typeId": "platform.observability.monitoring", "values": [
+        { "value": "OpenFaaS Gateway + Prometheus", "references": [ "https://docs.openfaas.com/architecture/metrics/" ] }
+      ]
+      },
+      { "typeId": "platform.observability.integration", "values": [ { "value": "pull-based", "references": [ "https://docs.openfaas.com/architecture/logs-provider/" ] } ] },
+      { "typeId": "platform.deployment-automation", "values": [ { "value": "faas-cli", "references": [ "https://docs.openfaas.com/cli/build/" ] } ] },
+      { "typeId": "platform.ci-cd", "values": [
+        { "value": "OpenFaaS Cloud", "references": [ "https://docs.openfaas.com/reference/cicd/intro/" ] },
+        { "value": "faas-cli", "references": [ "https://docs.openfaas.com/reference/cicd/intro/" ] },
+        { "value": "GitLab CI/CD", "references": [ "https://docs.openfaas.com/reference/cicd/intro/" ] },
+        { "value": "Jenkins", "references": [ "https://docs.openfaas.com/reference/cicd/intro/" ] },
+        { "value": "Travis", "references": [ "https://docs.openfaas.com/reference/cicd/intro/" ] },
+        { "value": "CodeFresh", "references": [ "https://docs.openfaas.com/reference/cicd/intro/" ] },
+        { "value": "Drone CI", "references": [ "https://docs.openfaas.com/reference/cicd/intro/" ] },
+        { "value": "Circle CI", "references": [ "https://docs.openfaas.com/reference/cicd/intro/" ] }
+      ]
+      },
+      { "typeId": "platform.function.marketplaces", "values": [ { "value": "OpenFaaS Function Store", "references": [ "https://github.com/openfaas/store" ] } ] },
+      { "typeId": "platform.function.code-sample-repositories", "values": [ { "value": true, "references": [ "https://github.com/openfaas/faas/tree/master/sample-functions" ] } ] },
+      { "typeId": "platform.authentication", "values": [
+        { "value": "shared secrets", "references": [ "https://docs.openfaas.com/reference/authentication/" ] },
+        { "value": "built-in basic authentication", "references": [ "https://docs.openfaas.com/reference/authentication/" ] },
+        { "value": "proprietary OAuth2 API access plugin", "references": [ "https://docs.openfaas.com/reference/authentication/" ] }
+      ]
+      },
+      { "typeId": "platform.access-control", "values": [ { "value": "resources", "references": [ "https://docs.openfaas.com/reference/yaml" ] } ] }
+    ]
+  },
+  {
+    "id": "apache-openwhisk",
+    "technologyName": "Apache Openwhisk",
+    "reviewDate": "2021-02-12",
+    "technologyInfo": {
+      "technologyType": "FAAS",
+      "logoLocator": "apache.openwhisk",
+      "shortDescription": "Apache OpenWhisk is an open source FaaS platform from Apache Software Foundation.",
+      "description": "Apache OpenWhisk is an open source, distributed Serverless platform that executes functions (fx) in response to events at any scale. OpenWhisk manages the infrastructure, servers and scaling using Docker containers so you can focus on building amazing and efficient applications. The OpenWhisk platform supports a programming model in which developers write functional logic (called Actions), in any supported programming language, that can be dynamically scheduled and run in response to associated events (via Triggers) from external sources (Feeds) or from HTTP requests. The project includes a REST API-based Command Line Interface (CLI) along with other tooling to support packaging, catalog services and many popular container deployment options."
+    },
+    "reviewedCriteria": [
+      { "typeId": "platform.license", "values": [ { "value": "Apache 2.0", "references": [ "https://github.com/apache/openwhisk/blob/master/LICENSE.txt" ] } ] },
+      { "typeId": "platform.license.type", "values": [ { "value": "permissive" } ] },
+      {
+        "typeId": "platform.installation.type",
+        "values": [ { "value": "installable", "references": [ "https://openwhisk.apache.org/documentation.html#openwhisk_deployment" ], "comment": "IBM Cloud Functions is based on Apache Openwhisk" }]
+      },
+      {
+        "typeId": "platform.installation.targets",
+        "values": [
+          { "value": "Docker", "references": [ "https://openwhisk.apache.org/documentation.html#deploy_docker_compose" ] },
+          { "value": "Kubernetes", "references": [ "https://openwhisk.apache.org/documentation.html#deploy_kubernetes" ] },
+          { "value": "Linux", "references": [ "https://github.com/apache/openwhisk/blob/master/tools/ubuntu-setup/README.md" ] },
+          { "value": "MacOS", "references": [ "https://github.com/apache/openwhisk/blob/master/tools/macos/README.md" ] },
+          { "value": "Mesos", "references": [ "https://github.com/apache/openwhisk-deploy-mesos/blob/master/README.md" ] }
+        ]
+      },
+      { "typeId": "platform.code.availability", "values": [ { "value": "open source", "references": [ "https://github.com/apache/openwhisk" ] } ] },
+      { "typeId": "platform.code.repository", "values": [ { "value": "GitHub", "references": [ "https://github.com/apache/openwhisk" ] } ] },
+      { "typeId": "platform.code.language", "values": [ { "value": "Scala", "references": [ "https://github.com/apache/openwhisk/search?l=scala" ] } ] },
+      {
+        "typeId": "platform.interface.types",
+        "values": [
+          { "value": "CLI", "references": [ "https://openwhisk.apache.org/documentation.html#wsk-cli" ] },
+          { "value": "API", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/rest_api.md#using-rest-apis-with-openwhisk" ] }
+        ]
+      },
+      { "typeId": "platform.interface.ops.app-mgmt", "values": [
+        { "value": "create", "references": [], "comment": "The interface is not documented explicitly, available features can be checked via the CLI tool with the -help flag" },
+        { "value": "retrieve", "references": [], "comment": "The interface is not documented explicitly, available features can be checked via the CLI tool with the -help flag" },
+        { "value": "update", "references": [], "comment": "The interface is not documented explicitly, available features can be checked via the CLI tool with the -help flag" },
+        { "value": "delete", "references": [], "comment": "The interface is not documented explicitly, available features can be checked via the CLI tool with the -help flag" }
+      ]
+      },
+      { "typeId": "platform.interface.ops.platform-adm", "values": [
+        { "value": "deployment", "references": [ "https://openwhisk.apache.org/documentation.html#openwhisk_deployment" ] },
+        { "value": "configuration", "references": [ "https://github.com/apache/openwhisk/tree/master/tools/admin" ] },
+        { "value": "enactment", "references": [ "https://openwhisk.apache.org/documentation.html#openwhisk_deployment" ] }
+      ]
+      },
+      { "typeId": "platform.github.stars", "values": [ { "value": 4800, "references": [ "https://github.com/apache/openwhisk/stargazers" ] } ] },
+      { "typeId": "platform.github.forks", "values": [ { "value": 932, "references": [ "https://github.com/apache/openwhisk/network/members" ] } ] },
+      { "typeId": "platform.github.issues", "values": [ { "value": 274, "references": [ "https://github.com/apache/openwhisk/issues" ] } ] },
+      { "typeId": "platform.github.commits", "values": [ { "value": 2790, "references": [ "https://github.com/apache/openwhisk" ] } ] },
+      { "typeId": "platform.github.contributors", "values": [ { "value": 180, "references": [ "https://github.com/apache/openwhisk" ] } ] },
+      { "typeId": "platform.stackoverflow.questions", "values": [ { "value": 198, "references": [ "https://api.stackexchange.com/2.2/questions?&filter=total&site=stackoverflow&tagged=openwhisk" ] } ] },
+      { "typeId": "platform.documentation", "values": [
+        { "value": "usage", "references": [ "https://openwhisk.apache.org/documentation.html#using-openwhisk" ] },
+        { "value": "development", "references": [ "https://openwhisk.apache.org/documentation.html#contributors" ] },
+        { "value": "deployment", "references": [ "https://openwhisk.apache.org/documentation.html#openwhisk_deployment" ] },
+        { "value": "architecture", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/about.md#how-openWhisk-works" ] }
+      ]
+      },
+      { "typeId": "platform.documentation.functions", "values": [
+        { "value": "development", "references": [ "https://openwhisk.apache.org/documentation.html" ] },
+        { "value": "deployment", "references": [ "https://openwhisk.apache.org/documentation.html#actions-creating-and-invoking", "https://openwhisk.apache.org/documentation.html#wskdeploy" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtimes", "values": [
+        { "value": "Ballerina", "references": [ "https://github.com/apache/openwhisk-runtime-ballerina#readme" ] },
+        { "value": "Binary", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/dev/modules.md#runtimes" ] },
+        { "value": "Docker Image", "references": [ "https://github.com/apache/openwhisk-runtime-docker#readme" ] },
+        { "value": "Go", "references": [ "https://github.com/apache/openwhisk-runtime-go#readme" ] },
+        { "value": "Java", "references": [ "https://github.com/apache/openwhisk-runtime-java#readme" ] },
+        { "value": ".NET", "references": [ "https://github.com/apache/openwhisk-runtime-dotnet#readme" ] },
+        { "value": "Node.js", "references": [ "https://github.com/apache/openwhisk-runtime-nodejs#readme" ] },
+        { "value": "PHP", "references": [ "https://github.com/apache/openwhisk-runtime-php#readme" ] },
+        { "value": "Python", "references": [ "https://github.com/apache/openwhisk-runtime-python#readme" ] },
+        { "value": "Ruby", "references": [ "https://github.com/apache/openwhisk-runtime-ruby#readme" ] },
+        { "value": "Rust", "references": [ "https://github.com/apache/openwhisk-runtime-rust#readme" ] },
+        { "value": "Shell", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/actions-docker.md#example-shell-script" ] },
+        { "value": "Swift", "references": [ "https://github.com/apache/openwhisk-runtime-swift#readme" ] }
+      ]
+      },
+      { "typeId": "platform.function.runtime-customization", "values": [ { "value": true, "references": [ "https://github.com/apache/openwhisk/blob/master/docs/actions-new.md" ] } ] },
+      { "typeId": "platform.development.ide-support", "values": [
+        { "value": "Visual Studio Code", "references": [ "https://github.com/apache/openwhisk-vscode" ], "comment": "deprecated" },
+        { "value": "Xcode", "references": [ "https://github.com/apache/openwhisk-xcode" ], "comment": "deprecated" }
+      ]
+      },
+      { "typeId": "platform.function.client-libraries", "values": [
+        { "value": "Go", "references": [ "https://github.com/apache/openwhisk-client-go/blob/master/README.md" ] },
+        { "value": "Node.js", "references": [ "https://github.com/apache/openwhisk-client-js/blob/master/README.md#openwhisk-client-for-javascript" ] }
+      ]
+      },
+      { "typeId": "platform.quotas.dep-pkg-size", "values": [ { "value": false, "references": [ "https://github.com/apache/openwhisk/blob/master/docs/reference.md#system-limits" ] } ] },
+      { "typeId": "platform.quotas.execution-time", "values": [ { "value": true, "references": [ "https://github.com/apache/openwhisk/blob/master/docs/reference.md#system-limits" ] } ] },
+      { "typeId": "platform.function.versioning", "values": [ { "value": "implicit", "references": [] } ] },
+      { "typeId": "platform.function.versioning-app", "values": [ { "value": "implicit", "references": [] } ] },
+      { "typeId": "platform.event-source.endpoint.sync-call", "values": [ { "value": "HTTP", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/webactions.md", "https://github.com/apache/openwhisk/blob/master/docs/rest_api.md#actions"] } ] },
+      { "typeId": "platform.event-source.endpoint.async-call", "values": [ { "value": "HTTP", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/rest_api.md#actions"], "comment": "non-blocking invocation is set by default" } ] },
+      { "typeId": "platform.event-source.endpoint.customization", "values": [ { "value": true, "references": [ "https://github.com/apache/openwhisk/blob/master/docs/apigateway.md" ] } ] },
+      { "typeId": "platform.event-source.endpoint.tls", "values": [ { "value": true, "references": [ "https://github.com/apache/openwhisk/blob/master/docs/webactions.md" ] } ] },
+      { "typeId": "platform.event-source.datastore.file-level", "values": [] },
+      { "typeId": "platform.event-source.datastore.database-mode", "values": [ { "value": "IBM Cloudant", "references": [ "https://github.com/apache/openwhisk-package-cloudant/blob/master/README.md" ] } ] },
+      { "typeId": "platform.event-source.scheduler", "values": [ { "value": true, "references": [ "https://github.com/apache/incubator-openwhisk-package-alarms/blob/master/README.md" ] } ] },
+      { "typeId": "platform.event-source.messaging", "values": [] },
+      { "typeId": "platform.event-source.streaming", "values": [
+        { "value": "Apache Kafka", "references": [ "https://github.com/apache/openwhisk-package-kafka/blob/master/README.md" ] },
+        { "value": "IBM Message Hub", "references": [ "https://github.com/apache/openwhisk-package-kafka/blob/master/README.md" ] }
+      ]
+      },
+      { "typeId": "platform.event-source.special-purpose-service", "values": [
+        { "value": "GitHub", "references": [ "https://github.com/apache/openwhisk-catalog/blob/master/packages/github/README.md" ] },
+        { "value": "Slack", "references": [ "https://github.com/apache/openwhisk-catalog/blob/master/packages/slack/README.md" ] },
+        { "value": "Weather Company Data", "references": [ "https://github.com/apache/openwhisk-catalog/blob/master/packages/weather/README.md" ] },
+        { "value": "IBM Push Notifications", "references": [ "https://github.com/apache/openwhisk-package-pushnotifications/blob/master/README.md" ] },
+        { "value": "Websocket API", "references": [ "https://github.com/apache/openwhisk-catalog/blob/master/packages/websocket/README.md" ] }
+      ]
+      },
+      { "typeId": "platform.event-source.integration", "values": [
+        { "value": "hooks", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/feeds.md" ] },
+        { "value": "polling", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/feeds.md" ] },
+        { "value": "connection", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/feeds.md" ] }
+      ]
+      },
+      { "typeId": "platform.function.orchestrator", "values": [ { "value": "Apache OpenWhisk Composer", "references": [ "https://github.com/apache/openwhisk-composer" ] } ] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-type", "values": [ { "value": "orchestrating function", "references": [ "https://github.com/apache/openwhisk-composer#defining-a-composition" ] } ] },
+      { "typeId": "platform.function.orchestrator.workflow-definition-languages", "values": [
+        { "value": "JavaScript", "references": [ "https://github.com/apache/openwhisk-composer#defining-a-composition" ] },
+        { "value": "Python", "references": [ "https://github.com/apache/openwhisk-composer-python" ] }
+      ]
+      },
+      { "typeId": "platform.function.orchestrator.control-flow-docs", "values": [ { "value": true, "references": [ "https://github.com/apache/openwhisk-composer/blob/master/docs/COMBINATORS.md" ] } ] },
+      { "typeId": "platform.function.orchestrator.quotas.execution-time", "values": [ { "value": true, "references": [ "https://github.com/apache/openwhisk-composer/blob/master/docs/COMMANDS.md#deploy" ] } ] },
+      { "typeId": "platform.function.orchestrator.quotas.io-size", "values": [ { "value": false, "references": [] } ] },
+      { "typeId": "platform.testing.functional", "values": [ { "value": "function invocation testing", "references": [ "https://github.com/apache/openwhisk-devtools/blob/master/node-local/README.md" ], "comment": "Using Openwhisk's CLI tool" } ] },
+      { "typeId": "platform.testing.non-functional", "values": [] },
+      { "typeId": "platform.debugging.local", "values": [] },
+      { "typeId": "platform.debugging.remote", "values": [] },
+      { "typeId": "platform.observability.logging", "values": [ { "value": "Logback (slf4j)", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/logging.md" ] } ] },
+      { "typeId": "platform.observability.monitoring", "values": [
+        { "value": "Kamon", "references": [ "https://github.com/apache/openwhisk/tree/master/core/monitoring/user-events", "https://github.com/apache/openwhisk/blob/master/docs/metrics.md" ] },
+        { "value": "Prometheus", "references": [ "https://github.com/apache/openwhisk/tree/master/core/monitoring/user-events" ], "comment": "User events can be pushed  via Kamon using user-events service" },
+        { "value": "Datadog", "references": [ "https://github.com/apache/openwhisk/tree/master/core/monitoring/user-events" ], "comment": "User events can be pushed  via Kamon using user-events service" }
+      ]
+      },
+      { "typeId": "platform.observability.integration", "values": [] },
+      { "typeId": "platform.deployment-automation", "values": [ { "value": "wskdeploy", "references": [ "https://github.com/apache/openwhisk-wskdeploy" ] } ] },
+      { "typeId": "platform.ci-cd", "values": [] },
+      { "typeId": "platform.function.marketplaces", "values": [] },
+      { "typeId": "platform.function.code-sample-repositories", "values": [ { "value": true, "references": [ "https://openwhisk.apache.org/documentation.html#contributors" ], "comment": "See Samples block" } ] },
+      { "typeId": "platform.authentication", "values": [ { "value": "shared secrets", "references": [ "https://github.com/apache/openwhisk/blob/master/docs/webactions.md#securing-web-actions" ] } ] },
+      { "typeId": "platform.access-control", "values": [] }
+    ]
+  }
+]

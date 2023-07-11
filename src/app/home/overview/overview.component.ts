@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Technology} from '../../shared/interfaces/technology';
+import {TechnologyDossier} from '../../shared/interfaces/dossier';
 
 @Component({
   selector: 'app-overview',
@@ -8,7 +8,7 @@ import {Technology} from '../../shared/interfaces/technology';
   styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent {
-  @Input() supportedPlatforms$: Observable<Technology[]>;
+  @Input() dossiers$: Observable<TechnologyDossier[]>;
 
   constructor() {
   }

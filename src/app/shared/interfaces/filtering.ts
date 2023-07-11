@@ -1,4 +1,4 @@
-import {TechnologyCategory} from './technology';
+import {TechnologyType} from './dossier';
 
 /**
  * An interface representing a rendered filter block in the UI which may comprise multiple filters with {@link CriterionFilterConfiguration}.
@@ -21,7 +21,7 @@ export interface RenderedFilterBlock {
 }
 
 /**
- * An interface representing a filter configuration for a given technology {@link TechnologyCategory}.
+ * An interface representing a filter configuration for a given technology {@link TechnologyType}.
  * This configuration defines which criteria have dedicated filter elements in the UI.
  */
 export interface TechnologyFilterConfiguration {
@@ -33,7 +33,7 @@ export interface TechnologyFilterConfiguration {
   /**
    * Technology category
    */
-  technologyCategory: TechnologyCategory;
+  technologyType: TechnologyType;
 
   /**
    * Configuration name
@@ -54,7 +54,7 @@ export interface CriterionFilterConfiguration {
   /**
    * Unique criterion identifier
    */
-  criterionId: string;
+  criterionTypeId: string;
 
   /**
    * Filter name

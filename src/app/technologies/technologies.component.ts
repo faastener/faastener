@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {DataService} from '../core/services/data.service';
 import {Subscription} from 'rxjs';
-import {Technology} from '../shared/interfaces/technology';
+import {TechnologyDossier, TechnologyInfo} from '../shared/interfaces/dossier';
 import {ActivatedRoute} from '@angular/router';
 import {TechnologyDataSource} from '../shared/datasource';
 import {ClassificationFramework, CriteriaGrouping} from '../shared/interfaces/classification';
@@ -23,7 +23,7 @@ import {UntypedFormBuilder} from '@angular/forms';
 })
 export class TechnologiesComponent implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
-  technologies: Technology[];
+  technologies: TechnologyDossier[];
   framework: ClassificationFramework;
   filterConfiguration: TechnologyFilterConfiguration;
   groupings: CriteriaGrouping[] = [];
@@ -61,10 +61,9 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.route.data.subscribe(data => {
         this.technologies = data.resolvedData[0];
-        this.dataSource = new TechnologyDataSource(this.technologies, {property: 'platformName', order: 'asc'}, {});
+        this.dataSource = new TechnologyDataSource(this.technologies, {property: 'technologyName', order: 'asc'}, {});
         this.framework = data.resolvedData[1];
         this.filterConfiguration = data.resolvedData[2];
-
         this.extractGroupings();
         this.generateFilterStructure();
       })
@@ -76,16 +75,11 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
   }
 
   private extractGroupings() {
-    for (const vc of this.framework.viewCombinations) {
-      if (vc.default) {
-        vc.views.forEach(v => this.groupings.push(...Array.from(v.groupings)));
-        break;
-      }
-    }
+    this.framework.frameworkViews.forEach(v => this.groupings.push(...Array.from(v.criteriaGroupings)));
   }
 
   private generateFilterStructure() {
-    const criteriaFilterLookup = new Map(this.filterConfiguration.filters.map(c => [c.criterionId, c] as [string, CriterionFilterConfiguration]));
+    const criteriaFilterLookup = new Map(this.filterConfiguration.filters.map(c => [c.criterionTypeId, c] as [string, CriterionFilterConfiguration]));
     const placement: Map<String, RenderedFilterBlock> = new Map<String, RenderedFilterBlock>();
     this.groupings.forEach(g => this.populateRenderBlocks(g, criteriaFilterLookup, placement));
     this.renderedFilter = Array.from(placement.values());
@@ -94,20 +88,22 @@ export class TechnologiesComponent implements OnInit, OnDestroy {
   private populateRenderBlocks(grouping: CriteriaGrouping, filterLookup: Map<string, CriterionFilterConfiguration>, placement: Map<String, RenderedFilterBlock>, parentGroup?: string) {
     let current = placement.get(grouping.name);
 
-    if (current === undefined && grouping.criteria && grouping.criteria.size > 0) {
+    if (current === undefined /*&& grouping.criteria && grouping.criteria.size > 0*/) {
       placement.set(grouping.name, {blockName: parentGroup ? parentGroup.concat(' : ').concat(grouping.name) : grouping.name, filters: []});
       current = placement.get(grouping.name);
     }
 
-    grouping.criteria.forEach(c => {
-      const config = filterLookup.get(c.id);
-      if (config) {
-        current.filters.push(config);
-      }
-    });
+    if (grouping.criteria && current) {
+      grouping.criteria.forEach(c => {
+        const config = filterLookup.get(c.id);
+        if (config) {
+          current.filters.push(config);
+        }
+      });
+    }
 
-    if (grouping.groupings) {
-      grouping.groupings.forEach(g => this.populateRenderBlocks(g, filterLookup, placement, grouping.name));
+    if (grouping.criteriaGroupings) {
+      grouping.criteriaGroupings.forEach(g => this.populateRenderBlocks(g, filterLookup, placement, grouping.name));
     }
   }
 

@@ -6,10 +6,10 @@
 
     <ng-container matColumnDef="techName" sticky>
       <th mat-header-cell *matHeaderCellDef [ngStyle]="{'display': 'none'}">Name</th>
-      <td mat-cell *matCellDef="let tech" class="tech-name-cell">
+      <td mat-cell *matCellDef="let dossier" class="tech-name-cell">
         <div class="tech-name-content">
-          <img src="{{tech.logoLocation}}" alt="{{tech.platformName}}"/>
-          <span class="text-center"> {{tech.platformName}}</span>
+          <img src="{{dossier.technologyInfo.logoLocation}}" alt="{{dossier.technologyName}}"/>
+          <span class="text-center"> {{dossier.technologyName}}</span>
         </div>
       </td>
     </ng-container>
@@ -23,8 +23,9 @@
     <ng-container *ngFor="let c of criteriaColumns">
       <ng-container [matColumnDef]="c.id">
         <th mat-header-cell *matHeaderCellDef [ngStyle]="{'background': c.color}" class="criterion-header-cell text-center"> {{c.displayName}}</th>
-        <td mat-cell *matCellDef="let tech" class="value-cell text-center" [ngStyle]="{'background': c.color}">
-          <ng-container *ngFor="let entry of tech.dossier.reviewedCriteria.get(c.id)?.values">
+        <td mat-cell *matCellDef="let dossier" class="value-cell text-center" [ngStyle]="{'background': c.color}">
+          <ng-container *ngFor="let entry of findValues(dossier.reviewedCriteria, c.id); index as i;">
+
             <div class="value-list">
               <span class="value">{{entry.value | yesNo }}</span>
             </div>

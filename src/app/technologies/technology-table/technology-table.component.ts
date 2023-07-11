@@ -1,6 +1,6 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {TechnologyDataSource} from '../../shared/datasource';
-import {ClassificationFramework, CriteriaGrouping} from '../../shared/interfaces/classification';
+import {ClassificationFramework, CriteriaGrouping, CriterionInstance, CriterionValue} from '../../shared/interfaces/classification';
 import {TechnologyFilterConfiguration} from '../../shared/interfaces/filtering';
 import {MatSidenav} from '@angular/material/sidenav';
 
@@ -35,23 +35,18 @@ export class TechnologyTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.framework.viewCombinations.forEach(viewComb => {
-      if (viewComb.default) {
-        viewComb.views.forEach(view => {
-          const groupingColumns: TableColumn[] = [];
-          Array.from(view.groupings).forEach((grouping, index) => {
-            const color = index % 2 === 0 ? '#ccc' : 'white';
-            this.generateGroupingColumns(grouping, groupingColumns, color);
-          });
-          if (groupingColumns.length > 0) {
-            this.groupingColumns.push(...groupingColumns);
-            let viewColspan = 0;
-            groupingColumns.forEach(c => {
-              if (c.colSpan) {
-                viewColspan += c.colSpan;
-              }
-            });
+    this.framework.frameworkViews.forEach(view => {
+      const groupingColumns: TableColumn[] = [];
+      Array.from(view.criteriaGroupings).forEach((grouping, index) => {
+        const color = index % 2 === 0 ? '#ccc' : 'white';
+        this.generateGroupingColumns(grouping, groupingColumns, color);
+      });
+      if (groupingColumns.length > 0) {
+        this.groupingColumns.push(...groupingColumns);
+        let viewColspan = 0;
+        groupingColumns.forEach(c => {
+          if (c.colSpan) {
+            viewColspan += c.colSpan;
           }
         });
       }
@@ -60,15 +55,19 @@ export class TechnologyTableComponent implements OnInit {
 
   private generateGroupingColumns(grouping: CriteriaGrouping, groupingColumns: TableColumn[], color: string, parentGroupingName?: string) {
     let counter = 0;
-    grouping.criteria.forEach((c, index) => {
-      this.criteriaColumns.push({
-        id: c.id,
-        displayName: c.name,
-        color
-      } as TableColumn);
-      this.columnsToDisplay.push(c.id);
-      counter += 1;
-    });
+
+    if (grouping.criteria) {
+      grouping.criteria.forEach((c, index) => {
+        this.criteriaColumns.push({
+          id: c.id,
+          displayName: c.name,
+          color
+        } as TableColumn);
+        this.columnsToDisplay.push(c.id);
+        counter += 1;
+      });
+    }
+
     if (counter > 0) {
       const name = parentGroupingName ? parentGroupingName.concat('.').concat(grouping.name) : grouping.name;
       groupingColumns.push({
@@ -79,8 +78,8 @@ export class TechnologyTableComponent implements OnInit {
       } as TableColumn);
       this.groupingColumnIds.push(grouping.id);
     }
-    if (grouping.groupings) {
-      grouping.groupings.forEach(g => this.generateGroupingColumns(g, groupingColumns, color, grouping.name));
+    if (grouping.criteriaGroupings) {
+      grouping.criteriaGroupings.forEach(g => this.generateGroupingColumns(g, groupingColumns, color, grouping.name));
     }
   }
 
@@ -90,6 +89,15 @@ export class TechnologyTableComponent implements OnInit {
 
   scrollRight() {
     this.tableContainer.nativeElement.scrollLeft += 150;
+  }
+
+  findValues(criteriaInstances: Set<CriterionInstance>, criterionId: string): Set<CriterionValue> {
+    for(let ci of criteriaInstances) {
+      if(ci.typeId === criterionId) {
+        return ci.values;
+      }
+    }
+    return undefined;
   }
 
 }

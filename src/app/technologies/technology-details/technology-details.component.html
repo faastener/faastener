@@ -1,22 +1,21 @@
 <app-header id="header"></app-header>
-<div class="g__page-section technology" *ngIf="platform" (scroll)="onWindowScroll($event)">
+<div class="g__page-section technology" *ngIf="dossier" (scroll)="onWindowScroll($event)">
   <div class="technology__header-block">
-    <img class="technology__logo" src="{{platform.logoLocation}}" alt="{{platform.platformName}}"/>
-    <h1 class="g__page-section-header technology__header">{{platform.platformName}}</h1>
-    <p class="text-justify">{{platform.description}}</p>
+    <img class="technology__logo" src="{{dossier.technologyInfo.logoLocation}}" alt="{{dossier.technologyName}}"/>
+    <h1 class="g__page-section-header technology__header">{{dossier.technologyName}}</h1>
+    <p class="text-justify">{{dossier.technologyInfo.description}}</p>
 
-    <mat-form-field class="technology__view-combinations" appearance="fill" *ngIf="framework">
+    <!--<mat-form-field class="technology__view-combinations" appearance="fill" *ngIf="framework">
       <mat-label>Technology View Mode</mat-label>
       <mat-select [(value)]="selectedViewCombination">
         <mat-option [value]="option" *ngFor="let option of framework.viewCombinations">{{ option.name }}</mat-option>
       </mat-select>
-    </mat-form-field>
+    </mat-form-field>-->
   </div>
   <app-framework-renderer [framework]="framework"
-                          [selectedViewCombination]="selectedViewCombination"
                           [includeFrameworkInfo]="false"
                           [renderReviewData]="true"
-                          [reviewData]="platform.dossier.reviewedCriteria">
+                          [reviewData]="dossier.reviewedCriteria">
   </app-framework-renderer>
 
 </div>

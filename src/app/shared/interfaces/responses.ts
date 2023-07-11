@@ -1,55 +1,22 @@
 /**
  * An interface representing a server response with available classification frameworks.
  */
-import {TechnologyCategory} from './technology';
-import {CriterionInstance} from './classification';
+import {TechnologyInfo, TechnologyType} from './dossier';
+import {ClassificationView, CriterionInstance} from './classification';
 
 export interface ClassificationFrameworkResponse {
   id: string;
-  name: string;
-  technologyCategory: TechnologyCategory;
+  technologyName: string;
+  technologyType: TechnologyType;
+  version?: string;
   description?: string;
-  viewCombinationIds: Set<string>;
-}
-
-/**
- * An interface representing a server response with available combinations of classification views.
- */
-export interface ClassificationViewCombinationResponse {
-  id: string;
-  name: string;
-  description: string;
-  viewIds: Set<string>;
-  default?: boolean;
-}
-
-/**
- * An interface representing a server response with available classification views.
- */
-export interface ClassificationViewResponse {
-  id: string;
-  name: string;
-  description: string;
-  groupingIds: Set<string>;
-}
-
-/**
- * An interface representing a server response with available criteria groupings.
- */
-export interface CriteriaGroupingResponse {
-  id: string;
-  name: string;
-  locator: string; // e.g. "licensing" or "community.github"
-  parentId?: string;
-  criteriaIds?: Set<string>;
+  frameworkViews: Set<ClassificationView>;
 }
 
 export interface TechnologyDossierResponse {
-  platformId: string;
+  id: string;
+  technologyName: string;
   reviewDate?: Date;
-  reviewedCriteria: CriteriaReview;
-}
-
-export interface CriteriaReview {
-  [key: string]: CriterionInstance;
+  technologyInfo: TechnologyInfo;
+  reviewedCriteria: Set<CriterionInstance>;
 }

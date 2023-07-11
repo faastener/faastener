@@ -1,18 +1,7 @@
 import {Observable} from 'rxjs';
-import {
-  ClassificationCriterion,
-  ClassificationFramework,
-  ClassificationView,
-  ClassificationViewCombination,
-  CriteriaGrouping
-} from '../../shared/interfaces/classification';
-import {Technology, TechnologyCategory, TechnologyDossier} from '../../shared/interfaces/technology';
+import {ClassificationFramework} from '../../shared/interfaces/classification';
+import {TechnologyInfo, TechnologyDossier, TechnologyType} from '../../shared/interfaces/dossier';
 import {TechnologyFilterConfiguration} from '../../shared/interfaces/filtering';
-import {
-  ClassificationViewCombinationResponse,
-  ClassificationViewResponse,
-  CriteriaGroupingResponse
-} from '../../shared/interfaces/responses';
 import {InfoResourceSection} from '../../shared/interfaces/info';
 
 export abstract class DataService {
@@ -20,42 +9,24 @@ export abstract class DataService {
   protected constructor() {
   }
 
-  public abstract getCriteria(): Observable<ClassificationCriterion[]>;
-
-  public abstract getGroupings(): Observable<CriteriaGrouping[]>;
-
-  public abstract getViews(): Observable<ClassificationView[]>;
-
-  public abstract getViewCombinations(): Observable<ClassificationViewCombination[]>;
-
   public abstract getFrameworks(): Observable<ClassificationFramework[]>;
 
-  public abstract getFrameworkForCategory(techCategory: TechnologyCategory): Observable<ClassificationFramework>;
+  public abstract getFrameworksForTechnologyType(technologyType: TechnologyType): Observable<ClassificationFramework[]>;
 
-  public abstract getFrameworkForTechnologyType(category: string): Observable<ClassificationFramework>;
+  public abstract getLatestFrameworkForTechnologyType(technologyType: TechnologyType): Observable<ClassificationFramework>;
 
-  public abstract getTechnologies(withDossier?: boolean): Observable<Technology[]>;
+  public abstract getDossiers(withReviewData: boolean): Observable<TechnologyDossier[]>;
 
-  public abstract getTechnologiesOfCategory(category: string, withDossier?: boolean): Observable<Technology[]>;
+  public abstract getDossiersForTechnologyType(technologyType: TechnologyType, withReviewData: boolean): Observable<TechnologyDossier[]>;
 
-  public abstract getTechnology(id: string, withDossier?: boolean): Observable<Technology>;
+  public abstract getDossier(technologyId: string, withReviewData: boolean): Observable<TechnologyDossier>;
 
-  public abstract getDossier(technologyId: string): Observable<TechnologyDossier>;
+  public abstract getReviewedTechnologies(): Observable<TechnologyInfo[]>;
 
-  public abstract getDossiersOfCategory(category: string): Observable<TechnologyDossier[]>;
+  public abstract getReviewedTechnologiesOfType(technologyType: TechnologyType): Observable<TechnologyInfo[]>;
 
-  public abstract getTechnologyFilter(category: TechnologyCategory): Observable<TechnologyFilterConfiguration>;
-
-  public abstract getFrameworkGroupingsData(frameworkId: string): Observable<CriteriaGroupingResponse[]>;
-
-  public abstract getDefaultViewCombinationData(frameworkId: string): Observable<ClassificationViewCombinationResponse>;
-
-  public abstract getViewsData(viewCombinationId: string): Observable<ClassificationViewResponse[]>;
-
-  public abstract getViewGroupingsData(viewId: string): Observable<CriteriaGroupingResponse[]>;
+  public abstract getTechnologyFilter(technologyType: TechnologyType): Observable<TechnologyFilterConfiguration>;
 
   public abstract getInfoResources(): Observable<InfoResourceSection[]>;
-
-
 }
 

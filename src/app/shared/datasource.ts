@@ -1,7 +1,7 @@
 import {DataSource} from '@angular/cdk/collections';
 import {BehaviorSubject, combineLatest, Observable, of} from 'rxjs';
 import {map, shareReplay, switchMap} from 'rxjs/operators';
-import {Technology} from './interfaces/technology';
+import {TechnologyDossier} from './interfaces/dossier';
 import {PageEvent} from '@angular/material/paginator';
 import {CriteriaBasedQuery, CriterionFilterType, CriterionFilterValue} from './interfaces/filtering';
 import {CriterionInstance} from './interfaces/classification';
@@ -17,10 +17,10 @@ export interface Sort<T> {
   order: 'asc' | 'desc';
 }
 
-export class TechnologyDataSource implements SimpleDataSource<Technology> {
-  private readonly data: Technology[];
+export class TechnologyDataSource implements SimpleDataSource<TechnologyDossier> {
+  private readonly data: TechnologyDossier[];
   private readonly pageNumber = new BehaviorSubject<number>(0);
-  private readonly sort: BehaviorSubject<Sort<Technology>>;
+  private readonly sort: BehaviorSubject<Sort<TechnologyDossier>>;
   private readonly criteriaBasedQuery: BehaviorSubject<CriteriaBasedQuery>;
   private readonly nameBasedQuery: BehaviorSubject<string>;
 
@@ -28,12 +28,12 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
   public totalInputSize: number;
   public currentIndex = 0;
   public pageNumber$ = this.pageNumber.asObservable();
-  public filteredData$: Observable<Technology[]>;
-  public paginatedData$: Observable<Technology[]>;
+  public filteredData$: Observable<TechnologyDossier[]>;
+  public paginatedData$: Observable<TechnologyDossier[]>;
 
-  constructor(data: Technology[], initialSort: Sort<Technology>, initialQuery: CriteriaBasedQuery, public pageSize = 10) {
+  constructor(data: TechnologyDossier[], initialSort: Sort<TechnologyDossier>, initialQuery: CriteriaBasedQuery, public pageSize = 10) {
     this.data = data;
-    this.sort = new BehaviorSubject<Sort<Technology>>(initialSort);
+    this.sort = new BehaviorSubject<Sort<TechnologyDossier>>(initialSort);
     this.criteriaBasedQuery = new BehaviorSubject<CriteriaBasedQuery>(initialQuery);
     this.nameBasedQuery = new BehaviorSubject<string>(undefined);
 
@@ -59,7 +59,7 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
     );
   }
 
-  sortBy(sort: Partial<Sort<Technology>>): void {
+  sortBy(sort: Partial<Sort<TechnologyDossier>>): void {
     const lastSort = this.sort.getValue();
     const nextSort = {...lastSort, ...sort};
     this.sort.next(nextSort);
@@ -88,7 +88,7 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
     this.isPaginated = !this.isPaginated;
   }
 
-  connect(): Observable<Technology[]> {
+  connect(): Observable<TechnologyDossier[]> {
     if (this.isPaginated) {
       return this.paginatedData$;
     }
@@ -98,19 +98,27 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
   disconnect(): void {
   }
 
-  private processData(data: Technology[], criteriaQuery: CriteriaBasedQuery, nameQuery: string, sort: Sort<Technology>): Technology[] {
-    let result: Technology[] = data;
+  private processData(data: TechnologyDossier[], criteriaQuery: CriteriaBasedQuery, nameQuery: string, sort: Sort<TechnologyDossier>): TechnologyDossier[] {
+    let result: TechnologyDossier[] = data;
     if (nameQuery) {
-      result = data.filter(platform => nameQuery ? platform.platformName.toLocaleLowerCase().includes(nameQuery) : true);
+      result = data.filter(dossier => nameQuery ? dossier.technologyName.toLocaleLowerCase().includes(nameQuery) : true);
     }
 
     if (criteriaQuery && Object.keys(criteriaQuery).length !== 0) {
-      Object.keys(criteriaQuery).forEach(key => {
+      Object.keys(criteriaQuery).forEach((key) => {
         if (TechnologyDataSource.canFilter(criteriaQuery[key])) {
-          result = result.filter(t => {
+          result = result.filter((dossier) => {
             let filteringResult = false;
-            if (t.dossier.reviewedCriteria.has(key)) {
-              filteringResult = this.getFilteringResult(criteriaQuery[key], t.dossier.reviewedCriteria.get(key));
+            let criterion: CriterionInstance;
+            dossier.reviewedCriteria.forEach(c => {
+              if (c.typeId == key) {
+                criterion = c;
+                return;
+              }
+            });
+
+            if (criterion) {
+              filteringResult = this.getFilteringResult(criteriaQuery[key], criterion);
             }
             return filteringResult;
           });

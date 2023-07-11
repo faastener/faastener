@@ -4,8 +4,8 @@
     <p class="text-justify">{{framework.description}}</p>
   </div>
 
-  <ng-container *ngIf="selectedViewCombination">
-    <div *ngFor="let view of selectedViewCombination.views" class="framework__view">
+  <ng-container>
+    <div *ngFor="let view of framework.frameworkViews" class="framework__view">
       <div class="framework__view-config-row">
         <h2 class="g__page-section-header--h2 framework__view-title">{{view.name}}</h2>
         <span class="g__spacer"></span>
@@ -26,7 +26,7 @@
                               [reviewData]="reviewData"
                               class="framework__grouping-details">
           </app-child-grouping>
-          <mat-card *ngFor="let g of view.groupings"
+          <mat-card *ngFor="let g of view.criteriaGroupings"
                     [attr.id]="g.id"
                     [class.framework__root-grouping-card--first]="selectedGrouping.get(view.id)?.id === g.id"
                     class="framework__root-grouping-card"
@@ -40,7 +40,7 @@
 
       <ng-template #flatView>
         <app-child-grouping [attr.id]="view.id"
-                            [groupings]="view.groupings | setToArray"
+                            [groupings]="view.criteriaGroupings | setToArray"
                             [parent]="view.name"
                             [subGroups]="true"
                             [extraCriterionTitle]="extraCriterionTitle"

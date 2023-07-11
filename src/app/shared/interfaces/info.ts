@@ -2,7 +2,7 @@
  * An interface representing a section grouping information resources.
  * Such sections represent different categories of additional information, e.g., research publications, blog posts, etc.
  */
-import {TechnologyCategory} from './technology';
+import {TechnologyType} from './dossier';
 
 export interface InfoResourceSection {
   /**
@@ -23,7 +23,7 @@ export interface InfoResourceSection {
   /**
    * Technology category.
    */
-  technologyCategory: TechnologyCategory;
+  technologyType: TechnologyType;
 
   /**
    * A list of [InfoResources]{@link InfoResource} related to this section.
