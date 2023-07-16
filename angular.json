@@ -30,7 +30,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/app/_scss/app.scss",
+              "src/assets/vendor/normalize.css"
             ],
             "scripts": []
           },
@@ -99,7 +100,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/app/_scss/app.scss",
+              "src/assets/vendor/normalize.css"
             ],
             "scripts": []
           }

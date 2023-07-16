@@ -1,0 +1,82 @@
+[
+  {
+    "id": "azure-functions",
+    "technologyName": "Microsoft Azure Functions",
+    "technologyType": "FAAS",
+    "logoLocation": "assets/images/vendor/azure.functions.png",
+    "shortDescription": "Azure Functions is a commercial FaaS platform offered by Microsoft.",
+    "description": "Azure Functions allows you to run small pieces of code (called \"functions\") without worrying about application infrastructure. With Azure Functions, the cloud infrastructure provides all the up-to-date servers you need to keep your application running at scale. A function is \"triggered\" by a specific type of event. Supported triggers include responding to changes in data, responding to messages, running on a schedule, or as the result of an HTTP request. While you can always code directly against a myriad of services, integrating with other services is streamlined by using bindings. Bindings give you declarative access to a wide variety of Azure and third-party services."
+  },
+  {
+    "id": "fission",
+    "technologyName": "Fission",
+    "technologyType": "FAAS",
+    "logoLocation": "assets/images/vendor/fission.png",
+    "shortDescription": "Fission is an open source FaaS platform based on Kubernetes.",
+    "description": "Fission is a fast, open source serverless framework for Kubernetes with a focus on developer productivity and high performance. Fission operates on just the code: Docker and Kubernetes are abstracted away under normal operation, though you can use both to extend Fission if you want to. Fission is extensible to any language; the core is written in Go, and language-specific parts are isolated in something called environments (more below). Fission currently supports NodeJS, Python, Ruby, Go, PHP, Bash, and any Linux executable, with more languages coming soon."
+  },
+  {
+    "id": "fn-project",
+    "technologyName": "Fn Project",
+    "technologyType": "FAAS",
+    "logoLocation": "assets/images/vendor/fn-project.png",
+    "shortDescription": "The Fn project is an open-source container-native FaaS platform that can run on cloud or on-premises.",
+    "description": "The Fn project is an open-source container-native serverless platform that you can run anywhere -- any cloud or on-premise. It’s easy to use, supports every programming language, and is extensible and performant."
+  },
+  {
+    "id": "google-cloud-functions",
+    "technologyName": "Google Cloud Functions",
+    "technologyType": "FAAS",
+    "logoLocation": "assets/images/vendor/google.cloud-functions.png",
+    "shortDescription": "Google Cloud Functions is a commercial FaaS platform by Google.",
+    "description": "Cloud Functions is Google Cloud’s event-driven serverless compute platform. Run your code locally or in the cloud without having to provision servers. Go from code to deploy with continuous delivery and monitoring tools. Cloud Functions scales up or down, so you pay only for compute resources you use. Easily create end-to-end complex development scenarios by connecting with existing Google Cloud or third-party services."
+  },
+  {
+    "id": "knative",
+    "technologyName": "Knative",
+    "technologyType": "FAAS",
+    "logoLocation": "assets/images/vendor/knative.png",
+    "shortDescription": "Knative Serving is an open source FaaS platform running on Kubernetes.",
+    "description": "Knative (pronounced kay-nay-tiv) extends Kubernetes to provide a set of middleware components that are essential to build modern, source-centric, and container-based applications that can run anywhere: on premises, in the cloud, or even in a third-party data center."
+  },
+  {
+    "id": "kubeless",
+    "technologyName": "Kubeless",
+    "technologyType": "FAAS",
+    "logoLocation": "assets/images/vendor/kubeless.png",
+    "shortDescription": "Kubeless is an open source, Kubernetes-native FaaS platform.",
+    "description": "Kubeless is a Kubernetes-native serverless framework that lets you deploy small bits of code (functions) without having to worry about the underlying infrastructure. It is designed to be deployed on top of a Kubernetes cluster and take advantage of all the great Kubernetes primitives. If you are looking for an open source serverless solution that clones what you can find on AWS Lambda, Azure Functions, and Google Cloud Functions, Kubeless is for you!"
+  },
+  {
+    "id": "aws-lambda",
+    "technologyName": "AWS Lambda",
+    "technologyType": "FAAS",
+    "logoLocation": "assets/images/vendor/aws.lambda.png",
+    "shortDescription": "AWS Lambda is a commerical FaaS platform offering from Amazon.",
+    "description": "AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume. With Lambda, you can run code for virtually any type of application or backend service - all with zero administration. Just upload your code and Lambda takes care of everything required to run and scale your code with high availability. You can set up your code to automatically trigger from other AWS services or call it directly from any web or mobile app."
+  },
+  {
+    "id": "nuclio",
+    "technologyName": "Nuclio",
+    "technologyType": "FAAS",
+    "logoLocation": "assets/images/vendor/nuclio.png",
+    "shortDescription": "Nuclio is an open source serverless platform focusing on data-science based applications.",
+    "description": "Nuclio is a high-performance \"serverless\" framework focused on data, I/O, and compute intensive workloads. It is well integrated with popular data science tools, such as Jupyter and Kubeflow; supports a variety of data and streaming sources; and supports execution over CPUs and GPUs. The Nuclio project began in 2017 and is constantly and rapidly evolving; many start-ups and enterprises are now using Nuclio in production."
+  },
+  {
+    "id": "openfaas",
+    "technologyName": "OpenFaaS",
+    "technologyType": "FAAS",
+    "logoLocation": "assets/images/vendor/openfaas.png",
+    "shortDescription": "OpenFaaS is an open source FaaS platform working with a variety of container platforms.",
+    "description": "OpenFaaS makes it easy for developers to deploy event-driven functions and microservices to Kubernetes without repetitive, boiler-plate coding. Package your code or an existing binary in a Docker image to get a highly scalable endpoint with auto-scaling and metrics."
+  },
+  {
+    "id": "apache-openwhisk",
+    "technologyName": "Apache Openwhisk",
+    "technologyType": "FAAS",
+    "logoLocation": "assets/images/vendor/apache.openwhisk.png",
+    "shortDescription": "Apache OpenWhisk is an open source FaaS platform from Apache Software Foundation.",
+    "description": "Apache OpenWhisk is an open source, distributed Serverless platform that executes functions (fx) in response to events at any scale. OpenWhisk manages the infrastructure, servers and scaling using Docker containers so you can focus on building amazing and efficient applications. The OpenWhisk platform supports a programming model in which developers write functional logic (called Actions), in any supported programming language, that can be dynamically scheduled and run in response to associated events (via Triggers) from external sources (Feeds) or from HTTP requests. The project includes a REST API-based Command Line Interface (CLI) along with other tooling to support packaging, catalog services and many popular container deployment options."
+  }
+]

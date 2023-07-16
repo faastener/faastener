@@ -1,0 +1,43 @@
+@use '@angular/material' as mat;
+
+@import "../theming/themes";
+@import "variables";
+
+@include mat.core();
+
+html {
+  scroll-behavior: smooth;
+}
+
+.root {
+  margin: 0;
+  padding: 0;
+  font-weight: $font-weight-base;
+  font-size: $font-size-base;
+  color: rgba(0, 0, 0, 0.87);
+  line-height: 1.3;
+  font-family: $font-family-base;
+}
+
+.root--faastener-theme {
+  @include mat.all-component-themes($faastener-main-theme);
+}
+
+.root__main-grid {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100vh;
+}
+
+/*
+@media screen and (max-width: 510px) {
+  .root__main-grid {
+    display: grid;
+    grid: " header " 4em
+        " main   " 1fr
+        " footer " min-content /
+        1fr;
+    height: 100vh;
+  }
+}
+*/

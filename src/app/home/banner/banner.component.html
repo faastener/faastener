@@ -1,0 +1,36 @@
+<section class="banner">
+  <h1 class="banner__heading text-center">
+    Choose your Function-as-a-Service Platform
+  </h1>
+  <div class="banner__description text-center">
+    Explore available Function-as-a-Service platforms and find one suiting your requirements.
+  </div>
+
+
+  <div class="banner__summary">
+    <div class="banner__summary-item">
+      <mat-icon>check_circle</mat-icon>
+      <span class="banner__summary-item-text"> 10 reviewed platforms, more on the way </span>
+    </div>
+    <div class="banner__summary-item">
+      <mat-icon>check_circle</mat-icon>
+      <span class="banner__summary-item-text"> High- and low-level platform selection criteria</span>
+    </div>
+    <div class="banner__summary-item">
+      <mat-icon>check_circle</mat-icon>
+      <span class="banner__summary-item-text"> Open source and extensible </span>
+    </div>
+  </div>
+
+  <div class="banner__quick-links">
+    <button mat-raised-button [routerLink]="'/platforms'" [queryParams]="{browsingMode: 'search'}">
+      <mat-icon>search</mat-icon>
+      Find a Platform
+    </button>
+    <span class="banner__quick-links-spacer"></span>
+    <button mat-raised-button [routerLink]="'/platforms'">
+      <mat-icon>view_list</mat-icon>
+      Browse Platforms
+    </button>
+  </div>
+</section>
