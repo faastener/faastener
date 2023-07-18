@@ -1,4 +1,4 @@
-import {Observable} from 'rxjs';
+import {EMPTY, Observable} from 'rxjs';
 import {ClassificationFramework} from '../../shared/interfaces/classification';
 import {Technology, TechnologyType} from '../../shared/interfaces/technology';
 import {InfoResourceSection} from '../../shared/interfaces/info';
@@ -12,7 +12,7 @@ export abstract class DataService {
 
   public abstract getFrameworksForTechnologyType(technologyType: TechnologyType): Observable<ClassificationFramework[]>;
 
-  public abstract getLatestFrameworkForTechnologyType(technologyType: TechnologyType): Observable<ClassificationFramework | undefined>;
+  public abstract getLatestFrameworkForTechnologyType(technologyType: TechnologyType): Observable<ClassificationFramework | null>;
 
   public abstract getTechnologies(): Observable<Technology[]>;
 

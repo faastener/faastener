@@ -1,0 +1,67 @@
+@import "../../_scss/shared";
+
+.framework {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0 1rem;
+  align-items: center;
+  height: 100%;
+}
+
+.framework__info {
+}
+
+.framework__root-groupings {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.framework__grouping-details {
+  order: 2;
+  flex: 100% 0;
+  padding-bottom: 1rem;
+}
+
+.framework__root-grouping-card {
+  margin: .2rem;
+  background: $gray-card;
+  cursor: pointer;
+  flex: 1 1 min-content;
+  order: 3;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: $salad-600;
+  }
+}
+
+
+.framework__view {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+
+.framework__view-config-row {
+  display: flex;
+  align-items: center;
+}
+
+.framework__view-title {
+  flex: 1 1 auto;
+}
+
+.framework__view-toggle {
+  flex: 0 0 auto;
+  font-size: .8rem;
+}
+
+.framework__root-grouping-card--first {
+  order: 1;
+  background: $salad-600;
+}

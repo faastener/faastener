@@ -1,0 +1,18 @@
+<faastener-header></faastener-header>
+<nav mat-tab-nav-bar class="info-tabs">
+  <div class="info-tabs__links">
+    <a mat-tab-link *ngFor="let link of navLinks"
+       [routerLink]="link.location"
+       routerLinkActive #rla="routerLinkActive" [active]="rla.isActive"
+       class="info-tabs--link">
+      <span>{{ link.label }}</span>
+    </a>
+  </div>
+</nav>
+
+<div class="info-main">
+  <section class="g__page-section info-main__text">
+    <router-outlet></router-outlet>
+  </section>
+</div>
+<faastener-footer></faastener-footer>

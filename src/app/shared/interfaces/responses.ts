@@ -10,7 +10,7 @@ export interface ClassificationFrameworkResponse {
   technologyType: TechnologyType;
   version?: string;
   description?: string;
-  frameworkViews: Set<ClassificationView>;
+  frameworkViews: ClassificationView[];
 }
 
 export interface TechnologyResponse {

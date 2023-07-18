@@ -34,9 +34,9 @@ export interface ClassificationFramework {
   description?: string;
 
   /**
-   * A set of {@link ClassificationView} which organize the representation of criteria groupings.
+   * A list of {@link ClassificationView} which organize the representation of criteria groupings.
    */
-  frameworkViews: Set<ClassificationView>;
+  frameworkViews: ClassificationView[];
 }
 
 /**
@@ -59,9 +59,9 @@ export interface ClassificationView {
   description: string;
 
   /**
-   * A set of {@link CriteriaGrouping} which organize the representation of criteria and optional sub-groupings.
+   * A list of {@link CriteriaGrouping} which organize the representation of criteria and optional sub-groupings.
    */
-  criteriaGroupings: Set<CriteriaGrouping>;
+  criteriaGroupings: CriteriaGrouping[];
 }
 
 /**
@@ -89,14 +89,14 @@ export interface CriteriaGrouping {
   name: string;
 
   /**
-   * A set of [Sub-groupings]{@link CriteriaGrouping} which organize the representation of criteria and optional sub-groupings.
+   * A list of [Sub-groupings]{@link CriteriaGrouping} which organize the representation of criteria and optional sub-groupings.
    */
-  criteriaGroupings?: Set<CriteriaGrouping>;
+  criteriaGroupings?: CriteriaGrouping[];
 
   /**
-   * A set of {@link ClassificationCriterion} which describe a particular aspect of the reviewed technology.
+   * A list of {@link ClassificationCriterion} which describe a particular aspect of the reviewed technology.
    */
-  criteria?: Set<ClassificationCriterion>;
+  criteria?: ClassificationCriterion[];
 }
 
 /**
@@ -127,13 +127,13 @@ export interface ClassificationCriterion {
    * @example
    * a true/false value, numeric values, a list of strings
    */
-  exampleValues?: Set<string>;
+  exampleValues?: string[];
 }
 
 /**
  * An interface representing an instance of a classification criterion containing the collected data for a particular technology.
  *
- * @example a set of runtimes supported by AWS Lambda.
+ * @example a list of runtimes supported by AWS Lambda.
  */
 export interface CriterionInstance {
   /**
@@ -141,9 +141,9 @@ export interface CriterionInstance {
    */
   typeId: string;
   /**
-   * A set of {@link CriterionValue} which store the criterion-specific review data for the reviewed technology.
+   * A list of {@link CriterionValue} which store the criterion-specific review data for the reviewed technology.
    */
-  values: Set<CriterionValue>;
+  values: CriterionValue[];
   /**
    * A date review was conducted (optional).
    * Reserved for future use.

@@ -8,11 +8,12 @@
 $faastener-theme-primary: mat.define-palette($faastener-violet);
 $faastener-theme-accent: mat.define-palette($faastener-salad);
 
+$faastener-typography: mat.define-typography-config();
+
 $faastener-main-theme: mat.define-light-theme((
   color: (
     primary: $faastener-theme-primary,
     accent: $faastener-theme-accent
-  )
+  ),
+  typography: $faastener-typography,
 ));
-
-// @include mat.all-component-themes($faastener-main-theme);

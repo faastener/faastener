@@ -1,0 +1,35 @@
+<div class="child-grouping" *ngIf="groupings && groupings.length">
+
+  <div *ngFor="let g of groupings" [class.child-grouping__criterion--nested]="subGroups">
+    <div *ngIf="subGroups">
+      <div class="child-grouping__title">Grouping: {{g.name}}</div>
+      <div class="child-grouping__path text-muted">{{parent + ' > ' + g.name}}</div>
+    </div>
+
+
+    <div class="child-grouping__criterion" *ngFor="let criterion of g.criteria">
+      <ng-container *ngIf="renderReviewData; else criterionWithoutReview">
+        <app-criterion [extraTitleText]="extraCriterionTitle"
+                       [criterion]="criterion"
+                       [reviewMode]="true"
+                       [criterionInstance]="findCriterionInstance(criterion.id)">
+        </app-criterion>
+      </ng-container>
+
+      <ng-template #criterionWithoutReview>
+        <app-criterion [extraTitleText]="extraCriterionTitle"
+                       [criterion]="criterion">
+        </app-criterion>
+      </ng-template>
+    </div>
+
+
+    <app-child-grouping *ngIf="g.criteriaGroupings?.length"
+                        [groupings]="g.criteriaGroupings || []"
+                        [subGroups]="true" [parent]="parent + ' > ' + g.name"
+                        [renderReviewData]="renderReviewData"
+                        [reviewData]="reviewData">
+    </app-child-grouping>
+  </div>
+</div>
+

@@ -7,11 +7,21 @@ import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {FrameworkRendererComponent} from "./framework-renderer/framework-renderer.component";
+import {ChildGroupingComponent} from "./child-grouping/child-grouping.component";
+import {CriterionComponent} from "./criterion/criterion.component";
+import {SetToArrayPipe} from "./pipes/set-to-array.pipe";
+import {YesNoPipe} from "./pipes/yes-no.pipe";
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
+    FrameworkRendererComponent,
+    ChildGroupingComponent,
+    CriterionComponent,
+    SetToArrayPipe,
+    YesNoPipe,
     PageNotFoundComponent
   ],
   imports: [
@@ -29,6 +39,11 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     MaterialModule,
     HeaderComponent,
     FooterComponent,
+    FrameworkRendererComponent,
+    ChildGroupingComponent,
+    CriterionComponent,
+    SetToArrayPipe,
+    YesNoPipe,
     PageNotFoundComponent,
     FontAwesomeModule
   ],

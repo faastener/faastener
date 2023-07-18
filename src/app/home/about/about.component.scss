@@ -40,9 +40,10 @@
 }
 
 .about-section__card-icon {
-  font-size: 3rem !important;
+  font-size: 3rem;
+  height: 3rem;
+  width: 3rem;
   transition: all .3s ease;
-  margin-right: 1rem;
 }
 
 .about-section__card-title {

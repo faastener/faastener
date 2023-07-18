@@ -8,9 +8,11 @@
       <li class="menu__text"><a class="menu__link" mat-button [routerLink]="['/platforms']" routerLinkActive="menu__link--active"> Platforms </a></li>
       <li class="menu__text"><a class="menu__link" mat-button href="mailto:yussupov@iaas.uni-stuttgart.de?subject=%5BGitHub%5D%20FaaStener"> Contact Us </a></li>
       <li class="header__spacer"><span></span></li>
-      <li><a class="menu__link-icon" mat-icon-button target="_blank" href="https://github.com/faastener/faastener" >
-        <fa-icon [icon]="faGithub"></fa-icon>
-      </a></li>
+      <li>
+        <a mat-icon-button class="menu__link-icon" target="_blank" href="https://github.com/faastener/faastener">
+          <fa-icon [icon]="faGithub"></fa-icon>
+        </a>
+      </li>
     </ul>
 
     <mat-menu #menu="matMenu">

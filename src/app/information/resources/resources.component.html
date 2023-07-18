@@ -1,0 +1,18 @@
+<ng-container *ngFor="let section of resources">
+  <h1>
+    {{section.title}}
+  </h1>
+  <p>
+    {{section.description}}
+  </p>
+
+  <div *ngFor="let res of section.resources; let i = index;">
+    <span>[{{i + 1}}]</span>
+    <span>
+      {{res.resource}}
+      <a href="{{res.reference}}">(reference)</a>
+    </span>
+
+  </div>
+
+</ng-container>

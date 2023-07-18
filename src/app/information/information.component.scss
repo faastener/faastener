@@ -1,0 +1,39 @@
+@import "../_scss/shared";
+
+:host {
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+}
+
+.info-tabs {
+  width: 100%;
+  color: white;
+  display: flex;
+}
+
+.info-tabs__links {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+}
+
+.info-tabs--link {
+  flex: 1 1 auto;
+  font-size: .8rem;
+}
+
+.info-main {
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 1100px) {
+  .info-tabs__links {
+    max-width: 1200px;
+  }
+}

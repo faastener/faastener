@@ -54,6 +54,10 @@
   outline: 0;
 }
 
+.menu__link-icon {
+  --mat-mdc-button-persistent-ripple-color: none;
+}
+
 .menu__link--active {
   color: $pink-main !important;
 }

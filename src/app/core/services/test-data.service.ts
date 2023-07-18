@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
+import {EMPTY, filter, Observable, throwError} from 'rxjs';
 import {catchError, map, shareReplay} from 'rxjs/operators';
 import {ClassificationFramework} from '../../shared/interfaces/classification';
 import {Technology, TechnologyType} from '../../shared/interfaces/technology';
@@ -56,11 +56,18 @@ export class TestDataService extends DataService {
     );
   }
 
-  getLatestFrameworkForTechnologyType(technologyType: TechnologyType): Observable<ClassificationFramework | undefined> {
+  getLatestFrameworkForTechnologyType(technologyType: TechnologyType): Observable<ClassificationFramework | null> {
     return this.getFrameworks().pipe(
-      map((frameworks) => frameworks.find(
-        // currently returns the first found value, TODO: check version values
-        (item) => item.technologyType.toLocaleLowerCase() === technologyType.toLocaleLowerCase())
+      map((frameworks) => {
+          const f: ClassificationFramework | undefined = frameworks.find(
+              // currently returns the first found value, TODO: check version values
+              (item) => item.technologyType.toLocaleLowerCase() === technologyType.toLocaleLowerCase());
+          if (f) {
+            return f;
+          } else {
+            return null;
+          }
+        }
       ),
       shareReplay(1),
       catchError(TestDataService.handleError)

@@ -1,0 +1,78 @@
+@import "../../_scss/shared";
+@import "../../_scss/global/variables";
+
+:host {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: flex-end;
+}
+
+.criterion__heading-line {
+  width: 100%;
+  margin: .5rem 0;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.criterion__title-block {
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  flex: 1 1 min-content;
+}
+
+.criterion__value-block {
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: center;
+  justify-content: flex-end;
+  flex: 1 1 min-content;
+}
+
+.criterion__value-list-item {
+  font-size: 1rem;
+  line-height: 1rem;
+  margin: .5rem 0;
+}
+
+.criterion__value-list-item-divider {
+  margin: .5rem 0;
+}
+
+.criterion__value-list-block {
+  margin-top: .5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 90%;
+  align-self: center;
+}
+
+.criterion__heading-line-block-item {
+  align-self: center;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+.criterion__icon {
+  font-size: 1.3rem;
+}
+
+.criterion__reference {
+  font-size: 1rem;
+  text-decoration: none;
+  padding-left: .2rem;
+}
+
+.criterion__title {
+  flex: 1;
+}
+
+.child-grouping__criterion-description {
+  flex: 2 0 100%;
+}
+
+.child-grouping__criterion-examples {
+  flex: 2 0 100%;
+}
