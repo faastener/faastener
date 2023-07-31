@@ -5,252 +5,247 @@
     "name": "Main filter",
     "filters": [
       {
-        "criterionTypeId": "platform.license",
+        "criterionTypeId": "license",
         "displayName": "License",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.license.type",
+        "criterionTypeId": "licenseType",
         "displayName": "License Type",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.installation.type",
+        "criterionTypeId": "installType",
         "displayName": "Installation",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.installation.targets",
+        "criterionTypeId": "installTargets",
         "displayName": "Installation Targets",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.code.availability",
+        "criterionTypeId": "code",
         "displayName": "Source Code Availability",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.code.repository",
+        "criterionTypeId": "codeLoc",
         "displayName": "Source Code Repository",
         "filterType": "containsAny"
       },
       {
-        "criterionTypeId": "platform.code.language",
+        "criterionTypeId": "developedIn",
         "displayName": "Main Programming Language",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.github.stars",
+        "criterionTypeId": "githubStars",
         "displayName": "GitHub Stars",
         "filterType": "lte"
       },
       {
-        "criterionTypeId": "platform.github.forks",
+        "criterionTypeId": "githubForks",
         "displayName": "GitHub Forks",
         "filterType": "lte"
       },
       {
-        "criterionTypeId": "platform.github.issues",
+        "criterionTypeId": "githubIssues",
         "displayName": "GitHub Issues",
         "filterType": "lte"
       },
       {
-        "criterionTypeId": "platform.github.commits",
+        "criterionTypeId": "githubCommits",
         "displayName": "GitHub Commits",
         "filterType": "lte"
       },
       {
-        "criterionTypeId": "platform.github.contributors",
+        "criterionTypeId": "githubContributors",
         "displayName": "GitHub Contributors",
         "filterType": "lte"
       },
       {
-        "criterionTypeId": "platform.stackoverflow.questions",
-        "displayName": "Stackoverflow Questions",
-        "filterType": "lte"
-      },
-      {
-        "criterionTypeId": "platform.function.runtimes",
+        "criterionTypeId": "funcRuntimes",
         "displayName": "Function Runtimes",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.function.runtime-customization",
+        "criterionTypeId": "runtimeCustomization",
         "displayName": "Function Runtime Customization",
         "filterType": "bool"
       },
       {
-        "criterionTypeId": "platform.development.ide-support",
+        "criterionTypeId": "ide",
         "displayName": "Supported IDEs",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.function.client-libraries",
+        "criterionTypeId": "clientLibs",
         "displayName": "Client Libraries",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.quotas.dep-pkg-size",
+        "criterionTypeId": "pkgSizeQuotas",
         "displayName": "Deployment Package Size Quota",
         "filterType": "bool"
       },
       {
-        "criterionTypeId": "platform.quotas.execution-time",
+        "criterionTypeId": "execTimeQuotas",
         "displayName": "Execution Time Quota",
         "filterType": "bool"
       },
       {
-        "criterionTypeId": "platform.function.versioning",
+        "criterionTypeId": "funcVersioning",
         "displayName": "Function Versioning",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.function.versioning-app",
+        "criterionTypeId": "appVersioning",
         "displayName": "Application Versioning",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.event-source.endpoint.sync-call",
+        "criterionTypeId": "endpointSyncCall",
         "displayName": "Synchronous Calls",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.event-source.endpoint.async-call",
+        "criterionTypeId": "endpointAsyncCall",
         "displayName": "Asynchronous Calls",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.event-source.endpoint.customization",
+        "criterionTypeId": "endpointCustomization",
         "displayName": "Endpoint Customization",
         "filterType": "bool"
       },
       {
-        "criterionTypeId": "platform.event-source.endpoint.tls",
+        "criterionTypeId": "endpointTLS",
         "displayName": "TLS Support",
         "filterType": "bool"
       },
       {
-        "criterionTypeId": "platform.event-source.datastore.file-level",
+        "criterionTypeId": "datastoreBlob",
         "displayName": "File-level Datastores",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.event-source.datastore.database-mode",
+        "criterionTypeId": "datastoreDB",
         "displayName": "Database Mode Datastores",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.event-source.scheduler",
+        "criterionTypeId": "scheduler",
         "displayName": "Scheduled Function Calls",
         "filterType": "bool"
       },
       {
-        "criterionTypeId": "platform.event-source.messaging",
+        "criterionTypeId": "messaging",
         "displayName": "Message Queues",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.event-source.streaming",
+        "criterionTypeId": "streaming",
         "displayName": "Stream Processing Platforms",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.event-source.special-purpose-service",
+        "criterionTypeId": "specService",
         "displayName": "Special-purpose Services",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.event-source.integration",
+        "criterionTypeId": "eventSourceIntegration",
         "displayName": "Event Sources Integration",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.function.orchestrator",
+        "criterionTypeId": "orchestrator",
         "displayName": "Native Function Orchestrators",
         "filterType": "containsAny"
       },
       {
-        "criterionTypeId": "platform.function.orchestrator.workflow-definition-type",
+        "criterionTypeId": "workflowDefType",
         "displayName": "Workflow Definition Type",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.function.orchestrator.workflow-definition-languages",
+        "criterionTypeId": "workflowDefLang",
         "displayName": "Workflow Definition Language",
         "filterType": "containsOne"
       },
       {
-        "criterionTypeId": "platform.function.orchestrator.quotas.execution-time",
+        "criterionTypeId": "orchExecTimeQuotas",
         "displayName": "Workflow Execution Time Quota",
         "filterType": "bool"
       },
       {
-        "criterionTypeId": "platform.function.orchestrator.quotas.io-size",
+        "criterionTypeId": "orchIOQuotas",
         "displayName": "Workflow I/O Size Quota",
         "filterType": "bool"
       },
       {
-        "criterionTypeId": "platform.testing.functional",
+        "criterionTypeId": "testingFunc",
         "displayName": "Functional Testing",
         "filterType": "containsAny"
       },
       {
-        "criterionTypeId": "platform.testing.non-functional",
+        "criterionTypeId": "testingNonFunc",
         "displayName": "Non-functional Testing",
         "filterType": "containsAny"
       },
       {
-        "criterionTypeId": "platform.debugging.local",
+        "criterionTypeId": "debuggingLocal",
         "displayName": "Local Debugging",
         "filterType": "containsAny"
       },
       {
-        "criterionTypeId": "platform.debugging.remote",
+        "criterionTypeId": "debuggingRemote",
         "displayName": "Remote Debugging",
         "filterType": "containsAny"
       },
       {
-        "criterionTypeId": "platform.observability.logging",
+        "criterionTypeId": "logging",
         "displayName": "Logging",
         "filterType": "containsAny"
       },
       {
-        "criterionTypeId": "platform.observability.monitoring",
+        "criterionTypeId": "monitoring",
         "displayName": "Monitoring",
         "filterType": "containsAny"
       },
       {
-        "criterionTypeId": "platform.observability.integration",
+        "criterionTypeId": "obsIntegration",
         "displayName": "Logging/Monitoring Integration",
         "filterType": "containsAny"
       },
       {
-        "criterionTypeId": "platform.deployment-automation",
+        "criterionTypeId": "depAutomation",
         "displayName": "Deployment Automation",
         "filterType": "containsAny"
       },
       {
-        "criterionTypeId": "platform.ci-cd",
+        "criterionTypeId": "cicd",
         "displayName": "CI/CD",
         "filterType": "containsAny"
       },
       {
-        "criterionTypeId": "platform.function.marketplaces",
+        "criterionTypeId": "funcMarketplaces",
         "displayName": "Function Marketplaces",
         "filterType": "containsAny"
       },
       {
-        "criterionTypeId": "platform.function.code-sample-repositories",
+        "criterionTypeId": "funcSampleRepos",
         "displayName": "Code Sample Repositories",
         "filterType": "bool"
       },
       {
-        "criterionTypeId": "platform.authentication",
+        "criterionTypeId": "auth",
         "displayName": "Authentication",
         "filterType": "containsAny"
       },
       {
-        "criterionTypeId": "platform.access-control",
+        "criterionTypeId": "accessControl",
         "displayName": "Access Control",
         "filterType": "containsAny"
       }

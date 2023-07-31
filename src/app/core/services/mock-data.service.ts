@@ -6,16 +6,16 @@ import {ClassificationFramework} from '../../shared/interfaces/classification';
 import {Technology, TechnologyType} from '../../shared/interfaces/technology';
 import {ClassificationFrameworkResponse, TechnologyResponse} from '../../shared/interfaces/responses';
 import {InfoResourceSection} from '../../shared/interfaces/info';
-import {DataService} from './data.service';
+import {AbstractDataService} from './abstract-data.service';
 
-const frameworksPath = '/assets/test-data/frameworks.json';
 const technologiesPath = '/assets/test-data/technologies.json';
+const frameworksPath = '/assets/test-data/frameworks.json';
 const dossiersPath = '/assets/test-data/dossiers.json';
 const filterConfigurationsPath = '/assets/test-data/filters.json';
 const infoResourcesPath = '/assets/test-data/resources.json';
 
 @Injectable()
-export class TestDataService extends DataService {
+export class MockDataService extends AbstractDataService {
 
   constructor(private http: HttpClient) {
     super();
@@ -30,7 +30,7 @@ export class TestDataService extends DataService {
             const framework: ClassificationFramework = {
               id: f.id,
               technologyType: f.technologyType,
-              name: f.technologyName,
+              name: f.name,
               description: f.description,
               version: '',
               frameworkViews: f.frameworkViews
@@ -42,7 +42,7 @@ export class TestDataService extends DataService {
           return result;
         }),
         shareReplay(1),
-        catchError(TestDataService.handleError)
+        catchError(MockDataService.handleError)
       );
   }
 
@@ -52,7 +52,7 @@ export class TestDataService extends DataService {
         (item) => item.technologyType.toLocaleLowerCase() === technologyType.toLocaleLowerCase())
       ),
       shareReplay(1),
-      catchError(TestDataService.handleError)
+      catchError(MockDataService.handleError)
     );
   }
 
@@ -70,7 +70,7 @@ export class TestDataService extends DataService {
         }
       ),
       shareReplay(1),
-      catchError(TestDataService.handleError)
+      catchError(MockDataService.handleError)
     );
   }
 
@@ -94,7 +94,7 @@ export class TestDataService extends DataService {
             return result;
           }
         ),
-        catchError(TestDataService.handleError),
+        catchError(MockDataService.handleError),
         shareReplay(1)
       );
   }
@@ -105,7 +105,7 @@ export class TestDataService extends DataService {
         techs.filter(t => t.technologyType.toLocaleLowerCase() === technologyType.toLocaleLowerCase())
       ),
       shareReplay(1),
-      catchError(TestDataService.handleError)
+      catchError(MockDataService.handleError)
     );
   }
 
@@ -238,7 +238,7 @@ export class TestDataService extends DataService {
   getInfoResources(): Observable<InfoResourceSection[]> {
     return this.http.get<InfoResourceSection[]>(infoResourcesPath)
       .pipe(
-        catchError(TestDataService.handleError),
+        catchError(MockDataService.handleError),
         shareReplay(1)
       );
   }

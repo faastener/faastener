@@ -6,7 +6,7 @@ import {ClassificationView, CriterionInstance} from './classification';
 
 export interface ClassificationFrameworkResponse {
   id: string;
-  technologyName: string;
+  name: string;
   technologyType: TechnologyType;
   version?: string;
   description?: string;

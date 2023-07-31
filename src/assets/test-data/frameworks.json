@@ -1,23 +1,23 @@
 [
   {
-    "id": "fw-faas",
-    "name": "A Framework for Classifying Function-as-a-Service Platforms",
+    "id": "fwFaaS",
+    "name": "A Classification Framework for Function-as-a-Service Platforms",
     "technologyType": "FAAS",
     "version": "1.0",
     "description": "A framework for classifying Function-as-a-Service platforms which encompasses 56 review criteria. By default, the criteria are grouped into two views: a higher-level, managerial view and a lower-level, DevOps view.",
     "frameworkViews": [
       {
-        "id": "view:faas:managerial",
+        "id": "vManagement",
         "name": "Managerial View",
         "description": "This view combines higher-level classification criteria focusing on general platform properties such as licence or installation type.",
         "criteriaGroupings": [
           {
-            "id": "grouping:licensing",
+            "id": "gLicense",
             "locator": "licensing",
             "name": "Licensing",
             "criteria": [
               {
-                "id": "platform.license",
+                "id": "license",
                 "name": "License Name",
                 "description": "The name of license under which a platform is released.",
                 "exampleValues": [
@@ -28,7 +28,7 @@
                 ]
               },
               {
-                "id": "platform.license.type",
+                "id": "licenseType",
                 "name": "License Type",
                 "description": "The type of license under which a platform is released.",
                 "exampleValues": [
@@ -42,12 +42,12 @@
             ]
           },
           {
-            "id": "grouping:installation",
+            "id": "gInstallation",
             "locator": "installation",
             "name": "Installation",
             "criteria": [
               {
-                "id": "platform.installation.type",
+                "id": "installType",
                 "name": "Installation Type",
                 "description": "This criterion indicates how a platform can be installed.",
                 "exampleValues": [
@@ -56,7 +56,7 @@
                 ]
               },
               {
-                "id": "platform.installation.targets",
+                "id": "installTargets",
                 "name": "Installation Target Hosts",
                 "description": "This criterion indicates to which target hosts a platform can be installed.",
                 "exampleValues": [
@@ -70,12 +70,12 @@
             ]
           },
           {
-            "id": "grouping:source-code",
+            "id": "gSourceCode",
             "locator": "source-code",
             "name": "Source Code",
             "criteria": [
               {
-                "id": "platform.code.availability",
+                "id": "code",
                 "name": "Source Code Availability",
                 "description": "This criterion indicates whether a platform's source code is publicly available.",
                 "exampleValues": [
@@ -84,7 +84,7 @@
                 ]
               },
               {
-                "id": "platform.code.repository",
+                "id": "codeLoc",
                 "name": "Source Code Repository",
                 "description": "This criterion indicates which open source repository contains the source code of a given open source platform.",
                 "exampleValues": [
@@ -94,7 +94,7 @@
                 ]
               },
               {
-                "id": "platform.code.language",
+                "id": "developedIn",
                 "name": "Main Programming Language",
                 "description": "This criterion indicates the main implementation language of a given open source platform.",
                 "exampleValues": [
@@ -112,12 +112,12 @@
             ]
           },
           {
-            "id": "grouping:interface",
+            "id": "gInterface",
             "locator": "interface",
             "name": "Interface",
             "criteria": [
               {
-                "id": "platform.interface.types",
+                "id": "interfaces",
                 "name": "Interface Types",
                 "description": "This criterion indicates which interfaces are provided by a given platform.",
                 "exampleValues": [
@@ -127,7 +127,7 @@
                 ]
               },
               {
-                "id": "platform.interface.ops.app-mgmt",
+                "id": "interfaceAppMgmt",
                 "name": "Interface Operations for Application Management",
                 "description": "This criterion indicates which application management operations are supported by a given platform.",
                 "exampleValues": [
@@ -138,7 +138,7 @@
                 ]
               },
               {
-                "id": "platform.interface.ops.platform-adm",
+                "id": "interfaceAdmin",
                 "name": "Interface Operations for Platform Administration",
                 "description": "This criterion indicates which platform administration operations are supported by a given platform.",
                 "exampleValues": [
@@ -152,17 +152,17 @@
             ]
           },
           {
-            "id": "grouping:community",
+            "id": "gCommunity",
             "locator": "community",
             "name": "Community",
             "criteriaGroupings": [
               {
-                "id": "grouping:github",
+                "id": "gGithub",
                 "locator": "github",
                 "name": "GitHub",
                 "criteria": [
                   {
-                    "id": "platform.github.stars",
+                    "id": "githubStars",
                     "name": "GitHub Stars",
                     "description": "This criterion indicates how many GitHub stars a given platform has.",
                     "exampleValues": [
@@ -170,7 +170,7 @@
                     ]
                   },
                   {
-                    "id": "platform.github.forks",
+                    "id": "githubForks",
                     "name": "GitHub Forks",
                     "description": "This criterion indicates how many GitHub forks a given platform has.",
                     "exampleValues": [
@@ -178,7 +178,7 @@
                     ]
                   },
                   {
-                    "id": "platform.github.issues",
+                    "id": "githubIssues",
                     "name": "GitHub Issues",
                     "description": "This criterion indicates how many GitHub issues a given platform has.",
                     "exampleValues": [
@@ -186,7 +186,7 @@
                     ]
                   },
                   {
-                    "id": "platform.github.commits",
+                    "id": "githubCommits",
                     "name": "GitHub Commits",
                     "description": "This criterion indicates how many GitHub commits a given platform has.",
                     "exampleValues": [
@@ -194,7 +194,7 @@
                     ]
                   },
                   {
-                    "id": "platform.github.contributors",
+                    "id": "githubContributors",
                     "name": "GitHub Contributors",
                     "description": "This criterion indicates how many GitHub contributors a given platform has.",
                     "exampleValues": [
@@ -204,12 +204,12 @@
                 ]
               },
               {
-                "id": "grouping:stackoverflow",
+                "id": "gStackoverflow",
                 "locator": "stackoverflow",
                 "name": "Stackoverflow",
                 "criteria": [
                   {
-                    "id": "platform.stackoverflow.questions",
+                    "id": "soQuestions",
                     "name": "Stackoverflow Questions",
                     "description": "This criterion indicates how many Stackoverflow questions a given platform has.",
                     "exampleValues": [
@@ -221,12 +221,12 @@
             ]
           },
           {
-            "id": "grouping:documentation",
+            "id": "gDocumentation",
             "locator": "documentation",
             "name": "Documentation",
             "criteria": [
               {
-                "id": "platform.documentation",
+                "id": "docs",
                 "name": "Platform Documentation",
                 "description": "This criterion indicates whether a given platform provides the documentation on how to use and extend it, also including the platform's architecture.",
                 "exampleValues": [
@@ -237,7 +237,7 @@
                 ]
               },
               {
-                "id": "platform.documentation.functions",
+                "id": "docFunctions",
                 "name": "Functions Documentation",
                 "description": "This criterion indicates whether a given FaaS platform provides the documentation on how to develop and deploy functions.",
                 "exampleValues": [
@@ -250,17 +250,17 @@
         ]
       },
       {
-        "id": "view:faas:devops",
+        "id": "vDevops",
         "name": "DevOps View",
         "description": "This view combines lower-level classification criteria focusing on technical properties such as supported runtimes or event sources.",
         "criteriaGroupings": [
           {
-            "id": "grouping:development",
+            "id": "gDevelopment",
             "locator": "development",
             "name": "Development",
             "criteria": [
               {
-                "id": "platform.function.runtimes",
+                "id": "funcRuntimes",
                 "name": "Function Runtimes",
                 "description": "This criterion indicates which function runtimes are supported by a given FaaS platform.",
                 "exampleValues": [
@@ -276,7 +276,7 @@
                 ]
               },
               {
-                "id": "platform.function.runtime-customization",
+                "id": "runtimeCustomization",
                 "name": "Function Runtime Customization",
                 "description": "This criterion indicates whether a given FaaS platform supports runtime customization.",
                 "exampleValues": [
@@ -285,7 +285,7 @@
                 ]
               },
               {
-                "id": "platform.development.ide-support",
+                "id": "ide",
                 "name": "IDEs and Text Editors",
                 "description": "This criterion indicates which IDEs and text editor a given platform supports.",
                 "exampleValues": [
@@ -295,7 +295,7 @@
                 ]
               },
               {
-                "id": "platform.function.client-libraries",
+                "id": "clientLibs",
                 "name": "Client Libraries",
                 "description": "This criterion indicates whether a given platform offers client libraries and in which programming languages.",
                 "exampleValues": [
@@ -313,12 +313,12 @@
             ],
             "criteriaGroupings": [
               {
-                "id": "grouping:dev-quotas",
+                "id": "gDevQuotas",
                 "locator": "dev-quotas",
                 "name": "Quotas",
                 "criteria": [
                   {
-                    "id": "platform.quotas.dep-pkg-size",
+                    "id": "pkgSizeQuotas",
                     "name": "Deployment Package Size Quota",
                     "description": "This criterion indicates whether a given FaaS platform has quotas on the deployment package size.",
                     "exampleValues": [
@@ -327,7 +327,7 @@
                     ]
                   },
                   {
-                    "id": "platform.quotas.execution-time",
+                    "id": "execTimeQuotas",
                     "name": "Execution Time Quota",
                     "description": "This criterion indicates whether a given FaaS platform has quotas on the function execution time.",
                     "exampleValues": [
@@ -340,12 +340,12 @@
             ]
           },
           {
-            "id": "grouping:versioning",
+            "id": "gVersioning",
             "locator": "versioning",
             "name": "Version Management",
             "criteria": [
               {
-                "id": "platform.function.versioning",
+                "id": "funcVersioning",
                 "name": "Function Versions",
                 "description": "This criterion indicates whether a given FaaS platform supports versioning on the level of functions.",
                 "exampleValues": [
@@ -354,7 +354,7 @@
                 ]
               },
               {
-                "id": "platform.function.versioning-app",
+                "id": "appVersioning",
                 "name": "Application Versions",
                 "description": "This criterion indicates whether a given FaaS platform supports versioning on the level of application.",
                 "exampleValues": [
@@ -366,17 +366,17 @@
             ]
           },
           {
-            "id": "grouping:event-sources",
+            "id": "gEventSources",
             "locator": "event-sources",
             "name": "Event Sources",
             "criteriaGroupings": [
               {
-                "id": "grouping:endpoint",
+                "id": "gEndpoint",
                 "locator": "endpoint",
                 "name": "Endpoint",
                 "criteria": [
                   {
-                    "id": "platform.event-source.endpoint.sync-call",
+                    "id": "endpointSyncCall",
                     "name": "Synchronous Endpoint Call",
                     "description": "This criterion indicates whether a given FaaS platform supports exposing functions as endpoints for synchronous calls and using which protocols.",
                     "exampleValues": [
@@ -385,7 +385,7 @@
                     ]
                   },
                   {
-                    "id": "platform.event-source.endpoint.async-call",
+                    "id": "endpointAsyncCall",
                     "name": "Asynchronous Endpoint Call",
                     "description": "This criterion indicates whether a given FaaS platform supports exposing functions as endpoints for asynchronous calls and using which protocols.",
                     "exampleValues": [
@@ -394,7 +394,7 @@
                     ]
                   },
                   {
-                    "id": "platform.event-source.endpoint.customization",
+                    "id": "endpointCustomization",
                     "name": "Endpoint Customization",
                     "description": "This criterion indicates whether a given FaaS platform supports exposing functions as endpoints for asynchronous calls and using which protocols.",
                     "exampleValues": [
@@ -403,7 +403,7 @@
                     ]
                   },
                   {
-                    "id": "platform.event-source.endpoint.tls",
+                    "id": "endpointTLS",
                     "name": "Endpoint TLS Support",
                     "description": "This criterion indicates whether a given FaaS platform supports exposing functions as secure endpoints using TLS.",
                     "exampleValues": [
@@ -414,12 +414,12 @@
                 ]
               },
               {
-                "id": "grouping:data-store",
+                "id": "gDataStore",
                 "locator": "data-store",
                 "name": "Data Store",
                 "criteria": [
                   {
-                    "id": "platform.event-source.datastore.file-level",
+                    "id": "datastoreBlob",
                     "name": "File Level Data Stores",
                     "description": "This criterion indicates which file-level data stores can trigger functions on a given FaaS platform.",
                     "exampleValues": [
@@ -428,7 +428,7 @@
                     ]
                   },
                   {
-                    "id": "platform.event-source.datastore.database-mode",
+                    "id": "datastoreDB",
                     "name": "Database Mode Data Stores",
                     "description": "This criterion indicates which database-mode data stores can trigger functions on a given FaaS platform.",
                     "exampleValues": [
@@ -441,7 +441,7 @@
             ],
             "criteria": [
               {
-                "id": "platform.event-source.scheduler",
+                "id": "scheduler",
                 "name": "Scheduler",
                 "description": "This criterion indicates whether a given FaaS platform supports scheduled function invocation.",
                 "exampleValues": [
@@ -450,7 +450,7 @@
                 ]
               },
               {
-                "id": "platform.event-source.messaging",
+                "id": "messaging",
                 "name": "Message Queue",
                 "description": "This criterion indicates which messaging solutions can trigger functions on a given FaaS platform.",
                 "exampleValues": [
@@ -459,7 +459,7 @@
                 ]
               },
               {
-                "id": "platform.event-source.streaming",
+                "id": "streaming",
                 "name": "Stream Processing Platform",
                 "description": "This criterion indicates which stream processing solutions can trigger functions on a given FaaS platform.",
                 "exampleValues": [
@@ -468,7 +468,7 @@
                 ]
               },
               {
-                "id": "platform.event-source.special-purpose-service",
+                "id": "specService",
                 "name": "Special Purpose Services",
                 "description": "This criterion indicates which special-purpose services can trigger functions on a given FaaS platform.",
                 "exampleValues": [
@@ -478,7 +478,7 @@
                 ]
               },
               {
-                "id": "platform.event-source.integration",
+                "id": "eventSourceIntegration",
                 "name": "Event Sources Integration",
                 "description": "This criterion indicates how a given FaaS platform enables integration of custom event sources.",
                 "exampleValues": [
@@ -489,12 +489,12 @@
             ]
           },
           {
-            "id": "grouping:function-orchestration",
+            "id": "gFunctionOrchestration",
             "locator": "function-orchestration",
             "name": "Function Orchestration",
             "criteria": [
               {
-                "id": "platform.function.orchestrator",
+                "id": "orchestrator",
                 "name": "Function Orchestrator",
                 "description": "This criterion indicates whether a function orchestrator can be used with a given FaaS platform.",
                 "exampleValues": [
@@ -503,7 +503,7 @@
                 ]
               },
               {
-                "id": "platform.function.orchestrator.workflow-definition-type",
+                "id": "workflowDefType",
                 "name": "Function Workflows Definition",
                 "description": "This criterion indicates how workflow are defined using a given function orchestrator.",
                 "exampleValues": [
@@ -513,7 +513,7 @@
                 ]
               },
               {
-                "id": "platform.function.orchestrator.workflow-definition-languages",
+                "id": "workflowDefLang",
                 "name": "Orchestrating Function Languages",
                 "description": "This criterion indicates which programming languages can be used to define workflows using a given function orchestrator.",
                 "exampleValues": [
@@ -522,7 +522,7 @@
                 ]
               },
               {
-                "id": "platform.function.orchestrator.control-flow-docs",
+                "id": "controlFlowDocs",
                 "name": "Control Flow Constructs Documentation",
                 "description": "This criterion indicates whether a given function orchestrator provides teh documentation on control flow constructs.",
                 "exampleValues": [
@@ -533,12 +533,12 @@
             ],
             "criteriaGroupings": [
               {
-                "id": "grouping:orchestrator-quotas",
+                "id": "gOrchestratorQuotas",
                 "locator": "orchestrator-quotas",
                 "name": "Quotas",
                 "criteria": [
                   {
-                    "id": "platform.function.orchestrator.quotas.execution-time",
+                    "id": "orchExecTimeQuotas",
                     "name": "Function Workflow Execution Time Quota",
                     "description": "This criterion indicates whether a given function orchestrator has quotas on workflow execution time.",
                     "exampleValues": [
@@ -547,7 +547,7 @@
                     ]
                   },
                   {
-                    "id": "platform.function.orchestrator.quotas.io-size",
+                    "id": "orchIOQuotas",
                     "name": "Function Workflow Task I/O Size Quota",
                     "description": "This criterion indicates whether a given function orchestrator has quotas on workflow tasks' I/O size.",
                     "exampleValues": [
@@ -560,17 +560,17 @@
             ]
           },
           {
-            "id": "grouping:testing-debugging",
+            "id": "gTestingDebugging",
             "locator": "testing-debugging",
             "name": "Testing and Debugging",
             "criteriaGroupings": [
               {
-                "id": "grouping:testing",
+                "id": "gTesting",
                 "locator": "testing",
                 "name": "Testing",
                 "criteria": [
                   {
-                    "id": "platform.testing.functional",
+                    "id": "testingFunc",
                     "name": "Tools for Functional Testing",
                     "description": "This criterion indicates which tools for functional testing a given platform supports.",
                     "exampleValues": [
@@ -579,7 +579,7 @@
                     ]
                   },
                   {
-                    "id": "platform.testing.non-functional",
+                    "id": "testingNonFunc",
                     "name": "Tools for Non-Functional Testing",
                     "description": "This criterion indicates which tools for non-functional testing a given platform supports.",
                     "exampleValues": [
@@ -590,12 +590,12 @@
                 ]
               },
               {
-                "id": "grouping:debugging",
+                "id": "gDebugging",
                 "locator": "debugging",
                 "name": "Debugging",
                 "criteria": [
                   {
-                    "id": "platform.debugging.local",
+                    "id": "debuggingLocal",
                     "name": "Local Debugging Tools",
                     "description": "This criterion indicates which tools for local debugging a given platform supports.",
                     "exampleValues": [
@@ -604,7 +604,7 @@
                     ]
                   },
                   {
-                    "id": "platform.debugging.remote",
+                    "id": "debuggingRemote",
                     "name": "Remote Debugging Tools",
                     "description": "This criterion indicates which tools for remote debugging a given platform supports.",
                     "exampleValues": [
@@ -617,12 +617,12 @@
             ]
           },
           {
-            "id": "grouping:observability",
+            "id": "gObservability",
             "locator": "observability",
             "name": "Observability",
             "criteria": [
               {
-                "id": "platform.observability.logging",
+                "id": "logging",
                 "name": "Logging Tools",
                 "description": "This criterion indicates which logging tools a given platform supports.",
                 "exampleValues": [
@@ -631,7 +631,7 @@
                 ]
               },
               {
-                "id": "platform.observability.monitoring",
+                "id": "monitoring",
                 "name": "Monitoring Tools",
                 "description": "This criterion indicates which monitoring tools a given platform supports.",
                 "exampleValues": [
@@ -640,7 +640,7 @@
                 ]
               },
               {
-                "id": "platform.observability.integration",
+                "id": "obsIntegration",
                 "name": "Tooling Integration",
                 "description": "This criterion indicates whether a given platform supports integration of logging and monitoring tools.",
                 "exampleValues": [
@@ -652,12 +652,12 @@
             ]
           },
           {
-            "id": "grouping:app-delivery",
+            "id": "gAppDelivery",
             "locator": "app-delivery",
             "name": "Application Delivery",
             "criteria": [
               {
-                "id": "platform.deployment-automation",
+                "id": "depAutomation",
                 "name": "Deployment Automation",
                 "description": "This criterion indicates which deployment automation tools a given platform supports.",
                 "exampleValues": [
@@ -666,7 +666,7 @@
                 ]
               },
               {
-                "id": "platform.ci-cd",
+                "id": "cicd",
                 "name": "CI/CD Pipelining",
                 "description": "This criterion indicates whether a given platform documents support for CI/CD tools.",
                 "exampleValues": [
@@ -677,12 +677,12 @@
             ]
           },
           {
-            "id": "grouping:code-reuse",
+            "id": "gCodeReuse",
             "locator": "code-reuse",
             "name": "Code Reuse",
             "criteria": [
               {
-                "id": "platform.function.marketplaces",
+                "id": "funcMarketplaces",
                 "name": "Function Marketplace",
                 "description": "This criterion indicates whether a given FaaS platform has function or application examples available via a function marketplace.",
                 "exampleValues": [
@@ -691,7 +691,7 @@
                 ]
               },
               {
-                "id": "platform.function.code-sample-repositories",
+                "id": "funcSampleRepos",
                 "name": "Function Code Sample Repository",
                 "description": "This criterion indicates whether a given FaaS platform provides one or more repositories with code samples.",
                 "exampleValues": [
@@ -702,12 +702,12 @@
             ]
           },
           {
-            "id": "grouping:access-mgmt",
+            "id": "gAccessMgmt",
             "locator": "access-mgmt",
             "name": "Access Management",
             "criteria": [
               {
-                "id": "platform.authentication",
+                "id": "auth",
                 "name": "Authentication",
                 "description": "This criterion indicates whether a given FaaS platform provides authentication mechanisms",
                 "exampleValues": [
@@ -716,7 +716,7 @@
                 ]
               },
               {
-                "id": "platform.access-control",
+                "id": "accessControl",
                 "name": "Access Control",
                 "description": "This criterion indicates whether a given FaaS platform provides access control mechanisms",
                 "exampleValues": [

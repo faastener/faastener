@@ -2,7 +2,8 @@ import {APP_INITIALIZER, NgModule, Optional, SkipSelf} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {EnsureModuleLoadedOnceGuard} from './ensure-module-loaded-once.guard';
 import {ConfigurationService} from './services/configuration.service';
-import {DataService} from "./services/data.service";
+import {AbstractDataService} from "./services/abstract-data.service";
+import {environment} from "../../environments/environment";
 
 @NgModule({
   declarations: [],
@@ -15,9 +16,8 @@ import {DataService} from "./services/data.service";
       useFactory: (appConfigService: ConfigurationService) => (() => appConfigService.load())
     },
     {
-      provide: DataService,
-      useFactory: (appConfigService: ConfigurationService) => (appConfigService.dataServiceFactory()),
-      deps: [ConfigurationService]
+      provide: AbstractDataService,
+      useClass: environment.dataService
     },
     ConfigurationService
   ]

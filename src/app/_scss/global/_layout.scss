@@ -21,6 +21,7 @@ html {
 
 .root--faastener-theme {
   @include mat.all-component-themes($faastener-main-theme);
+  @include mat.all-component-typographies($faastener-typography);
 }
 
 .root__main-grid {

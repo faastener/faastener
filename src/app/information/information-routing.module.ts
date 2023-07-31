@@ -4,7 +4,7 @@ import {ResourcesComponent} from './resources/resources.component';
 import {FaqComponent} from './faq/faq.component';
 import {InformationComponent} from './information.component';
 import {FrameworkComponent} from './framework/framework.component';
-import {classificationFrameworkResolver, resourcesResolver} from "./resolvers/resolvers";
+import {classificationFrameworkResolver, resourcesResolver} from "../core/resolvers";
 
 const infoRoutes: Routes = [
   {

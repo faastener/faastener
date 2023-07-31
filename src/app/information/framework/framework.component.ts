@@ -9,13 +9,13 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class FrameworkComponent implements OnInit {
   framework!: ClassificationFramework;
-
   constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
     this.route.data.subscribe(data => {
       this.framework = data['resolvedData'];
+      console.log(this.framework)
     });
   }
 }

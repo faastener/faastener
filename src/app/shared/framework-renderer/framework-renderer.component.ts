@@ -10,9 +10,9 @@ import {ViewportScroller} from '@angular/common';
 })
 export class FrameworkRendererComponent implements OnInit {
   @Input() framework!: ClassificationFramework;
-  @Input() includeFrameworkInfo = true;
+  @Input() includeFrameworkInfo: boolean = true;
   @Input() extraCriterionTitle: string = '';
-  @Input() renderReviewData = false;
+  @Input() renderReviewData: boolean = false;
   @Input() reviewData: CriterionInstance[] = [];
 
   viewToggles: Map<string, boolean> = new Map<string, boolean>();

@@ -31,9 +31,7 @@
                     [class.framework__root-grouping-card--first]="selectedGrouping.get(view.id)?.id === g.id"
                     class="framework__root-grouping-card"
                     (click)="onGroupingSelected(view.id, g)">
-            <mat-card-header>
-              <mat-card-title class="text-center">{{g.name}}</mat-card-title>
-            </mat-card-header>
+            <mat-card-content class="text-center">{{g.name}}</mat-card-content>
           </mat-card>
         </div>
       </ng-container>

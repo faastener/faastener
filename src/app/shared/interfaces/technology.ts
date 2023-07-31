@@ -68,3 +68,16 @@ export interface TechnologyDossier {
 export enum TechnologyType {
   faas = 'faas', baas = 'baas'
 }
+
+export class TechnologyTypeUtil {
+  public static toString(type: TechnologyType): string {
+    switch (type) {
+      case TechnologyType.faas:
+        return "Function-as-a-Service";
+      case TechnologyType.baas:
+        return "Blockchain-as-a-Service";
+      default:
+        return "";
+    }
+  }
+}
