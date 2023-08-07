@@ -1,4 +1,4 @@
-import {CriterionInstance} from './classification';
+import {CriterionValue} from "./classification";
 
 /**
  * An interface representing a particular technology of some [TechnologyType]{@link TechnologyType}.
@@ -36,16 +36,26 @@ export interface Technology {
    * Full description shown in technology details.
    */
   description?: string;
+
+  /**
+   * Technology dossier with the review data.
+   */
+  dossier?: TechnologyDossier;
 }
 
 /**
- * An interface representing the review data which comprises [CriterionInstances]{@link CriterionInstance} related to a particular [Technology]{@link Technology}.
+ * An interface representing the review data which comprises review data related to a particular [Technology]{@link Technology}.
  */
 export interface TechnologyDossier {
   /**
-   * Unique technology identifier.
+   * Unique dossier identifier.
    */
   id: string;
+
+  /**
+   * Unique technology identifier.
+   */
+  technologyId: string;
 
   /**
    * Date of review.
@@ -53,9 +63,9 @@ export interface TechnologyDossier {
   reviewDate?: Date;
 
   /**
-   * A list of CriterionInstance {@link CriterionInstance} encompassing the review data.
+   * A map of values {@link CriterionValue} encompassing the review data for the criterion ID.
    */
-  reviewedCriteria: CriterionInstance[];
+  reviewedCriteria: Map<string, CriterionValue[]>;
 }
 
 /**

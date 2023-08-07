@@ -1,0 +1,36 @@
+<faastener-header id="header"></faastener-header>
+<div class="g__page-section technology" *ngIf="technology" (scroll)="onWindowScroll()">
+  <div class="technology__header-block">
+    <img class="technology__logo" src="{{technology.logoLocation}}" alt="{{technology.technologyName}}"/>
+    <h1 class="g__page-section-header technology__header">{{technology.technologyName}}</h1>
+    <p class="text-justify">{{technology.description}}</p>
+
+    <!--<mat-form-field class="technology__view-combinations" appearance="fill" *ngIf="framework">
+      <mat-label>Technology View Mode</mat-label>
+      <mat-select [(value)]="selectedViewCombination">
+        <mat-option [value]="option" *ngFor="let option of framework.viewCombinations">{{ option.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>-->
+  </div>
+  <app-framework-renderer [framework]="framework"
+                          [includeFrameworkInfo]="false"
+                          [renderReviewData]="true"
+                          [reviewData]="technology.dossier?.reviewedCriteria!">
+  </app-framework-renderer>
+
+</div>
+<app-bottom-nav #bottomNavComponent [scrollToAnchor]="'header'">
+  <button class="g__nav-button" mat-button color="primary" routerLink="/home">
+    <mat-icon>home</mat-icon> Home
+  </button>
+  <button class="g__nav-button" mat-button color="primary" routerLink="/platforms">
+    <mat-icon>view_list</mat-icon> Platforms
+  </button>
+</app-bottom-nav>
+<faastener-footer></faastener-footer>
+
+
+
+
+
+

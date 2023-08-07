@@ -1,0 +1,43 @@
+<section class="platforms-list" *ngIf="dataSource.connect() | async as platforms">
+  <form class="platforms-list__search">
+    <mat-form-field appearance="fill" class="platforms-list__search-field">
+      <mat-label>Filter by name</mat-label>
+      <input #techName matInput placeholder="Ex. AWS Lambda..." aria-label="platform name"
+             (input)="onNameChange(techName.value)">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </form>
+
+  <div class="platforms-list__cards">
+    <ng-container *ngFor="let p of platforms">
+      <mat-card class="platforms-list__card text-center" [routerLink]="['./', p.id]">
+        <mat-card-content>
+          <img class="platforms-list__logo" src="{{p.logoLocation}}" alt="{{p.technologyName}}"/>
+          <h2 class="platform-section__card-title"> {{p.technologyName}} </h2>
+
+          <ng-container>
+            <p class="platforms-list__card-description text-center">
+              {{p.shortDescription}}
+            </p>
+
+          </ng-container>
+
+          <a mat-icon-button color="primary" [routerLink]="['./', p.id]"
+             aria-label="Open platform details button">
+            <mat-icon class="platforms-list__explore-button">arrow_forward</mat-icon>
+          </a>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+  </div>
+
+  <mat-paginator class="platforms-list__paginator"
+                 [length]="dataSource.totalInputSize"
+                 [pageSize]="dataSource.pageSize"
+                 [pageSizeOptions]="pageSizeOptions"
+                 [pageIndex]="dataSource.currentIndex"
+                 (page)="dataSource.fetch($event)">
+  </mat-paginator>
+
+
+</section>

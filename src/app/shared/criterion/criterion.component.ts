@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ClassificationCriterion, CriterionInstance, CriterionValue} from '../interfaces/classification';
+import {ClassificationCriterion, CriterionValue} from '../interfaces/classification';
 
 @Component({
   selector: 'app-criterion',
@@ -9,11 +9,10 @@ import {ClassificationCriterion, CriterionInstance, CriterionValue} from '../int
 export class CriterionComponent implements OnInit {
   @Input() criterion!: ClassificationCriterion;
   @Input() extraTitleText: string = '';
-  @Input() criterionInstance: CriterionInstance | undefined;
+  @Input() criterionValues: CriterionValue[] | undefined;
   @Input() reviewMode!: boolean;
   @Input() icon = 'text_snippet';
   title: string = '';
-  values: CriterionValue[] = [];
 
   constructor() {
   }
@@ -23,10 +22,6 @@ export class CriterionComponent implements OnInit {
       this.title = this.extraTitleText + this.criterion.name;
     } else {
       this.title = this.criterion.name;
-    }
-
-    if (this.criterionInstance) {
-      this.values = Array.from(this.criterionInstance.values);
     }
   }
 }

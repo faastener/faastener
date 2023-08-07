@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
+import {combineLatest, Observable, throwError} from 'rxjs';
 import {catchError, map, shareReplay} from 'rxjs/operators';
 import {ClassificationFramework} from '../../shared/interfaces/classification';
 import {Technology, TechnologyType} from '../../shared/interfaces/technology';
@@ -8,10 +8,11 @@ import {ClassificationFrameworkResponse, TechnologyResponse} from '../../shared/
 import {InfoResourceSection} from '../../shared/interfaces/info';
 import {AbstractDataService} from './abstract-data.service';
 import {environment} from "../../../environments/environment";
+import {CriterionFilterType, TechnologyFilterConfiguration} from "../../shared/interfaces/filtering";
 
-const infoResourcesPath = '/assets/test-data/resources.json';
-
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class DataService extends AbstractDataService {
   apiUrl: string = environment.apiUrl;
 
@@ -65,7 +66,7 @@ export class DataService extends AbstractDataService {
     );
   }
 
-  getLatestFrameworkForTechnologyType(technologyType: TechnologyType): Observable<ClassificationFramework | null> {
+  getLatestFrameworkForTechnologyType(technologyType: TechnologyType): Observable<ClassificationFramework> {
     return this.getFrameworks().pipe(
       map((frameworks) => {
           const f: ClassificationFramework | undefined = frameworks.find(
@@ -73,9 +74,15 @@ export class DataService extends AbstractDataService {
             (item) => item.technologyType.toLocaleLowerCase() === technologyType.toLocaleLowerCase());
           if (f) {
             return f;
-          } else {
-            return null;
           }
+          return {
+            id: "f.id",
+            technologyType: TechnologyType.faas,
+            name: "f.name",
+            description: "f.description",
+            version: '',
+            frameworkViews: []
+          };
         }
       ),
       shareReplay(1),
@@ -84,7 +91,7 @@ export class DataService extends AbstractDataService {
   }
 
   public getTechnologies(): Observable<Technology[]> {
-    return this.http.get<TechnologyResponse[]>(this.apiUrl + '/api/technologies')
+    return this.http.get<TechnologyResponse[]>(this.apiUrl + '/api/technologies?withDossier=true')
       .pipe(
         map((response) => {
             const result: Technology[] = [];
@@ -98,6 +105,15 @@ export class DataService extends AbstractDataService {
                 description: response.description
               };
 
+              if (response.dossier) {
+                technology.dossier = {
+                  id: response.dossier.id,
+                  technologyId: response.dossier.technologyId,
+                  reviewDate: response.dossier.reviewDate,
+                  reviewedCriteria: new Map(Object.entries(response.dossier.reviewedCriteria))
+                };
+              }
+
               result.push(technology);
             });
             return result;
@@ -108,56 +124,100 @@ export class DataService extends AbstractDataService {
       );
   }
 
-  /*getDossiers(withReviewData: boolean): Observable<TechnologyDossier[]> {
-    return this.http.get<TechnologyDossierResponse[]>(dossiersPath)
+  public getTechnology(technologyId: string): Observable<Technology> {
+    return this.http.get<TechnologyResponse>(this.apiUrl + '/api/technologies/' + technologyId + '?withDossier=true')
+      .pipe(
+        map((response) => {
+            const technology: Technology = {
+              id: response.id,
+              technologyName: response.technologyName,
+              technologyType: response.technologyType,
+              logoLocation: response.logoLocation,
+              shortDescription: response.shortDescription,
+              description: response.description
+            };
+
+            if (response.dossier) {
+              technology.dossier = {
+                id: response.dossier.id,
+                technologyId: response.dossier.technologyId,
+                reviewDate: response.dossier.reviewDate,
+                reviewedCriteria: new Map(Object.entries(response.dossier.reviewedCriteria))
+              };
+            }
+
+            return technology;
+          }
+        ),
+        catchError(DataService.handleError),
+        shareReplay(1)
+      );
+  }
+
+  public getTechnologiesOfType(technologyType: TechnologyType): Observable<Technology[]> {
+    return this.getTechnologies().pipe(
+      map((techs) =>
+        techs.filter(t => t.technologyType.toLocaleLowerCase() === technologyType.toLocaleLowerCase())
+      ),
+      shareReplay(1),
+      catchError(DataService.handleError)
+    );
+  }
+
+  getInfoResources(): Observable<InfoResourceSection[]> {
+    return this.http.get<InfoResourceSection[]>(this.apiUrl + '/api/infosections')
+      .pipe(
+        catchError(DataService.handleError),
+        shareReplay(1)
+      );
+  }
+
+  /*getDossiers(): Observable<TechnologyDossier[]> {
+    return this.http.get<TechnologyDossierResponse[]>(this.apiUrl + '/api/dossiers')
       .pipe(
         map((response) => {
             const result: TechnologyDossier[] = [];
             response.forEach((dossier) => {
               const d: TechnologyDossier = {
                 id: dossier.id,
-                technologyName: dossier.technologyName,
+                technologyId: dossier.technologyId,
                 reviewDate: dossier.reviewDate,
-                technologyInfo: dossier.technologyInfo,
-                reviewedCriteria: []
+                reviewedCriteria: dossier.reviewedCriteria
               };
-
-              if (withReviewData) {
-                d.reviewedCriteria = dossier.reviewedCriteria;
-              }
 
               result.push(d);
             });
             return result;
           }
         ),
-        catchError(TestDataService.handleError),
+        catchError(DataService.handleError),
         shareReplay(1)
       );
-  }
+  }*/
 
-  getDossiersForTechnologyType(technologyType: TechnologyType, withReviewData: boolean): Observable<TechnologyDossier[]> {
+  /*getDossiersForTechnologyType(technologyType: TechnologyType, withReviewData: boolean): Observable<TechnologyDossier[]> {
     return this.getDossiers(withReviewData).pipe(
       map((techs) =>
         techs.filter(t => t.technologyInfo.technologyType.toLocaleLowerCase() === technologyType.toLocaleLowerCase())
       ),
       shareReplay(1),
-      catchError(TestDataService.handleError)
+      catchError(DataService.handleError)
     );
-  }
+  }*/
 
-  public getDossier(technologyId: string, withReviewData: boolean): Observable<TechnologyDossier | undefined> {
+  /*public getDossier(technologyId: string): Observable<TechnologyDossier | undefined> {
     console.log("technologyId=" + technologyId);
 
-    return this.getDossiers(withReviewData).pipe(
+    return this.getDossiers().pipe(
       map((techs) =>
         techs.find(t => t.id === technologyId)
       ),
       shareReplay(1),
-      catchError(TestDataService.handleError)
+      catchError(DataService.handleError)
     );
-  }
+  }*/
 
+  /*
   getReviewedTechnologies(): Observable<TechnologyInfo[]> {
     return this.http.get<TechnologyDossierResponse[]>(dossiersPath)
       .pipe(
@@ -187,39 +247,45 @@ export class DataService extends AbstractDataService {
         shareReplay(1),
         catchError(TestDataService.handleError)
       );
-  }
+  }*/
 
-  getTechnologyFilter(technologyType: TechnologyType): Observable<TechnologyFilterConfiguration> {
-    /!*return combineLatest([
-      this.http.get<TechnologyFilterConfiguration[]>(filterConfigurationsPath).pipe(
+  getTechnologyFilter(technologyType: TechnologyType): any {
+    return combineLatest([
+      this.http.get<TechnologyFilterConfiguration[]>(this.apiUrl + '/api/filters').pipe(
         map((conf) => conf.find(c => c.technologyType.toLocaleLowerCase() === technologyType.toLocaleLowerCase())),
       ),
-      this.getDossiersForTechnologyType(technologyType, true)
+      this.getTechnologies()
     ]).pipe(
-      map(([filter, dossiers]) => {
-          const criteriaValues = new Map<string, any[]>();
-          dossiers.forEach(d => {
+      map(([filter, technologies]) => {
+          const values: Map<string, any[]> = new Map<string, any[]>();
 
-            d.reviewedCriteria.forEach((criterionInstance) => {
-              const distinctValues: any[] = [];
-              const previous: any[] | undefined = criteriaValues.get(criterionInstance.typeId);
+          technologies.forEach(tech => {
+            if (tech.dossier) {
+              tech.dossier.reviewedCriteria.forEach((reviewData, id) => {
+                const distinctValues: Set<any> = new Set();
+                const previous: Set<any> = new Set(values.get(id));
 
-              criterionInstance.values.forEach(v => distinctValues.push(v.value));
-              if (previous) {
-                criteriaValues.set(criterionInstance.typeId, [...previous, ...distinctValues]);
-              } else {
-                criteriaValues.set(criterionInstance.typeId, distinctValues);
-              }
-            });
+                reviewData.forEach((v: any) => distinctValues.add(v.value));
+                if (previous) {
+                  values.set(id, Array.from(new Set([...previous, ...distinctValues])));
+                } else {
+                  values.set(id, Array.from(distinctValues.values()));
+                }
+              });
+            }
           });
 
           if (filter) {
             filter.filters.forEach((f) => {
               if (f.filterType === CriterionFilterType.lte) {
-                const range: any[] = criteriaValues.get(f.criterionTypeId).sort(((a, b) => a > b ? 1 : -1));
-                f.filterValues = [range[0], range[range.length - 1]];
+                if (values.has(f.criterionTypeId)) {
+                  const range: any[] | undefined = values.get(f.criterionTypeId)!.sort(((a, b) => a > b ? 1 : -1));
+                  f.filterValues = [range[0], range[range.length - 1]];
+                }
               } else if (f.filterType !== CriterionFilterType.bool) {
-                f.filterValues = criteriaValues.get(f.criterionTypeId).values();
+                if (values.has(f.criterionTypeId)) {
+                  f.filterValues = values.get(f.criterionTypeId);
+                }
               }
             });
           }
@@ -227,28 +293,10 @@ export class DataService extends AbstractDataService {
           return filter;
         }
       ),
-      catchError(LocalTestDataService.handleError),
+      catchError(DataService.handleError),
       shareReplay(1)
-    );*!/
-
-    return EMPTY;
-  }*/
-
-  public getTechnologiesOfType(technologyType: TechnologyType): Observable<Technology[]> {
-    return this.getTechnologies().pipe(
-      map((techs) =>
-        techs.filter(t => t.technologyType.toLocaleLowerCase() === technologyType.toLocaleLowerCase())
-      ),
-      shareReplay(1),
-      catchError(DataService.handleError)
     );
   }
 
-  getInfoResources(): Observable<InfoResourceSection[]> {
-    return this.http.get<InfoResourceSection[]>(infoResourcesPath)
-      .pipe(
-        catchError(DataService.handleError),
-        shareReplay(1)
-      );
-  }
+
 }

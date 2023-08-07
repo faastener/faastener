@@ -2,7 +2,7 @@
  * An interface representing a server response with available classification frameworks.
  */
 import {TechnologyType} from './technology';
-import {ClassificationView, CriterionInstance} from './classification';
+import {ClassificationView, CriterionValue} from './classification';
 
 export interface ClassificationFrameworkResponse {
   id: string;
@@ -20,10 +20,12 @@ export interface TechnologyResponse {
   logoLocation?: string;
   shortDescription?: string;
   description?: string;
+  dossier?: TechnologyDossierResponse;
 }
 
 export interface TechnologyDossierResponse {
   id: string;
+  technologyId: string;
   reviewDate?: Date;
-  reviewedCriteria: CriterionInstance[];
+  reviewedCriteria: Map<string, CriterionValue[]>;
 }

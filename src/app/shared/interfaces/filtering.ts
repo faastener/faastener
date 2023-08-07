@@ -69,7 +69,7 @@ export interface CriterionFilterConfiguration {
   /**
    * Distinct filter values obtained from the review data
    */
-  filterValues?: [number, number] | string[];
+  filterValues?: any; //[number, number] | string[];
 }
 
 /**

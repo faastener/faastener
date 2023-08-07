@@ -9,14 +9,14 @@
     <ul class="platforms__logos">
       <ng-container *ngFor="let tech of techs">
         <li class="platforms__item">
-          <a [routerLink]="['/platforms', tech.id]">
+          <a [routerLink]="['/technologies', tech.id]">
             <img class="platforms__logo" src="{{tech.logoLocation}}" alt="{{tech.technologyName}}" matTooltip="{{tech.technologyName}}"/>
           </a>
         </li>
       </ng-container>
     </ul>
 
-    <button class="platforms__button" mat-raised-button color="accent" [routerLink]="'/platforms'">
+    <button class="platforms__button" mat-raised-button color="accent" [routerLink]="'/technologies'">
       Browse Platforms
     </button>
   </div>

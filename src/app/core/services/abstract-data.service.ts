@@ -2,6 +2,7 @@ import {Observable} from 'rxjs';
 import {ClassificationFramework} from '../../shared/interfaces/classification';
 import {Technology, TechnologyType} from '../../shared/interfaces/technology';
 import {InfoResourceSection} from '../../shared/interfaces/info';
+import {TechnologyFilterConfiguration} from "../../shared/interfaces/filtering";
 
 export abstract class AbstractDataService {
   protected constructor() {
@@ -11,9 +12,11 @@ export abstract class AbstractDataService {
 
   public abstract getFrameworksForTechnologyType(technologyType: TechnologyType): Observable<ClassificationFramework[]>;
 
-  public abstract getLatestFrameworkForTechnologyType(technologyType: TechnologyType): Observable<ClassificationFramework | null>;
+  public abstract getLatestFrameworkForTechnologyType(technologyType: TechnologyType): Observable<ClassificationFramework>;
 
   public abstract getTechnologies(): Observable<Technology[]>;
+
+  public abstract getTechnology(technologyId: string): Observable<Technology>;
 
   public abstract getTechnologiesOfType(technologyType: TechnologyType): Observable<Technology[]>;
 
@@ -25,9 +28,9 @@ export abstract class AbstractDataService {
 
    public abstract getReviewedTechnologies(): Observable<TechnologyInfo[]>;
 
-   public abstract getReviewedTechnologiesOfType(technologyType: TechnologyType): Observable<TechnologyInfo[]>;
+   public abstract getReviewedTechnologiesOfType(technologyType: TechnologyType): Observable<TechnologyInfo[]>;*/
 
-   public abstract getTechnologyFilter(technologyType: TechnologyType): Observable<TechnologyFilterConfiguration>;*/
+   public abstract getTechnologyFilter(technologyType: TechnologyType): Observable<TechnologyFilterConfiguration>;
 
   public abstract getInfoResources(): Observable<InfoResourceSection[]>;
 }

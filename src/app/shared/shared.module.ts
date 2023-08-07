@@ -12,6 +12,7 @@ import {ChildGroupingComponent} from "./child-grouping/child-grouping.component"
 import {CriterionComponent} from "./criterion/criterion.component";
 import {SetToArrayPipe} from "./pipes/set-to-array.pipe";
 import {YesNoPipe} from "./pipes/yes-no.pipe";
+import {BottomNavComponent} from "./bottom-nav/bottom-nav.component";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {YesNoPipe} from "./pipes/yes-no.pipe";
     FrameworkRendererComponent,
     ChildGroupingComponent,
     CriterionComponent,
+    BottomNavComponent,
     SetToArrayPipe,
     YesNoPipe,
     PageNotFoundComponent
@@ -39,6 +41,7 @@ import {YesNoPipe} from "./pipes/yes-no.pipe";
     MaterialModule,
     HeaderComponent,
     FooterComponent,
+    BottomNavComponent,
     FrameworkRendererComponent,
     ChildGroupingComponent,
     CriterionComponent,

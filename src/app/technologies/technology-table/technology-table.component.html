@@ -1,0 +1,54 @@
+<div #content class="table-container">
+  <table mat-table [dataSource]="dataSource" [fixedLayout]="true">
+    <ng-container matColumnDef="techNameHeader" sticky>
+      <th mat-header-cell *matHeaderCellDef rowspan="2" class="tech-name-header-cell">Name</th>
+    </ng-container>
+
+    <ng-container matColumnDef="techName" sticky>
+      <th mat-header-cell *matHeaderCellDef [ngStyle]="{'display': 'none'}">Name</th>
+      <td mat-cell *matCellDef="let technology" class="tech-name-cell">
+        <div class="tech-name-content">
+          <img src="{{technology.logoLocation}}" alt="{{technology.technologyName}}"/>
+          <span class="text-center"> {{technology.technologyName}}</span>
+        </div>
+      </td>
+    </ng-container>
+
+    <ng-container *ngFor="let c of groupingColumns">
+      <ng-container [matColumnDef]="c.id">
+        <th mat-header-cell *matHeaderCellDef [attr.colspan]="c.colSpan" [ngStyle]="{'background': c.color}" class="grouping-header-cell text-center"> {{c.displayName}}</th>
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngFor="let c of criteriaColumns">
+      <ng-container [matColumnDef]="c.id">
+        <th mat-header-cell *matHeaderCellDef [ngStyle]="{'background': c.color}" class="criterion-header-cell text-center"> {{c.displayName}}</th>
+        <td mat-cell *matCellDef="let technology" class="value-cell text-center" [ngStyle]="{'background': c.color}">
+          <ng-container *ngFor="let entry of findValues(technology.dossier.reviewedCriteria, c.id); index as i;">
+
+            <div class="value-list">
+              <span class="value">{{entry.value | yesNo }}</span>
+            </div>
+          </ng-container>
+        </td>
+      </ng-container>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="groupingColumnIds; sticky: true"></tr>
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true"></tr>
+    <tr class="tech-row" mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+  </table>
+</div>
+<app-bottom-nav #bottomNavComponent [scrollToAnchor]="'header'">
+  <button class="g__nav-button" mat-button color="primary" (click)="scrollLeft()">
+    <mat-icon>arrow_back_ios</mat-icon> Scroll Left
+  </button>
+  <button class="g__nav-button" mat-button color="primary" (click)="scrollRight()">
+    <mat-icon>arrow_forward_ios</mat-icon> Scroll Right
+  </button>
+</app-bottom-nav>
+
+
+
+
+

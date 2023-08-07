@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {ClassificationFramework, CriteriaGrouping, CriterionInstance} from '../interfaces/classification';
+import {ClassificationFramework, CriteriaGrouping, CriterionValue} from '../interfaces/classification';
 import {ViewportScroller} from '@angular/common';
 
 @Component({
@@ -13,7 +13,7 @@ export class FrameworkRendererComponent implements OnInit {
   @Input() includeFrameworkInfo: boolean = true;
   @Input() extraCriterionTitle: string = '';
   @Input() renderReviewData: boolean = false;
-  @Input() reviewData: CriterionInstance[] = [];
+  @Input() reviewData: Map<string, CriterionValue[]> = new Map();
 
   viewToggles: Map<string, boolean> = new Map<string, boolean>();
   selectedGrouping: Map<string, CriteriaGrouping> = new Map<string, CriteriaGrouping>();

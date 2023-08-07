@@ -1,0 +1,34 @@
+@import "../../_scss/shared";
+
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.filter-block__filter-values {
+  @include list-style-none;
+  padding-left: .2rem;
+}
+
+.criterion-block {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.criterion-block__filter-name {
+  margin-bottom: 0;
+}
+
+.criterion-block__filter-body {
+  margin-top: .3rem;
+}
+
+.filter-block__filter-type {
+  height: 2.2rem;
+  margin: 0 auto .7rem;
+  align-items: center;
+}
+
+.clear-filter-button {
+  align-self: stretch;
+}

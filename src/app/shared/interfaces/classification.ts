@@ -122,33 +122,12 @@ export interface ClassificationCriterion {
   description: string;
 
   /**
-   * Example values which an instance of this criterion {@link CriterionInstance} can store.
+   * Example values which this criterion can store.
    *
    * @example
    * a true/false value, numeric values, a list of strings
    */
   exampleValues?: string[];
-}
-
-/**
- * An interface representing an instance of a classification criterion containing the collected data for a particular technology.
- *
- * @example a list of runtimes supported by AWS Lambda.
- */
-export interface CriterionInstance {
-  /**
-   * Unique {@link ClassificationCriterion} identifier.
-   */
-  typeId: string;
-  /**
-   * A list of {@link CriterionValue} which store the criterion-specific review data for the reviewed technology.
-   */
-  values: CriterionValue[];
-  /**
-   * A date review was conducted (optional).
-   * Reserved for future use.
-   */
-  reviewDate?: Date;
 }
 
 /**

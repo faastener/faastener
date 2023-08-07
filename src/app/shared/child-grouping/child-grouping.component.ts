@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {CriteriaGrouping, CriterionInstance} from '../interfaces/classification';
+import {CriteriaGrouping, CriterionValue} from '../interfaces/classification';
 
 @Component({
   selector: 'app-child-grouping',
@@ -12,12 +12,12 @@ export class ChildGroupingComponent {
   @Input() parent = '';
   @Input() extraCriterionTitle: string = '';
   @Input() renderReviewData = false;
-  @Input() reviewData: CriterionInstance[] = [];
+  @Input() reviewData: Map<String, CriterionValue[]> = new Map();
 
   constructor() {
   }
 
-  findCriterionInstance(id: string): CriterionInstance | undefined {
-    return this.reviewData.find(item => (item.typeId === id));
+  findCriterionValues(id: string): CriterionValue[] | undefined {
+    return this.reviewData.get(id);
   }
 }
