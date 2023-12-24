@@ -17,24 +17,39 @@ export interface Sort<T> {
   order: 'asc' | 'desc';
 }
 
+export interface PageRequest<T> {
+  page: number;
+  size: number;
+  sort?: Sort<T>;
+}
+
+export interface Page<T> {
+  content: T[];
+  totalElements: number;
+  size: number;
+  number: number;
+}
+
+export type PaginatedEndpoint<T> = (req: PageRequest<T>) => Observable<Page<T>>
+
 export class TechnologyDataSource implements SimpleDataSource<Technology> {
   public isPaginated = true;
   public totalInputSize: number = 0;
   public currentIndex = 0;
   public filteredData$: Observable<Technology[]>;
   public paginatedData$: Observable<Technology[]>;
-  private readonly data: Technology[];
   private readonly pageNumber = new BehaviorSubject<number>(0);
   public pageNumber$ = this.pageNumber.asObservable();
   private readonly sort: BehaviorSubject<Sort<Technology>>;
   private readonly criteriaBasedQuery: BehaviorSubject<CriteriaBasedQuery>;
-  private readonly nameBasedQuery: BehaviorSubject<string>;
+  private readonly nameBasedQuery: BehaviorSubject<string[]>;
+  private readonly data: Technology[];
 
   constructor(data: Technology[], initialSort: Sort<Technology>, initialQuery: CriteriaBasedQuery, public pageSize = 10) {
     this.data = data;
     this.sort = new BehaviorSubject<Sort<Technology>>(initialSort);
     this.criteriaBasedQuery = new BehaviorSubject<CriteriaBasedQuery>(initialQuery);
-    this.nameBasedQuery = new BehaviorSubject<string>("");
+    this.nameBasedQuery = new BehaviorSubject<string[]>([]);
 
     this.filteredData$ = combineLatest([this.criteriaBasedQuery, this.nameBasedQuery, this.sort]).pipe(
       switchMap(([criteriaQuery, nameQuery, sort]) => {
@@ -110,7 +125,7 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
     this.criteriaBasedQuery.next(nextQuery);
   }
 
-  queryByName(query: string): void {
+  queryByName(query: string[]): void {
     this.nameBasedQuery.next(query);
   }
 
@@ -134,11 +149,20 @@ export class TechnologyDataSource implements SimpleDataSource<Technology> {
   disconnect(): void {
   }
 
-  private processData(data: Technology[], criteriaQuery: CriteriaBasedQuery, nameQuery: string, sort: Sort<Technology>): Technology[] {
+  private processData(data: Technology[], criteriaQuery: CriteriaBasedQuery, nameQuery: string[], sort: Sort<Technology>): Technology[] {
     let result: Technology[] = data;
-    /*if (nameQuery) {
-      result = data.filter(dossier => nameQuery ? dossier.technologyName.toLocaleLowerCase().includes(nameQuery) : true);
-    }*/
+    if (nameQuery.length > 0) {
+      result = data.filter(dossier => {
+        const name = dossier.technologyName.toLocaleLowerCase();
+        console.log(name);
+        for (const q of nameQuery) {
+          if (name.includes(q.replaceAll('-', ' '))) {
+            return true;
+          }
+        }
+        return false;
+      });
+    }
 
     if (criteriaQuery && Object.keys(criteriaQuery).length !== 0) {
       Object.keys(criteriaQuery).forEach((key) => {

@@ -10,18 +10,14 @@
 
   <div class="platforms-list__cards">
     <ng-container *ngFor="let p of platforms">
-      <mat-card class="platforms-list__card text-center" [routerLink]="['./', p.id]">
-        <mat-card-content>
+      <mat-card class="platforms-list__card" [routerLink]="['./', p.id]">
+        <mat-card-content class="platforms-list__card-content text-center">
           <img class="platforms-list__logo" src="{{p.logoLocation}}" alt="{{p.technologyName}}"/>
-          <h2 class="platform-section__card-title"> {{p.technologyName}} </h2>
-
           <ng-container>
             <p class="platforms-list__card-description text-center">
               {{p.shortDescription}}
             </p>
-
           </ng-container>
-
           <a mat-icon-button color="primary" [routerLink]="['./', p.id]"
              aria-label="Open platform details button">
             <mat-icon class="platforms-list__explore-button">arrow_forward</mat-icon>

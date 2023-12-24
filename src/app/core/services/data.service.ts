@@ -69,6 +69,7 @@ export class DataService extends AbstractDataService {
   getLatestFrameworkForTechnologyType(technologyType: TechnologyType): Observable<ClassificationFramework> {
     return this.getFrameworks().pipe(
       map((frameworks) => {
+          console.log(frameworks);
           const f: ClassificationFramework | undefined = frameworks.find(
             // currently returns the first found value, TODO: check version values
             (item) => item.technologyType.toLocaleLowerCase() === technologyType.toLocaleLowerCase());

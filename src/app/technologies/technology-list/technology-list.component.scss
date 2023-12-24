@@ -27,20 +27,26 @@
 }
 
 .platforms-list__card {
+  display: flex;
+  flex: 1 1 auto;
   margin: 0.2rem .5rem 0 .5rem;
-  padding: 0 .5rem !important;
   border-left: .2rem solid $violet-400;
   transition: all .3s ease;
-  flex: 1 1 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
 
   &:hover {
     border-left: .2rem solid $salad-600;
     box-shadow: 0 10px 16px rgba(0, 0, 0, 0.2) !important;
     cursor: pointer;
   }
+}
+
+.platforms-list__card-content {
+  display: flex;
+  flex: 1 1 auto;
+  margin: 0.2rem .5rem 0 .5rem;
+  padding: 0 .5rem !important;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .platforms-list__logo {
@@ -81,7 +87,7 @@
     flex-flow: row wrap;
   }
 
-  .platforms-list__card {
+  .platforms-list__card-content {
     flex: 1 1 auto;
     display: flex;
     align-items: center;
